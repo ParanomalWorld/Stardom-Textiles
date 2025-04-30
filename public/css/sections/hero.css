@@ -169,7 +169,6 @@
         font-size: 2.2rem;
         line-height: 1.2;
         margin-bottom: 1.2rem;
-        background: linear-gradient(135deg, #8EB8E5 15%, var(--light) 85%);
     }
 
     .hero-subtitle {
@@ -179,12 +178,12 @@
         padding: 0 1rem;
     }
 
-    .hero-image {
+    /* .hero-image {
         order: 2;
         width: 100%;
         max-width: 270px;
         margin: 2rem auto 0;
-    }
+    } */
 
     .floating-frame {
         width: 90%;

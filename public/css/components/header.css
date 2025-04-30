@@ -95,9 +95,43 @@
         white-space: nowrap; /* Prevent wrapping */
     }
 
-    .main-nav {
-        height: var(--nav-bar-height);
-        padding: 0 0.5rem; /* Reduced side padding */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--nav-bar-height);
+            box-sizing: border-box; /* Add this */
+            padding: 0 0.8rem; /* Adjusted padding */
+            position: relative;
+            top: var(--top-bar-height); /* Anchor below top policy bar */
+        }
+    
+        .nav-brand {
+            padding-left: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    
+        .nav-brand .logo {
+            height: var(--logo-size);
+            width: auto;
+            transform: translateY(1px); /* Fine-tune vertical alignment */
+        }
+    
+        .hamburger {
+            margin-right: 0;
+            padding: 0.15rem;
+            transform: translateY(-1px); /* Align with logo */
+        }
+    
+        /* Ensure header container height matches */
+        .main-header {
+            height: calc(var(--top-bar-height) + var(--nav-bar-height));
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .nav-brand {
@@ -381,4 +415,3 @@
 }
 }
 
-  /* ... (rest of header/nav styles) */

@@ -9,41 +9,70 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+<!-- Update header section -->
+<header class="main-header">
+    <!-- Top Policy Bar -->
+    <div class="top-policy-bar">
         <div class="container">
-            <div class="logo">
-                <img src="/images/logo1.png" alt="YodhaPlay Logo">
-                <span>YodhaPlay</span>
+            <div class="policy-links">
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#fairplay">Fair Play Policy</a>
+                <a href="#returns">Return Policy</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#tournaments">Tournaments</a></li>
-            </ul>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="/images/logo.png" alt="YodhaPlay Logo" class="logo">
+            </div>
+
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-menu">
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#refer" class="nav-link">Refer & Earn</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
         </div>
     </nav>
+</header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Dominate Mobile Esports</h1>
-                <p>Compete in thrilling tournaments for Free Fire, BGMI & more!</p>
+                <h1 class="hero-title">YodhaPlay Esports</h1>
+                <p class="hero-subtitle">
+                    Introducing YodhaPlay Esports, the ultimate destination for adrenaline-pumping gaming tournaments! Dive into the heart of competitive gaming with a platform that hosts a plethora of tournaments for popular titles like Free Fire and BGMI</p>
                 <div class="cta-group">
-                    <a href="/downloads/yodhaplay-app.apk" class="cta-button" download>
-                        <i class="fas fa-download"></i> Download App
+                    <a href="/downloads/yodhaplay-app.apk" class="cta-button glow-effect" download>
+                        <span class="glow-container">
+                            <i class="fas fa-download"></i> Download App
+                            <span class="glow-blur"></span>
+                        </span>
                     </a>
-                    <a href="#tournaments" class="cta-button secondary">
-                        <i class="fas fa-trophy"></i> View Tournaments
-                    </a>
+                 
                 </div>
             </div>
             <div class="hero-image">
-                <img src="/images/hero-mockup.png" alt="App Preview">
+                <div class="floating-frame">
+                    <img src="/images/login_page.jpeg" alt="App Preview" class="floating-element">
+                    <div class="gradient-overlay"></div>
+                </div>
             </div>
         </div>
+        <div class="hero-background"></div>
     </section>
 
     <!-- Stats Section -->
@@ -64,36 +93,74 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose YodhaPlay?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized performance for lag-free gaming experience</p>
-                </div>
-                <!-- Add more feature cards -->
-            </div>
-        </div>
-    </section>
+      <!-- About Section -->
+  <section class="about-section">
+    <h2>About YodhaPlay</h2>
+    <p>Introducing YodhaPlay - Android's ultimate eSports app! Compete, connect, and earn real cash prizes.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Advanced Protection</h3>
+        <p>We secure your data by applying extensive data & file protection.</p>
+      </div>
+      <div class="feature">
+        <h3>Seamless Performance</h3>
+        <p>Built with cutting-edge technology to deliver smooth and reliable performance.</p>
+      </div>
+      <div class="feature">
+        <h3>Earn Real Cash Prizes</h3>
+        <p>No points, tokens, or scores—just real cash prizes. Win competitions, demonstrate your skills, and earn money effortlessly.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Download Section -->
-    <section class="download" id="download">
-        <div class="container">
-            <div class="download-content">
-                <h2>Start Winning Today!</h2>
-                <p>Download now and get ₹100 bonus on first tournament</p>
-                <a href="/downloads/yodhaplay-app.apk" class="cta-button" download>
-                    <i class="fas fa-download"></i> Get the App
-                </a>
-            </div>
-        </div>
-    </section>
+  <!-- Key Features -->
+  <section class="key-features">
+    <ul>
+      <li>Quick Payouts</li>
+      <li>Social Login</li>
+      <li>Winnings</li>
+      <li>Notifications</li>
+    </ul>
+    <div class="character-illustration">
+      <img src="/images/character3.png" alt="Gaming Character">
+    </div>
+    <ul>
+      <li>Retina Ready</li>
+      <li>High Resolution</li>
+      <li>Clean Code</li>
+      <li>Dedicated Customer Support</li>
+    </ul>
+  </section>
 
-    <script src="/js/script.js"></script>
+  <!-- Screenshot Section -->
+  <section class="screenshot-section">
+    <h2>Screenshot</h2>
+    <div class="carousel">
+      <img src="/images/login_page.jpeg" alt="App Screen 1">
+      <img src="/images/login_page.jpeg" alt="App Screen 2">
+      <img src="/images/login_page.jpeg" alt="App Screen 3">
+      <img src="/images/login_page.jpeg" alt="App Screen 4">
+      <!-- Additional screens in JS-controlled carousel -->
+    </div>
+  </section>
+
+   <!-- Testimonials Section -->
+   <section class="testimonials-section">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <p>"Top player on YodhaPlay."</p>
+      <h4>Teamop</h4>
+      <h4>Barcano</h4>
+      <h4>Stapda</h4>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <h2>Download Available</h2>
+    <p>Now play and earn by downloading latest version of YodhaPlay</p>
+    <button class="footer-download-btn">Download Here</button>
+  </footer>
 </body>
+
 </html>

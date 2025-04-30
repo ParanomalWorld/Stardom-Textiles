@@ -96,10 +96,8 @@ html, body {
 }
 
 .main-nav {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 0;
 }
 
 .nav-brand {
@@ -159,15 +157,17 @@ html, body {
     font-weight: 600;
 }
 
+/* Fix hamburger visibility */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
-    gap: 4px;
-    background-color: #080808;
+    gap: 5px;
     cursor: pointer;
-    padding: 0.5rem;
+    background: none;
+    border: none;
+    z-index: 1001;
+    margin-left: auto;
 }
-
 .hamburger .bar {
     width: 25px;
     height: 3px;
@@ -177,20 +177,22 @@ html, body {
 
 /* Responsive Menu Toggle */
 /* Mobile Menu Enhancements */
+/* Position hamburger properly on mobile */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
     .nav-menu {
         position: fixed;
         top: var(--header-height);
         right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - var(--header-height));
+        width: 80%;
+        max-width: 320px;
         background: var(--dark);
-        backdrop-filter: blur(12px);
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
-        padding: 2rem;
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
+        transition: right 0.3s ease;
+        height: calc(100vh - var(--header-height));
+        padding: 2rem 1.5rem;
     }
 
     .nav-menu.active {
@@ -199,10 +201,10 @@ html, body {
 
     .nav-links {
         flex-direction: column;
-        align-items: flex-start;
         gap: 1.5rem;
-        width: 100%;
+        align-items: flex-start;
     }
+
 
     .nav-link {
         width: 100%;

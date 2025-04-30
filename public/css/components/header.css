@@ -73,10 +73,10 @@
 /* Mobile-Specific Header Enhancements */
 @media (max-width: 768px) {
     :root {
-        --header-height: 80px;  /* Reduced total height */
+        --header-height: 60px;  /* Reduced total height */
         --top-bar-height: 24px; /* Slimmer top bar */
-        --nav-bar-height: 56px; /* Compact navigation bar */
-        --logo-size: 40px;      /* Smaller logo */
+        --nav-bar-height: 30px; /* Compact navigation bar */
+        --logo-size: 20px;      /* Smaller logo */
     }
 
     .top-policy-bar {

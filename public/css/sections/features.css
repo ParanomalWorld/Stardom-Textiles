@@ -1,0 +1,29 @@
+
+/* ============================================
+   Key Features Section
+============================================ */
+.key-features {
+    background: linear-gradient(to right, #0A1128, #1C2E4A);
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.key-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.key-features li {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-bottom: 1rem;
+}
+
+.character-illustration img {
+    max-width: 200px;
+}

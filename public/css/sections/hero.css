@@ -1,0 +1,146 @@
+/* ============================================
+   Hero Section
+============================================ */
+.hero {
+    background: linear-gradient(152deg, var(--dark) 45%, var(--accent) 100%);
+    position: relative;
+    z-index: 2;
+    padding: 100px 0 40px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 70% 30%, rgba(26,77,143,0.7) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.hero-background {
+    background: none !important; /* or clean up the color effect */
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 680px;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-title {
+    font-size: 4.2rem;
+    background: linear-gradient(135deg, #8EB8E5 25%, var(--light) 75%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 4px 25px rgba(26,77,143,0.4);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 3;
+    width: 80%;            /* ✅ Half of container */
+    height: auto;          /* ✅ Maintains aspect ratio */
+    max-width: 400px;      /* Optional: prevent it from getting too large */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* ============================================
+   Floating Frame & Hero Image
+============================================ */
+.floating-frame {
+    background: none;
+    border: none;
+    transform: none;       /* ✅ No tilt */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    margin-left: -40px;    /* ✅ Shifts toward title */
+    border-radius: 20px;
+    width: 50%;            /* ✅ Matches image size */
+    max-width: 400px;
+}
+
+/* Image inside the floating frame */
+.floating-element {
+    width: var(--hero-image-width);
+    height: var(--hero-image-height);
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Remove overlays/tints */
+.gradient-overlay,
+.dark-overlay,
+.tint {
+    display: none !important;
+}
+
+/* ============================================
+   CTA Buttons
+============================================ */
+.cta-button.glow-effect {
+    background: var(--gradient);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.cta-button.secondary {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid var(--primary-bg);
+    backdrop-filter: blur(8px);
+}
+
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    background: var(--gradient);
+    color: white;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 18px rgba(79, 156, 255, 0.3);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #2D82CF 0%, #4f9cff 100%);
+    box-shadow: 0 10px 24px rgba(79, 156, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+.cta-button i {
+    margin-right: 0.6rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+    }
+}

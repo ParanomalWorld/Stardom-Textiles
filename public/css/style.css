@@ -1,6 +1,9 @@
 :root {
-    --header-height: 100px;
+    --header-height: 50px; /* Increased to accommodate both bars */
+    --top-bar-height: 40px;
+    --nav-bar-height: 250px;
     --logo-size: 130px;
+    --policy-bar-height: 20px;
     --hero-image-width: 270px;
     --hero-image-height: 550px;
     --primary-bg: linear-gradient(to right, #0f1a39, #0066cc);
@@ -57,7 +60,8 @@ html, body {
     padding: 0.6rem 2rem;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+
+    align-items: start;
     color: var(--light);
     font-size: 0.85rem;
     border-bottom: 1px solid var(--divider);
@@ -96,9 +100,46 @@ html, body {
 }
 
 .main-nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    height: var(--nav-bar-height);
+    display: flex;
+    align-items: center;
 }
+
+.container {
+    height: 100%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 130px;
+        --top-bar-height: 30px;
+        --nav-bar-height: 100px;
+        --logo-size: 80px;
+    }
+
+    .nav-brand {
+        padding-left: 0;
+    }
+
+    .hamburger {
+        margin-left: auto;
+        padding-right: 1rem;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }}
 
 .nav-brand {
     padding-left: 1rem; /* Enhanced logo padding */

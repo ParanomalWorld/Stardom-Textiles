@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    background-color: var(--dark);
+    color: var(--text-light);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    padding-top: var(--header-height);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

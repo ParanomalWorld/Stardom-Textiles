@@ -1,0 +1,36 @@
+/* ============================================
+   Footer Section
+============================================ */
+.footer {
+    background: #0A1128;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer h2 {
+    color: var(--primary-bg);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.footer-download-btn {
+    background: var(--gradient);
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.footer-download-btn:hover {
+    background: #1A4D8F;
+}
+

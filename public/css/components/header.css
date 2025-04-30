@@ -74,7 +74,7 @@
     :root {
         --header-height: 100px; /* Total height of top bar + nav bar */
         --top-bar-height: 30px;
-        --nav-bar-height: 70px;
+        --nav-bar-height: 20px;
     }
 
     .main-header {

@@ -1,13 +1,23 @@
+// Update the JavaScript
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelector('.nav-links');
+    const body = document.querySelector('body');
 
     hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        navLinks.classList.toggle('open'); // For animation or visibility
-    });
+        body.classList.toggle('nav-active'); // Prevent body scroll
 
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('nav-active');
+        }
+    });
+});
     // Animate stats numbers
     const animateNumbers = (entries, observer) => {
         entries.forEach(entry => {

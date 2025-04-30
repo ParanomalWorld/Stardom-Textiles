@@ -72,9 +72,9 @@
 /* header.css - Revised Mobile Navigation */
 @media (max-width: 768px) {
     :root {
-        --header-height: 80px; /* Total height of top bar + nav bar */
+        --header-height: 100px; /* Total height of top bar + nav bar */
         --top-bar-height: 30px;
-        --nav-bar-height: 40px;
+        --nav-bar-height: 20px;
     }
 
     .main-header {

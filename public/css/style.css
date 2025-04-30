@@ -1,58 +1,109 @@
-/* ============================================
-   Root Variables
-============================================ */
 :root {
-    --header-height: 100px;  /* Reduced from 130px */
-    --logo-size: 60px;       /* Reduced from 90px */
-    --hero-image-width: 270px; /* Increased from 60px */
+    --header-height: 100px;
+    --logo-size: 130px;
+    --hero-image-width: 270px;
     --hero-image-height: 550px;
+    --primary-bg: linear-gradient(to right, #0f1a39, #0066cc);
     --primary: #1A4D8F;
-    --dark: #0A1128;
     --accent: #1C2E4A;
+    --dark: #0A1128;
     --light: #FFFFFF;
-    --gradient: linear-gradient(135deg, #1A4D8F 0%, #2D82CF 100%);
-
-    --primary: #4f9cff; /* You can update this to match your brand color */
     --text-light: rgba(255, 255, 255, 0.85);
     --text-muted: rgba(255, 255, 255, 0.65);
     --divider: rgba(255, 255, 255, 0.1);
+    --gradient: linear-gradient(135deg, #1A4D8F 0%, #2D82CF 100%);
 }
 
-/* ============================================
-   Base Styles
-============================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
-html,
-body {
-    background: var(--dark);
-    color: var(--light);
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.7;
-
-    padding-top: 120px; /* Adjust based on actual header height */
-    margin: 0;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    background-color: #0a1128;
+html, body {
+    background-color: var(--dark);
     color: var(--text-light);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    padding-top: var(--header-height);
 }
 
-/* ============================================
-   Navbar Styles
-============================================ */
-.navbar {
-    padding: 1rem 0;
+.container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header {
     position: fixed;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    background: rgba(15, 25, 35, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 17, 40, 0.98);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+.top-policy-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    background: rgba(10, 17, 40, 0.98);
+    padding: 0.6rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--light);
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--divider);
+}
+
+.policy-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.policy-links a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.policy-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-bg);
+    transition: width 0.3s ease;
+}
+
+.policy-links a:hover {
+    color: var(--primary-bg);
+}
+
+.policy-links a:hover::after {
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.nav-brand {
+    padding-left: 1rem; /* Enhanced logo padding */
 }
 
 .nav-brand .logo {
@@ -60,18 +111,14 @@ body {
     width: auto;
 }
 
-.logo {
+.nav-menu {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 700;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
-    align-items: center;
+    gap: 2.5rem; /* More spacing between nav links */
 }
 
 .nav-link {
@@ -79,12 +126,12 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
+    padding: 1rem 1.2rem;
     position: relative;
     text-transform: uppercase;
+    border-radius: 8px;
     letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
 }
 
 .nav-link::before {
@@ -94,7 +141,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary);
+    background: var(--primary-bg);
     transition: width 0.3s ease;
 }
 
@@ -108,88 +155,60 @@ body {
 }
 
 .nav-link.active {
-    color: var(--primary);
+    color: var(--primary-bg);
     font-weight: 600;
 }
 
-/* ============================================
-   Header and Policy Bar
-============================================ */
-.main-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(10, 17, 40, 0.98);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--divider);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0.5rem;
 }
 
-.top-policy-bar {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 0.75rem 2rem;
-    border-bottom: 1px solid var(--divider);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
 }
 
-.policy-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+/* Responsive Menu Toggle */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        padding: 10px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 1002;
+    }
+
+    .nav-links a {
+        padding: 12px 20px;
+        color: #222;
+        font-weight: 500;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-menu.active .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
 
-.policy-links a {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    font-weight: 400;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.policy-links a::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background-color: var(--primary);
-    transition: width 0.3s ease;
-}
-
-.policy-links a:hover {
-    color: var(--primary);
-}
-
-.policy-links a:hover::after {
-    width: 100%;
-}
-
-/* Add padding below the header using body or main wrapper */
-body {
-    padding-top: 110px; /* Adjust to match the total height of .main-header */
-}
-
-/* ============================================
-   Layout Containers
-============================================ */
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main-nav {
-    padding: 1.5rem 0;
-}
 
 /* ============================================
    Hero Section
@@ -292,7 +311,7 @@ body {
 
 .cta-button.secondary {
     background: rgba(255,255,255,0.05);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--primary-bg);
     backdrop-filter: blur(8px);
 }
 
@@ -391,7 +410,7 @@ body {
 .about-section h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--primary);
+    color: var(--primary-bg);
 }
 
 .about-section p {
@@ -480,7 +499,7 @@ body {
 .carousel img {
     max-height: 400px;
     border-radius: 10px;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--primary-bg);
 }
 
 /* ============================================
@@ -495,7 +514,7 @@ body {
 .testimonials-section h2 {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
-    color: var(--primary);
+    color: var(--primary-bg);
 }
 
 .testimonial {
@@ -525,7 +544,7 @@ body {
 }
 
 .footer h2 {
-    color: var(--primary);
+    color: var(--primary-bg);
     font-size: 2rem;
     margin-bottom: 1rem;
 }

@@ -170,7 +170,7 @@ html, body {
 .hamburger .bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: #080808;
     border-radius: 2px;
 }
 
@@ -179,7 +179,7 @@ html, body {
     .nav-links {
         display: none;
         flex-direction: column;
-        background: #fff;
+        background: #585050;
         position: absolute;
         top: 100%;
         right: 0;

@@ -26,8 +26,7 @@
 html, body {
     background-color: var(--dark);
     color: var(--text-light);
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    line-height: 1.7;
+
     padding-top: var(--header-height);
 }
 

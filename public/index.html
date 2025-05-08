@@ -10,42 +10,69 @@
 </head>
 <body>
 <!-- Update header section -->
+<!-- Header Structure -->
 <header class="main-header">
-    <!-- Top Policy Bar -->
-    <div class="top-policy-bar">
-      <div class="container">
-          <div class="policy-links">
-              <a href="/terms.html" target="_blank">Terms</a>
-              <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
-              <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>
-              <a href="/return-policy.html" target="_blank">Return Policy</a>
-          </div>
+  <nav class="header-nav container">
+      <!-- Logo -->
+      <div class="header-brand">
+          <img src="/images/yodha_play2.png" alt="game.tv" class="header-logo">
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav">
+          <ul class="nav-list">
+              <li class="nav-item">
+                  <a href="#home" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown-parent">
+                  <a href="#esports" class="nav-link">Esports <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                  <div class="dropdown-menu">
+                      <a href="#features" class="dropdown-item">Features</a>
+                      <a href="#host" class="dropdown-item">Host</a>
+                      <a href="#developer" class="dropdown-item">Developer</a>
+                      <a href="#host" class="dropdown-item">Host</a>
+                      <a href="#developer" class="dropdown-item">Developer</a>
+                  </div>
+              </li>
+          </ul>
+          
+          <!-- Download CTA -->
+          <a href="#download" class="download-cta glow-hover">
+              <span class="cta-text">Download App</span>
+              <i class="fas fa-download cta-icon"></i>
+          </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="mobile-menu-toggle">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+      </button>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+      <div class="mobile-nav-content">
+          <ul class="mobile-nav-list">
+              <li class="mobile-nav-item">
+                  <a href="#home" class="mobile-nav-link">Home</a>
+              </li>
+              <li class="mobile-nav-item">
+                  <a href="#esports" class="mobile-nav-link">Esports</a>
+                  <div class="mobile-submenu">
+                    <a href="#features" class="dropdown-item">Features</a>
+                    <a href="#host" class="dropdown-item">Host</a>
+                    <a href="#developer" class="dropdown-item">Developer</a>
+                    <a href="#host" class="dropdown-item">Host</a>
+                    <a href="#developer" class="dropdown-item">Developer</a>
+                  </div>
+              <li class="mobile-nav-item">
+                  <a href="#download" class="mobile-download-cta">Download App</a>
+              </li>
+          </ul>
       </div>
   </div>
-
-  <!-- Main Navigation -->
-  <nav class="main-nav">
-      <div class="container">
-          <div class="nav-brand">
-              <img src="/images/logo.png" alt="YodhaPlay Logo" class="logo">
-          </div>
-
-          <button class="hamburger">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </button>
-
-          <div class="nav-menu">
-              <div class="nav-links">
-                  <a href="#home" class="nav-link active">Home</a>
-                  <a href="#about" class="nav-link">About</a>
-                  <a href="#refer" class="nav-link">Refer & Earn</a>
-                  <a href="#contact" class="nav-link">Contact</a>
-              </div>
-          </div>
-      </div>
-  </nav>
 </header>
 
     <!-- Hero Section -->
@@ -74,24 +101,26 @@
         </div>
         <div class="hero-background"></div>
     </section>
+  <!-- Key Features -->
+  <section class="key-features">
+    <ul>
+      <li>Quick Payouts</li>
+      <li>Social Login</li>
+      <li>Winnings</li>
+      <li>Notifications</li>
+    </ul>
+    <div class="character-illustration">
+      <img src="/images/logo.jpg" alt="Gaming Character">
+    </div>
+    <ul>
+      <li>Retina Ready</li>
+      <li>High Resolution</li>
+      <li>Clean Code</li>
+      <li>Dedicated Customer Support</li>
+    </ul>
+  </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-card">
-                <h3 data-count="42262">0</h3>
-                <p>Tournaments Hosted</p>
-            </div>
-            <div class="stat-card">
-                <h3 data-count="893680">0</h3>
-                <p>Active Players</p>
-            </div>
-            <div class="stat-card">
-                <h3 data-count="194288">0</h3>
-                <p>₹ Distributed</p>
-            </div>
-        </div>
-    </section>
+  
 
       <!-- About Section -->
   <section class="about-section">
@@ -113,24 +142,24 @@
     </div>
   </section>
 
-  <!-- Key Features -->
-  <section class="key-features">
-    <ul>
-      <li>Quick Payouts</li>
-      <li>Social Login</li>
-      <li>Winnings</li>
-      <li>Notifications</li>
-    </ul>
-    <div class="character-illustration">
-      <img src="/images/character3.png" alt="Gaming Character">
-    </div>
-    <ul>
-      <li>Retina Ready</li>
-      <li>High Resolution</li>
-      <li>Clean Code</li>
-      <li>Dedicated Customer Support</li>
-    </ul>
-  </section>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <h3 data-count="42262">0</h3>
+                <p>Tournaments Hosted</p>
+            </div>
+            <div class="stat-card">
+                <h3 data-count="893680">0</h3>
+                <p>Active Players</p>
+            </div>
+            <div class="stat-card">
+                <h3 data-count="194288">0</h3>
+                <p>₹ Distributed</p>
+            </div>
+        </div>
+    </section>
+
 
   <!-- Screenshot Section -->
   <section class="screenshot-section">

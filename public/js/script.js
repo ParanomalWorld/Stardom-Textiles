@@ -1,39 +1,52 @@
-
+// Header Interactions
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const body = document.body;
-    
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const dropdownParents = document.querySelectorAll('.dropdown-parent');
 
-    hamburger.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent bubbling
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        body.classList.toggle('nav-active');
+    // Mobile Menu Toggle
+    mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileNav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
     });
 
-    // Close menu on outside click
+    // Close Mobile Menu
     document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            body.classList.remove('nav-active');
+        if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+            mobileNav.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         }
     });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Dropdown Interactions
+    dropdownParents.forEach(parent => {
+        parent.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 768) {
+                parent.querySelector('.dropdown-menu').style.opacity = '1';
+                parent.querySelector('.dropdown-menu').style.visibility = 'visible';
+            }
+        });
 
-            // Close menu on mobile after clicking a link
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            body.classList.remove('nav-active');
+        parent.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 768) {
+                parent.querySelector('.dropdown-menu').style.opacity = '0';
+                parent.querySelector('.dropdown-menu').style.visibility = 'hidden';
+            }
+        });
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 });
-

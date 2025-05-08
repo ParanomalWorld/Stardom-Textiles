@@ -2,7 +2,7 @@
    Enhanced Key Features Section - Desktop
 ============================================ */
 .key-features {
-    background: linear-gradient(135deg, #0A1128 0%, #1C2E4A 100%);
+    background: linear-gradient(12deg, var(--dark) 45%, var(--accent) 100%);
     padding: 6rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@
 }
 
 .key-features::before {
-    content: "";
+   
     position: absolute;
     top: 0;
     left: 0;
@@ -136,7 +136,7 @@
     .key-features {
         padding: 2rem 1rem;
         gap: 1.5rem;
-        flex-direction: column;
+    
         align-items: center;
     }
 

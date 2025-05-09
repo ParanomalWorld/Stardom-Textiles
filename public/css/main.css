@@ -7,6 +7,9 @@
 @import url('sections/about.css');
 @import url('sections/features.css');
 @import url('sections/testimonials.css');
+@import url('sections/about1.css');
+@import url('sections/faq.css');
+@import url('sections/main_footer.css');
 @import url('sections/footer.css');
 
 /* Add media queries at the end if needed */

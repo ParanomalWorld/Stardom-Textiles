@@ -1,60 +1,151 @@
-
 /* ============================================
-   Screenshot Section
+   Screenshot Section - Enhanced
 ============================================ */
 .screenshot-section {
-    padding: 4rem 1rem;
-    text-align: center;
+    padding: 3rem 1rem;
     background: var(--accent);
+    text-align: center;
 }
 
 .screenshot-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--light);
 }
 
 .carousel {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
     overflow-x: auto;
     scroll-behavior: smooth;
+    padding: 1rem 0;
+    scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
 }
 
 .carousel img {
-    max-height: 400px;
-    border-radius: 10px;
-    border: 3px solid var(--primary-bg);
+    max-height: 300px;
+    width: auto;
+    border-radius: 12px;
+    border: 2px solid var(--primary-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.carousel img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 8px;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+    background-color: #fff;
+}
+
+/* Optional tweak for small screens */
+@media (max-width: 768px) {
+    .carousel-dots .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .carousel img {
+        max-height: 180px;
+        border-radius: 10px;
+    }
+
+    .screenshot-section h2 {
+        font-size: 1.6rem;
+    }
+}
 /* ============================================
-   Testimonials Section
+   Testimonials Section - Enhanced
 ============================================ */
 .testimonials-section {
     background: var(--dark);
-    padding: 4rem 1rem;
+    padding: 3.5rem 1rem;
     text-align: center;
 }
 
 .testimonials-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: var(--primary-bg);
 }
 
 .testimonial {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.04);
-    padding: 2rem;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
     font-style: italic;
-    color: #eee;
+    color: #f1f1f1;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial::before {
+    content: "“";
+    font-size: 3rem;
+    color: #00FFCC;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+.testimonial::after {
+    content: "”";
+    font-size: 3rem;
+    color: #00FFCC;
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
 }
 
 .testimonial h4 {
     margin-top: 1rem;
     color: #00FFCC;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .testimonial {
+        padding: 1.2rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .testimonials-section h2 {
+        font-size: 1.6rem;
+    }
 }

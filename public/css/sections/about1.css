@@ -117,6 +117,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    text-align: center;
 }
 
 .disclaimer-heading {
@@ -126,6 +127,7 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .disclaimer-text {

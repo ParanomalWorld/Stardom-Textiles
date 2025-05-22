@@ -14,7 +14,7 @@
 .faq-main-title {
     font-size: 2.75rem;
     text-align: center;
-    color: #e11d48;
+    color: #2D82CF 100%;
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -57,7 +57,7 @@
 
 .faq-icon {
     font-size: 2rem;
-    color: #e11d48;
+    color:  #2D82CF 100%;
     margin-bottom: 1rem;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .badge-icon {
-    color: #e11d48;
+    color:  #2D82CF 100%;
     font-size: 1.5rem;
 }
 

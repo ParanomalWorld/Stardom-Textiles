@@ -1,89 +1,108 @@
-/* ============================================
-   Screenshot Section - Enhanced
-============================================ */
-.screenshot-section {
-    padding: 3rem 1rem;
-    background: var(--accent);
-    text-align: center;
+/* ===== Clean Feature Showcase Styles ===== */
+.feature-showcase {
+    background: linear-gradient(152deg, #0f172a 20%, #1e293b 100%);
+    padding: 4rem 0;
 }
 
-.screenshot-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--light);
-}
-
-.carousel {
-    display: flex;
-    justify-content: center;
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 0;
-    scrollbar-width: none; /* Firefox */
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+/* Feature Content Styles */
+.feature-content {
+    padding-right: 2rem;
 }
 
-.carousel img {
-    max-height: 300px;
-    width: auto;
-    border-radius: 12px;
-    border: 2px solid var(--primary-bg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-title {
+    font-size: 2.25rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    color: #f8fafc;
 }
 
-.carousel img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.section-title span {
+    color: #7dd3fc;
+    display: block;
+    font-weight: 500;
 }
 
-.carousel-container {
+.feature-chips {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.chip {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(125, 211, 252, 0.1);
+}
+
+.chip-icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Frame Container Styles */
+.frame-container {
     position: relative;
-    overflow: hidden;
+    padding: 1rem;
 }
 
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 8px;
+.enhanced-frame {
+    width: 100%;
+    height: auto;
+    max-width: 330px;
+    border-radius: 18px;
+   
 }
 
-.carousel-dots .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-dots .dot.active {
-    background-color: #fff;
-}
-
-/* Optional tweak for small screens */
-@media (max-width: 768px) {
-    .carousel-dots .dot {
-        width: 8px;
-        height: 8px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .feature-content {
+        padding-right: 0;
+    }
+    
+    .enhanced-frame {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
-
-/* Responsive for mobile */
 @media (max-width: 768px) {
-    .carousel img {
-        max-height: 180px;
-        border-radius: 10px;
+    .section-title {
+        font-size: 1.75rem;
     }
+    
+    .feature-chips {
+        grid-template-columns: 1fr;
+    }
+    
+    .enhanced-frame {
+        max-width: 200px;
+    }
+}
 
-    .screenshot-section h2 {
-        font-size: 1.6rem;
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .chip {
+        padding: 1rem;
     }
 }
 /* ============================================

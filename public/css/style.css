@@ -1,5 +1,5 @@
 :root {
-    --header-height: 50px; /* Increased to accommodate both bars */
+    --header-height: 20px; /* Increased to accommodate both bars */
     --top-bar-height: 40px;
     --nav-bar-height: 250px;
     --logo-size: 130px;
@@ -111,7 +111,7 @@ html, body {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     :root {
-        --header-height: 130px;
+        --header-height: 10px;
         --top-bar-height: 30px;
         --nav-bar-height: 100px;
         --logo-size: 80px;

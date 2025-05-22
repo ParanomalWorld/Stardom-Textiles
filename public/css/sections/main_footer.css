@@ -27,7 +27,7 @@
 
 .brand-logo:hover {
     transform: scale(1);
-    box-shadow: 0 6px 25px rgba(225, 29, 72, 0.25);
+    box-shadow: 0 6px 25px rgba(29, 127, 225, 0.562);
 }
 
 .footer-container {
@@ -55,7 +55,7 @@
 }
 
 .social-icon:hover {
-    color: #e11d48;
+    color:  #2D82CF 100%;
     transform: translateY(-2px);
 }
 
@@ -82,12 +82,12 @@
     left: 0;
     width: 0;
     height: 1px;
-    background: #e11d48;
+    background:  #2D82CF 100%;
     transition: width 0.3s ease;
 }
 
 .footer-nav a:hover {
-    color: #e11d48;
+    color:  #2D82CF 100%;
 }
 
 .footer-nav a:hover::after {

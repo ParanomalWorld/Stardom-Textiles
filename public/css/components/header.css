@@ -9,9 +9,9 @@
     width: 100%;
     align-items: end;
     z-index: 1000;
-    background: rgba(16, 24, 40, 0.96);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+    /* background: rgba(16, 24, 40, 0.96);
+    backdrop-filter: blur(12px); */
+    box-shadow: 0 2px 16px rgba(245, 147, 20, 0.12);
     transform: translateY(0);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }

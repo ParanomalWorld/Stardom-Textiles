@@ -1,12 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>YodhaPlay Terms and Conditions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* ========== GLOBAL STYLES ========== */
+        :root {
+            --primary: #1A4D8F;
+            --primary-dark: #0f2a50;
+            --accent: #FF6B35;
+            --accent-dark: #d45226;
+            --dark: #0A1128;
+            --light: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.65);
+            --divider: rgba(255, 255, 255, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #2D82CF 100%);
+            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #FF8C61 100%);
+            --bg-light: #E5E7EB;
+            --text-dark: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        body.light-mode {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            --text-light: #1F2937;
+            --text-muted: #6B7280;
+            --dark: #F3F4F6;
+            --divider: rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ========== HEADER ========== */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 17, 40, 0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+            transition: background 0.5s ease;
+        }
+
+        .main-header.light-mode {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-policy-bar {
+            padding: 1rem 0;
+        }
+
+        .policy-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .policy-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .policy-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ========== MODE TOGGLE ========== */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--primary);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-toggle i {
+            color: var(--light);
+            font-size: 1.2rem;
+        }
+
+        .mode-toggle:hover {
+            background: var(--accent);
+        }
+
+        /* ========== TERMS AND CONDITIONS STYLES ========== */
         .policy-container {
             max-width: 900px;
             margin: 100px auto 40px;
@@ -14,12 +122,23 @@
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .breadcrumb {
             font-size: 0.9rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-dark);
         }
 
         .policy-content h1 {
@@ -29,10 +148,48 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px var(--accent);
         }
 
         .policy-section {
             margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 1.5rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .policy-section h2 i {
+            transition: transform 0.3s ease;
+        }
+
+        .policy-section.active h2 i {
+            transform: rotate(90deg);
+        }
+
+        .policy-section .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .policy-section.active .content {
+            max-height: 1000px;
+        }
+
+        .policy-section p, .policy-section li {
+            line-height: 1.8;
+            color: var(--text-muted);
         }
 
         .policy-section ol {
@@ -41,12 +198,20 @@
 
         .policy-section li {
             margin-bottom: 1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
         }
 
         .policy-section strong {
             color: var(--primary);
+        }
+
+        .policy-section a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .policy-section a:hover {
+            color: var(--accent-dark);
         }
 
         .copyright {
@@ -57,32 +222,81 @@
             margin-top: 3rem;
         }
 
+        /* ========== BACK TO TOP ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ========== PARTICLE EFFECT ========== */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ========== RESPONSIVE ADJUSTMENTS ========== */
         @media (max-width: 768px) {
             .policy-container {
                 margin: 80px 1rem 2rem;
                 padding: 1.5rem;
             }
-            
+
             .policy-content h1 {
                 font-size: 2rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .policy-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Mode Toggle -->
+    <div class="mode-toggle" id="modeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
     <!-- Header -->
     <header class="main-header">
         <div class="top-policy-bar">
             <div class="container">
                 <div class="policy-links">
-                    <a href="/terms.html">Terms</a>
-                    <a href="/privacy-policy.html">Privacy Policy</a>
-                    <a href="/fairplay-policy.html">Fair Play Policy</a>
-                    <a href="/return-policy.html">Return Policy</a>
+                    <a href="/terms.html" target="_blank">Terms</a>
+                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+                    <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>
+                    <a href="/return-policy.html" target="_blank">Return Policy</a>
                 </div>
             </div>
         </div>
-
     </header>
 
     <!-- Terms and Conditions Content -->
@@ -92,35 +306,193 @@
         </div>
 
         <div class="policy-content">
-            <h1>YodhaPlay Terms and Conditions</h1>
+            <h1 style="text-align: center; color: #FF6B35;">Terms and Conditions</h1>
 
             <div class="policy-section">
-                <p>Welcome to YodhaPlay! By participating in our platform, you agree to comply with the terms and conditions outlined below. These rules are designed to ensure a fair, transparent, and enjoyable experience for all users. Please read them carefully before engaging with our services.</p>
+                <h2><i class="fas fa-chevron-right"></i> Introduction</h2>
+                <div class="content">
+                    <p>Welcome to YodhaPlay, a skill-based gaming platform where warriors battle for glory! By participating in our platform, you agree to comply with the Terms and Conditions outlined below. These rules are designed to ensure a fair, transparent, and enjoyable experience for all users, while complying with the Information Technology Act, 2000, the Consumer Protection Act, 2019, and other applicable Indian laws. Please read them carefully before engaging with our services. Your continued use of YodhaPlay constitutes acceptance of these terms.</p>
+                </div>
             </div>
 
             <div class="policy-section">
-                <ol>
-                    <li><strong>Gameplay Recording Submission Deadline:</strong> If you fail to submit the gameplay recording within 2 hours after the scheduled match time, you will not be eligible to receive any prizes.</li>
-                    <li><strong>Winnings Transfer from Banned Accounts:</strong> Winnings from banned or inaccessible accounts cannot be transferred.</li>
-                    <li><strong>Minimum Resolution and FPS Requirements for Recording:</strong> A minimum resolution of 480p and 30 FPS is required for recordings.</li>
-                    <li><strong>Cancellation of Withdrawal Requests:</strong> Withdrawal requests cannot be canceled after submission.</li>
-                    <li><strong>Changing UPI Details After Withdrawal Request:</strong> Once a withdrawal request is submitted, UPI details cannot be modified.</li>
-                    <li><strong>Appeal Process for Unfair Account Bans:</strong> If you believe your account has been unfairly banned, you may submit an appeal for review by contacting our support team at support@yodhaplay.com.</li>
-                    <li><strong>Impact of Account Ban on Match Registrations:</strong> All upcoming match registrations will be canceled from banned accounts.</li>
-                    <li><strong>Participation During Account Review:</strong> Accounts under review for suspected violations are prohibited from participating in matches until the review is completed.</li>
-                    <li><strong>Prize Allocation for Rule Violations:</strong> If both teams violate the match rules & regulations in a short map match, the prizes will still be awarded to the winners.</li>
-                    <li><strong>Financial Responsibility Disclaimer:</strong> Participants are solely responsible for their financial investments, and refunds will not be provided for any monetary losses. Participation is strictly limited to individuals aged 18 and above to ensure compliance with our eligibility criteria.</li>
-                </ol>
+                <h2><i class="fas fa-chevron-right"></i> 1. Platform Rules</h2>
+                <div class="content">
+                    <p>To ensure a fair and competitive environment, all participants must adhere to the following rules:</p>
+                    <ol>
+                        <li>
+                            <strong>Gameplay Recording Submission Deadline:</strong> To verify fair play and prize eligibility, you must submit gameplay recordings within 2 hours after the scheduled match time. Failure to do so will result in ineligibility for prizes.
+                        </li>
+                        <li>
+                            <strong>Winnings Transfer from Banned Accounts:</strong> Winnings from banned or inaccessible accounts cannot be transferred to another account, as this ensures compliance with our Fair Play Policy.
+                        </li>
+                        <li>
+                            <strong>Minimum Resolution and FPS Requirements for Recordings:</strong> Gameplay recordings must meet a minimum resolution of 480p and 30 FPS to be considered valid for review. This ensures clarity for fair play verification.
+                        </li>
+                        <li>
+                            <strong>Cancellation of Withdrawal Requests:</strong> Once a withdrawal request is submitted, it cannot be canceled to ensure secure and streamlined processing.
+                        </li>
+                        <li>
+                            <strong>Changing UPI Details After Withdrawal Request:</strong> UPI details cannot be modified after a withdrawal request is submitted to prevent fraudulent activity. Ensure accuracy before submission.
+                        </li>
+                        <li>
+                            <strong>Appeal Process for Unfair Account Bans:</strong> If you believe your account has been unfairly banned, you may submit an appeal within 7 days by contacting our support team at <a href="mailto:support@yodhaplay.com">support@yodhaplay.com</a>. Include your account details and evidence. Appeals will be reviewed within 15 business days.
+                        </li>
+                        <li>
+                            <strong>Impact of Account Ban on Match Registrations:</strong> All upcoming match registrations will be automatically canceled for banned accounts, and no refunds will be provided for those registrations.
+                        </li>
+                        <li>
+                            <strong>Participation During Account Review:</strong> Accounts under review for suspected violations (e.g., cheating, multiple accounts) are prohibited from participating in matches until the review is completed, ensuring fairness for all players.
+                        </li>
+                        <li>
+                            <strong>Prize Allocation for Rule Violations:</strong> If both teams violate match rules in a short map match (e.g., using unauthorized tools), prizes will still be awarded to the winners, but both teams may face penalties as per our Fair Play Policy.
+                        </li>
+                        <li>
+                            <strong>Financial Responsibility Disclaimer:</strong> Participants are solely responsible for their financial investments on the platform. YodhaPlay is not liable for monetary losses, and refunds will not be provided unless specified in our Return Policy.
+                        </li>
+                    </ol>
+                </div>
+            </div>
 
-                <p>By continuing to use YodhaPlay, you acknowledge and accept these terms and conditions. For any inquiries or clarifications, feel free to reach out to our support team.</p>
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 2. Responsible Gaming and Regional Restrictions</h2>
+                <div class="content">
+                    <p>YodhaPlay is a skill-based gaming platform intended for users aged 18 and above. We are implementing strict age verification to ensure compliance. Additionally, due to state-specific regulations, YodhaPlay is not available in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana. Participation by users in violation of these restrictions may result in account termination and forfeiture of rewards.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 3. Intellectual Property</h2>
+                <div class="content">
+                    <p>All content on YodhaPlay, including but not limited to logos, designs, game assets, and text, is the intellectual property of YodhaPlay or its licensors. Users may not reproduce, distribute, or create derivative works from this content without prior written consent. By submitting gameplay recordings or other content, you grant YodhaPlay a non-exclusive, royalty-free license to use, store, and display such content for platform operations and fair play verification.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 4. Termination of Access</h2>
+                <div class="content">
+                    <p>YodhaPlay reserves the right to terminate or suspend user access to the platform at its discretion, with or without notice, for reasons including but not limited to:</p>
+                    <ul>
+                        <li>Violation of these Terms and Conditions or other policies (e.g., Fair Play Policy).</li>
+                        <li>Engaging in fraudulent or illegal activities.</li>
+                        <li>Failure to comply with age or regional restrictions.</li>
+                    </ul>
+                    <p>Upon termination, all rights granted to you under these Terms will cease, and you will lose access to your account and any associated rewards.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 5. Dispute Resolution</h2>
+                <div class="content">
+                    <p>Any disputes arising from your use of YodhaPlay will be resolved through the following process:</p>
+                    <ul>
+                        <li>Contact our support team at <a href="mailto:support@yodhaplay.com">support@yodhaplay.com</a> with details of the dispute within 30 days of the issue.</li>
+                        <li>Our team will review the dispute and provide a resolution within 15 business days.</li>
+                        <li>If the dispute remains unresolved, it may be referred to mediation or arbitration in accordance with Indian laws, with the jurisdiction being [City], India.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 6. Changes to These Terms and Conditions</h2>
+                <div class="content">
+                    <p>We may update these Terms and Conditions periodically to reflect changes in our practices or legal requirements. Updates will be posted on this page with an updated effective date. We encourage you to review this page regularly to stay informed about your rights and responsibilities.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 7. Contact Us</h2>
+                <div class="content">
+                    <p>For inquiries, clarifications, or assistance regarding these Terms and Conditions, please contact our support team:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:support@yodhaplay.com">support@yodhaplay.com</a></li>
+                        <li><strong>Support:</strong> Available 24/7 via our <a href="/help-center.html">Help Center</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="copyright">
-                Copyright © 2025 YodhaPlay. All rights reserved.
+                Copyright © 2020-2025 YodhaPlay. All Rights Reserved.
             </div>
         </div>
     </main>
 
-    <script src="/js/script.js"></script>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modeToggle = document.querySelector('#modeToggle');
+            const body = document.body;
+            const backToTop = document.querySelector('#backToTop');
+
+            // Dark/Light Mode Toggle
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const isLightMode = body.classList.contains('light-mode');
+                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            });
+
+            // Load Theme Preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-mode');
+                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            // Collapsible Sections
+            document.querySelectorAll('.policy-section h2').forEach(header => {
+                header.addEventListener('click', () => {
+                    const section = header.parentElement;
+                    section.classList.toggle('active');
+                });
+            });
+
+            // Back to Top
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'block';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Simple Particle Effect
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = 'rgba(255, 107, 53, 0.5)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animation = `float ${Math.random() * 5 + 3}s infinite`;
+                particlesContainer.appendChild(particle);
+            }
+        });
+
+        // Particle Animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes float {
+                0% { transform: translateY(0); opacity: 0.5; }
+                50% { opacity: 1; }
+                100% { transform: translateY(-50vh); opacity: 0.5; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>

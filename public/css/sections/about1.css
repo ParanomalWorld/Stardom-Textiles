@@ -84,7 +84,7 @@
 }
 
 /* Cash Withdrawal Section */
-.cash-withdrawal {
+.gaming-highlight {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     padding: 2rem 1rem;
     border-radius: 16px;
@@ -95,14 +95,14 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.withdrawal-title {
+.highlight-title {
     color: #10b981;
     margin-bottom: 0.75rem;
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-.withdrawal-text {
+.highlight-text {
     font-size: 1rem;
     color: #cbd5e1;
     line-height: 1.6;
@@ -177,11 +177,11 @@
         font-size: 0.95rem;
     }
 
-    .withdrawal-title {
+    .highlight-title {
         font-size: 1.125rem;
     }
 
-    .withdrawal-text {
+    .highlight-text {
         font-size: 0.95rem;
     }
 

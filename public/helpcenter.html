@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YodhaPlay Help Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== GLOBAL STYLES ========== */
+        :root {
+            --primary: #1A4D8F;
+            --primary-dark: #0f2a50;
+            --accent: #FF6B35;
+            --accent-dark: #d45226;
+            --dark: #0A1128;
+            --light: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.65);
+            --divider: rgba(255, 255, 255, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #2D82CF 100%);
+            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #FF8C61 100%);
+            --bg-light: #E5E7EB;
+            --text-dark: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        body.light-mode {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            --text-light: #1F2937;
+            --text-muted: #6B7280;
+            --dark: #F3F4F6;
+            --divider: rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ========== HEADER ========== */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 17, 40, 0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+            transition: background 0.5s ease;
+        }
+
+        .main-header.light-mode {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-policy-bar {
+            padding: 1rem 0;
+        }
+
+        .policy-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .policy-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .policy-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ========== MODE TOGGLE ========== */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--primary);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-toggle i {
+            color: var(--light);
+            font-size: 1.2rem;
+        }
+
+        .mode-toggle:hover {
+            background: var(--accent);
+        }
+
+        /* ========== HELP CENTER STYLES ========== */
+        .help-container {
+            max-width: 900px;
+            margin: 100px auto 40px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-dark);
+        }
+
+        .help-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        .help-section {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 1.5rem;
+        }
+
+        .help-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .help-section h2 i {
+            transition: transform 0.3s ease;
+        }
+
+        .help-section.active h2 i {
+            transform: rotate(90deg);
+        }
+
+        .help-section .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .help-section.active .content {
+            max-height: 1000px;
+        }
+
+        .help-section p, .help-section li {
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .help-section ul {
+            padding-left: 1.5rem;
+        }
+
+        .help-section li {
+            margin-bottom: 1rem;
+        }
+
+        .help-section a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .help-section a:hover {
+            color: var(--accent-dark);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 0.8rem;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 5px var(--accent);
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 1rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-item h3 i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active h3 i {
+            transform: rotate(90deg);
+        }
+
+        .faq-item .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .content {
+            max-height: 500px;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .quick-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--divider);
+            margin-top: 3rem;
+        }
+
+        /* ========== BACK TO TOP ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ========== PARTICLE EFFECT ========== */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ========== RESPONSIVE ADJUSTMENTS ========== */
+        @media (max-width: 768px) {
+            .help-container {
+                margin: 80px 1rem 2rem;
+                padding: 1.5rem;
+            }
+
+            .help-content h1 {
+                font-size: 2rem;
+            }
+
+            .help-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .policy-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .quick-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mode Toggle -->
+    <div class="mode-toggle" id="modeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="top-policy-bar">
+            <div class="container">
+                <div class="policy-links">
+                    <a href="/terms.html" target="_blank">Terms</a>
+                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+                    <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>
+                    <a href="/return-policy.html" target="_blank">Return Policy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Help Center Content -->
+    <main class="help-container">
+        <div class="breadcrumb">
+            <a href="/index.html">Home</a> / Help Center
+        </div>
+
+        <div class="help-content">
+            <h1>YodhaPlay Help Center</h1>
+
+            <div class="help-section">
+                <h2><i class="fas fa-chevron-right"></i> Welcome, Warriors!</h2>
+                <div class="content">
+                    <p>Need assistance on your journey to glory? The YodhaPlay Help Center is here to support you with answers to common questions, troubleshooting tips, and direct support options. Whether you're facing issues with tournaments, payments, or your account, we've got you covered. Use the search bar below to find answers quickly, or reach out to our pro-gamer support team.</p>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h2><i class="fas fa-chevron-right"></i> Frequently Asked Questions</h2>
+                <div class="content">
+                    <div class="search-bar">
+                        <input type="text" id="faqSearch" placeholder="Search FAQs..." onkeyup="searchFAQs()">
+                    </div>
+                    <div class="faq-list" id="faqList">
+                        <div class="faq-item">
+                            <h3><i class="fas fa-chevron-right"></i> How do I join a tournament?</h3>
+                            <div class="content">
+                                <p>To join a tournament, download the YodhaPlay app, create an account, and navigate to the "Tournaments" section. Select an ongoing or upcoming tournament (e.g., Warrior Clash, starting at 6:00 PM IST today, June 02, 2025), pay the nominal platform fee, and register. Ensure you meet the eligibility criteria (18+ and not residing in restricted states like Andhra Pradesh, Assam, Odisha, or Telangana).</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3><i class="fas fa-chevron-right"></i> What should I do if I face a payment issue?</h3>
+                            <div class="content">
+                                <p>If you encounter a payment issue (e.g., failed transaction), check your payment method and internet connection. If the issue persists, contact our support team at <a href="mailto:support@yodhaplay.com">support@yodhaplay.com</a> with your transaction details. Refunds for failed transactions are processed within 5-10 business days, as per our <a href="/return-policy.html" target="_blank">Return Policy</a>.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3><i class="fas fa-chevron-right"></i> How are prizes distributed in tournaments?</h3>
+                            <div class="content">
+                                <p>Prizes are distributed from a pre-declared prize pool based on your rank or skill level at the end of the tournament. Higher ranks or better performance (e.g., kills, survival time) result in larger shares of the prize pool. The platform fee you pay supports operational costs, and all prize distributions are transparent, as outlined in the tournament rules.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3><i class="fas fa-chevron-right"></i> What happens if my account is under review?</h3>
+                            <div class="content">
+                                <p>If your account is under review for suspected violations (e.g., cheating, multiple accounts), you will be temporarily prohibited from participating in matches until the review is completed. Reviews typically take 3-5 business days. You’ll be notified of the outcome via email, and you can appeal the decision within 7 days if needed.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3><i class="fas fa-chevron-right"></i> How can I report a cheater in a match?</h3>
+                            <div class="content">
+                                <p>To report a cheater, submit evidence (e.g., screenshots, recordings) to our support team within 48 hours of the match via email at <a href="mailto:support@yodhaplay.com">support@yodhaplay.com</a>. Include the match ID and details of the incident. Verified reports may lead to the violator’s ban and potential refunds for affected players, as per our <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <h3><i class="fas fa-chevron-right"></i> Is my data safe on YodhaPlay?</h3>
+                            <div class="content">
+                                <p>Yes, your data safety is our priority. We collect minimal data (username, email) to provide our services, and we are working towards full compliance with the Digital Personal Data Protection Act, 2023. All transactions are encrypted, and we do not store sensitive personal information at this stage. Learn more in our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h2><i class="fas fa-chevron-right"></i> More Support Options</h2>
+                <div class="content">
+                    <p>Need further assistance? Explore these resources or contact us directly:</p>
+                    <div class="quick-links">
+                        <a href="/contact-us.html">Contact Us</a>
+                        <a href="/community">Join Our Community</a>
+                        <a href="/leaderboards">View Leaderboards</a>
+                        <a href="/tournaments">Check Tournaments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h2><i class="fas fa-chevron-right"></i> Contact Support</h2>
+                <div class="content">
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:support@yodhaplay.com">support@yodhaplay.com</a></li>
+                        <li><strong>Support Hours:</strong> 24/7 (including today, June 02, 2025, at 12:21 PM IST)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h2><i class="fas fa-chevron-right"></i> Important Notice</h2>
+                <div class="content">
+                    <p><strong>Responsible Gaming & Age Policy:</strong> YodhaPlay is intended for users aged 18 and above. We are committed to responsible gaming and are implementing age verification measures.</p>
+                    <p><strong>State Restrictions:</strong> Users residing in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana are not allowed to access YodhaPlay, as per state regulations.</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                Copyright © 2020-2025 YodhaPlay. All Rights Reserved.
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modeToggle = document.querySelector('#modeToggle');
+            const body = document.body;
+            const backToTop = document.querySelector('#backToTop');
+
+            // Dark/Light Mode Toggle
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const isLightMode = body.classList.contains('light-mode');
+                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            });
+
+            // Load Theme Preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-mode');
+                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            // Collapsible Sections
+            document.querySelectorAll('.help-section h2, .faq-item h3').forEach(header => {
+                header.addEventListener('click', () => {
+                    const section = header.parentElement;
+                    section.classList.toggle('active');
+                });
+            });
+
+            // Back to Top
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'block';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Simple Particle Effect
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = 'rgba(255, 107, 53, 0.5)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animation = `float ${Math.random() * 5 + 3}s infinite`;
+                particlesContainer.appendChild(particle);
+            }
+        });
+
+        // FAQ Search Functionality
+        function searchFAQs() {
+            const searchInput = document.getElementById('faqSearch').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.content p').textContent.toLowerCase();
+                if (question.includes(searchInput) || answer.includes(searchInput)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Particle Animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes float {
+                0% { transform: translateY(0); opacity: 0.5; }
+                50% { opacity: 1; }
+                100% { transform: translateY(-50vh); opacity: 0.5; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

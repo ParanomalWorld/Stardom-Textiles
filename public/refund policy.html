@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YodhaPlay Help Center</title>
+    <title>Refund Policy - YodhaPlay</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -114,8 +114,8 @@
             background: var(--accent);
         }
 
-        /* ========== HELP CENTER STYLES ========== */
-        .help-container {
+        /* ========== REFUND POLICY STYLES ========== */
+        .policy-container {
             max-width: 900px;
             margin: 100px auto 40px;
             padding: 2rem;
@@ -141,7 +141,7 @@
             color: var(--accent-dark);
         }
 
-        .help-content h1 {
+        .policy-content h1 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             background: var(--gradient);
@@ -152,16 +152,16 @@
             text-shadow: 0 0 10px var(--accent);
         }
 
-        .help-section {
+        .policy-section {
             margin-bottom: 2.5rem;
             border-bottom: 1px solid var(--divider);
             padding-bottom: 1.5rem;
         }
 
-        .help-section h2 {
+        .policy-section h2 {
             font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1 factories;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -169,128 +169,38 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        .help-section h2 i {
+        .policy-section h2 i {
             transition: transform 0.3s ease;
         }
 
-        .help-section.active h2 i {
+        .policy-section.active h2 i {
             transform: rotate(90deg);
         }
 
-        .help-section .content {
+        .policy-section .content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
 
-        .help-section.active .content {
+        .policy-section.active .content {
             max-height: 1000px;
         }
 
-        .help-section p, .help-section li {
+        .policy-section p {
             line-height: 1.8;
             color: var(--text-muted);
-        }
-
-        .help-section ul {
-            padding-left: 1.5rem;
-        }
-
-        .help-section li {
             margin-bottom: 1rem;
         }
 
-        .help-section a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .help-section a:hover {
-            color: var(--accent-dark);
-        }
-
-        /* Search Bar */
-        .search-bar {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .search-bar input {
-            padding: 0.8rem;
-            width: 100%;
-            max-width: 500px;
-            border: 1px solid var(--divider);
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--light);
-            font-size: 1rem;
-        }
-
-        .search-bar input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 5px var(--accent);
-        }
-
-        /* FAQ Items */
-        .faq-item {
+        .policy-section ol, .policy-section ul {
+            padding-left: 1.5rem;
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--divider);
-            padding-bottom: 1rem;
         }
 
-        .faq-item h3 {
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .faq-item h3 i {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active h3 i {
-            transform: rotate(90deg);
-        }
-
-        .faq-item .content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-item.active .content {
-            max-height: 500px;
-        }
-
-        .faq-item p {
+        .policy-section li {
+            margin-bottom: 1rem;
             color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        /* Quick Links */
-        .quick-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .quick-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .quick-links a:hover {
-            color: var(--accent);
         }
 
         .copyright {
@@ -334,16 +244,16 @@
 
         /* ========== RESPONSIVE ADJUSTMENTS ========== */
         @media (max-width: 768px) {
-            .help-container {
+            .policy-container {
                 margin: 80px 1rem 2rem;
                 padding: 1.5rem;
             }
 
-            .help-content h1 {
+            .policy-content h1 {
                 font-size: 2rem;
             }
 
-            .help-section h2 {
+            .policy-section h2 {
                 font-size: 1.3rem;
             }
 
@@ -351,11 +261,6 @@
                 flex-direction: column;
                 gap: 0.5rem;
                 text-align: center;
-            }
-
-            .quick-links {
-                flex-direction: column;
-                gap: 1rem;
             }
         }
     </style>
@@ -369,116 +274,146 @@
     <!-- Particle Background -->
     <div id="particles"></div>
 
-    <!-- Header -->
+    <!-- Header Section -->
     <header class="main-header">
+        <!-- Top Policy Bar -->
         <div class="top-policy-bar">
             <div class="container">
                 <div class="policy-links">
                     <a href="/terms.html" target="_blank">Terms</a>
                     <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
                     <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>
-                    <a href="/return-policy.html" target="_blank">Return Policy</a>
+                    <a href="/return-policy.html" target="_blank">Refund Policy</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Help Center Content -->
-    <main class="help-container">
+    <!-- Refund Policy Content -->
+    <main class="policy-container">
         <div class="breadcrumb">
-            <a href="/index.html">Home</a> / Help Center
+            <a href="/index.html">Home</a> / Refund Policy
         </div>
 
-        <div class="help-content">
-            <h1>YodhaPlay Help Center</h1>
+        <div class="policy-content">
+            <h1 style="text-align: center; color: #FF6B35;">Refund Policy</h1>
 
-            <div class="help-section">
-                <h2><i class="fas fa-chevron-right"></i> Welcome, Warriors!</h2>
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> Introduction</h2>
                 <div class="content">
-                    <p>Need assistance on your journey to glory? The YodhaPlay Help Center is here to support you with answers to common questions, troubleshooting tips, and direct support options. Whether you're facing issues with tournaments, payments, or your account, we've got you covered. Use the search bar below to find answers quickly, or reach out to our pro-gamer support team.</p>
+                    <p>Welcome to YodhaPlay, India’s leading skill-based esports platform for Free Fire tournaments. This Refund Policy outlines the conditions under which refunds are provided for tournament entry fees, in-app purchases, or other services on our platform. We are committed to transparency, fairness, and compliance with the Consumer Protection Act, 2019, and the Payment and Settlement Systems Act, 2007, ensuring a seamless experience for our warriors.</p>
                 </div>
             </div>
 
-            <div class="help-section">
-                <h2><i class="fas fa-chevron-right"></i> Frequently Asked Questions</h2>
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 1. Eligibility for Refunds</h2>
                 <div class="content">
-                    <div class="search-bar">
-                        <input type="text" id="faqSearch" placeholder="Search FAQs..." onkeyup="searchFAQs()">
-                    </div>
-                    <div class="faq-list" id="faqList">
-                        <div class="faq-item">
-                            <h3><i class="fas fa-chevron-right"></i> How do I join a tournament?</h3>
-                            <div class="content">
-                                <p>To join a tournament, download the YodhaPlay app, create an account, and navigate to the "Tournaments" section. Select an ongoing or upcoming tournament (e.g., Warrior Clash, starting at 6:00 PM IST today, June 02, 2025), pay the nominal platform fee, and register. Ensure you meet the eligibility criteria (18+ and not residing in restricted states like Andhra Pradesh, Assam, Odisha, or Telangana).</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <h3><i class="fas fa-chevron-right"></i> What should I do if I face a payment issue?</h3>
-                            <div class="content">
-                                <p>If you encounter a payment issue (e.g., failed transaction), check your payment method and internet connection. If the issue persists, contact our support team at <a href="mailto:yodhaverse@gmail.com">yodhaverse@gmail.com</a> with your transaction details. Refunds for failed transactions are processed within 5-10 business days, as per our <a href="/return-policy.html" target="_blank">Return Policy</a>.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <h3><i class="fas fa-chevron-right"></i> How are prizes distributed in tournaments?</h3>
-                            <div class="content">
-                                <p>Prizes are distributed from a pre-declared prize pool based on your rank or skill level at the end of the tournament. Higher ranks or better performance (e.g., kills, survival time) result in larger shares of the prize pool. The platform fee you pay supports operational costs, and all prize distributions are transparent, as outlined in the tournament rules.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <h3><i class="fas fa-chevron-right"></i> What happens if my account is under review?</h3>
-                            <div class="content">
-                                <p>If your account is under review for suspected violations (e.g., cheating, multiple accounts), you will be temporarily prohibited from participating in matches until the review is completed. Reviews typically take 3-5 business days. You’ll be notified of the outcome via email, and you can appeal the decision within 7 days if needed.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <h3><i class="fas fa-chevron-right"></i> How can I report a cheater in a match?</h3>
-                            <div class="content">
-                                <p>To report a cheater, submit evidence (e.g., screenshots, recordings) to our support team within 48 hours of the match via email at <a href="mailto:yodhaverse@gmail.com">yodhaverse@gmail.com</a>. Include the match ID and details of the incident. Verified reports may lead to the violator’s ban and potential refunds for affected players, as per our <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <h3><i class="fas fa-chevron-right"></i> Is my data safe on YodhaPlay?</h3>
-                            <div class="content">
-                                <p>Yes, your data safety is our priority. We collect minimal data (username, email) to provide our services, and we are working towards full compliance with the Digital Personal Data Protection Act, 2023. All transactions are encrypted, and we do not store sensitive personal information at this stage. Learn more in our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Refunds may be requested under the following conditions, subject to review:</p>
+                    <ol>
+                        <li><strong>Tournament Cancellations:</strong> If YodhaPlay cancels a tournament due to technical issues, insufficient participants, or other reasons, a full refund of the entry fee will be issued.</li>
+                        <li><strong>Technical Issues:</strong> If you are unable to participate in a tournament due to platform-specific technical issues (e.g., server downtime), you may be eligible for a refund.</li>
+                        <li><strong>In-App Purchases:</strong> Refunds for in-app purchases (e.g., premium features, virtual items) may be granted if the item is defective or not delivered as advertised.</li>
+                        <li><strong>Unauthorized Transactions:</strong> Refunds will be issued for unauthorized or fraudulent transactions, provided you notify us within 7 days.</li>
+                    </ol>
+                    <p>All refund requests are evaluated in accordance with Indian consumer protection laws.</p>
                 </div>
             </div>
 
-            <div class="help-section">
-                <h2><i class="fas fa-chevron-right"></i> More Support Options</h2>
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 2. Non-Refundable Scenarios</h2>
                 <div class="content">
-                    <p>Need further assistance? Explore these resources or contact us directly:</p>
-                    <div class="quick-links">
-                        <a href="/contact-us.html">Contact Us</a>
-                        <a href="/community">Join Our Community</a>
-                        <a href="/leaderboards">View Leaderboards</a>
-                        <a href="/tournaments">Check Tournaments</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="help-section">
-                <h2><i class="fas fa-chevron-right"></i> Contact Support</h2>
-                <div class="content">
+                    <p>Refunds will not be provided in the following cases:</p>
                     <ul>
-                        <li><strong>Email:</strong> <a href="mailto:yodhaverse@gmail.com">yodhaverse@gmail.com</a></li>
-                        <li><strong>Support Hours:</strong> 24/7 (including today, June 02, 2025, at 12:21 PM IST)</li>
+                        <li><strong>Completed Tournaments:</strong> Entry fees for tournaments you have participated in, regardless of your performance or rank.</li>
+                        <li><strong>Change of Mind:</strong> If you choose not to participate after registering, unless the cancellation is due to YodhaPlay’s fault.</li>
+                        <li><strong>Account Violations:</strong> No refunds will be issued if your account is suspended or terminated for violating our Terms & Conditions or Fair Play Policy.</li>
+                        <li><strong>Third-Party Purchases:</strong> Transactions processed through third-party platforms (e.g., Google Play, Apple App Store) are subject to their refund policies.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="help-section">
-                <h2><i class="fas fa-chevron-right"></i> Important Notice</h2>
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 3. Refund Request Process</h2>
                 <div class="content">
-                    <p><strong>Responsible Gaming & Age Policy:</strong> YodhaPlay is intended for users aged 18 and above. We are committed to responsible gaming and are implementing age verification measures.</p>
-                    <p><strong>State Restrictions:</strong> Users residing in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana are not allowed to access YodhaPlay, as per state regulations.</p>
+                    <p>To request a refund, please follow these steps:</p>
+                    <ol>
+                        <li><strong>Submit a Request:</strong> Contact our support team at <a href="mailto:support@yodhaplay.in" style="color: var(--accent);">support@yodhaplay.in</a> or via our <a href="/help-center.html" style="color: var(--accent);">Help Center</a>, including your account details, transaction ID, and reason for the refund.</li>
+                        <li><strong>Timeframe:</strong> Requests must be submitted within 7 days of the transaction or issue.</li>
+                        <li><strong>Review:</strong> Our team will review your request within 5 business days and notify you of the decision.</li>
+                        <li><strong>Processing:</strong> Approved refunds will be processed within 7-10 business days to the original payment method, subject to payment provider policies.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 4. Tournament Cancellations by YodhaPlay</h2>
+                <div class="content">
+                    <p>In the event that YodhaPlay cancels a tournament, we will:</p>
+                    <ul>
+                        <li>Issue a full refund of the entry fee to the original payment method.</li>
+                        <li>Notify participants via email or in-app notifications.</li>
+                        <li>Offer an option to transfer the entry fee to another tournament, if available.</li>
+                    </ul>
+                    <p>Refunds for cancellations will be processed within 7 business days.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 5. Technical Issues</h2>
+                <div class="content">
+                    <p>If you encounter technical issues caused by YodhaPlay that prevent tournament participation, you may be eligible for a refund. To qualify:</p>
+                    <ul>
+                        <li>Report the issue to <a href="mailto:support@yodhaplay.in" style="color: var(--accent);">support@yodhaplay.in</a> within 24 hours.</li>
+                        <li>Provide evidence (e.g., screenshots, error messages) to support your claim.</li>
+                    </ul>
+                    <p>Our team will investigate and, if verified, issue a refund or credit for a future tournament within 7 business days.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 6. Payment Processing</h2>
+                <div class="content">
+                    <p>Refunds will be credited to the original payment method used for the transaction. Note:</p>
+                    <ul>
+                        <li>Processing times may vary depending on your bank or payment provider (e.g., PhonePe, UPI).</li>
+                        <li>Transaction fees (e.g., payment gateway charges) are non-refundable unless the issue is due to YodhaPlay’s error.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 7. User Responsibilities</h2>
+                <div class="content">
+                    <p>Users are responsible for:</p>
+                    <ul>
+                        <li>Providing accurate payment information during transactions.</li>
+                        <li>Complying with YodhaPlay’s Terms & Conditions and Fair Play Policy.</li>
+                        <li>Contacting support promptly for refund requests or issues.</li>
+                    </ul>
+                    <p>Failure to comply may result in denial of refund requests.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 8. Changes to This Refund Policy</h2>
+                <div class="content">
+                    <p>We may update this Refund Policy periodically to reflect changes in our practices or legal requirements. Updates will be posted on this page with an updated effective date. We encourage you to review this policy regularly to stay informed.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fas fa-chevron-right"></i> 9. Contact Us</h2>
+                <div class="content">
+                    <p>For questions, concerns, or refund requests, please contact us at:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:support@yodhaplay.in" style="color: var(--accent);">support@yodhaplay.in</a></li>
+                        <li><strong>Support:</strong> Available 24/7 via our <a href="/help-center.html" style="color: var(--accent);">Help Center</a></li>
+                    </ul>
                 </div>
             </div>
 
             <div class="copyright">
-                Copyright © 2020-2025 YodhaPlay. All Rights Reserved.
+                Copyright © 2020-2025 YodhaPlay Esports. All Rights Reserved.
             </div>
         </div>
     </main>
@@ -510,7 +445,7 @@
             }
 
             // Collapsible Sections
-            document.querySelectorAll('.help-section h2, .faq-item h3').forEach(header => {
+            document.querySelectorAll('.policy-section h2').forEach(header => {
                 header.addEventListener('click', () => {
                     const section = header.parentElement;
                     section.classList.toggle('active');
@@ -548,22 +483,6 @@
                 particlesContainer.appendChild(particle);
             }
         });
-
-        // FAQ Search Functionality
-        function searchFAQs() {
-            const searchInput = document.getElementById('faqSearch').value.toLowerCase();
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('h3').textContent.toLowerCase();
-                const answer = item.querySelector('.content p').textContent.toLowerCase();
-                if (question.includes(searchInput) || answer.includes(searchInput)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
 
         // Particle Animation
         const style = document.createElement('style');

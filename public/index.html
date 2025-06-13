@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YodhaPlay Esports - Ultimate Battle Arena</title>
+    <title>YodhaPlay - Skill-Based Entertainment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -407,10 +407,6 @@
             transition: transform 0.5s ease;
         }
 
-
-
-     
-
         /* ========== LIVE TICKER ========== */
         .live-ticker {
             background: var(--primary-dark);
@@ -568,7 +564,7 @@
             line-height: 1.6;
         }
 
-        .gaming-highlight {
+        .highlight {
             background: var(--gradient);
             border-radius: 12px;
             padding: 2rem;
@@ -858,215 +854,215 @@
             line-height: 1.6;
         }
 
-       /* ========== FOOTER ========== */
-.main-footer {
-    background: linear-gradient(135deg, rgba(10, 17, 40, 0.98) 0%, rgba(16, 24, 60, 0.98) 100%);
-    padding: 4rem 0 2rem;
-    border-top: 1px solid var(--divider);
-    position: relative;
-    animation: fadeIn 1s ease-in-out;
-}
+        /* ========== FOOTER ========== */
+        .main-footer {
+            background: linear-gradient(135deg, rgba(10, 17, 40, 0.98) 0%, rgba(16, 24, 60, 0.98) 100%);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--divider);
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-.main-footer.light-mode {
-    background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
-}
+        .main-footer.light-mode {
+            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
+        }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-}
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
 
-.footer-column {
-    text-align: center;
-}
+        .footer-column {
+            text-align: center;
+        }
 
-.footer-column h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent);
-    font-weight: 600;
-    position: relative;
-}
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            position: relative;
+        }
 
-.footer-column h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 2px;
-}
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
 
-.footer-links {
-    list-style: none;
-}
+        .footer-links {
+            list-style: none;
+        }
 
-.footer-links li {
-    margin-bottom: 1rem;
-}
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
 
-.footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 1rem;
-}
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 1rem;
+        }
 
-.footer-links a:hover {
-    color: var(--accent);
-    transform: translateX(5px);
-}
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
 
-.social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1.3rem;
-    box-shadow: var(--shadow-dark);
-}
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-dark);
+        }
 
-.social-icon.light-mode {
-    background: rgba(0, 0, 0, 0.1);
-    color: var(--text-dark);
-    box-shadow: var(--shadow-light);
-}
+        .social-icon.light-mode {
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-light);
+        }
 
-.social-icon:hover {
-    background: var(--accent);
-    transform: translateY(-5px) rotate(360deg);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
-}
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
 
-.newsletter-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-}
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
 
-.newsletter-form input {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-light);
-    transition: all 0.3s ease;
-}
+        .newsletter-form input {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
 
-.newsletter-form input:focus {
-    background: rgba(255, 255, 255, 0.2);
-}
+        .newsletter-form input:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
 
-.newsletter-form input::placeholder {
-    color: var(--text-muted);
-    opacity: 0.8;
-}
+        .newsletter-form input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
 
-.newsletter-form.light-mode input {
-    background: rgba(0, 0, 0, 0.1);
-    color: var(--text-dark);
-}
+        .newsletter-form.light-mode input {
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--text-dark);
+        }
 
-.newsletter-form.light-mode input:focus {
-    background: rgba(0, 0, 0, 0.15);
-}
+        .newsletter-form.light-mode input:focus {
+            background: rgba(0, 0, 0, 0.15);
+        }
 
-.footer-legal {
-    text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--divider);
-}
+        .footer-legal {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--divider);
+        }
 
-.footer-legal-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-.footer-legal-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-}
+        .footer-legal-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
 
-.footer-legal-links a:hover {
-    color: var(--accent);
-}
+        .footer-legal-links a:hover {
+            color: var(--accent);
+        }
 
-.copyright {
-    text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--divider);
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    opacity: 0.8;
-}
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--divider);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
 
-    .footer-column {
-        margin-bottom: 1rem;
-    }
+            .footer-column {
+                margin-bottom: 1rem;
+            }
 
-    .newsletter-form input {
-        width: 60%;
-    }
-}
+            .newsletter-form input {
+                width: 60%;
+            }
+        }
 
-@media (max-width: 480px) {
-    .social-links {
-        gap: 1rem;
-    }
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 1rem;
+            }
 
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
 
-    .newsletter-form input {
-        width: 50%;
-        font-size: 0.85rem;
-    }
+            .newsletter-form input {
+                width: 50%;
+                font-size: 0.85rem;
+            }
 
-    .newsletter-form button {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-    }
-}
+            .newsletter-form button {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
 
         /* ========== BACK TO TOP ========== */
         .back-to-top {
@@ -1217,16 +1213,16 @@
                         <a href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#esports" class="nav-link">Esports</a>
+                        <a href="#challenges" class="nav-link">Challenges</a>
                     </li>
                     <li class="nav-item">
                         <a href="#community" class="nav-link">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tournaments" class="nav-link">Tournaments</a>
+                        <a href="#contests" class="nav-link">Contests</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#leaderboards" class="nav-link">Leaderboards</a>
+                        <!-- <a href="#leaderboards" class="nav-link">Leaderboards</a> -->
                     </li>
                 </ul>
                 <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -1241,16 +1237,6 @@
                 <span class="menu-bar"></span>
             </button>
         </nav>
-    </header>
-    <!-- Mode Toggle (outside header, fixed to top right below header bar) -->
-    <div class="mode-toggle" id="modeToggle" style="position: fixed; top: 110px; right: 30px; z-index: 1100;">
-        <i class="fas fa-moon"></i>
-    </div>
-    <!-- WhatsApp Icon (same size, just below mode-toggle) -->
-    <a href="https://wa.me/918767148005" target="_blank" rel="noopener"
-        style="position: fixed; top: 170px; right: 30px; z-index: 1100; background: #25D366; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); text-decoration: none;">
-         <i class="fab fa-whatsapp" style="color: #fff; font-size: 1.7rem;"></i>
-    </a>
 
         <!-- Mobile Navigation -->
         <div class="mobile-nav">
@@ -1260,16 +1246,16 @@
                         <a href="#home" class="mobile-nav-link">Home</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="#esports" class="mobile-nav-link">Esports</a>
+                        <a href="#challenges" class="mobile-nav-link">Challenges</a>
                     </li>
                     <li class="mobile-nav-item">
                         <a href="#community" class="mobile-nav-link">Community</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="#tournaments" class="mobile-nav-link">Tournaments</a>
+                        <a href="#contests" class="mobile-nav-link">Contests</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="#leaderboards" class="mobile-nav-link">Leaderboards</a>
+                        <!-- <a href="#leaderboards" class="mobile-nav-link">Leaderboards</a> -->
                     </li>
                     <li class="mobile-nav-item">
                         <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary" style="justify-content: center; margin-top: 1rem;">Download App</a>
@@ -1279,13 +1265,24 @@
         </div>
     </header>
 
-    <!-- Live Tournament Ticker -->
+    <!-- Mode Toggle -->
+    <div class="mode-toggle" id="modeToggle" style="position: fixed; top: 110px; right: 30px; z-index: 1100;">
+        <i class="fas fa-moon"></i>
+    </div>
+<!-- 
+    WhatsApp Icon
+    <a href="https://wa.me/918767148005" target="_blank" rel="noopener"
+        style="position: fixed; top: 170px; right: 30px; z-index: 1100; background: #25D366; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); text-decoration: none;">
+        <i class="fab fa-whatsapp" style="color: #fff; font-size: 1.7rem;"></i>
+    </a> -->
+
+    <!-- Live Contest Ticker -->
     <section class="live-ticker">
         <div class="ticker-content">
-            <span>🏆 Battle Arena #1 - Ongoing: 50 Players Competing!</span>
-            <span>⚔️ Upcoming: Warrior Clash - Starts at 6:00 PM IST</span>
-            <span>🏆 Battle Arena #1 - Ongoing: 50 Players Competing!</span>
-            <span>⚔️ Upcoming: Warrior Clash - Starts at 6:00 PM IST</span>
+            <span>🏆 Skill Challenge #1 - Ongoing: 50 Participants Competing!</span>
+            <span>⚡ Upcoming: Strategy Contest - Starts at 6:00 PM IST</span>
+            <span>🏆 Skill Challenge #1 - Ongoing: 50 Participants Competing!</span>
+            <span>⚡ Upcoming: Strategy Contest - Starts at 6:00 PM IST</span>
         </div>
     </section>
 
@@ -1295,31 +1292,31 @@
             <div class="content-wrapper">
                 <!-- Left Content - Text Features -->
                 <div class="feature-content">
-                    <h2 class="section-title">Forge Your Legacy<br><span>Battle with Honor. Rise as a Warrior.</span></h2>
+                    <h2 class="section-title">Showcase Your Skills<br><span>Compete with Confidence. Rise to the Top.</span></h2>
                     <p class="section-subtitle">
-                        Step into YodhaPlay’s ultimate battle arenas, where skill and strategy reign supreme. Compete, conquer, and claim your place among the elite.
+                        Step into YodhaPlay’s skill-based challenges, where strategy and expertise lead to success. Participate, excel, and earn recognition among top contenders.
                     </p>
                     <div class="feature-chips">
                         <div class="chip">
                             <span class="chip-icon">🏆</span>
-                            <span>Battle Arenas</span>
+                            <span>Interactive Contests</span>
                         </div>
                         <div class="chip">
                             <span class="chip-icon">🎥</span>
-                            <span>Clan Forging</span>
+                            <span>Team Building</span>
                         </div>
                         <div class="chip">
                             <span class="chip-icon">⚡</span>
-                            <span>Legacy System</span>
+                            <span>Progress Tracking</span>
                         </div>
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary">
                             <i class="fas fa-download"></i> Download Now
                         </a>
-    <a href="#leaderboards" class="btn btn-secondary">
+                        <!-- <a href="#leaderboards" class="btn btn-secondary">
                             <i class="fas fa-trophy"></i> View Leaderboard
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 
@@ -1338,31 +1335,31 @@
     <!-- Community Section -->
     <section class="community-section" id="community">
         <div class="container">
-            <h2 class="section-title">Warrior Community</h2>
+            <h2 class="section-title">Join Our Community</h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-            Join a Free Fire warriors in our awesome community! Team up, share cool battle tips, and grow stronger together. Let’s win those Free Fire matches and rise to the top!
+                Connect with fellow participants in our vibrant community! Collaborate, share strategies, and grow together to excel in skill-based challenges.
             </p>
             <div class="community-grid">
                 <div class="community-card">
                     <div class="community-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="community-title">Alliance Building</h3>
-                    <p class="community-description">Find battle-ready allies based on playstyle, skill level, and availability. Form your ultimate clan.</p>
+                    <h3 class="community-title">Team Collaboration</h3>
+                    <p class="community-description">Connect with like-minded participants based on skill level and interests to form strong teams.</p>
                 </div>
                 <div class="community-card">
                     <div class="community-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="community-title">Skill Mastery</h3>
-                    <p class="community-description">Access training resources, strategy guides, and coaching sessions to sharpen your battle skills.</p>
+                    <h3 class="community-title">Skill Development</h3>
+                    <p class="community-description">Access resources, guides, and tips to enhance your abilities and succeed in challenges.</p>
                 </div>
                 <div class="community-card">
                     <div class="community-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3 class="community-title">War Councils</h3>
-                    <p class="community-description">Discuss tactics, analyze battles, and share insights with warriors across India.</p>
+                    <h3 class="community-title">Strategy Discussions</h3>
+                    <p class="community-description">Engage in forums to share insights, discuss tactics, and learn from others across India.</p>
                 </div>
             </div>
         </div>
@@ -1371,17 +1368,17 @@
     <div class="section-divider"></div>
 
     <!-- Leaderboard Section -->
-    <section class="leaderboard-section" id="leaderboards">
+    <!-- <section class="leaderboard-section" id="leaderboards">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Hall of Warriors<br><span>Top Players</span></h2>
+            <h2 class="section-title" style="text-align: center;">Top Performers<br><span>Leading Contenders</span></h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                See who’s dominating the battlefield. Climb the ranks and etch your name in glory.
+                Discover who’s excelling in our challenges. Aim high and secure your spot among the best.
             </p>
             <table class="leaderboard-table">
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Warrior</th>
+                        <th>Participant</th>
                         <th>Score</th>
                     </tr>
                 </thead>
@@ -1401,7 +1398,6 @@
                         <td>ShadowSlayer</td>
                         <td>8900</td>
                     </tr>
-                    <!-- Expandable rows start here -->
                     <tr class="leaderboard-extra" style="display: none;">
                         <td>4</td>
                         <td>IronWolf</td>
@@ -1439,45 +1435,26 @@
                     </tr>
                 </tbody>
             </table>
-            <div style="text-align: center; margin-top: 2rem;">
+            <!-- <div style="text-align: center; margin-top: 2rem;">
                 <a href="#leaderboards" class="btn btn-secondary" id="toggleLeaderboard">
-                    View Full Leaderboard 
+                    View Full Leaderboard
                 </a>
-            </div>
+            </div> -->
         </div>
-    </section>
-    <script>
-        // Leaderboard expand/collapse
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleBtn = document.getElementById('toggleLeaderboard');
-            const extraRows = document.querySelectorAll('.leaderboard-extra');
-            const toggleIcon = document.getElementById('leaderboardToggleIcon');
-            let expanded = false;
-
-            toggleBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                expanded = !expanded;
-                extraRows.forEach(row => {
-                    row.style.display = expanded ? '' : 'none';
-                });
-                toggleIcon.textContent = expanded ? '[Collapse]' : '[Expand]';
-            });
-        });
-    </script>
-    </section>
+    </section> -->
 
     <div class="section-divider"></div>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonials">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Warriors Speak<br><span>Hear From Legends</span></h2>
+            <h2 class="section-title" style="text-align: center;">Participants Speak<br><span>Hear From Top Contenders</span></h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                See what top warriors say about their journey on YodhaPlay.
+                Learn what top participants say about their experience with YodhaPlay.
             </p>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"YodhaPlay turned my passion into glory. The battle arenas and community pushed me to become a legend."</p>
+                    <p class="testimonial-text">"YodhaPlay transformed my skills into achievements. The challenges and community helped me excel."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SR</div>
                         <div class="author-info">
@@ -1487,7 +1464,7 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"The skill-based battles are intense. I’m always matched with worthy opponents, making every victory sweeter."</p>
+                    <p class="testimonial-text">"The skill-based contests are engaging. I’m always paired with strong competitors, making every win rewarding."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">BH</div>
                         <div class="author-info">
@@ -1497,7 +1474,7 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"YodhaPlay’s arenas are unmatched. It’s the ultimate platform for warriors to prove their worth."</p>
+                    <p class="testimonial-text">"YodhaPlay’s challenges are top-notch. It’s the perfect platform to showcase your skills."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SS</div>
                         <div class="author-info">
@@ -1517,34 +1494,32 @@
         <div class="container about-container">
             <h2 class="section-title">About YodhaPlay</h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                Redefining Esports with Honor
+                Empowering Skill-Based Entertainment
             </p>
             <div class="about-content">
                 <p class="feature-text" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
-               Founded in 2024, YodhaPlay is India’s premier skill-based esports platform for Free Fire tournaments. Our mission is to empower young Indian gamers to showcase their skills, build communities, and rise as champions. Join our battle arenas and redefine esports with honor!
-
-
+                    Founded in 2024, YodhaPlay is India’s leading skill-based entertainment platform for interactive challenges. Our mission is to empower participants to showcase their abilities, build communities, and achieve recognition through strategic contests.
                 </p>
                 <div class="features-grid">
                     <div class="feature-card">
                         <i class="fas fa-shield-alt feature-icon"></i>
                         <h3 class="feature-title">Secure & Trusted</h3>
-                        <p class="feature-text">We are working to ensure a safe gaming experience with verified profiles, encrypted transactions, and compliance with the Digital Personal Data Protection Act, 2023, as we grow.</p>
+                        <p class="feature-text">We prioritize safety with verified profiles, encrypted transactions, and compliance with the Digital Personal Data Protection Act, 2023.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-trophy feature-icon"></i>
-                        <h3 class="feature-title">Skill-Based Battles</h3>
-                        <p class="feature-text">Compete in battle arenas with a nominal platform charge. Win from a declared prize pool based on your skill and rank.</p>
+                        <h3 class="feature-title">Skill-Based Challenges</h3>
+                        <p class="feature-text">Participate in contests with a nominal entry fee. Earn rewards based on your skill and performance.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-clock feature-icon"></i>
                         <h3 class="feature-title">24/7 Support</h3>
-                        <p class="feature-text">Get instant resolution for queries with our dedicated pro-gamer support team.</p>
+                        <p class="feature-text">Access instant support for queries with our dedicated team.</p>
                     </div>
                 </div>
-                <div class="gaming-highlight">
-                    <h3 class="highlight-title">Unleash Your Inner Warrior</h3>
-                    <p class="highlight-text">Enter the arena where true warriors shine. Compete in skill-based battles, rise through the ranks, and let your legacy speak for itself. Fight with honor, win with glory.</p>
+                <div class="highlight">
+                    <h3 class="highlight-title">Unleash Your Potential</h3>
+                    <p class="highlight-text">Engage in skill-based challenges where talent shines. Compete, improve, and let your achievements define your journey.</p>
                 </div>
             </div>
             <div class="disclaimer" style="text-align: left; direction: ltr;">
@@ -1553,19 +1528,19 @@
                     <ol style="padding-left: 1.5em; margin-bottom: 0; direction: ltr; text-align: left;">
                         <li>
                             <strong>Skill-Based Platform:</strong>
-                            YodhaPlay is strictly a skill-based battle arena platform. Gambling, betting, and casual games (including quizzes, rummy, or poker) are not permitted.
+                            YodhaPlay is a skill-based entertainment platform. Gambling, betting, and casual games (e.g., quizzes, rummy, poker) are not permitted.
                         </li>
                         <li>
                             <strong>State Restrictions:</strong>
-                            Users residing in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana are not allowed to access YodhaPlay, as per state regulations.
+                            Users in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana cannot access YodhaPlay due to state regulations.
                         </li>
                         <li>
-                            <strong>Responsible Gaming & Age Policy:</strong>
-                            Participation is limited to users aged 18 years and above. We are committed to responsible gaming and are implementing age verification measures.
+                            <strong>Responsible Engagement & Age Policy:</strong>
+                            Participation is restricted to users aged 18+. We promote responsible engagement with age verification measures.
                         </li>
                         <li>
                             <strong>Data Privacy:</strong>
-                            Only minimal user data (such as username and email) is collected to provide our services. Sensitive personal information is not stored at this stage. We are working towards full compliance with the Digital Personal Data Protection Act, 2023.
+                            We collect minimal data (e.g., username, email) to provide services, ensuring compliance with the Digital Personal Data Protection Act, 2023.
                         </li>
                     </ol>
                 </div>
@@ -1580,25 +1555,25 @@
         <div class="container faq-container">
             <h2 class="section-title">YodhaPlay Assurance<br><span>Frequently Asked Questions</span></h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                Everything you need to know about our battle arenas, security, and rewards.
+                Everything you need to know about our challenges, security, and rewards.
             </p>
             <div class="faq-grid">
                 <div class="faq-card">
                     <div class="faq-header">
                         <i class="fas fa-shield-alt faq-icon"></i>
-                        <h3 class="faq-question">What is the mission behind YodhaPlay?</h3>
+                        <h3 class="faq-question">What is YodhaPlay’s mission?</h3>
                     </div>
                     <p class="faq-answer">
-                        YodhaPlay is dedicated to building a fair, skill-based eSports platform where every warrior can compete, improve, and get recognized. We empower players by offering competitive battle arenas, tracking progress, and highlighting talent.
+                        YodhaPlay aims to provide a fair, skill-based platform where participants can compete, improve, and gain recognition through interactive challenges.
                     </p>
                 </div>
                 <div class="faq-card">
                     <div class="faq-header">
                         <i class="fas fa-trophy faq-icon"></i>
-                        <h3 class="faq-question">How do battle arenas and prizes work?</h3>
+                        <h3 class="faq-question">How do challenges and rewards work?</h3>
                     </div>
                     <p class="faq-answer">
-                        Join battle arenas with a nominal platform charge. Compete in skill-based matches, and top-ranked warriors win from a declared prize pool. At this early stage, rewards are focused on in-game items and recognition, with cash prizes to be introduced once we implement KYC verification.
+                        Join challenges with a nominal fee. Top performers earn rewards based on skill and rank. Rewards currently include in-app items, with cash rewards planned post-KYC implementation.
                     </p>
                 </div>
                 <div class="faq-card">
@@ -1607,7 +1582,7 @@
                         <h3 class="faq-question">Is my data safe on YodhaPlay?</h3>
                     </div>
                     <p class="faq-answer">
-                        We currently collect minimal data (username, email) to manage battle arenas. We are working to ensure data safety with encryption and compliance with the Digital Personal Data Protection Act, 2023, as we grow.
+                        We collect minimal data (username, email) to manage challenges, ensuring encryption and compliance with the Digital Personal Data Protection Act, 2023.
                     </p>
                 </div>
             </div>
@@ -1618,87 +1593,82 @@
                 </div>
                 <div class="chip" style="display: flex; align-items: center; gap: 0.75rem; min-width: 180px;">
                     <i class="fas fa-headset chip-icon" style="margin-bottom: 0; color: var(--accent);"></i>
-                    <span style="font-weight: 600; color: var(--text-light);">Pro-Gamer Support</span>
+                    <span style="font-weight: 600; color: var(--text-light);">Dedicated Support</span>
                 </div>
                 <div class="chip" style="display: flex; align-items: center; gap: 0.75rem; min-width: 180px;">
                     <i class="fas fa-users chip-icon" style="margin-bottom: 0; color: var(--accent);"></i>
-                    <span style="font-weight: 600; color: var(--text-light);">Thriving Community</span>
+                    <span style="font-weight: 600; color: var(--text-light);">Vibrant Community</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-<!-- Footer -->
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <img src="/images/logo.jpg" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px;">
-                    <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 340px; text-align: center; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.6;">
-                        YodhaPlay – India’s best spot for Free Fire warriors! Join fight in tournaments, climb leaderboards, and win big!
-                    </p>
-                    <div class="social-links">
-                        <a href="https://wa.me/message/POHAA2GKHA7OH1?src=qr" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/YodhaPlay2030vsn" class="social-icon" aria-label="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="https://facebook.com/yodhaplay" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/yodhaplay" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@yodhaverse?si=S_jgadMBpftPvM4N" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <img src="/images/logo.jpg" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px;">
+                        <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 340px; text-align: center; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.6;">
+                            YodhaPlay – India’s premier platform for skill-based challenges! Participate in contests, climb leaderboards, and earn rewards.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://wa.me/message/POHAA2GKHA7OH1?src=qr" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://t.me/YodhaPlay2030vsn" class="social-icon" aria-label="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="https://facebook.com/yodhaplay" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/yodhaplay" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@yodhaverse?si=S_jgadMBpftPvM4N" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#challenges">Challenges</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul class="footer-links">
+                            <li><a href="/helpcenter.html">Help Center</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="#">Account Issues</a></li>
+                            <li><a href="#">Payment Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Stay Connected</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                            Get the latest updates on challenges and tips!
+                        </p>
+                        <form class="newsletter-form" action="#" method="POST">
+                            <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border-radius: 25px 0 0 25px; border: none; outline: none; width: 70%; font-size: 0.9rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: 0 25px 25px 0; margin-left: -5px;">Join</button>
+                        </form>
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
+                            <i class="fas fa-download"></i> Download App
+                        </a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <!-- <li><a href="#home">Home</a></li> -->
-                        <li><a href="#esports">Free Fire Esports</a></li>
-                        <!-- <li><a href="#community">Community</a></li>
-                        <li><a href="#tournaments">Tournaments</a></li>
-                        <li><a href="#leaderboards">Leaderboards</a></li> -->
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul class="footer-links">
-                        <li><a href="/helpcenter.html">Help Center</a></li>
-                        <li><a href="#faq">FAQs</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                        <li><a href="#">Account Issues</a></li>
-                        <li><a href="#">Payment Help</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Stay Connected</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        Get the latest Free Fire tournament updates and tips!
+                <div class="footer-legal">
+                    <div class="footer-legal-links">
+                        <a href="/fairplay-policy.html">Fair Play Policy</a>
+                        <a href="/terms.html">Terms & Conditions</a>
+                        <a href="/refund-policy.html">Refund Policy</a>
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/return-policy.html">Return Policy</a>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; opacity: 0.7; text-align: center; font-style: italic;">
+                        Committed to compliance with the Digital Personal Data Protection Act, 2023.
                     </p>
-                    <form class="newsletter-form" action="#" method="POST">
-                        <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border-radius: 25px 0 0 25px; border: none; outline: none; width: 70%; font-size: 0.9rem;">
-                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: 0 25px 25px 0; margin-left: -5px;">Join</button>
-                    </form>
-                    <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
-                        <i class="fas fa-download"></i> Download App
-                    </a>
                 </div>
-            </div>
-            <div class="footer-legal">
-                <div class="footer-legal-links">
-                    <a href="/fairplay-policy.html">Fair Play Policy</a>
-                    <a href="/terms.html">Terms & Conditions</a>
-                    <a href="/refund policy.html">Refund Policy</a>
-                    <a href="/privacy-policy.html">Privacy Policy</a>
-                    <a href="/return-policy.html">Return Policy</a>
+                <div class="copyright">
+                    © 2020-2025 YodhaPlay. All Rights Reserved.
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; opacity: 0.7; text-align: center; font-style: italic;">
-                    Working on Privacy Policy updates to follow the Digital Personal Data Protection Act, 2023. Check back soon!
-                </p>
-            </div>
-            <div class="copyright">
-                © 2020-2025 YodhaPlay Esports. All Rights Reserved.
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
@@ -1712,6 +1682,8 @@
             const modeToggle = document.querySelector('#modeToggle');
             const body = document.body;
             const backToTop = document.querySelector('#backToTop');
+            const toggleLeaderboard = document.querySelector('#toggleLeaderboard');
+            const extraRows = document.querySelectorAll('.leaderboard-extra');
 
             // Mobile Menu Toggle
             mobileToggle.addEventListener('click', (e) => {
@@ -1789,6 +1761,17 @@
                 card.addEventListener('click', () => {
                     card.classList.toggle('active');
                 });
+            });
+
+            // Leaderboard Toggle
+            let expanded = false;
+            toggleLeaderboard.addEventListener('click', (e) => {
+                e.preventDefault();
+                expanded = !expanded;
+                extraRows.forEach(row => {
+                    row.style.display = expanded ? '' : 'none';
+                });
+                toggleLeaderboard.textContent = expanded ? 'Collapse Leaderboard' : 'View Full Leaderboard';
             });
 
             // Simple Particle Effect

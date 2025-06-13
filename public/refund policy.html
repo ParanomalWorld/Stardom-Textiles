@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ========== GLOBAL STYLES ========== */
         :root {
             --primary: #1A4D8F;
             --primary-dark: #0f2a50;
@@ -19,9 +18,10 @@
             --text-muted: rgba(255, 255, 255, 0.65);
             --divider: rgba(255, 255, 255, 0.1);
             --gradient: linear-gradient(135deg, var(--primary) 0%, #2D82CF 100%);
-            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #FF8C61 100%);
-            --bg-light: #E5E7EB;
+            --bg-light: #F1F5F9;
             --text-dark: #1F2937;
+            --card-bg-light: #FFFFFF;
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -34,7 +34,6 @@
         body {
             background: var(--dark);
             color: var(--light);
-            overflow-x: hidden;
             transition: background 0.5s ease, color 0.5s ease;
         }
 
@@ -43,457 +42,229 @@
             color: var(--text-dark);
             --text-light: #1F2937;
             --text-muted: #6B7280;
-            --dark: #F3F4F6;
             --divider: rgba(0, 0, 0, 0.1);
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* ========== HEADER ========== */
-        .main-header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 17, 40, 0.96);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
-            transition: background 0.5s ease;
-        }
-
-        .main-header.light-mode {
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .top-policy-bar {
-            padding: 1rem 0;
-        }
-
-        .policy-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .policy-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .policy-links a:hover {
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
             color: var(--accent);
         }
 
-        /* ========== MODE TOGGLE ========== */
-        .mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            background: var(--primary);
-            padding: 0.5rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .mode-toggle i {
-            color: var(--light);
-            font-size: 1.2rem;
-        }
-
-        .mode-toggle:hover {
-            background: var(--accent);
-        }
-
-        /* ========== REFUND POLICY STYLES ========== */
-        .policy-container {
-            max-width: 900px;
-            margin: 100px auto 40px;
-            padding: 2rem;
+        .policy-content {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            position: relative;
+            padding: 2rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+            color: var(--text-light);
         }
 
-        .breadcrumb {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+        .policy-content.light-mode {
+            background: var(--card-bg-light);
+            box-shadow: var(--shadow-light);
         }
 
-        .breadcrumb a {
+        .policy-content h2 {
+            font-size: 1.8rem;
             color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .policy-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .policy-content p, .policy-content li {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-content ul, .policy-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .main-footer {
+            background: linear-gradient(135deg, rgba(10, 17, 40, 0.98) 0%, rgba(16, 24, 60, 0.98) 100%);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--divider);
+        }
+
+        .main-footer.light-mode {
+            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
+        }
+
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-legal-links a {
+            color: var(--text-muted);
             text-decoration: none;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
-        .breadcrumb a:hover {
-            color: var(--accent-dark);
-        }
-
-        .policy-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px var(--accent);
-        }
-
-        .policy-section {
-            margin-bottom: 2.5rem;
-            border-bottom: 1px solid var(--divider);
-            padding-bottom: 1.5rem;
-        }
-
-        .policy-section h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .policy-section h2 i {
-            transition: transform 0.3s ease;
-        }
-
-        .policy-section.active h2 i {
-            transform: rotate(90deg);
-        }
-
-        .policy-section .content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .policy-section.active .content {
-            max-height: 1000px;
-        }
-
-        .policy-section p {
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .policy-section ol, .policy-section ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .policy-section li {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
+        .footer-legal-links a:hover {
+            color: var(--accent);
         }
 
         .copyright {
             text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
+            padding-top: 1.5rem;
             border-top: 1px solid var(--divider);
-            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            opacity: 0.8;
         }
 
-        /* ========== BACK TO TOP ========== */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 0.8rem;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .back-to-top:hover {
-            background: var(--accent-dark);
-            transform: translateY(-5px);
-        }
-
-        /* ========== PARTICLE EFFECT ========== */
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* ========== RESPONSIVE ADJUSTMENTS ========== */
         @media (max-width: 768px) {
-            .policy-container {
-                margin: 80px 1rem 2rem;
-                padding: 1.5rem;
-            }
-
-            .policy-content h1 {
+            .section-title {
                 font-size: 2rem;
             }
 
-            .policy-section h2 {
-                font-size: 1.3rem;
+            .policy-content {
+                padding: 1.5rem;
             }
 
-            .policy-links {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
+            .policy-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .policy-content h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Mode Toggle -->
-    <div class="mode-toggle" id="modeToggle">
-        <i class="fas fa-moon"></i>
-    </div>
+    <section class="policy-section">
+        <div class="container">
+            <h1 class="section-title">Cancellation & Refund Policy</h1>
+            <p class="section-subtitle">
+                YodhaPlay, operated by YodhaVerse Innovations, is committed to providing a fair and transparent experience for all participants. Below is our policy for cancellations and refunds related to skill-based challenges.
+            </p>
+            <div class="policy-content">
+                <h2>Introduction</h2>
+                <p>
+                    YodhaPlay is a skill-based entertainment platform where users participate in challenges with nominal entry fees. This policy outlines the conditions, eligibility, and process for cancellations and refunds, ensuring compliance with the Consumer Protection Act, 2019, and the Digital Personal Data Protection Act, 2023.
+                </p>
 
-    <!-- Particle Background -->
-    <div id="particles"></div>
+                <h3>Eligibility for Refunds</h3>
+                <p>
+                    Refunds may be issued under the following circumstances:
+                </p>
+                <ul>
+                    <li><strong>Platform Error</strong>: A technical issue on YodhaPlay’s platform prevents participation in a challenge (e.g., server downtime, transaction failure).</li>
+                    <li><strong>Challenge Cancellation</strong>: YodhaPlay cancels a challenge before it starts due to insufficient participants or other reasons.</li>
+                    <li><strong>Failed Transaction</strong>: An entry fee is deducted, but the user is not registered for the challenge due to a payment processing error.</li>
+                </ul>
 
-    <!-- Header Section -->
-    <header class="main-header">
-        <!-- Top Policy Bar -->
-        <div class="top-policy-bar">
-            <div class="container">
-                <div class="policy-links">
-                    <a href="/terms.html" target="_blank">Terms</a>
-                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
-                    <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>
-                    <a href="/return-policy.html" target="_blank">Refund Policy</a>
-                </div>
+                <h3>Non-Refundable Cases</h3>
+                <p>
+                    Refunds will not be issued in the following situations:
+                </p>
+                <ul>
+                    <li>User-initiated withdrawal from a challenge after registration, unless due to a platform error.</li>
+                    <li>Entry fees for challenges completed, regardless of performance or outcome.</li>
+                    <li>Requests made more than 7 days after the transaction date.</li>
+                    <li>Users from restricted states (Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, Telangana) attempting to participate in violation of platform terms.</li>
+                    <li>In-app purchases or rewards (e.g., credits, virtual items) used or partially consumed.</li>
+                </ul>
+
+                <h3>Refund Process</h3>
+                <p>
+                    To request a refund, follow these steps:
+                </p>
+                <ol>
+                    <li>Contact our support team at <a href="mailto:yodhaverse@gmail.com">yodhaverse@gmail.com</a> within 7 days of the transaction.</li>
+                    <li>Provide proof of purchase, such as a transaction ID, UPI reference number, or email confirmation.</li>
+                    <li>Describe the issue (e.g., platform error, challenge cancellation).</li>
+                    <li>Our team will review the request within 3 business days and notify you of approval or rejection via email.</li>
+                    <li>If approved, the refund will be processed to the original payment method (e.g., UPI, bank account) within 5-10 business days.</li>
+                </ol>
+
+                <h3>Timelines</h3>
+                <p>
+                    - <strong>Refund Request Deadline</strong>: Within 7 days from the transaction or challenge cancellation date.<br>
+                    - <strong>Processing Time</strong>: 5-10 business days after approval.<br>
+                    - <strong>Bank Processing</strong>: Additional time may be required by your bank or payment provider (e.g., UPI provider, credit card issuer).
+                </p>
+
+                <h3>Fees and Charges</h3>
+                <p>
+                    - No additional fees are charged by YodhaPlay for processing refunds.<br>
+                    - Transaction fees (if any) imposed by payment providers may be deducted from the refund amount.<br>
+                    - Refunds for failed transactions or canceled challenges will include the full entry fee, subject to payment provider deductions.
+                </p>
+
+                <h3>Late or Missing Refunds</h3>
+                <p>
+                    If you haven’t received your refund within the specified timeline:
+                </p>
+                <ul>
+                    <li>Check your bank account or UPI app for the credited amount.</li>
+                    <li>Contact your bank or payment provider, as processing delays may occur.</li>
+                    <li>If the issue persists, email us at <a href="mailto:yodhaverse@gmail.com">yodhaverse@gmail.com</a> with your transaction details.</li>
+                </ul>
+
+                <h3>Contact Us</h3>
+                <p>
+                    For refund-related queries or assistance, please reach out to:
+                </p>
+                <address>
+                    YodhaVerse Innovations<br>
+                    MIHAN-SEZ IT Park,<br>
+                    Near AIIMS Hospital,<br>
+                    Wardha Road, Khapri,<br>
+                    Nagpur, Maharashtra – 441108<br>
+                    India<br>
+                    Email: <a href="mailto:yodhaverse@gmail.com">yodhaverse@gmail.com</a>
+                </address>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Refund Policy Content -->
-    <main class="policy-container">
-        <div class="breadcrumb">
-            <a href="/index.html">Home</a> / Refund Policy
-        </div>
-
-        <div class="policy-content">
-            <h1 style="text-align: center; color: #FF6B35;">Refund Policy</h1>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> Introduction</h2>
-                <div class="content">
-                    <p>Welcome to YodhaPlay, a skill-based entertainment app for Android offering interactive challenges and secure wallet top-ups for enhanced user experiences. This Refund Policy outlines the conditions for refunds related to wallet top-ups, participation fees, or other in-app services. We are committed to transparency, fairness, and compliance with the Consumer Protection Act, 2019, and the Payment and Settlement Systems Act, 2007, ensuring a seamless experience for our users.</p>
-                </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-legal-links">
+                <a href="/fairplay-policy.html">Fair Play Policy</a>
+                <a href="/terms.html">Terms & Conditions</a>
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/return-policy.html">Refund Policy</a>
             </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 1. Eligibility for Refunds</h2>
-                <div class="content">
-                    <p>Refunds may be requested under the following conditions, subject to review:</p>
-                    <ol>
-                        <li><strong>Activity Cancellations:</strong> If YodhaPlay cancels an interactive challenge due to technical issues, insufficient participants, or other reasons, a full refund of the participation fee will be issued.</li>
-                        <li><strong>Technical Issues:</strong> If you cannot participate in a challenge due to platform-specific technical issues (e.g., server downtime), you may be eligible for a refund.</li>
-                        <li><strong>In-App Purchases:</strong> Refunds for in-app purchases (e.g., premium features, virtual items) may be granted if the item is defective or not delivered as advertised.</li>
-                        <li><strong>Unauthorized Transactions:</strong> Refunds will be issued for unauthorized or fraudulent transactions, provided you notify us within 7 days.</li>
-                    </ol>
-                    <p>All refund requests are evaluated in accordance with Indian consumer protection laws and our skill-based framework.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 2. Non-Refundable Scenarios</h2>
-                <div class="content">
-                    <p>Refunds will not be provided in the following cases:</p>
-                    <ul>
-                        <li><strong>Completed Challenges:</strong> Participation fees for challenges you have engaged in, regardless of your performance or outcome.</li>
-                        <li><strong>Change of Mind:</strong> If you choose not to participate after registering, unless the cancellation is due to YodhaPlay’s fault.</li>
-                        <li><strong>Account Violations:</strong> No refunds will be issued if your account is suspended or terminated for violating our Terms & Conditions or Fair Play Policy.</li>
-                        <li><strong>Third-Party Purchases:</strong> Transactions processed through third-party platforms (e.g., Google Play, Apple App Store) are subject to their refund policies.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 3. Refund Request Process</h2>
-                <div class="content">
-                    <p>To request a refund, please follow these steps:</p>
-                    <ol>
-                        <li><strong>Submit a Request:</strong> Contact our support team at <a href="mailto:support@yodhaplay.in" style="color: var(--accent);">support@yodhaplay.in</a> or via our <a href="/help-center.html" style="color: var(--accent);">Help Center</a>, including your account details, transaction ID, and reason for the refund.</li>
-                        <li><strong>Timeframe:</strong> Requests must be submitted within 7 days of the transaction or issue.</li>
-                        <li><strong>Review:</strong> Our team will review your request within 5 business days and notify you of the decision.</li>
-                        <li><strong>Processing:</strong> Approved refunds will be processed within 7-10 business days to the original payment method, subject to payment provider policies.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 4. Activity Cancellations by YodhaPlay</h2>
-                <div class="content">
-                    <p>In the event that YodhaPlay cancels an interactive challenge, we will:</p>
-                    <ul>
-                        <li>Issue a full refund of the participation fee to the original payment method.</li>
-                        <li>Notify participants via email or in-app notifications.</li>
-                        <li>Offer an option to transfer the participation fee to another challenge, if available.</li>
-                    </ul>
-                    <p>Refunds for cancellations will be processed within 7 business days.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 5. Technical Issues</h2>
-                <div class="content">
-                    <p>If you encounter technical issues caused by YodhaPlay that prevent participation in a challenge, you may be eligible for a refund. To qualify:</p>
-                    <ul>
-                        <li>Report the issue to <a href="mailto:support@yodhaplay.in" style="color: var(--accent);">support@yodhaplay.in</a> within 24 hours.</li>
-                        <li>Provide evidence (e.g., screenshots, error messages) to support your claim.</li>
-                    </ul>
-                    <p>Our team will investigate and, if verified, issue a refund or credit for a future challenge within 7 business days.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 6. Payment Processing</h2>
-                <div class="content">
-                    <p>Refunds will be credited to the original payment method used for the transaction. Note:</p>
-                    <ul>
-                        <li>Processing times may vary depending on your bank or payment provider (e.g., UPI, PhonePe).</li>
-                        <li>Transaction fees (e.g., payment gateway charges) are non-refundable unless the issue is due to YodhaPlay’s error.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 7. User Responsibilities</h2>
-                <div class="content">
-                    <p>Users are responsible for:</p>
-                    <ul>
-                        <li>Providing accurate payment information during transactions.</li>
-                        <li>Complying with YodhaPlay’s Terms & Conditions and Fair Play Policy.</li>
-                        <li>Contacting support promptly for refund requests or issues.</li>
-                    </ul>
-                    <p>Failure to comply may result in denial of refund requests.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 8. Changes to This Refund Policy</h2>
-                <div class="content">
-                    <p>We may update this Refund Policy periodically to reflect changes in our practices or legal requirements. Updates will be posted on this page with an updated effective date. We encourage you to review this policy regularly to stay informed.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 9. Contact Us</h2>
-                <div class="content">
-                    <p>For questions, concerns, or refund requests, please contact us at:</p>
-                    <ul>
-                        <li><strong>Email:</strong> <a href="mailto:support@yodhaplay.in" style="color: var(--accent);">support@yodhaplay.in</a></li>
-                        <li><strong>Support:</strong> Available 24/7 via our <a href="/help-center.html" style="color: var(--accent);">Help Center</a></li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="copyright">
-                Copyright © 2020-2025 YodhaPlay. All Rights Reserved.
+                © 2020-2025 YodhaPlay. All Rights Reserved.
             </div>
         </div>
-    </main>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modeToggle = document.querySelector('#modeToggle');
-            const body = document.body;
-            const backToTop = document.querySelector('#backToTop');
-
-            // Dark/Light Mode Toggle
-            modeToggle.addEventListener('click', () => {
-                body.classList.toggle('light-mode');
-                const isLightMode = body.classList.contains('light-mode');
-                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-            });
-
-            // Load Theme Preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                body.classList.add('light-mode');
-                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            }
-
-            // Collapsible Sections
-            document.querySelectorAll('.policy-section h2').forEach(header => {
-                header.addEventListener('click', () => {
-                    const section = header.parentElement;
-                    section.classList.toggle('active');
-                });
-            });
-
-            // Back to Top
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTop.style.display = 'block';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
-
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Simple Particle Effect
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.width = '2px';
-                particle.style.height = '2px';
-                particle.style.background = 'rgba(255, 107, 53, 0.5)';
-                particle.style.borderRadius = '50%';
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animation = `float ${Math.random() * 5 + 3}s infinite`;
-                particlesContainer.appendChild(particle);
-            }
-        });
-
-        // Particle Animation
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes float {
-                0% { transform: translateY(0); opacity: 0.5; }
-                50% { opacity: 1; }
-                100% { transform: translateY(-50vh); opacity: 0.5; }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    </footer>
 </body>
 </html>

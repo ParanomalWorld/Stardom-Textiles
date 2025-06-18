@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1308,9 +1309,9 @@
                         <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary">
                             <i class="fas fa-download"></i> Download Now
                         </a>
-                        <button id="buyNowBtn" class="btn btn-secondary">
-                            <i class="fas fa-shopping-cart"></i> Buy Now
-                        </button>
+                        <!-- <a href="#leaderboards" class="btn btn-secondary">
+                            <i class="fas fa-trophy"></i> View Leaderboard
+                        </a> -->
                     </div>
                 </div>
 
@@ -1586,7 +1587,7 @@
                     <div class="footer-legal-links">
                         <a href="/fairplay-policy.html">Fair Play Policy</a>
                         <a href="/terms.html">Terms & Conditions</a>
-                        <a href="/refund policy.html">Refund Policy</a>
+                         <a href="/refund policy.html">Refund Policy</a>
                         <a href="/privacy-policy.html">Privacy Policy</a>
                         <a href="/return-policy.html">Return Policy</a>
                     </div>
@@ -1613,7 +1614,8 @@
             const modeToggle = document.querySelector('#modeToggle');
             const body = document.body;
             const backToTop = document.querySelector('#backToTop');
-            const buyNowBtn = document.querySelector('#buyNowBtn');
+            const toggleLeaderboard = document.querySelector('#toggleLeaderboard');
+            const extraRows = document.querySelectorAll('.leaderboard-extra');
 
             // Mobile Menu Toggle
             mobileToggle.addEventListener('click', (e) => {
@@ -1672,20 +1674,18 @@
             });
 
             // Dark/Light Mode Toggle
-            if (modeToggle) {
-                modeToggle.addEventListener('click', () => {
-                    body.classList.toggle('light-mode');
-                    const isLightMode = body.classList.contains('light-mode');
-                    modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-                });
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const isLightMode = body.classList.contains('light-mode');
+                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            });
 
-                // Load Theme Preference
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'light') {
-                    body.classList.add('light-mode');
-                    modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                }
+            // Load Theme Preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-mode');
+                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
             }
 
             // FAQ Toggle
@@ -1695,11 +1695,16 @@
                 });
             });
 
-            // Buy Now Button - Fetch Payment Order
-// Buy Now Button - Open Payment Requests Page
-buyNowBtn.addEventListener('click', () => {
-    window.open('/public/payment-requests.html', '_blank');
-});
+            // Leaderboard Toggle
+            let expanded = false;
+            toggleLeaderboard.addEventListener('click', (e) => {
+                e.preventDefault();
+                expanded = !expanded;
+                extraRows.forEach(row => {
+                    row.style.display = expanded ? '' : 'none';
+                });
+                toggleLeaderboard.textContent = expanded ? 'Collapse Leaderboard' : 'View Full Leaderboard';
+            });
 
             // Simple Particle Effect
             const particlesContainer = document.getElementById('particles');
@@ -1730,3 +1735,4 @@ buyNowBtn.addEventListener('click', () => {
     </script>
 </body>
 </html>
+```

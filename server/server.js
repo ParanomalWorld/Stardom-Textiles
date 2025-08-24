@@ -21,9 +21,25 @@ const userMap = new Map();
 // Create bot
 const bot = new TelegramBot(TOKEN, { polling: true });
 
-// When a user messages the bot
+/**
+ * Handle /start command
+ */
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(
+    chatId,
+    "👋 Welcome to YodhaPlay Support!\n\nSend us your issue and our support team will help you."
+  );
+});
+
+/**
+ * Handle normal messages
+ */
 bot.on("message", (msg) => {
   const chatId = msg.chat.id;
+
+  // Ignore if message is /start (we already handled it above)
+  if (msg.text && msg.text.startsWith("/start")) return;
 
   // If message is from a user (not admin)
   if (chatId.toString() !== ADMIN_CHAT_ID) {
@@ -41,7 +57,9 @@ bot.on("message", (msg) => {
   }
 });
 
-// Admin replies in this format: /reply USER_ID your message
+/**
+ * Admin replies with: /reply USER_ID message
+ */
 bot.onText(/\/reply (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
 
@@ -51,11 +69,14 @@ bot.onText(/\/reply (.+)/, (msg, match) => {
     const userId = parts[0];
     const replyMsg = parts.slice(1).join(" ");
 
+    if (!userId || !replyMsg) {
+      return bot.sendMessage(ADMIN_CHAT_ID, "⚠️ Usage: /reply USER_ID message");
+    }
+
     bot.sendMessage(userId, `💬 Support: ${replyMsg}`);
     bot.sendMessage(ADMIN_CHAT_ID, "✅ Reply sent!");
   }
 });
-
 // ===== Express Website Setup =====
 // Configure paths
 const publicPath = path.join(__dirname, '../public');

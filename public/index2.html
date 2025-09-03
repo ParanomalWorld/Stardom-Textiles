@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YodhaPlay - Skill-Based Entertainment</title>
+    <title>YodhaPlay - Skill-Driven eSports Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -314,6 +313,94 @@
 
         body.light-mode .mode-toggle i {
             color: var(--primary);
+        }
+
+        /* ========== DOWNLOAD MODAL ========== */
+        .download-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 17, 40, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-modal-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--divider);
+        }
+
+        .download-modal-content.light-mode {
+            background: var(--card-bg-light);
+            box-shadow: var(--shadow-light);
+        }
+
+        .download-modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .download-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            width: 0;
+            height: 100%;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .download-status {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        .trust-badge i {
+            color: var(--accent);
+        }
+
+        .download-modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
         }
 
         /* ========== FEATURE SHOWCASE ========== */
@@ -1213,22 +1300,19 @@
                     <li class="nav-item">
                         <a href="#home" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#challenges" class="nav-link">Challenges</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="#community" class="nav-link">Community</a>
                     </li>
                     <li class="nav-item">
                         <a href="#contests" class="nav-link">Contests</a>
                     </li>
-                    <li class="nav-item">
-                        <!-- <a href="#leaderboards" class="nav-link">Leaderboards</a> -->
-                    </li>
                 </ul>
-                <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn" style="padding: 0.7rem 1.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                     <i class="fas fa-download"></i>
-                    <span>Download App</span>
+                    <span>Download App (29MB)</span>
                 </a>
             </div>
 
@@ -1256,20 +1340,30 @@
                         <a href="#contests" class="mobile-nav-link">Contests</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <!-- <a href="#leaderboards" class="mobile-nav-link">Leaderboards</a> -->
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary" style="justify-content: center; margin-top: 1rem;">Download App</a>
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn" style="justify-content: center; margin-top: 1rem;">
+                            <i class="fas fa-download"></i> Download App (29MB)
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- Mode Toggle
-    <div class="mode-toggle" id="modeToggle" style="position: fixed; top: 110px; right: 30px; z-index: 1100;">
-        <i class="fas fa-moon"></i>
-    </div> -->
+    <!-- Download Modal -->
+    <div class="download-modal" id="downloadModal">
+        <div class="download-modal-content">
+            <button class="download-modal-close" id="closeModal">&times;</button>
+            <h3 class="download-modal-title">Downloading YodhaPlay</h3>
+            <p class="download-status" id="downloadStatus">Initiating download...</p>
+            <div class="download-progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure download from YodhaPlay servers</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Live Contest Ticker -->
     <section class="live-ticker">
@@ -1306,12 +1400,9 @@
                         </div>
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary">
-                            <i class="fas fa-download"></i> Download Now
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn">
+                            <i class="fas fa-download"></i> Download Now (29MB)
                         </a>
-                        <!-- <a href="#leaderboards" class="btn btn-secondary">
-                            <i class="fas fa-trophy"></i> View Leaderboard
-                        </a> -->
                     </div>
                 </div>
 
@@ -1435,7 +1526,7 @@
                     </div>
                 </div>
                 <div class="highlight">
-                    <h3 class="highlight-title">Unleash Your Potential</h3>
+                    <h3 class="highlight-title">Unlock Your Potential</h3>
                     <p class="highlight-text">Engage in skill-based challenges where talent shines. Compete, improve, and let your achievements define your journey.</p>
                 </div>
             </div>
@@ -1444,16 +1535,12 @@
                 <div class="disclaimer-text">
                     <ol style="padding-left: 1.5em; margin-bottom: 0; direction: ltr; text-align: left;">
                         <li>
-                            <strong>Skill-Based Platform:</strong>
-                            YodhaPlay is a skill-based entertainment platform. Gambling, betting, and casual games (e.g., quizzes, rummy, poker) are not permitted.
+                            <strong>Responsible Engagement & Age Policy:</strong>
+                            Participation is restricted to users aged 18+. We promote responsible engagement with age verification measures.
                         </li>
                         <li>
                             <strong>State Restrictions:</strong>
-                            Users in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana cannot access YodhaPlay due to state regulations.
-                        </li>
-                        <li>
-                            <strong>Responsible Engagement & Age Policy:</strong>
-                            Participation is restricted to users aged 18+. We promote responsible engagement with age verification measures.
+                            Available only in those Indian states where skill gaiming is allowed by regulations.
                         </li>
                         <li>
                             <strong>Data Privacy:</strong>
@@ -1520,6 +1607,27 @@
         </div>
     </section>
 
+    <!-- Payment Methods Section -->
+    <section class="payment-methods-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Secure Payment Methods<br><span>Pay with Confidence</span></h2>
+            <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
+                We partner with trusted payment gateways for seamless and secure transactions.
+            </p>
+            <div class="payment-methods" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap;">
+                <div class="chip" style="min-width: 180px;">
+                    <img src="/images/razorpay.png" alt="Razorpay" style="height: 24px; margin-bottom: 0;">
+                    <span style="font-weight: 600; color: var(--text-light);">Razorpay</span>
+                </div>
+                <div class="chip" style="min-width: 180px;">
+                    <img src="/images/cashfree.png" alt="Cashfree" style="height: 24px; margin-bottom: 0;">
+                    <span style="font-weight: 600; color: var(--text-light);">Cashfree</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
@@ -1528,33 +1636,41 @@
                     <div class="footer-column">
                         <img src="/images/logo.png" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px; border-radius: 22px;">
                         <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 340px; text-align: center; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.6;">
-                            YodhaPlay – India’s premier platform for skill-based challenges! Participate in contests, climb leaderboards, and earn rewards.
+                            YodhaPlay – Skill-Driven eSports Platform! Participate in contests, climb leaderboards, and earn rewards.
                         </p>
-                        <!-- Added Address -->
-                        <address style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; text-align: center; margin-bottom: 1rem; max-width: 340px; margin-left: auto; margin-right: auto; font-style: normal; transition: color 0.3s ease;">
-                            YodhaVerse Innovations<br>
-                            MIHAN-SEZ IT Park,<br>
-                            Near AIIMS Hospital,<br>
-                            Wardha Road, Khapri,<br>
-                            Nagpur, Maharashtra – 441108<br>
-                            India
-                        </address>
                         <div style="text-align: center; margin-bottom: 1rem;">
-                            <a href="mailto:business@yodhaplay.in" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <a href="mailto:contact@yodhaplay.in" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
                                 <i class="fas fa-envelope" aria-hidden="true"></i>
-                                business@yodhaplay.in
+                                contact@yodhaplay.in
                             </a>
                         </div>
                         <div class="social-links">
-                            <a href="https://wa.me/message/POHAA2GKHA7OH1?src=qr" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://t.me/YodhaPlay2030vsn" class="social-icon" aria-label="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="https://facebook.com/yodhaplay" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://instagram.com/yodhaplay" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://youtube.com/@yodhaverse?si=S_jgadMBpftPvM4N" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <!-- <a href="https://wa.me/message/POHAA2GKHA7OH1?src=qr" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a> -->
+                            <a href="https://t.me/YodhaPlaySupportBot" class="social-icon" aria-label="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+
+<a href="https://x.com/PlayYodha98248" class="social-icon" aria-label="X (Twitter)" target="_blank" style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 20px;">
+  X
+</a>
+
+<a href="https://www.facebook.com/profile.php?id=61578978252689" class="social-icon" aria-label="Facebook" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+
+<a href="https://www.instagram.com/yodhaplay/" class="social-icon" aria-label="Instagram" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://youtube.com/@yodhaplay-official?si=xVR3gd91HdPauW9K" class="social-icon" aria-label="YouTube" target="_blank">
+  <i class="fab fa-youtube"></i>
+</a>
+
                         </div>
                     </div>
                     <div class="footer-column">
-                        <h3>Quick Links</h3>
+                   
+</a>
+
                         <ul class="footer-links">
                             <li><a href="#challenges">Challenges</a></li>
                         </ul>
@@ -1578,8 +1694,8 @@
                             <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border-radius: 25px 0 0 25px; border: none; outline: none; width: 70%; font-size: 0.9rem;">
                             <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: 0 25px 25px 0; margin-left: -5px;">Join</button>
                         </form>
-                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
-                            <i class="fas fa-download"></i> Download App
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary download-btn" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
+                            <i class="fas fa-download"></i> Download App (29MB)
                         </a>
                     </div>
                 </div>
@@ -1587,7 +1703,7 @@
                     <div class="footer-legal-links">
                         <a href="/fairplay-policy.html">Fair Play Policy</a>
                         <a href="/terms.html">Terms & Conditions</a>
-                         <a href="/refund policy.html">Refund Policy</a>
+                        <a href="/refund policy.html">Refund Policy</a>
                         <a href="/privacy-policy.html">Privacy Policy</a>
                         <a href="/return-policy.html">Return Policy</a>
                     </div>
@@ -1614,8 +1730,11 @@
             const modeToggle = document.querySelector('#modeToggle');
             const body = document.body;
             const backToTop = document.querySelector('#backToTop');
-            const toggleLeaderboard = document.querySelector('#toggleLeaderboard');
-            const extraRows = document.querySelectorAll('.leaderboard-extra');
+            const downloadModal = document.querySelector('#downloadModal');
+            const closeModal = document.querySelector('#closeModal');
+            const downloadStatus = document.querySelector('#downloadStatus');
+            const progressFill = document.querySelector('#progressFill');
+            const downloadButtons = document.querySelectorAll('.download-btn');
 
             // Mobile Menu Toggle
             mobileToggle.addEventListener('click', (e) => {
@@ -1648,6 +1767,45 @@
                 });
             });
 
+            // Handle Download Button Clicks
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    downloadModal.style.display = 'flex';
+                    downloadStatus.textContent = 'Initiating download...';
+                    progressFill.style.width = '10%';
+
+                    // Simulate download progress (since direct APK progress is browser-limited)
+                    setTimeout(() => {
+                        progressFill.style.width = '50%';
+                        downloadStatus.textContent = 'Downloading YodhaPlay (29MB)...';
+                    }, 1000);
+                    setTimeout(() => {
+                        progressFill.style.width = '100%';
+                        downloadStatus.textContent = 'Download complete! Check your downloads folder.';
+                    }, 3000);
+
+                    // Trigger actual download
+                    setTimeout(() => {
+                        window.location.href = button.href;
+                    }, 500);
+                });
+            });
+
+            // Close Modal
+            closeModal.addEventListener('click', () => {
+                downloadModal.style.display = 'none';
+                progressFill.style.width = '0%';
+            });
+
+            // Close Modal when clicking outside
+            downloadModal.addEventListener('click', (e) => {
+                if (e.target === downloadModal) {
+                    downloadModal.style.display = 'none';
+                    progressFill.style.width = '0%';
+                }
+            });
+
             // Header scroll effect
             let lastScrollY = window.scrollY;
             window.addEventListener('scroll', () => {
@@ -1674,18 +1832,20 @@
             });
 
             // Dark/Light Mode Toggle
-            modeToggle.addEventListener('click', () => {
-                body.classList.toggle('light-mode');
-                const isLightMode = body.classList.contains('light-mode');
-                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-            });
+            if (modeToggle) {
+                modeToggle.addEventListener('click', () => {
+                    body.classList.toggle('light-mode');
+                    const isLightMode = body.classList.contains('light-mode');
+                    modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+                });
 
-            // Load Theme Preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                body.classList.add('light-mode');
-                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                // Load Theme Preference
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'light') {
+                    body.classList.add('light-mode');
+                    modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                }
             }
 
             // FAQ Toggle
@@ -1693,17 +1853,6 @@
                 card.addEventListener('click', () => {
                     card.classList.toggle('active');
                 });
-            });
-
-            // Leaderboard Toggle
-            let expanded = false;
-            toggleLeaderboard.addEventListener('click', (e) => {
-                e.preventDefault();
-                expanded = !expanded;
-                extraRows.forEach(row => {
-                    row.style.display = expanded ? '' : 'none';
-                });
-                toggleLeaderboard.textContent = expanded ? 'Collapse Leaderboard' : 'View Full Leaderboard';
             });
 
             // Simple Particle Effect
@@ -1735,4 +1884,3 @@
     </script>
 </body>
 </html>
-```

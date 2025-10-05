@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yodhaplay.in/</loc>  <!-- Homepage (matches your index.html) -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!-- Virtual sections (anchors) - Google crawls as sub-content -->
+  <url>
+    <loc>https://yodhaplay.in/#home</loc>  <!-- Feature Showcase -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/#community</loc>  <!-- Community Section -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/#about</loc>  <!-- About Section -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/#faq</loc>  <!-- FAQ Section -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <!-- Footer .html links (only if files exist in public/; else remove to avoid 404s) -->
+  <url>
+    <loc>https://yodhaplay.in/helpcenter.html</loc>  <!-- Create file if needed -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/contact.html</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/fairplay-policy.html</loc>  <!-- Note: Fix "fairplay" spelling if needed -->
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/terms.html</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/privacy-policy.html</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yodhaplay.in/return-policy.html</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <!-- Skip /refund policy.html for now (space in URL = bad SEO; fix to /refund-policy.html & create file) -->
+</urlset>

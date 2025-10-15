@@ -1,30 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>YodhaPlay</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YodhaPlay Esports - Ultimate Battle Arena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for mobile responsiveness -->
+    <meta name="description" content="Join YodhaPlay for skill-driven eSports challenges, community contests, and secure rewards. Compete in India’s top gaming app – fair play guaranteed. Download now!">
+    <meta name="keywords" content="YodhaPlay, eSports India, skill gaming, online contests, win rewards, gaming app, tournaments, fair play">
+    <meta property="og:title" content="YodhaPlay – India's Ultimate eSports Platform">
+    <meta property="og:description" content="Compete in skill-based challenges, build teams, and earn rewards. Secure, compliant gaming for 18+.">
+    <meta property="og:url" content="https://yodhaplay.in">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yodhaplay.in/images/yodha_play2.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yodhaplay.in/"> <!-- Added to prevent duplicate content issues -->
+    
+    <!-- Improved FAVICON LINKS with multi-sizes -->
+<!-- Optimized FAVICON LINKS -->
+<link rel="icon" href="https://yodhaplay.in/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://yodhaplay.in/favicon.png" type="image/png" sizes="any">
+<link rel="icon" href="https://yodhaplay.in/favicon-48x48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="https://yodhaplay.in/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="https://yodhaplay.in/favicon.png">
+
+
+    <!-- MERGED ORGANIZATION SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "YodhaPlay",
+      "url": "https://yodhaplay.in",
+      "logo": "https://yodhaplay.in/favicon.png",
+      "sameAs": [
+        "https://www.instagram.com/yodhaplay/",
+        "https://www.youtube.com/@yodhaplay-official",
+        "https://x.com/PlayYodha98248",
+        "https://www.facebook.com/profile.php?id=61578978252689",
+        "https://t.me/YodhaPlaySupportBot"
+      ]
+    }
+    </script>
+    <!-- MERGED MOBILE APP SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "YodhaPlay",
+      "operatingSystem": "Android",
+      "applicationCategory": "GameApplication",
+      "url": "https://yodhaplay.in",
+      "description": "Skill-driven eSports platform for India",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* ========== GLOBAL STYLES ========== */
         :root {
-            --primary: #1A4D8F;
-            --primary-dark: #0f2a50;
-            --accent: #FF6B35;
-            --accent-dark: #d45226;
-            --dark: #0A1128;
+            --primary: #1d4ed8; /* Blue shade inspired by game.tv */
+            --primary-dark: #1e40af; /* Darker blue for contrast */
+            --accent: #ea580c; /* Orange shade inspired by game.tv */
+            --accent-dark: #c2410c; /* Darker orange */
+            --dark: #0f172a; /* Dark navy background like game.tv */
             --light: #FFFFFF;
-            --text-light: rgba(255, 255, 255, 0.85);
-            --text-muted: rgba(255, 255, 255, 0.65);
-            --divider: rgba(255, 255, 255, 0.1);
-            --gradient: linear-gradient(135deg, var(--primary) 0%, #2D82CF 100%);
-            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #FF8C61 100%);
+            --text-light: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --divider: rgba(255, 255, 255, 0.12);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%); /* Blue gradient */
+            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #f97316 100%); /* Orange gradient */
             --section-padding: 6rem 1.5rem;
-            --bg-light: #F1F5F9;
-            --text-dark: #1F2937;
+            --bg-light: #f8fafc; /* Softer light for mode */
+            --text-dark: #f1f5f9;
             --card-bg-light: #FFFFFF;
-            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow like game.tv cards */
+            --card-bg-dark: #1e293b; /* Dark card background */
         }
 
         * {
@@ -44,10 +99,10 @@
         body.light-mode {
             background: var(--bg-light);
             color: var(--text-dark);
-            --text-light: #1F2937;
-            --text-muted: #6B7280;
-            --dark: #E5E7EB;
-            --divider: rgba(0, 0, 0, 0.1);
+            --text-light: #0f172a;
+            --text-muted: #475569;
+            --dark: #f1f5f9;
+            --divider: rgba(0, 0, 0, 0.12);
         }
 
         .container {
@@ -61,16 +116,16 @@
             font-size: 3rem;
             margin-bottom: 1.5rem;
             position: relative;
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.2;
             font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px var(--accent);
+            text-shadow: 0 0 8px rgba(234, 88, 12, 0.3);
         }
 
         .section-title span {
             color: var(--accent);
             display: block;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .section-subtitle {
@@ -103,7 +158,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
             transition: 0.5s;
         }
 
@@ -114,12 +169,12 @@
         .btn-primary {
             background: var(--accent-gradient);
             color: white;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.6);
+            box-shadow: 0 6px 20px rgba(234, 88, 12, 0.5);
         }
 
         .btn-secondary {
@@ -129,7 +184,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
         }
 
         /* ========== HEADER ========== */
@@ -138,16 +193,16 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 17, 40, 0.96);
+            background: rgba(15, 23, 42, 0.96); /* Darker like game.tv */
             backdrop-filter: blur(12px);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
             border-bottom: 1px solid var(--divider);
             transition: background 0.5s ease;
         }
 
         .main-header.light-mode {
             background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
 
         .header-nav {
@@ -156,7 +211,6 @@
             align-items: center;
             height: 80px;
             padding: 0 1.5rem;
-            position: relative;
         }
 
         .header-logo {
@@ -236,7 +290,7 @@
             right: -100%;
             width: 300px;
             height: calc(100vh - 80px);
-            background: rgba(16, 24, 40, 0.98);
+            background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(18px);
             box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
             transition: right 0.35s ease;
@@ -276,19 +330,13 @@
 
         /* ========== MODE TOGGLE ========== */
         .mode-toggle {
-            position: absolute;
-            top: 50%;
-            right: 1.5rem;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.08);
             border: 1.5px solid var(--divider);
-            box-shadow: 0 4px 16px rgba(26,77,143,0.10), 0 1.5px 6px rgba(255,107,53,0.07);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.08), 0 1.5px 4px rgba(234, 88, 12, 0.05);
             padding: 0.55rem;
             border-radius: 50%;
             cursor: pointer;
             transition: background 0.22s, box-shadow 0.22s, border-color 0.22s;
-            z-index: 1001;
-            backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -303,11 +351,11 @@
         .mode-toggle:hover {
             background: var(--light);
             border-color: var(--accent);
-            box-shadow: 0 6px 24px rgba(255,107,53,0.13), 0 2px 8px rgba(26,77,143,0.10);
+            box-shadow: 0 6px 20px rgba(234, 88, 12, 0.1), 0 2px 6px rgba(29, 78, 216, 0.08);
         }
 
         body.light-mode .mode-toggle {
-            background: rgba(26,77,143,0.07);
+            background: rgba(29, 78, 216, 0.05);
             border-color: var(--divider);
         }
 
@@ -315,10 +363,98 @@
             color: var(--primary);
         }
 
+        /* ========== DOWNLOAD MODAL ========== */
+        .download-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-modal-content {
+            background: var(--card-bg-dark);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--divider);
+        }
+
+        .download-modal-content.light-mode {
+            background: var(--card-bg-light);
+            box-shadow: var(--shadow-light);
+        }
+
+        .download-modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .download-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            width: 0;
+            height: 100%;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .download-status {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(234, 88, 12, 0.08);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        .trust-badge i {
+            color: var(--accent);
+        }
+
+        .download-modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
         /* ========== FEATURE SHOWCASE ========== */
         .feature-showcase {
             padding: 10rem 0 6rem;
-            background: radial-gradient(circle at top right, rgba(26, 77, 143, 0.2) 0%, transparent 40%), url('https://www.transparenttextures.com/patterns/metal-mesh.png');
+            background: radial-gradient(circle at top right, rgba(29, 78, 216, 0.15) 0%, transparent 40%), url('https://www.transparenttextures.com/patterns/metal-mesh.png');
             background-attachment: fixed;
             position: relative;
             overflow: hidden;
@@ -332,7 +468,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 17, 40, 0.5);
+            background: rgba(15, 23, 42, 0.5);
             z-index: 0;
         }
 
@@ -354,15 +490,17 @@
 
         .chip {
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(125, 211, 252, 0.1);
+            background: var(--card-bg-dark); /* Dark card like game.tv */
+            border-radius: 1rem; /* Rounded like game.tv cards */
+            border: none; /* No border, like game.tv */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-light); /* Subtle shadow */
         }
 
         .chip.light-mode {
@@ -372,8 +510,7 @@
 
         .chip:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .chip::before {
@@ -389,13 +526,27 @@
         }
 
         .chip:hover::before {
-            opacity: 0.1;
+            opacity: 0.08;
         }
 
         .chip-icon {
-            font-size: 1.5rem;
-            color: var(--accent);
+            font-size: 3rem; /* Larger icons like game.tv */
+            margin-bottom: 1rem;
         }
+
+        .chip:nth-child(1) .chip-icon {
+            color: #0ea5e9; /* Blue like first game.tv icon */
+        }
+
+        .chip:nth-child(2) .chip-icon {
+            color: #a855f7; /* Purple like second */
+        }
+
+        .chip:nth-child(3) .chip-icon {
+            color: #f97316; /* Orange like third */
+        }
+
+        /* If more chips, add green #22c55e for fourth */
 
         .frame-container {
             position: relative;
@@ -407,23 +558,19 @@
             transition: transform 0.5s ease;
         }
 
-
-
-     
-
         /* ========== LIVE TICKER ========== */
         .live-ticker {
             background: var(--primary-dark);
             padding: 1rem 0;
             overflow: hidden;
             white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             animation: fadeIn 1s ease-in-out;
         }
 
         .live-ticker.light-mode {
-            background: #D1D5DB;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #E0E0E0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .ticker-content {
@@ -445,13 +592,13 @@
         /* ========== LEADERBOARD ========== */
         .leaderboard-section {
             padding: var(--section-padding);
-            background: linear-gradient(to bottom, var(--dark) 0%, #0d1a33 100%);
+            background: linear-gradient(to bottom, var(--dark) 0%, #1A1A1A 100%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .leaderboard-section.light-mode {
-            background: linear-gradient(to bottom, var(--bg-light) 0%, #D1D5DB 100%);
+            background: linear-gradient(to bottom, var(--bg-light) 0%, #F5F5F5 100%);
         }
 
         .leaderboard-table {
@@ -490,19 +637,19 @@
         }
 
         .leaderboard-table tr:hover {
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
         }
 
         /* ========== ABOUT SECTION ========== */
         .about1-section {
             padding: var(--section-padding);
-            background: linear-gradient(to bottom, var(--dark) 0%, #0d1a33 100%);
+            background: linear-gradient(to bottom, var(--dark) 0%, #1A1A1A 100%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .about1-section.light-mode {
-            background: linear-gradient(to bottom, var(--bg-light) 0%, #D1D5DB 100%);
+            background: linear-gradient(to bottom, var(--bg-light) 0%, #F5F5F5 100%);
         }
 
         .about-container {
@@ -517,12 +664,13 @@
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-light);
         }
 
         .feature-card.light-mode {
@@ -532,8 +680,8 @@
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--accent);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            border: none; /* No border on hover */
         }
 
         .feature-card::before {
@@ -549,7 +697,7 @@
         }
 
         .feature-card:hover::before {
-            opacity: 0.1;
+            opacity: 0.08;
         }
 
         .feature-icon {
@@ -568,13 +716,13 @@
             line-height: 1.6;
         }
 
-        .gaming-highlight {
+        .highlight {
             background: var(--gradient);
             border-radius: 12px;
             padding: 2rem;
             margin: 3rem 0;
             text-align: center;
-            box-shadow: 0 0 20px rgba(26, 77, 143, 0.5);
+            box-shadow: 0 0 15px rgba(29, 78, 216, 0.4);
         }
 
         .highlight-title {
@@ -591,14 +739,14 @@
         .disclaimer {
             margin-top: 3rem;
             padding: 1.5rem;
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
             border-radius: 10px;
             border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
         }
 
         .disclaimer.light-mode {
-            background: rgba(255, 107, 53, 0.05);
+            background: rgba(234, 88, 12, 0.05);
             box-shadow: var(--shadow-light);
         }
 
@@ -621,13 +769,13 @@
         /* ========== FAQ SECTION ========== */
         .faq-section {
             padding: var(--section-padding);
-            background: linear-gradient(to bottom, #0d1a33 0%, var(--dark) 100%);
+            background: linear-gradient(to bottom, #1A1A1A 0%, var(--dark) 100%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .faq-section.light-mode {
-            background: linear-gradient(to bottom, #D1D5DB 0%, var(--bg-light) 100%);
+            background: linear-gradient(to bottom, #F5F5F5 0%, var(--bg-light) 100%);
         }
 
         .faq-container {
@@ -642,12 +790,13 @@
         }
 
         .faq-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem;
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            box-shadow: var(--shadow-light);
         }
 
         .faq-card.light-mode {
@@ -657,8 +806,8 @@
 
         .faq-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border: none;
         }
 
         .faq-header {
@@ -703,8 +852,9 @@
             align-items: center;
             gap: 0.75rem;
             padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
+            box-shadow: var(--shadow-light);
         }
 
         .badge-item.light-mode {
@@ -720,15 +870,15 @@
         /* ========== TESTIMONIALS ========== */
         .testimonials-section {
             padding: var(--section-padding);
-            background: linear-gradient(45deg, rgba(26, 77, 143, 0.2) 0%, transparent 50%), 
-                        linear-gradient(-45deg, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
+            background: linear-gradient(45deg, rgba(29, 78, 216, 0.15) 0%, transparent 50%), 
+                        linear-gradient(-45deg, rgba(234, 88, 12, 0.12) 0%, transparent 50%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .testimonials-section.light-mode {
-            background: linear-gradient(45deg, rgba(26, 77, 143, 0.05) 0%, transparent 50%), 
-                        linear-gradient(-45deg, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            background: linear-gradient(45deg, rgba(29, 78, 216, 0.03) 0%, transparent 50%), 
+                        linear-gradient(-45deg, rgba(234, 88, 12, 0.03) 0%, transparent 50%);
         }
 
         .testimonial-grid {
@@ -739,11 +889,12 @@
         }
 
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem;
             position: relative;
             transition: transform 0.3s ease;
+            box-shadow: var(--shadow-light);
         }
 
         .testimonial-card.light-mode {
@@ -753,7 +904,7 @@
 
         .testimonial-card:hover {
             transform: translateY(-10px);
-            border: 1px solid var(--accent);
+            border: none;
         }
 
         .testimonial-card::before {
@@ -762,7 +913,7 @@
             top: 20px;
             left: 20px;
             font-size: 4rem;
-            color: rgba(255, 107, 53, 0.2);
+            color: rgba(234, 88, 12, 0.15);
             font-family: Georgia, serif;
             line-height: 1;
         }
@@ -815,7 +966,7 @@
         }
 
         .community-section.light-mode {
-            background: linear-gradient(135deg, #D1D5DB 0%, var(--bg-light) 100%);
+            background: linear-gradient(135deg, #E0E0E0 0%, var(--bg-light) 100%);
         }
 
         .community-grid {
@@ -826,10 +977,11 @@
         }
 
         .community-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem;
             transition: transform 0.3s ease;
+            box-shadow: var(--shadow-light);
         }
 
         .community-card.light-mode {
@@ -839,7 +991,7 @@
 
         .community-card:hover {
             transform: translateY(-8px);
-            border: 1px solid var(--accent);
+            border: none;
         }
 
         .community-icon {
@@ -858,215 +1010,215 @@
             line-height: 1.6;
         }
 
-       /* ========== FOOTER ========== */
-.main-footer {
-    background: linear-gradient(135deg, rgba(10, 17, 40, 0.98) 0%, rgba(16, 24, 60, 0.98) 100%);
-    padding: 4rem 0 2rem;
-    border-top: 1px solid var(--divider);
-    position: relative;
-    animation: fadeIn 1s ease-in-out;
-}
+        /* ========== FOOTER ========== */
+        .main-footer {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--divider);
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-.main-footer.light-mode {
-    background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
-}
+        .main-footer.light-mode {
+            background: linear-gradient(135deg, #EEEEEE 0%, #E0E0E0 100%);
+        }
 
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-}
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
 
-.footer-column {
-    text-align: center;
-}
+        .footer-column {
+            text-align: center;
+        }
 
-.footer-column h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent);
-    font-weight: 600;
-    position: relative;
-}
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            position: relative;
+        }
 
-.footer-column h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 2px;
-}
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
 
-.footer-links {
-    list-style: none;
-}
+        .footer-links {
+            list-style: none;
+        }
 
-.footer-links li {
-    margin-bottom: 1rem;
-}
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
 
-.footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 1rem;
-}
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 1rem;
+        }
 
-.footer-links a:hover {
-    color: var(--accent);
-    transform: translateX(5px);
-}
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
 
-.social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1.3rem;
-    box-shadow: var(--shadow-dark);
-}
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.social-icon.light-mode {
-    background: rgba(0, 0, 0, 0.1);
-    color: var(--text-dark);
-    box-shadow: var(--shadow-light);
-}
+        .social-icon.light-mode {
+            background: rgba(0, 0, 0, 0.08);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-light);
+        }
 
-.social-icon:hover {
-    background: var(--accent);
-    transform: translateY(-5px) rotate(360deg);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
-}
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 8px 15px rgba(234, 88, 12, 0.3);
+        }
 
-.newsletter-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-}
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
 
-.newsletter-form input {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-light);
-    transition: all 0.3s ease;
-}
+        .newsletter-form input {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
 
-.newsletter-form input:focus {
-    background: rgba(255, 255, 255, 0.2);
-}
+        .newsletter-form input:focus {
+            background: rgba(255, 255, 255, 0.15);
+        }
 
-.newsletter-form input::placeholder {
-    color: var(--text-muted);
-    opacity: 0.8;
-}
+        .newsletter-form input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
 
-.newsletter-form.light-mode input {
-    background: rgba(0, 0, 0, 0.1);
-    color: var(--text-dark);
-}
+        .newsletter-form.light-mode input {
+            background: rgba(0, 0, 0, 0.08);
+            color: var(--text-dark);
+        }
 
-.newsletter-form.light-mode input:focus {
-    background: rgba(0, 0, 0, 0.15);
-}
+        .newsletter-form.light-mode input:focus {
+            background: rgba(0, 0, 0, 0.12);
+        }
 
-.footer-legal {
-    text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--divider);
-}
+        .footer-legal {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--divider);
+        }
 
-.footer-legal-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-.footer-legal-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-}
+        .footer-legal-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
 
-.footer-legal-links a:hover {
-    color: var(--accent);
-}
+        .footer-legal-links a:hover {
+            color: var(--accent);
+        }
 
-.copyright {
-    text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--divider);
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    opacity: 0.8;
-}
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--divider);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
 
-    .footer-column {
-        margin-bottom: 1rem;
-    }
+            .footer-column {
+                margin-bottom: 1rem;
+            }
 
-    .newsletter-form input {
-        width: 60%;
-    }
-}
+            .newsletter-form input {
+                width: 60%;
+            }
+        }
 
-@media (max-width: 480px) {
-    .social-links {
-        gap: 1rem;
-    }
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 1rem;
+            }
 
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
 
-    .newsletter-form input {
-        width: 50%;
-        font-size: 0.85rem;
-    }
+            .newsletter-form input {
+                width: 50%;
+                font-size: 0.85rem;
+            }
 
-    .newsletter-form button {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-    }
-}
+            .newsletter-form button {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
 
         /* ========== BACK TO TOP ========== */
         .back-to-top {
@@ -1207,7 +1359,8 @@
     <header class="main-header">
         <nav class="header-nav container">
             <div class="header-brand">
-                <img src="/images/yodha_play2.png" alt="YodhaPlay" class="header-logo">
+              <!-- //  <img src="/images/yodha_play2.png" alt="YodhaPlay" class="header-logo"> -->
+              <img src="/images/yodha_play2.png" alt="YodhaPlay" class="header-logo" loading="lazy">
             </div>
 
             <!-- Desktop Navigation -->
@@ -1216,20 +1369,17 @@
                     <li class="nav-item">
                         <a href="#home" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#esports" class="nav-link">Esports</a>
-                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="#challenges" class="nav-link">Challenges</a>
+                    </li> -->
                     <li class="nav-item">
                         <a href="#community" class="nav-link">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tournaments" class="nav-link">Tournaments</a>
+                        <a href="#contests" class="nav-link">Contests</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a href="#leaderboards" class="nav-link">Leaderboards</a>
-                    </li> -->
                 </ul>
-                <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn" style="padding: 0.7rem 1.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                     <i class="fas fa-download"></i>
                     <span>Download App</span>
                 </a>
@@ -1241,16 +1391,6 @@
                 <span class="menu-bar"></span>
             </button>
         </nav>
-    </header>
-    <!-- Mode Toggle (outside header, fixed to top right below header bar) -->
-    <div class="mode-toggle" id="modeToggle" style="position: fixed; top: 110px; right: 30px; z-index: 1100;">
-        <i class="fas fa-moon"></i>
-    </div>
-    <!-- WhatsApp Icon (same size, just below mode-toggle) -->
-    <!-- <a href="https://wa.me/918767148005" target="_blank" rel="noopener"
-        style="position: fixed; top: 170px; right: 30px; z-index: 1100; background: #25D366; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); text-decoration: none;">
-         <i class="fab fa-whatsapp" style="color: #fff; font-size: 1.7rem;"></i>
-    </a> -->
 
         <!-- Mobile Navigation -->
         <div class="mobile-nav">
@@ -1260,32 +1400,51 @@
                         <a href="#home" class="mobile-nav-link">Home</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="#esports" class="mobile-nav-link">Esports</a>
+                        <a href="#challenges" class="mobile-nav-link">Challenges</a>
                     </li>
                     <li class="mobile-nav-item">
                         <a href="#community" class="mobile-nav-link">Community</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="#tournaments" class="mobile-nav-link">Tournaments</a>
+                        <a href="#contests" class="mobile-nav-link">Contests</a>
                     </li>
-                    <!-- <li class="mobile-nav-item">
-                        <a href="#leaderboards" class="mobile-nav-link">Leaderboards</a>
-                    </li> -->
                     <li class="mobile-nav-item">
-                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary" style="justify-content: center; margin-top: 1rem;">Download App</a>
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn" style="justify-content: center; margin-top: 1rem;">
+                            <i class="fas fa-download"></i> Download App
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
+        <!-- Mode Toggle Button (Added missing HTML element) -->
+        <!-- <button class="mode-toggle" id="modeToggle" style="position: absolute; top: 50%; right: 1.5rem; transform: translateY(-50%); z-index: 1001;">
+            <i class="fas fa-moon"></i>
+        </button> -->
     </header>
 
-    <!-- Live Tournament Ticker -->
+    <!-- Download Modal -->
+    <div class="download-modal" id="downloadModal">
+        <div class="download-modal-content">
+            <button class="download-modal-close" id="closeModal">&times;</button>
+            <h3 class="download-modal-title">Downloading YodhaPlay</h3>
+            <p class="download-status" id="downloadStatus">Initiating download...</p>
+            <div class="download-progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure download from YodhaPlay servers</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Contest Ticker -->
     <section class="live-ticker">
         <div class="ticker-content">
-            <span>🏆 Battle Arena #1 - Ongoing: 50 Players Competing!</span>
-            <span>⚔️ Upcoming: Warrior Clash - Starts at 6:00 PM IST</span>
-            <span>🏆 Battle Arena #1 - Ongoing: 50 Players Competing!</span>
-            <span>⚔️ Upcoming: Warrior Clash - Starts at 6:00 PM IST</span>
+            <span>🏆 Skill Challenge #1 - Ongoing: 50 Participants Competing!</span>
+            <span>⚡ Upcoming: Strategy Contest - Starts at 6:00 PM IST</span>
+            <span>🏆 Skill Challenge #1 - Ongoing: 50 Participants Competing!</span>
+            <span>⚡ Upcoming: Strategy Contest - Starts at 6:00 PM IST</span>
         </div>
     </section>
 
@@ -1295,38 +1454,35 @@
             <div class="content-wrapper">
                 <!-- Left Content - Text Features -->
                 <div class="feature-content">
-                    <h2 class="section-title">Forge Your Legacy<br><span>Battle with Honor. Rise as a Warrior.</span></h2>
+                    <h2 class="section-title">Showcase Your Skills<br><span>Compete with Confidence. Rise to the Top.</span></h2>
                     <p class="section-subtitle">
-                        Step into YodhaPlay’s ultimate battle arenas, where skill and strategy reign supreme. Compete, conquer, and claim your place among the elite.
+                        Step into YodhaPlay’s skill-based challenges, where strategy and expertise lead to success. Participate, excel, and earn recognition among top contenders.
                     </p>
                     <div class="feature-chips">
                         <div class="chip">
                             <span class="chip-icon">🏆</span>
-                            <span>Battle Arenas</span>
+                            <span>Interactive Contests</span>
                         </div>
                         <div class="chip">
                             <span class="chip-icon">🎥</span>
-                            <span>Clan Forging</span>
+                            <span>Team Building</span>
                         </div>
                         <div class="chip">
                             <span class="chip-icon">⚡</span>
-                            <span>Legacy System</span>
+                            <span>Progress Tracking</span>
                         </div>
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary">
-                            <i class="fas fa-download"></i> Download Now
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn">
+                            <i class="fas fa-download"></i> Download
                         </a>
-    <!-- <a href="#leaderboards" class="btn btn-secondary">
-                            <i class="fas fa-trophy"></i> View Leaderboard
-                        </a> -->
                     </div>
                 </div>
 
                 <!-- Right Content - Frame Image -->
                 <div class="frame-container">
                     <div class="responsive-frame" style="max-width: 320px; margin: 0 auto;">
-                        <img src="/images/frame.png" alt="App Interface" class="enhanced-frame" style="width: 100%; height: auto;">
+                      <img src="/images/frame.png" alt="App Interface" class="enhanced-frame" style="width: 100%; height: auto;" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1338,31 +1494,31 @@
     <!-- Community Section -->
     <section class="community-section" id="community">
         <div class="container">
-            <h2 class="section-title">Warrior Community</h2>
+            <h2 class="section-title">Join Our Community</h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-            Join a Free Fire warriors in our awesome community! Team up, share cool battle tips, and grow stronger together. Let’s win those Free Fire matches and rise to the top!
+                Connect with fellow participants in our vibrant community! Collaborate, share strategies, and grow together to excel in skill-based challenges.
             </p>
             <div class="community-grid">
                 <div class="community-card">
                     <div class="community-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="community-title">Alliance Building</h3>
-                    <p class="community-description">Find battle-ready allies based on playstyle, skill level, and availability. Form your ultimate clan.</p>
+                    <h3 class="community-title">Team Collaboration</h3>
+                    <p class="community-description">Connect with like-minded participants based on skill level and interests to form strong teams.</p>
                 </div>
                 <div class="community-card">
                     <div class="community-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="community-title">Skill Mastery</h3>
-                    <p class="community-description">Access training resources, strategy guides, and coaching sessions to sharpen your battle skills.</p>
+                    <h3 class="community-title">Skill Development</h3>
+                    <p class="community-description">Access resources, guides, and tips to enhance your abilities and succeed in challenges.</p>
                 </div>
                 <div class="community-card">
                     <div class="community-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3 class="community-title">War Councils</h3>
-                    <p class="community-description">Discuss tactics, analyze battles, and share insights with warriors across India.</p>
+                    <h3 class="community-title">Strategy Discussions</h3>
+                    <p class="community-description">Engage in forums to share insights, discuss tactics, and learn from others across India.</p>
                 </div>
             </div>
         </div>
@@ -1370,114 +1526,16 @@
 
     <div class="section-divider"></div>
 
-    <!-- Leaderboard Section -->
-    <section class="leaderboard-section" id="leaderboards">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Hall of Warriors<br><span>Top Players</span></h2>
-            <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                See who’s dominating the battlefield. Climb the ranks and etch your name in glory.
-            </p>
-            <table class="leaderboard-table">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Warrior</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>StormRiser</td>
-                        <td>9500</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>BlazeHunter</td>
-                        <td>9200</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>ShadowSlayer</td>
-                        <td>8900</td>
-                    </tr>
-                    <!-- Expandable rows start here -->
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>4</td>
-                        <td>IronWolf</td>
-                        <td>8600</td>
-                    </tr>
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>5</td>
-                        <td>NightBlade</td>
-                        <td>8300</td>
-                    </tr>
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>6</td>
-                        <td>ThunderFang</td>
-                        <td>8000</td>
-                    </tr>
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>7</td>
-                        <td>VenomStrike</td>
-                        <td>7800</td>
-                    </tr>
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>8</td>
-                        <td>FrostNova</td>
-                        <td>7600</td>
-                    </tr>
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>9</td>
-                        <td>CrimsonHawk</td>
-                        <td>7400</td>
-                    </tr>
-                    <tr class="leaderboard-extra" style="display: none;">
-                        <td>10</td>
-                        <td>SteelViper</td>
-                        <td>7200</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- <div style="text-align: center; margin-top: 2rem;">
-                <a href="#leaderboards" class="btn btn-secondary" id="toggleLeaderboard">
-                    View Full Leaderboard 
-                </a>
-            </div> -->
-        </div>
-    </section>
-    <script>
-        // Leaderboard expand/collapse
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleBtn = document.getElementById('toggleLeaderboard');
-            const extraRows = document.querySelectorAll('.leaderboard-extra');
-            const toggleIcon = document.getElementById('leaderboardToggleIcon');
-            let expanded = false;
-
-            toggleBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                expanded = !expanded;
-                extraRows.forEach(row => {
-                    row.style.display = expanded ? '' : 'none';
-                });
-                toggleIcon.textContent = expanded ? '[Collapse]' : '[Expand]';
-            });
-        });
-    </script>
-    </section>
-
-    <div class="section-divider"></div>
-
     <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonials">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Warriors Speak<br><span>Hear From Legends</span></h2>
+            <h2 class="section-title" style="text-align: center;">Participants Speak<br><span>Hear From Top Contenders</span></h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                See what top warriors say about their journey on YodhaPlay.
+                Learn what top participants say about their experience with YodhaPlay.
             </p>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"YodhaPlay turned my passion into glory. The battle arenas and community pushed me to become a legend."</p>
+                    <p class="testimonial-text">"YodhaPlay transformed my skills into achievements. The challenges and community helped me excel."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SR</div>
                         <div class="author-info">
@@ -1487,7 +1545,7 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"The skill-based battles are intense. I’m always matched with worthy opponents, making every victory sweeter."</p>
+                    <p class="testimonial-text">"The skill-based contests are engaging. I’m always paired with strong competitors, making every win rewarding."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">BH</div>
                         <div class="author-info">
@@ -1497,7 +1555,7 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"YodhaPlay’s arenas are unmatched. It’s the ultimate platform for warriors to prove their worth."</p>
+                    <p class="testimonial-text">"YodhaPlay’s challenges are top-notch. It’s the perfect platform to showcase your skills."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SS</div>
                         <div class="author-info">
@@ -1517,34 +1575,32 @@
         <div class="container about-container">
             <h2 class="section-title">About YodhaPlay</h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                Redefining Esports with Honor
+                Empowering Skill-Based Entertainment
             </p>
             <div class="about-content">
                 <p class="feature-text" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
-               Founded in 2024, YodhaPlay is India’s premier skill-based esports platform for Free Fire tournaments. Our mission is to empower young Indian gamers to showcase their skills, build communities, and rise as champions. Join our battle arenas and redefine esports with honor!
-
-
+                    Founded in 2024, YodhaPlay is India’s leading skill-based entertainment platform for interactive challenges. Our mission is to empower participants to showcase their abilities, build communities, and achieve recognition through strategic contests.
                 </p>
                 <div class="features-grid">
                     <div class="feature-card">
                         <i class="fas fa-shield-alt feature-icon"></i>
                         <h3 class="feature-title">Secure & Trusted</h3>
-                        <p class="feature-text">We are working to ensure a safe gaming experience with verified profiles, encrypted transactions, and compliance with the Digital Personal Data Protection Act, 2023, as we grow.</p>
+                        <p class="feature-text">We prioritize safety with verified profiles, encrypted transactions, and compliance with the Digital Personal Data Protection Act, 2023.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-trophy feature-icon"></i>
-                        <h3 class="feature-title">Skill-Based Battles</h3>
-                        <p class="feature-text">Compete in battle arenas with a nominal platform charge. Win from a declared prize pool based on your skill and rank.</p>
+                        <h3 class="feature-title">Skill-Based Challenges</h3>
+                        <p class="feature-text">Participate in contests with a nominal entry fee. Earn rewards based on your skill and performance.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-clock feature-icon"></i>
                         <h3 class="feature-title">24/7 Support</h3>
-                        <p class="feature-text">Get instant resolution for queries with our dedicated pro-gamer support team.</p>
+                        <p class="feature-text">Access instant support for queries with our dedicated team.</p>
                     </div>
                 </div>
-                <div class="gaming-highlight">
-                    <h3 class="highlight-title">Unleash Your Inner Warrior</h3>
-                    <p class="highlight-text">Enter the arena where true warriors shine. Compete in skill-based battles, rise through the ranks, and let your legacy speak for itself. Fight with honor, win with glory.</p>
+                <div class="highlight">
+                    <h3 class="highlight-title">Unlock Your Potential</h3>
+                    <p class="highlight-text">Engage in skill-based challenges where talent shines. Compete, improve, and let your achievements define your journey.</p>
                 </div>
             </div>
             <div class="disclaimer" style="text-align: left; direction: ltr;">
@@ -1552,20 +1608,16 @@
                 <div class="disclaimer-text">
                     <ol style="padding-left: 1.5em; margin-bottom: 0; direction: ltr; text-align: left;">
                         <li>
-                            <strong>Skill-Based Platform:</strong>
-                            YodhaPlay is strictly a skill-based battle arena platform. Gambling, betting, and casual games (including quizzes, rummy, or poker) are not permitted.
+                            <strong>Responsible Engagement & Age Policy:</strong>
+                            Participation is restricted to users aged 18+. We promote responsible engagement with age verification measures.
                         </li>
                         <li>
-                            <strong>State Restrictions:</strong>
-                            Users residing in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana are not allowed to access YodhaPlay, as per state regulations.
-                        </li>
-                        <li>
-                            <strong>Responsible Gaming & Age Policy:</strong>
-                            Participation is limited to users aged 18 years and above. We are committed to responsible gaming and are implementing age verification measures.
+                            <strong>Compliance with 2025 Policy:</strong>
+                           In line with the Promotion and Regulation of Online Gaming Act, 2025, YodhaPlay offers only permissible skill-based e-sports without real-money involvement in gameplay. We charge an entry fee as a platform administrative cost, not a wager, and provide prize pools funded by sponsors to encourage skill-based competition, fully complying with the national ban on money-based online games.
                         </li>
                         <li>
                             <strong>Data Privacy:</strong>
-                            Only minimal user data (such as username and email) is collected to provide our services. Sensitive personal information is not stored at this stage. We are working towards full compliance with the Digital Personal Data Protection Act, 2023.
+                            We collect minimal data (e.g., username, email) to provide services, ensuring compliance with the Digital Personal Data Protection Act, 2023.
                         </li>
                     </ol>
                 </div>
@@ -1580,25 +1632,25 @@
         <div class="container faq-container">
             <h2 class="section-title">YodhaPlay Assurance<br><span>Frequently Asked Questions</span></h2>
             <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
-                Everything you need to know about our battle arenas, security, and rewards.
+                Everything you need to know about our challenges, security, and rewards.
             </p>
             <div class="faq-grid">
                 <div class="faq-card">
                     <div class="faq-header">
                         <i class="fas fa-shield-alt faq-icon"></i>
-                        <h3 class="faq-question">What is the mission behind YodhaPlay?</h3>
+                        <h3 class="faq-question">What is YodhaPlay’s mission?</h3>
                     </div>
                     <p class="faq-answer">
-                        YodhaPlay is dedicated to building a fair, skill-based eSports platform where every warrior can compete, improve, and get recognized. We empower players by offering competitive battle arenas, tracking progress, and highlighting talent.
+                        YodhaPlay aims to provide a fair, skill-based platform where participants can compete, improve, and gain recognition through interactive challenges.
                     </p>
                 </div>
                 <div class="faq-card">
                     <div class="faq-header">
                         <i class="fas fa-trophy faq-icon"></i>
-                        <h3 class="faq-question">How do battle arenas and prizes work?</h3>
+                        <h3 class="faq-question">How do challenges and rewards work?</h3>
                     </div>
                     <p class="faq-answer">
-                        Join battle arenas with a nominal platform charge. Compete in skill-based matches, and top-ranked warriors win from a declared prize pool. At this early stage, rewards are focused on in-game items and recognition, with cash prizes to be introduced once we implement KYC verification.
+                        Join challenges with a nominal fee. Top performers earn rewards based on skill and rank. Rewards currently include in-app items, with cash rewards planned post-KYC implementation.
                     </p>
                 </div>
                 <div class="faq-card">
@@ -1607,7 +1659,7 @@
                         <h3 class="faq-question">Is my data safe on YodhaPlay?</h3>
                     </div>
                     <p class="faq-answer">
-                        We currently collect minimal data (username, email) to manage battle arenas. We are working to ensure data safety with encryption and compliance with the Digital Personal Data Protection Act, 2023, as we grow.
+                        We collect minimal data (username, email) to manage challenges, ensuring encryption and compliance with the Digital Personal Data Protection Act, 2023.
                     </p>
                 </div>
             </div>
@@ -1618,87 +1670,125 @@
                 </div>
                 <div class="chip" style="display: flex; align-items: center; gap: 0.75rem; min-width: 180px;">
                     <i class="fas fa-headset chip-icon" style="margin-bottom: 0; color: var(--accent);"></i>
-                    <span style="font-weight: 600; color: var(--text-light);">Pro-Gamer Support</span>
+                    <span style="font-weight: 600; color: var(--text-light);">Dedicated Support</span>
                 </div>
                 <div class="chip" style="display: flex; align-items: center; gap: 0.75rem; min-width: 180px;">
                     <i class="fas fa-users chip-icon" style="margin-bottom: 0; color: var(--accent);"></i>
-                    <span style="font-weight: 600; color: var(--text-light);">Thriving Community</span>
+                    <span style="font-weight: 600; color: var(--text-light);">Vibrant Community</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-<!-- Footer -->
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <img src="/images/logo.jpg" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px;">
-                    <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 340px; text-align: center; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.6;">
-                        YodhaPlay – India’s best spot for Free Fire warriors! Join fight in tournaments, climb leaderboards, and win big!
-                    </p>
-                    <div class="social-links">
-                        <a href="https://wa.me/message/POHAA2GKHA7OH1?src=qr" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/YodhaPlay2030vsn" class="social-icon" aria-label="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="https://facebook.com/yodhaplay" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/yodhaplay" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@yodhaverse?si=S_jgadMBpftPvM4N" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
+    <!-- Payment Methods Section -->
+    <section class="payment-methods-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Secure Payment Methods<br><span>Pay with Confidence</span></h2>
+            <p class="section-subtitle" style="text-align: center; display: block; margin-left: auto; margin-right: auto;">
+                We partner with trusted payment gateways for seamless and secure transactions.
+            </p>
+            <div class="payment-methods" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap;">
+                <div class="chip" style="min-width: 180px;">
+                    <img src="/images/razorpay.png" alt="Razorpay" style="height: 24px; margin-bottom: 0;">
+                    <span style="font-weight: 600; color: var(--text-light);">Razorpay</span>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <!-- <li><a href="#home">Home</a></li> -->
-                        <li><a href="#esports">Free Fire Esports</a></li>
-                        <!-- <li><a href="#community">Community</a></li>
-                        <li><a href="#tournaments">Tournaments</a></li>
-                        <li><a href="#leaderboards">Leaderboards</a></li> -->
-                    </ul>
+                <div class="chip" style="min-width: 180px;">
+                    <img src="/images/cashfree.png" alt="Cashfree" style="height: 24px; margin-bottom: 0;">
+                    <span style="font-weight: 600; color: var(--text-light);">Cashfree</span>
                 </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul class="footer-links">
-                        <li><a href="/helpcenter.html">Help Center</a></li>
-                        <li><a href="#faq">FAQs</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                        <li><a href="#">Account Issues</a></li>
-                        <li><a href="#">Payment Help</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Stay Connected</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        Get the latest Free Fire tournament updates and tips!
-                    </p>
-                    <form class="newsletter-form" action="#" method="POST">
-                        <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border-radius: 25px 0 0 25px; border: none; outline: none; width: 70%; font-size: 0.9rem;">
-                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: 0 25px 25px 0; margin-left: -5px;">Join</button>
-                    </form>
-                    <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
-                        <i class="fas fa-download"></i> Download App
-                    </a>
-                </div>
-            </div>
-            <div class="footer-legal">
-                <div class="footer-legal-links">
-                    <a href="/fairplay-policy.html">Fair Play Policy</a>
-                    <a href="/terms.html">Terms & Conditions</a>
-                    <a href="/refund policy.html">Refund Policy</a>
-                    <a href="/privacy-policy.html">Privacy Policy</a>
-                    <a href="/return-policy.html">Return Policy</a>
-                </div>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; opacity: 0.7; text-align: center; font-style: italic;">
-                    Working on Privacy Policy updates to follow the Digital Personal Data Protection Act, 2023. Check back soon!
-                </p>
-            </div>
-            <div class="copyright">
-                © 2020-2025 YodhaPlay Esports. All Rights Reserved.
             </div>
         </div>
-    </div>
-</footer>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <!-- <img src="/images/logo.png" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px; border-radius: 22px;"> -->
+                         <img src="/images/logo.png" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px; border-radius: 22px;" loading="lazy">
+                        <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 340px; text-align: center; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.6;">
+                            YodhaPlay – Skill-Driven eSports Platform! Participate in contests, climb leaderboards, and earn rewards.
+                        </p>
+                        <div style="text-align: center; margin-bottom: 1rem;">
+                            <a href="mailto:contact@yodhaplay.in" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                contact@yodhaplay.in
+                            </a>
+                        </div>
+                        <div class="social-links">
+                            <!-- <a href="https://wa.me/message/POHAA2GKHA7OH1?src=qr" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a> -->
+                            <a href="https://t.me/YodhaPlaySupportBot" class="social-icon" aria-label="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+
+<a href="https://x.com/PlayYodha98248" class="social-icon" aria-label="X (Twitter)" target="_blank" style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 20px;">
+  X
+</a>
+
+<a href="https://www.facebook.com/profile.php?id=61578978252689" class="social-icon" aria-label="Facebook" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+
+<a href="https://www.instagram.com/yodhaplay/" class="social-icon" aria-label="Instagram" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://youtube.com/@yodhaplay-official?si=xVR3gd91HdPauW9K" class="social-icon" aria-label="YouTube" target="_blank">
+  <i class="fab fa-youtube"></i>
+</a>
+
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Useful Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#challenges">Challenges</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul class="footer-links">
+                            <li><a href="/helpcenter.html">Help Center</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="#">Account Issues</a></li>
+                            <li><a href="#">Payment Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Stay Connected</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                            Get the latest updates on challenges and tips!
+                        </p>
+                        <form class="newsletter-form" action="#" method="POST">
+                            <input type="email" placeholder="Enter your email" required style="padding: 0.75rem; border-radius: 25px 0 0 25px; border: none; outline: none; width: 70%; font-size: 0.9rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: 0 25px 25px 0; margin-left: -5px;">Join</button>
+                        </form>
+                        <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary download-btn" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
+                            <i class="fas fa-download"></i> Download App
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-legal">
+                    <div class="footer-legal-links">
+                        <a href="/fairplay-policy.html">Fair Play Policy</a>
+                        <a href="/terms.html">Terms & Conditions</a>
+                        <a href="/refund policy.html">Refund Policy</a>
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/return-policy.html">Return Policy</a>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; opacity: 0.7; text-align: center; font-style: italic;">
+                        Committed to compliance with the Digital Personal Data Protection Act, 2023.
+                    </p>
+                </div>
+                <div class="copyright">
+                    ©2025 YodhaVerse Innovations. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
@@ -1712,6 +1802,11 @@
             const modeToggle = document.querySelector('#modeToggle');
             const body = document.body;
             const backToTop = document.querySelector('#backToTop');
+            const downloadModal = document.querySelector('#downloadModal');
+            const closeModal = document.querySelector('#closeModal');
+            const downloadStatus = document.querySelector('#downloadStatus');
+            const progressFill = document.querySelector('#progressFill');
+            const downloadButtons = document.querySelectorAll('.download-btn');
 
             // Mobile Menu Toggle
             mobileToggle.addEventListener('click', (e) => {
@@ -1744,18 +1839,58 @@
                 });
             });
 
+            // Handle Download Button Clicks
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    downloadModal.style.display = 'flex';
+                    downloadStatus.textContent = 'Initiating download...';
+                    progressFill.style.width = '10%';
+
+                    // Simulate download progress (since direct APK progress is browser-limited)
+                    setTimeout(() => {
+                        progressFill.style.width = '50%';
+                        downloadStatus.textContent = 'Downloading YodhaPlay (29MB)...';
+                    }, 1000);
+                    setTimeout(() => {
+                        progressFill.style.width = '100%';
+                        downloadStatus.textContent = 'Downloading! Check your downloads folder.';
+                    }, 3000);
+
+                    // Trigger actual download
+                    setTimeout(() => {
+                        window.location.href = button.href;
+                    }, 500);
+                });
+            });
+
+            // Close Modal
+            closeModal.addEventListener('click', () => {
+                downloadModal.style.display = 'none';
+                progressFill.style.width = '0%';
+            });
+
+            // Close Modal when clicking outside
+            downloadModal.addEventListener('click', (e) => {
+                if (e.target === downloadModal) {
+                    downloadModal.style.display = 'none';
+                    progressFill.style.width = '0%';
+                }
+            });
+
             // Header scroll effect
             let lastScrollY = window.scrollY;
             window.addEventListener('scroll', () => {
                 const header = document.querySelector('.main-header');
                 if (window.scrollY > 100) {
                     if (window.scrollY > lastScrollY) {
-                        header.classList.add('hidden');
+                        header.style.transform = 'translateY(-100%)'; // Fixed hidden class issue by using style
                     } else {
-                        header.classList.remove('hidden');
+                        header.style.transform = 'translateY(0)';
                     }
                     backToTop.style.display = 'block';
                 } else {
+                    header.style.transform = 'translateY(0)';
                     backToTop.style.display = 'none';
                 }
                 lastScrollY = window.scrollY;
@@ -1770,19 +1905,21 @@
             });
 
             // Dark/Light Mode Toggle
-            modeToggle.addEventListener('click', () => {
-                body.classList.toggle('light-mode');
-                const isLightMode = body.classList.contains('light-mode');
-                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-            });
+            // if (modeToggle) {
+            //     modeToggle.addEventListener('click', () => {
+            //         body.classList.toggle('light-mode');
+            //         const isLightMode = body.classList.contains('light-mode');
+            //         modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            //         localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            //     });
 
-            // Load Theme Preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                body.classList.add('light-mode');
-                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            }
+            //     // Load Theme Preference
+            //     const savedTheme = localStorage.getItem('theme');
+            //     if (savedTheme === 'light') {
+            //         body.classList.add('light-mode');
+            //         modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            //     }
+            // }
 
             // FAQ Toggle
             document.querySelectorAll('.faq-card').forEach(card => {
@@ -1798,7 +1935,7 @@
                 particle.style.position = 'absolute';
                 particle.style.width = '2px';
                 particle.style.height = '2px';
-                particle.style.background = 'rgba(255, 107, 53, 0.5)';
+                particle.style.background = 'rgba(234, 88, 12, 0.4)';
                 particle.style.borderRadius = '50%';
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;

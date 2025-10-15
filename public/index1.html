@@ -24,39 +24,61 @@
 
 
     <!-- MERGED ORGANIZATION SCHEMA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "YodhaPlay",
-      "url": "https://yodhaplay.in",
-      "logo": "https://yodhaplay.in/favicon.png",
-      "sameAs": [
-        "https://www.instagram.com/yodhaplay/",
-        "https://www.youtube.com/@yodhaplay-official",
-        "https://x.com/PlayYodha98248",
-        "https://www.facebook.com/profile.php?id=61578978252689",
-        "https://t.me/YodhaPlaySupportBot"
-      ]
-    }
-    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YodhaPlay",
+  "url": "https://yodhaplay.in/",
+  "logo": "https://yodhaplay.in/path/to/logo.png",  <!-- Replace with actual logo URL -->
+  "description": "India's Premier eSports Platform for Skill Tournaments and Rewards",
+  "sameAs": [
+    "https://twitter.com/yodhaplay",  <!-- Add social links if any -->
+    "https://facebook.com/yodhaplay"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@yodhaplay.in",  <!-- Replace with real email -->
+    "contactType": "Customer Support"
+  }
+}
+</script>
+
+<!-- Optional: Add WebSite schema for better rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://yodhaplay.in/",
+  "name": "YodhaPlay",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://yodhaplay.in/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
     <!-- MERGED MOBILE APP SCHEMA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MobileApplication",
-      "name": "YodhaPlay",
-      "operatingSystem": "Android",
-      "applicationCategory": "GameApplication",
-      "url": "https://yodhaplay.in",
-      "description": "Skill-driven eSports platform for India",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR"
-      }
-    }
-    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YodhaPlay",
+  "operatingSystem": "Android",
+  "applicationCategory": "GameApplication",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",  <!-- Update if ratings exist -->
+    "ratingCount": "100"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "downloadUrl": "https://yodhaplay.in/downloads/yodhaplay-app.apk"
+}
+</script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">

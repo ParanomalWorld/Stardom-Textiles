@@ -1,30 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>YodhaPlay | India’s Top eSports & Skill Gaming Platform</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YodhaPlay - Skill-Driven eSports Platform</title>
+    <meta name="description" content="Join YodhaPlay for exciting eSports tournaments, skill-based challenges, community contests, and secure rewards. India's premier eSports app for fair play and real wins. Download YodhaPlay now!">
+    <meta name="keywords" content="YodhaPlay, yodhaplay, eSports India, yodhaplay esports, skill gaming, online tournaments, esports app, win rewards, gaming platform, fair play contests">
+    <meta property="og:title" content="YodhaPlay – India's Ultimate eSports Platform">
+    <meta property="og:description" content="Compete in skill-based eSports challenges, build teams, and earn rewards on YodhaPlay. Secure, compliant eSports gaming for 18+. Join the top eSports community in India.">
+    <meta property="og:url" content="https://yodhaplay.in">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yodhaplay.in/images/yodha_play2.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yodhaplay.in/">
+    
+    <!-- Optimized FAVICON LINKS -->
+<link rel="icon" href="https://yodhaplay.in/favicon.png" sizes="48x48" type="image/png">
+<link rel="icon" href="https://yodhaplay.in/favicon-96x96.png" sizes="96x96" type="image/png">
+<link rel="apple-touch-icon" href="https://yodhaplay.in/apple-touch-icon.png" sizes="180x180">
+
+
+    <!-- Enhanced ORGANIZATION SCHEMA with eSports keywords -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "YodhaPlay",
+      "url": "https://yodhaplay.in",
+      "logo": "https://yodhaplay.in/favicon.png",
+      "keywords": "YodhaPlay, yodhaplay, eSports, esports India, skill gaming, tournaments",
+      "sameAs": [
+        "https://www.instagram.com/yodhaplay/",
+        "https://www.youtube.com/@yodhaplay-official",
+        "https://x.com/PlayYodha98248",
+        "https://www.facebook.com/profile.php?id=61578978252689",
+        "https://t.me/YodhaPlaySupportBot"
+      ]
+    }
+    </script>
+    
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* ========== GLOBAL STYLES ========== */
         :root {
-            --primary: #1A4D8F;
-            --primary-dark: #0f2a50;
-            --accent: #FF6B35;
-            --accent-dark: #d45226;
-            --dark: #0A1128;
+            --primary: #1d4ed8; /* Blue shade inspired by game.tv */
+            --primary-dark: #1e40af; /* Darker blue for contrast */
+            --accent: #ea580c; /* Orange shade inspired by game.tv */
+            --accent-dark: #c2410c; /* Darker orange */
+            --dark: #0f172a; /* Dark navy background like game.tv */
             --light: #FFFFFF;
-            --text-light: rgba(255, 255, 255, 0.85);
-            --text-muted: rgba(255, 255, 255, 0.65);
-            --divider: rgba(255, 255, 255, 0.1);
-            --gradient: linear-gradient(135deg, var(--primary) 0%, #2D82CF 100%);
-            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #FF8C61 100%);
+            --text-light: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --divider: rgba(255, 255, 255, 0.12);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%); /* Blue gradient */
+            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #f97316 100%); /* Orange gradient */
             --section-padding: 6rem 1.5rem;
-            --bg-light: #F1F5F9;
-            --text-dark: #1F2937;
+            --bg-light: #f8fafc; /* Softer light for mode */
+            --text-dark: #f1f5f9;
             --card-bg-light: #FFFFFF;
-            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow like game.tv cards */
+            --card-bg-dark: #1e293b; /* Dark card background */
         }
 
         * {
@@ -44,10 +83,10 @@
         body.light-mode {
             background: var(--bg-light);
             color: var(--text-dark);
-            --text-light: #1F2937;
-            --text-muted: #6B7280;
-            --dark: #E5E7EB;
-            --divider: rgba(0, 0, 0, 0.1);
+            --text-light: #0f172a;
+            --text-muted: #475569;
+            --dark: #f1f5f9;
+            --divider: rgba(0, 0, 0, 0.12);
         }
 
         .container {
@@ -61,16 +100,16 @@
             font-size: 3rem;
             margin-bottom: 1.5rem;
             position: relative;
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.2;
             font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px var(--accent);
+            text-shadow: 0 0 8px rgba(234, 88, 12, 0.3);
         }
 
         .section-title span {
             color: var(--accent);
             display: block;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .section-subtitle {
@@ -103,7 +142,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
             transition: 0.5s;
         }
 
@@ -114,12 +153,12 @@
         .btn-primary {
             background: var(--accent-gradient);
             color: white;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.6);
+            box-shadow: 0 6px 20px rgba(234, 88, 12, 0.5);
         }
 
         .btn-secondary {
@@ -129,7 +168,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
         }
 
         /* ========== HEADER ========== */
@@ -138,16 +177,16 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 17, 40, 0.96);
+            background: rgba(15, 23, 42, 0.96); /* Darker like game.tv */
             backdrop-filter: blur(12px);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
             border-bottom: 1px solid var(--divider);
             transition: background 0.5s ease;
         }
 
         .main-header.light-mode {
             background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
 
         .header-nav {
@@ -156,7 +195,6 @@
             align-items: center;
             height: 80px;
             padding: 0 1.5rem;
-            position: relative;
         }
 
         .header-logo {
@@ -236,7 +274,7 @@
             right: -100%;
             width: 300px;
             height: calc(100vh - 80px);
-            background: rgba(16, 24, 40, 0.98);
+            background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(18px);
             box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
             transition: right 0.35s ease;
@@ -276,19 +314,13 @@
 
         /* ========== MODE TOGGLE ========== */
         .mode-toggle {
-            position: absolute;
-            top: 50%;
-            right: 1.5rem;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.08);
             border: 1.5px solid var(--divider);
-            box-shadow: 0 4px 16px rgba(26,77,143,0.10), 0 1.5px 6px rgba(255,107,53,0.07);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.08), 0 1.5px 4px rgba(234, 88, 12, 0.05);
             padding: 0.55rem;
             border-radius: 50%;
             cursor: pointer;
             transition: background 0.22s, box-shadow 0.22s, border-color 0.22s;
-            z-index: 1001;
-            backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -303,18 +335,88 @@
         .mode-toggle:hover {
             background: var(--light);
             border-color: var(--accent);
-            box-shadow: 0 6px 24px rgba(255,107,53,0.13), 0 2px 8px rgba(26,77,143,0.10);
+            box-shadow: 0 6px 20px rgba(234, 88, 12, 0.1), 0 2px 6px rgba(29, 78, 216, 0.08);
         }
 
         body.light-mode .mode-toggle {
-            background: rgba(26,77,143,0.07);
+            background: rgba(29, 78, 216, 0.05);
             border-color: var(--divider);
         }
 
         body.light-mode .mode-toggle i {
             color: var(--primary);
         }
+/* ===========herto tiltle and leaderboard============== */
+/* Pro Hero Title Styles - Add to :root or global */
+/* Pro Hero Title Styles - Add to :root or global */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #FFFFFF, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+.hero-tagline {
+    font-size: 1.8rem;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
+/* Leaderboard Simple Styles */
+.leaderboard-section {
+    padding: 6rem 1.5rem;
+    background: var(--card-bg-dark);
+    text-align: center;
+}
+.leaderboard-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background: var(--dark);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.leaderboard-table th {
+    background: var(--accent-gradient);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+.leaderboard-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--divider);
+    color: var(--text-light);
+}
+.leaderboard-row:hover {
+    background: rgba(234, 88, 12, 0.1);
+}
+.rank-badge {
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Animation for fade-in (pro touch) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.8s ease-out; }
+/* Animation for fade-in (pro touch) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.8s ease-out; }
         /* ========== DOWNLOAD MODAL ========== */
         .download-modal {
             display: none;
@@ -323,7 +425,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 17, 40, 0.8);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(8px);
             z-index: 2000;
             align-items: center;
@@ -331,13 +433,13 @@
         }
 
         .download-modal-content {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--card-bg-dark);
             border-radius: 12px;
             padding: 2rem;
             max-width: 400px;
             width: 90%;
             text-align: center;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
             border: 1px solid var(--divider);
         }
 
@@ -357,7 +459,7 @@
         .download-progress-bar {
             width: 100%;
             height: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 4px;
             overflow: hidden;
             margin: 1rem 0;
@@ -381,7 +483,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
             border-radius: 8px;
             font-size: 0.9rem;
             color: var(--text-light);
@@ -406,7 +508,7 @@
         /* ========== FEATURE SHOWCASE ========== */
         .feature-showcase {
             padding: 10rem 0 6rem;
-            background: radial-gradient(circle at top right, rgba(26, 77, 143, 0.2) 0%, transparent 40%), url('https://www.transparenttextures.com/patterns/metal-mesh.png');
+            background: radial-gradient(circle at top right, rgba(29, 78, 216, 0.15) 0%, transparent 40%), url('https://www.transparenttextures.com/patterns/metal-mesh.png');
             background-attachment: fixed;
             position: relative;
             overflow: hidden;
@@ -420,7 +522,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 17, 40, 0.5);
+            background: rgba(15, 23, 42, 0.5);
             z-index: 0;
         }
 
@@ -442,15 +544,17 @@
 
         .chip {
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(125, 211, 252, 0.1);
+            background: var(--card-bg-dark); /* Dark card like game.tv */
+            border-radius: 1rem; /* Rounded like game.tv cards */
+            border: none; /* No border, like game.tv */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-light); /* Subtle shadow */
         }
 
         .chip.light-mode {
@@ -460,8 +564,7 @@
 
         .chip:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .chip::before {
@@ -477,13 +580,27 @@
         }
 
         .chip:hover::before {
-            opacity: 0.1;
+            opacity: 0.08;
         }
 
         .chip-icon {
-            font-size: 1.5rem;
-            color: var(--accent);
+            font-size: 3rem; /* Larger icons like game.tv */
+            margin-bottom: 1rem;
         }
+
+        .chip:nth-child(1) .chip-icon {
+            color: #0ea5e9; /* Blue like first game.tv icon */
+        }
+
+        .chip:nth-child(2) .chip-icon {
+            color: #a855f7; /* Purple like second */
+        }
+
+        .chip:nth-child(3) .chip-icon {
+            color: #f97316; /* Orange like third */
+        }
+
+        /* If more chips, add green #22c55e for fourth */
 
         .frame-container {
             position: relative;
@@ -501,13 +618,13 @@
             padding: 1rem 0;
             overflow: hidden;
             white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             animation: fadeIn 1s ease-in-out;
         }
 
         .live-ticker.light-mode {
-            background: #D1D5DB;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #E0E0E0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .ticker-content {
@@ -529,13 +646,13 @@
         /* ========== LEADERBOARD ========== */
         .leaderboard-section {
             padding: var(--section-padding);
-            background: linear-gradient(to bottom, var(--dark) 0%, #0d1a33 100%);
+            background: linear-gradient(to bottom, var(--dark) 0%, #1A1A1A 100%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .leaderboard-section.light-mode {
-            background: linear-gradient(to bottom, var(--bg-light) 0%, #D1D5DB 100%);
+            background: linear-gradient(to bottom, var(--bg-light) 0%, #F5F5F5 100%);
         }
 
         .leaderboard-table {
@@ -574,19 +691,19 @@
         }
 
         .leaderboard-table tr:hover {
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
         }
 
         /* ========== ABOUT SECTION ========== */
         .about1-section {
             padding: var(--section-padding);
-            background: linear-gradient(to bottom, var(--dark) 0%, #0d1a33 100%);
+            background: linear-gradient(to bottom, var(--dark) 0%, #1A1A1A 100%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .about1-section.light-mode {
-            background: linear-gradient(to bottom, var(--bg-light) 0%, #D1D5DB 100%);
+            background: linear-gradient(to bottom, var(--bg-light) 0%, #F5F5F5 100%);
         }
 
         .about-container {
@@ -601,12 +718,13 @@
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-light);
         }
 
         .feature-card.light-mode {
@@ -616,8 +734,8 @@
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--accent);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            border: none; /* No border on hover */
         }
 
         .feature-card::before {
@@ -633,7 +751,7 @@
         }
 
         .feature-card:hover::before {
-            opacity: 0.1;
+            opacity: 0.08;
         }
 
         .feature-icon {
@@ -658,7 +776,7 @@
             padding: 2rem;
             margin: 3rem 0;
             text-align: center;
-            box-shadow: 0 0 20px rgba(26, 77, 143, 0.5);
+            box-shadow: 0 0 15px rgba(29, 78, 216, 0.4);
         }
 
         .highlight-title {
@@ -675,14 +793,14 @@
         .disclaimer {
             margin-top: 3rem;
             padding: 1.5rem;
-            background: rgba(255, 107, 53, 0.1);
+            background: rgba(234, 88, 12, 0.08);
             border-radius: 10px;
             border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
         }
 
         .disclaimer.light-mode {
-            background: rgba(255, 107, 53, 0.05);
+            background: rgba(234, 88, 12, 0.05);
             box-shadow: var(--shadow-light);
         }
 
@@ -705,13 +823,13 @@
         /* ========== FAQ SECTION ========== */
         .faq-section {
             padding: var(--section-padding);
-            background: linear-gradient(to bottom, #0d1a33 0%, var(--dark) 100%);
+            background: linear-gradient(to bottom, #1A1A1A 0%, var(--dark) 100%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .faq-section.light-mode {
-            background: linear-gradient(to bottom, #D1D5DB 0%, var(--bg-light) 100%);
+            background: linear-gradient(to bottom, #F5F5F5 0%, var(--bg-light) 100%);
         }
 
         .faq-container {
@@ -726,12 +844,13 @@
         }
 
         .faq-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem;
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            box-shadow: var(--shadow-light);
         }
 
         .faq-card.light-mode {
@@ -741,8 +860,8 @@
 
         .faq-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border: none;
         }
 
         .faq-header {
@@ -787,8 +906,9 @@
             align-items: center;
             gap: 0.75rem;
             padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
+            box-shadow: var(--shadow-light);
         }
 
         .badge-item.light-mode {
@@ -804,15 +924,15 @@
         /* ========== TESTIMONIALS ========== */
         .testimonials-section {
             padding: var(--section-padding);
-            background: linear-gradient(45deg, rgba(26, 77, 143, 0.2) 0%, transparent 50%), 
-                        linear-gradient(-45deg, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
+            background: linear-gradient(45deg, rgba(29, 78, 216, 0.15) 0%, transparent 50%), 
+                        linear-gradient(-45deg, rgba(234, 88, 12, 0.12) 0%, transparent 50%);
             position: relative;
             animation: fadeIn 1s ease-in-out;
         }
 
         .testimonials-section.light-mode {
-            background: linear-gradient(45deg, rgba(26, 77, 143, 0.05) 0%, transparent 50%), 
-                        linear-gradient(-45deg, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            background: linear-gradient(45deg, rgba(29, 78, 216, 0.03) 0%, transparent 50%), 
+                        linear-gradient(-45deg, rgba(234, 88, 12, 0.03) 0%, transparent 50%);
         }
 
         .testimonial-grid {
@@ -823,11 +943,12 @@
         }
 
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem;
             position: relative;
             transition: transform 0.3s ease;
+            box-shadow: var(--shadow-light);
         }
 
         .testimonial-card.light-mode {
@@ -837,7 +958,7 @@
 
         .testimonial-card:hover {
             transform: translateY(-10px);
-            border: 1px solid var(--accent);
+            border: none;
         }
 
         .testimonial-card::before {
@@ -846,7 +967,7 @@
             top: 20px;
             left: 20px;
             font-size: 4rem;
-            color: rgba(255, 107, 53, 0.2);
+            color: rgba(234, 88, 12, 0.15);
             font-family: Georgia, serif;
             line-height: 1;
         }
@@ -899,7 +1020,7 @@
         }
 
         .community-section.light-mode {
-            background: linear-gradient(135deg, #D1D5DB 0%, var(--bg-light) 100%);
+            background: linear-gradient(135deg, #E0E0E0 0%, var(--bg-light) 100%);
         }
 
         .community-grid {
@@ -910,10 +1031,11 @@
         }
 
         .community-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
+            background: var(--card-bg-dark);
+            border-radius: 1rem;
             padding: 2rem;
             transition: transform 0.3s ease;
+            box-shadow: var(--shadow-light);
         }
 
         .community-card.light-mode {
@@ -923,7 +1045,7 @@
 
         .community-card:hover {
             transform: translateY(-8px);
-            border: 1px solid var(--accent);
+            border: none;
         }
 
         .community-icon {
@@ -944,7 +1066,7 @@
 
         /* ========== FOOTER ========== */
         .main-footer {
-            background: linear-gradient(135deg, rgba(10, 17, 40, 0.98) 0%, rgba(16, 24, 60, 0.98) 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
             padding: 4rem 0 2rem;
             border-top: 1px solid var(--divider);
             position: relative;
@@ -952,7 +1074,7 @@
         }
 
         .main-footer.light-mode {
-            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
+            background: linear-gradient(135deg, #EEEEEE 0%, #E0E0E0 100%);
         }
 
         .footer-container {
@@ -1022,7 +1144,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1030,11 +1152,11 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 1.3rem;
-            box-shadow: var(--shadow-dark);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .social-icon.light-mode {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.08);
             color: var(--text-dark);
             box-shadow: var(--shadow-light);
         }
@@ -1042,7 +1164,7 @@
         .social-icon:hover {
             background: var(--accent);
             transform: translateY(-5px) rotate(360deg);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 8px 15px rgba(234, 88, 12, 0.3);
         }
 
         .newsletter-form {
@@ -1053,13 +1175,13 @@
         }
 
         .newsletter-form input {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: var(--text-light);
             transition: all 0.3s ease;
         }
 
         .newsletter-form input:focus {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .newsletter-form input::placeholder {
@@ -1068,12 +1190,12 @@
         }
 
         .newsletter-form.light-mode input {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.08);
             color: var(--text-dark);
         }
 
         .newsletter-form.light-mode input:focus {
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.12);
         }
 
         .footer-legal {
@@ -1291,7 +1413,8 @@
     <header class="main-header">
         <nav class="header-nav container">
             <div class="header-brand">
-                <img src="/images/yodha_play2.png" alt="YodhaPlay" class="header-logo">
+              <!-- //  <img src="/images/yodha_play2.png" alt="YodhaPlay" class="header-logo"> -->
+              <img src="/images/yodha_play2.png" alt="YodhaPlay" class="header-logo" loading="lazy">
             </div>
 
             <!-- Desktop Navigation -->
@@ -1312,7 +1435,7 @@
                 </ul>
                 <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn" style="padding: 0.7rem 1.5rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                     <i class="fas fa-download"></i>
-                    <span>Download App (29MB)</span>
+                    <span>Download App</span>
                 </a>
             </div>
 
@@ -1341,12 +1464,16 @@
                     </li>
                     <li class="mobile-nav-item">
                         <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn" style="justify-content: center; margin-top: 1rem;">
-                            <i class="fas fa-download"></i> Download App (29MB)
+                            <i class="fas fa-download"></i> Download App
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
+        <!-- Mode Toggle Button (Added missing HTML element) -->
+        <!-- <button class="mode-toggle" id="modeToggle" style="position: absolute; top: 50%; right: 1.5rem; transform: translateY(-50%); z-index: 1001;">
+            <i class="fas fa-moon"></i>
+        </button> -->
     </header>
 
     <!-- Download Modal -->
@@ -1401,7 +1528,7 @@
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="/downloads/yodhaplay-app.apk" class="btn btn-primary download-btn">
-                            <i class="fas fa-download"></i> Download Now (29MB)
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </div>
@@ -1409,7 +1536,7 @@
                 <!-- Right Content - Frame Image -->
                 <div class="frame-container">
                     <div class="responsive-frame" style="max-width: 320px; margin: 0 auto;">
-                        <img src="/images/frame.png" alt="App Interface" class="enhanced-frame" style="width: 100%; height: auto;">
+                      <img src="/images/frame.png" alt="App Interface" class="enhanced-frame" style="width: 100%; height: auto;" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1539,8 +1666,8 @@
                             Participation is restricted to users aged 18+. We promote responsible engagement with age verification measures.
                         </li>
                         <li>
-                            <strong>State Restrictions:</strong>
-                            Available only in those Indian states where skill gaiming is allowed by regulations.
+                            <strong>Compliance with 2025 Policy:</strong>
+                           In line with the Promotion and Regulation of Online Gaming Act, 2025, YodhaPlay offers only permissible skill-based e-sports without real-money involvement in gameplay. We charge an entry fee as a platform administrative cost, not a wager, and provide prize pools funded by sponsors to encourage skill-based competition, fully complying with the national ban on money-based online games.
                         </li>
                         <li>
                             <strong>Data Privacy:</strong>
@@ -1634,7 +1761,8 @@
             <div class="footer-container">
                 <div class="footer-content">
                     <div class="footer-column">
-                        <img src="/images/logo.png" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px; border-radius: 22px;">
+                        <!-- <img src="/images/logo.png" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px; border-radius: 22px;"> -->
+                         <img src="/images/logo.png" alt="YodhaPlay Logo" style="margin-bottom: 2rem; max-width: 100px; border-radius: 22px;" loading="lazy">
                         <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 340px; text-align: center; margin-left: auto; margin-right: auto; font-size: 1rem; line-height: 1.6;">
                             YodhaPlay – Skill-Driven eSports Platform! Participate in contests, climb leaderboards, and earn rewards.
                         </p>
@@ -1668,9 +1796,7 @@
                         </div>
                     </div>
                     <div class="footer-column">
-                   
-</a>
-
+                        <h3>Useful Links</h3>
                         <ul class="footer-links">
                             <li><a href="#challenges">Challenges</a></li>
                         </ul>
@@ -1695,7 +1821,7 @@
                             <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: 0 25px 25px 0; margin-left: -5px;">Join</button>
                         </form>
                         <a href="/downloads/yodhaplay-app.apk" class="btn btn-secondary download-btn" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block;">
-                            <i class="fas fa-download"></i> Download App (29MB)
+                            <i class="fas fa-download"></i> Download App
                         </a>
                     </div>
                 </div>
@@ -1782,7 +1908,7 @@
                     }, 1000);
                     setTimeout(() => {
                         progressFill.style.width = '100%';
-                        downloadStatus.textContent = 'Download complete! Check your downloads folder.';
+                        downloadStatus.textContent = 'Downloading! Check your downloads folder.';
                     }, 3000);
 
                     // Trigger actual download
@@ -1812,12 +1938,13 @@
                 const header = document.querySelector('.main-header');
                 if (window.scrollY > 100) {
                     if (window.scrollY > lastScrollY) {
-                        header.classList.add('hidden');
+                        header.style.transform = 'translateY(-100%)'; // Fixed hidden class issue by using style
                     } else {
-                        header.classList.remove('hidden');
+                        header.style.transform = 'translateY(0)';
                     }
                     backToTop.style.display = 'block';
                 } else {
+                    header.style.transform = 'translateY(0)';
                     backToTop.style.display = 'none';
                 }
                 lastScrollY = window.scrollY;
@@ -1832,21 +1959,21 @@
             });
 
             // Dark/Light Mode Toggle
-            if (modeToggle) {
-                modeToggle.addEventListener('click', () => {
-                    body.classList.toggle('light-mode');
-                    const isLightMode = body.classList.contains('light-mode');
-                    modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-                });
+            // if (modeToggle) {
+            //     modeToggle.addEventListener('click', () => {
+            //         body.classList.toggle('light-mode');
+            //         const isLightMode = body.classList.contains('light-mode');
+            //         modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            //         localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            //     });
 
-                // Load Theme Preference
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'light') {
-                    body.classList.add('light-mode');
-                    modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                }
-            }
+            //     // Load Theme Preference
+            //     const savedTheme = localStorage.getItem('theme');
+            //     if (savedTheme === 'light') {
+            //         body.classList.add('light-mode');
+            //         modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            //     }
+            // }
 
             // FAQ Toggle
             document.querySelectorAll('.faq-card').forEach(card => {
@@ -1862,7 +1989,7 @@
                 particle.style.position = 'absolute';
                 particle.style.width = '2px';
                 particle.style.height = '2px';
-                particle.style.background = 'rgba(255, 107, 53, 0.5)';
+                particle.style.background = 'rgba(234, 88, 12, 0.4)';
                 particle.style.borderRadius = '50%';
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;

@@ -87,7 +87,7 @@ app.use(express.static(publicPath));
 
 // APK download route
 app.get('/download-app', (req, res) => {
-    const filePath = path.join(downloadsPath, 'yodhaplay-app.apk');
+    const filePath = path.join(downloadsPath, 'yodhaplay19nov-app.apk');
     res.download(filePath, 'YodhaPlay-Esports.apk', (err) => {
         if (err) {
             res.status(500).send('Error downloading file');

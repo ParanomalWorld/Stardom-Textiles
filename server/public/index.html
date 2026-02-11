@@ -11,12 +11,11 @@
            CSS RESET & BASE VARIABLES
         ====================== */
         :root {
-            /* Core Brand Colors */
             --primary-color: #3d3935;
-            --secondary-color: #000000; /* Changed to black */
+            --secondary-color: #000000;
             --accent-red: #e61733;
             --accent-red-dark: #c1132b;
-            --accent-gold: #FBB117; /* Beer color for accents */
+            --accent-gold: #FBB117;
             --white: #ffffff;
             --light-bg: #f7f7f7;
             --light-gray: #ebebeb;
@@ -24,19 +23,16 @@
             --dark-gray: #76716b;
             --border-color: #c9c9c9;
             
-            /* Typography */
             --font-light: 'Acronym-Light', 'Helvetica Neue', Arial, sans-serif;
             --font-regular: 'Acronym-Regular', 'Helvetica Neue', Arial, sans-serif;
             --font-semibold: 'Acronym-Semibold', 'Helvetica Neue', Arial, sans-serif;
             
-            /* Spacing */
             --container-max-width: 1320px;
             --section-padding: 80px 0;
             --mobile-section-padding: 60px 0;
             --card-padding: 32px;
             --mobile-card-padding: 24px;
             
-            /* Components */
             --border-radius: 4px;
             --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             --transition: all 0.3s ease;
@@ -686,7 +682,7 @@
            FOOTER (BLACK BACKGROUND)
         ====================== */
         .footer {
-            background-color: var(--secondary-color); /* Now black */
+            background-color: var(--secondary-color);
             color: var(--white);
             padding: 80px 0 40px;
         }
@@ -795,11 +791,9 @@
             .hero h1 {
                 font-size: 3rem;
             }
-            
             .section-title {
                 font-size: 2.25rem;
             }
-            
             .nav-menu {
                 gap: 24px;
             }
@@ -809,7 +803,6 @@
             .mobile-menu-btn {
                 display: flex;
             }
-            
             .nav-menu {
                 display: none;
                 position: fixed;
@@ -823,44 +816,35 @@
                 z-index: 1000;
                 gap: 0;
             }
-            
             .nav-menu.active {
                 display: flex;
             }
-            
             .nav-menu li {
                 width: 100%;
             }
-            
             .nav-menu a {
                 display: block;
                 padding: 16px 0;
                 border-bottom: 1px solid var(--light-gray);
                 font-size: 16px;
             }
-            
             .nav-menu li:last-child a {
                 border-bottom: none;
             }
-            
             .hero {
                 padding: 60px 0;
                 min-height: auto;
             }
-            
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
             .section-title {
                 font-size: 2rem;
                 margin-bottom: 40px;
             }
-            
             .solutions-intro {
                 margin-bottom: 48px;
             }
-            
             .products-grid,
             .solutions-grid,
             .industries-grid,
@@ -868,26 +852,21 @@
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
-            
             .hero-buttons,
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
             .mes-bar-cta {
                 display: none;
             }
-            
             .mes-bar-info {
                 text-align: center;
             }
-            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
             .footer {
                 padding: 60px 0 40px;
             }
@@ -897,40 +876,47 @@
             .container {
                 padding: 0 20px;
             }
-            
             .hero h1 {
                 font-size: 2rem;
             }
-            
             .hero p {
                 font-size: 1.125rem;
             }
-            
             .section-title {
                 font-size: 1.75rem;
                 margin-bottom: 32px;
             }
-            
             .btn {
                 padding: 14px 28px;
                 min-width: 180px;
                 width: 100%;
                 max-width: 280px;
             }
-            
             .product-image-container {
                 height: 240px;
             }
-            
             .value-item,
             .industry-card {
                 padding: 24px 20px;
             }
-            
             .solution-content,
             .product-info {
                 padding: 20px;
             }
+        }
+
+        /* Animation styles */
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        .product-card {
+            opacity: 1;
+            transition: opacity 0.3s ease;
         }
     </style>
 </head>
@@ -1005,7 +991,7 @@
         </div>
     </section>
     
-    <!-- Solutions Section -->
+    <!-- Solutions Section (Static) -->
     <section class="solutions" id="solutions">
         <div class="container">
             <h2 class="section-title">Tailored Solutions for Every Need</h2>
@@ -1051,7 +1037,7 @@
         </div>
     </section>
     
-    <!-- Products Showcase -->
+    <!-- Products Showcase – STATIC CARDS (NO API) -->
     <section class="products-showcase" id="products">
         <div class="container">
             <h2 class="section-title">Featured Products</h2>
@@ -1149,19 +1135,16 @@
                     <h3>Hospitality</h3>
                     <p>Complete textile solutions for hotels, resorts, and restaurants with custom branding options.</p>
                 </div>
-                
                 <div class="industry-card">
                     <span class="industry-icon">🏥</span>
                     <h3>Healthcare</h3>
                     <p>Medical-grade textiles meeting strict healthcare standards, infection control, and durability requirements.</p>
                 </div>
-                
                 <div class="industry-card">
                     <span class="industry-icon">🎓</span>
                     <h3>Education</h3>
                     <p>Durable, easy-maintenance textiles for universities, schools, dormitories, and campus facilities.</p>
                 </div>
-                
                 <div class="industry-card">
                     <span class="industry-icon">🏭</span>
                     <h3>Corporate</h3>
@@ -1181,19 +1164,16 @@
                     <h3>Sustainability</h3>
                     <p>Eco-friendly manufacturing and sustainable materials across all product lines with certified processes.</p>
                 </div>
-                
                 <div class="value-item">
                     <span class="value-icon">⭐</span>
                     <h3>Quality</h3>
                     <p>Superior craftsmanship and rigorous quality control standards ensuring long-lasting performance.</p>
                 </div>
-                
                 <div class="value-item">
                     <span class="value-icon">💡</span>
                     <h3>Innovation</h3>
                     <p>Continuous research and development in textile technology and fabric engineering.</p>
                 </div>
-                
                 <div class="value-item">
                     <span class="value-icon">🌍</span>
                     <h3>Global Reach</h3>
@@ -1232,7 +1212,6 @@
                         <li><a href="#uniforms">Uniforms & Workwear</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h4>Business Solutions</h4>
                     <ul class="footer-links">
@@ -1243,7 +1222,6 @@
                         <li><a href="#technical-support">Technical Support</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul class="footer-links">
@@ -1254,7 +1232,6 @@
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h4>Support</h4>
                     <ul class="footer-links">
@@ -1273,7 +1250,7 @@
                             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTggNi4wMDAxNlY2LjAxMzVNMS4zMzMzMyA2LjY2NjgzQzEuMzMzMzMgNS4yNTIzNCAxLjg5NTIzIDMuODk1NzkgMi44OTU0MyAyLjg5NTU5QzMuODk1NjIgMS44OTU0IDUuMjUyMTcgMS4zMzM1IDYuNjY2NjYgMS4zMzM1SDE3LjMzMzNDMTguNzQ3OCAxLjMzMzUgMjAuMTA0NCAxLjg5NTQgMjEuMTA0NiAyLjg5NTU5QzIyLjEwNDggMy44OTU3OSAyMi42NjY3IDUuMjUyMzQgMjIuNjY2NyA2LjY2NjgzVjE3LjMzMzVDMjIuNjY2NyAxOC43NDggMjIuMTA0OCAyMC4xMDQ1IDIxLjEwNDYgMjEuMTA0N0MyMC4xMDQ0IDIyLjEwNDkgMTguNzQ3OCAyMi42NjY4IDE3LjMzMzMgMjIuNjY2OEg2LjY2NjY2QzUuMjUyMTcgMjIuNjY2OCAzLjg5NTYyIDIyLjEwNDkgMi44OTU0MyAyMS4xMDQ3QzEuODk1MjMgMjAuMTA0NSAxLjMzMzMzIDE4Ljc0OCAxLjMzMzMzIDE3LjMzMzVWNi42NjY4M1pNNy45OTk5OSAxMi4wMDAyQzcuOTk5OTkgMTMuMDYxIDguNDIxNDIgMTQuMDc4NCA5LjE3MTU3IDE0LjgyODZDOS45MjE3MSAxNS41Nzg3IDEwLjkzOTEgMTYuMDAwMiAxMiAxNi4wMDAyQzEzLjA2MDkgMTYuMDAwMiAxNC4wNzgzIDE1LjU3ODcgMTQuODI4NCAxNC44Mjg2QzE1LjU3ODYgMTQuMDc4NCAxNiAxMy4wNjEgMTYgMTIuMDAwMkMxNiAxMC45MzkzIDE1LjU3ODYgOS45MjE4OCAxNC44Mjg0IDkuMTcxNzNDMTQuMDc4MyA4LjQyMTU5IDEzLjA2MDkgOC4wMDAxNiAxMiA4LjAwMDE2QzEwLjkzOTEgOC4wMDAxNiA5LjkyMTcxIDguNDIxNTkgOS4xNzE1NyA5LjE3MTczQzguNDIxNDIgOS45MjE4OCA3Ljk5OTk5IDEwLjkzOTMgNy45OTk5OSAxMi4wMDAyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=" alt="Instagram">
                         </a>
                         <a href="#linkedin" aria-label="LinkedIn">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIuNDk4OTQgMi4zODgyIDE1LjQzIDE0LjczIj48cGF0aCBkPSJNNiw3LjE3djkuOTRIMi43VjcuMTdaTTYuMjIsNC4xYTEuNTksMS41OSwwLDAsMS0uNTEsMS4yMiwxLjg5LDEuODksMCwwLDEtMS4zNi40OWgwQTEuODEsMS44MSwwLDAsMSwzLDUuMzNhMS42NCwxLjY0LDAsMCwxLS41LTEuMjJBMS42MiwxLjYyLDAsMCwxLDMsMi44OGExLjg4LDEuODgsMCwwLDEsMS4zNS0uNDksMS44NCwxLjg0LDAsMCwxLDEuMzMuNDlBMS42NywxLjY3LDAsMCwxLDYuMjIsNC4xWm0xMS42OSw3LjMxdjUuN2gtMy4zVjExLjhhMi45LDIuOSwwLDAsMC0uNDEtMS42NSwxLjQzLDEuNDMsMCwwLDAtMS4yNy0uNiwxLjYyLDEuNjIsMCwwLDAtMS4wNi4zNSwyLjEzLDIuMTMsMCwwLDAtLjY0Ljg2LDIuNDMsMi40MywwLDAsMC0uMTEuODN2NS41NUg3Ljg0cTAtNCwwLTYuNDl0MC0zVjcuMTdoMy4zVjguNjJoMGE0LjM4LDQuMzgsMCwwLDEsLjQxLS41Niw0LjI2LDQuMjYsMCwwLDEsLjU3LS41MkEyLjYxLDIuNjEsMCwwLDEsMTMsNy4xYTQsNCwwLDAsMSwxLjE1LS4xNiwzLjU2LDMuNTYsMCwwLDEsMi43NiwxLjE0LDQuNzgsNC43OCwwLDAsMSwxLDMuMzNaIiBmaWxsPSIjZmZmZmZmIi8+PC9zdmc+" alt="LinkedIn">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIuNDk4OTQgMi4zODkyIDE1LjQzIDE0LjczIj48cGF0aCBkPSJNNiw3LjE3djkuOTRIMi43VjcuMTdaTTYuMjIsNC4xYTEuNTksMS41OSwwLDAsMS0uNTEsMS4yMiwxLjg5LDEuODksMCwwLDEtMS4zNi40OWgwQTEuODEsMS44MSwwLDAsMSwzLDUuMzNhMS42NCwxLjY0LDAsMCwxLS41LTEuMjJBMS42MiwxLjYyLDAsMCwxLDMsMi44OGExLjg4LDEuODgsMCwwLDEsMS4zNS0uNDksMS44NCwxLjg0LDAsMCwxLDEuMzMuNDlBMS42NywxLjY3LDAsMCwxLDYuMjIsNC4xWm0xMS42OSw3LjMxdjUuN2gtMy4zVjExLjhhMi45LDIuOSwwLDAsMC0uNDEtMS42NSwxLjQzLDEuNDMsMCwwLDAtMS4yNy0uNiwxLjYyLDEuNjIsMCwwLDAtMS4wNi4zNSwyLjEzLDIuMTMsMCwwLDAtLjY0Ljg2LDIuNDMsMi40MywwLDAsMC0uMTEuODN2NS41NUg3Ljg0cTAtNCwwLTYuNDl0MC0zVjcuMTdoMy4zVjguNjJoMGE0LjM4LDQuMzgsMCwwLDEsLjQxLS41Niw0LjI2LDQuMjYsMCwwLDEsLjU3LS41MkEyLjYxLDIuNjEsMCwwLDEsMTMsNy4xYTQsNCwwLDAsMSwxLjE1LS4xNiwzLjU2LDMuNTYsMCwwLDEsMi43NiwxLjE0LDQuNzgsNC43OCwwLDAsMSwxLDMuMzNaIiBmaWxsPSIjZmZmZmZmIi8+PC9zdmc+" alt="LinkedIn">
                         </a>
                         <a href="#facebook" aria-label="Facebook">
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjUuOCAxLjM5MDAxIDguNDUgMTcuMjEiPjxwYXRoIGQ9Ik0xMy43Niw3LjEybC0wLjIsMi41NEgxMVYxOC41SDcuNjZWOS42Nkg1LjlWNy4xMkg3LjY2VjUuNDFhNC41Nyw0LjU3LDAsMCwxLC41Ny0yLjY0QTMuMTMsMy4xMywwLDAsMSwxMSwxLjVhMTEuMDUsMTEuMDUsMCwwLDEsMy4xNS4zMkwxMy42Niw0LjQyYTUuOTQsNS45NCwwLDAsMC0xLjQyLS4yMSwxLjA2LDEuMDYsMCwwLDAtMS4zLjkzdjJoMi44WiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==" alt="Facebook">
@@ -1294,108 +1271,98 @@
         </div>
     </footer>
     
-    <!-- JavaScript -->
+    <!-- JavaScript – ONLY static interactions (no API) -->
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-            this.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-        });
+        // ============================================
+        // STATIC SITE FUNCTIONALITY – NO BACKEND
+        // ============================================
+
+        // ---------- Mobile Menu Toggle ----------
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+            });
+        }
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
-            const navMenu = document.getElementById('navMenu');
-            const mobileBtn = document.getElementById('mobileMenuBtn');
-            
             if (!navMenu.contains(event.target) && !mobileBtn.contains(event.target)) {
                 navMenu.classList.remove('active');
-                mobileBtn.setAttribute('aria-expanded', 'false');
+                if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
             }
         });
-        
-        // Product filtering functionality
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
+
+        // ---------- Product Filtering (works with static cards) ----------
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
                 // Update active button
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
+                filterButtons.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 
-                // Filter products
                 const filter = this.getAttribute('data-filter');
-                const products = document.querySelectorAll('.product-card');
                 
-                products.forEach(product => {
-                    const categories = product.getAttribute('data-category').split(' ');
-                    
+                productCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
                     if (filter === 'all' || categories.includes(filter)) {
-                        product.style.display = 'block';
-                        setTimeout(() => {
-                            product.style.opacity = '1';
-                        }, 10);
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
                     } else {
-                        product.style.opacity = '0';
-                        setTimeout(() => {
-                            product.style.display = 'none';
-                        }, 300);
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
                     }
                 });
             });
         });
-        
-        // Smooth scroll for anchor links
+
+        // ---------- Smooth Scroll for Anchor Links ----------
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                
-                // Skip # links
-                if (href === '#') return;
-                
-                // Don't prevent default for filter buttons
-                if (this.classList.contains('filter-btn')) return;
-                
+                if (href === '#' || this.classList.contains('filter-btn')) return;
                 e.preventDefault();
-                
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
+                const target = document.querySelector(href);
+                if (target) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: target.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                    
                     // Close mobile menu if open
-                    document.getElementById('navMenu').classList.remove('active');
-                    document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('active');
+                    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
                 }
             });
         });
-        
-        // Cart functionality
+
+        // ---------- Simple Cart Counter (static simulation) ----------
         const cartCount = document.querySelector('.cart-count');
         let cartItems = 0;
-        
-        // Add to cart buttons
-        document.querySelectorAll('.product-card a[href*="product"]').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.textContent.includes('Add to Cart')) {
+
+        // Only attach to buttons that say "Add to Cart"
+        document.querySelectorAll('.product-card .btn-primary').forEach(btn => {
+            if (btn.textContent.includes('Add to Cart')) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     cartItems++;
                     cartCount.textContent = cartItems;
                     
                     // Animation
                     cartCount.style.transform = 'scale(1.5)';
-                    setTimeout(() => {
-                        cartCount.style.transform = 'scale(1)';
-                    }, 300);
+                    setTimeout(() => cartCount.style.transform = 'scale(1)', 300);
                     
                     // Show notification
                     showNotification('Product added to cart!');
-                }
-            });
+                });
+            }
         });
-        
+
+        // ---------- Notification Helper ----------
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.textContent = message;
@@ -1411,39 +1378,15 @@
                 z-index: 9999;
                 animation: slideIn 0.3s ease;
             `;
-            
             document.body.appendChild(notification);
             
             setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
+                setTimeout(() => document.body.removeChild(notification), 300);
             }, 3000);
         }
-        
-        // Add CSS for animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-            .product-card {
-                opacity: 1;
-                transition: opacity 0.3s ease;
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Standard Textile premium website loaded');
-        });
+
+        console.log('Static Standard Textile website ready');
     </script>
 </body>
 </html>

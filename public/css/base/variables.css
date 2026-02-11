@@ -1,0 +1,18 @@
+:root {
+  --header-height: 20px;
+  --top-bar-height: 40px;
+  --nav-bar-height: 120px;
+  --logo-size: 80px;
+  --policy-bar-height: 20px;
+  --hero-image-width: 180px;
+  --hero-image-height: 390px;
+  --primary-bg: linear-gradient(to right, #0f1a39, #0066cc);
+  --primary: #1A4D8F;
+ 
+  --dark: #0A1128;
+  --light: #FFFFFF;
+  --text-light: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --divider: rgba(255, 255, 255, 0.1);
+  --gradient: linear-gradient(135deg, #1A4D8F 0%, #2D82CF 100%);
+}

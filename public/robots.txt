@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /downloads/  # Optional: Block sensitive folders
+Sitemap: https://yodhaplay.in/sitemap.xml

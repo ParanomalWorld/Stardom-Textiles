@@ -1,0 +1,167 @@
+.main-footer {
+    position: relative;
+    padding: 6rem 0 3rem;
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-logo {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #0f172a;
+    padding: 6px;
+}
+
+.brand-logo:hover {
+    transform: scale(1);
+    box-shadow: 0 6px 25px rgba(29, 127, 225, 0.562);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 0; /* added top padding to give space below logo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.75rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.social-icon {
+    color: #94a3b8;
+    font-size: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem;
+}
+
+.social-icon:hover {
+    color:  #2D82CF 100%;
+    transform: translateY(-2px);
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.footer-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background:  #2D82CF 100%;
+    transition: width 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color:  #2D82CF 100%;
+}
+
+.footer-nav a:hover::after {
+    width: 100%;
+}
+
+.copyright {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 5rem 0 2.5rem;
+    }
+
+    .footer-container {
+        padding: 4rem 1.5rem 0;
+        gap: 1.5rem;
+    }
+
+    .social-links {
+        gap: 1.25rem;
+    }
+
+    .social-icon {
+        font-size: 1.25rem;
+    }
+
+    .footer-nav {
+        gap: 1.5rem;
+    }
+
+    .footer-nav a {
+        font-size: 0.875rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo {
+        width: 40px;
+        height: 40px;
+        top: -60px;
+        border-width: 3px;
+    }
+
+    .main-footer {
+        padding: 4rem 0 2rem;
+    }
+
+    .footer-container {
+        padding-top: 3.5rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .copyright {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}

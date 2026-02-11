@@ -1,0 +1,272 @@
+
+.mobile-nav {
+    display: none;
+}
+/* Enhanced Header Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: end;
+    z-index: 1000;
+    /* background: rgba(16, 24, 40, 0.96);
+    backdrop-filter: blur(12px); */
+    box-shadow: 0 2px 16px rgba(245, 147, 20, 0.12);
+    transform: translateY(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header Hide/Show Animation on Scroll */
+.main-header.hidden {
+    transform: translateY(-100%);
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 32px;
+    position: relative;
+}
+
+.header-logo {
+    height: 100px;
+    width: auto;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-logo:hover {
+    transform: translateX(-4px);
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Reduced gap for tighter spacing */
+    margin-left: auto; /* Push to the right */
+    justify-content: flex-end; /* Ensure alignment to the extreme right */
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px; /* More balanced spacing */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.nav-item {
+    list-style: none;
+    position: relative;
+}
+
+.nav-link {
+    color: #F8FAFC;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+    padding: 12px 16px; /* Added horizontal padding */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #60A5FA;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+    width: calc(100% - 32px);
+    left: 16px;
+}
+
+/* Enhanced Dropdown Animation */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 8px) scale(0.95);
+    background: rgba(30, 41, 59, 0.98);
+    border-radius: 6px;
+    padding: 4px 0;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #F8FAFC;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60A5FA;
+}
+
+.dropdown-parent:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+    transition-delay: 0.1s;
+}
+
+/* Professional Download CTA */
+.download-cta {
+    background: transparent;
+    color: #3B82F6;
+    padding: 4px 12px; /* Reduced padding for smaller size */
+    border: 2px solid #3B82F6;
+    border-radius: 6px; /* Slightly smaller border radius */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap for tighter spacing */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-cta:hover {
+    transform: translateY(-1px) scale(1.01); /* Subtle hover effect */
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.24); /* Softer shadow */
+}
+
+/* Mobile Header Styles */
+@media (max-width: 768px) {
+    .header-nav {
+        height: 64px;
+        padding: 0 24px;
+    }
+    
+    .header-logo {
+        height: 60px;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        background: transparent;
+        border: none;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .menu-bar {
+        width: 28px;
+        height: 2px;
+        background: #F8FAFC;
+        transition: all 0.3s ease;
+    }
+    
+.mobile-nav {
+    display: block;
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 260px;
+    max-width: 100%;
+    height: calc(100vh - 64px);
+    background: rgba(16, 24, 40, 0.96);
+    backdrop-filter: blur(18px);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-list {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-nav-link {
+    color: #e0f0ff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #1c81e6;
+}
+
+/* Mobile Navigation Enhancements */
+.mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 1.5rem;
+}
+
+.mobile-nav-item.has-submenu.active .mobile-submenu {
+    max-height: 500px; /* Adjust based on content */
+}
+
+.mobile-submenu-item {
+    display: block;
+    padding: 0.8rem 0;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mobile-submenu-item:hover {
+    color: #e11d48;
+}
+
+.mobile-nav-item.has-submenu > .mobile-nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav-item.has-submenu .fa-chevron-down {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.mobile-nav-item.has-submenu.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+    
+    .mobile-download-cta {
+
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap for tighter spacing */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    }
+}

@@ -1,0 +1,41 @@
+/* ============================================
+   Stats Section
+============================================ */
+.stats {
+    background: linear-gradient(135deg, #1A4D8F 0%, #152C4E 100%);
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    min-width: 200px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: #00FFCC;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    color: #EEE;
+}

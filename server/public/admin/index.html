@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Product Manager</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        img { max-width: 100px; max-height: 100px; }
+        .form-group { margin-bottom: 1rem; }
+        #loginForm, #productForm { max-width: 400px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div id="loginSection">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginError" class="error"></p>
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+        <h2>Manage Products</h2>
+        <button id="logoutBtn">Logout</button>
+        <hr>
+        <h3>Add / Edit Product</h3>
+        <form id="productForm">
+            <input type="hidden" id="productId">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label>Category (e.g. "Bedding · B2B")</label>
+                <input type="text" id="category" required>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Price (e.g. "$39.99" or "From $45.00")</label>
+                <input type="text" id="price" required>
+            </div>
+            <div class="form-group">
+                <label>Image URL</label>
+                <input type="url" id="imageUrl" required>
+            </div>
+            <div class="form-group">
+                <label>Badge (b2b / b2c / leave empty)</label>
+                <select id="badge">
+                    <option value="">None</option>
+                    <option value="b2b">B2B</option>
+                    <option value="b2c">B2C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="isBestSeller"> Best Seller</label>
+            </div>
+            <button type="submit">Save Product</button>
+            <button type="button" id="cancelEdit">Cancel</button>
+        </form>
+        <hr>
+        <h3>All Products</h3>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Badge</th>
+                    <th>Best</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="/admin/admin.js"></script>
+</body>
+</html>

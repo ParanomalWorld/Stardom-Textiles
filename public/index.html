@@ -662,25 +662,38 @@
         .catch(err => console.warn('Hero data not loaded yet (local dev).'));
     }
 
-    function loadSolutions() {
-      fetch('/data/solutions.json')
-        .then(res => res.json())
-        .then(solutions => {
-          const grid = document.getElementById('solutionsGrid');
-          grid.innerHTML = solutions.map(sol => `
-            <div class="solution-card">
-              <img src="${sol.image}" alt="${sol.title}" class="solution-image">
-              <div class="solution-content">
-                <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
-                <h3>${sol.title}</h3>
-                <p>${sol.description}</p>
-                <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
+ function loadProducts() {
+  fetch('/data/products.json')
+    .then(res => res.json())
+    .then(data => {
+      // If data is an array, use it directly; if it's an object with a "products" property, use that.
+      const products = Array.isArray(data) ? data : (data.products || []);
+      const container = document.getElementById('productHorizontal');
+      container.innerHTML = products.map(prod => {
+        const catAttr = prod.categories ? prod.categories.join(' ') : '';
+        return `
+          <div class="product-card" data-category="${catAttr}">
+            <div class="product-image-container">
+              <img src="${prod.image}" alt="${prod.name}" class="product-image">
+            </div>
+            <div class="product-info">
+              <div class="product-category">${prod.category}</div>
+              <h3 class="product-name">${prod.name}</h3>
+              <p class="product-desc">${prod.description}</p>
+              <div class="product-actions">
+                <span class="product-price">${prod.price}</span>
+                <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
               </div>
             </div>
-          `).join('');
-        })
-        .catch(err => console.warn('Solutions data not loaded yet.'));
-    }
+          </div>
+        `;
+      }).join('');
+
+      initFilters();
+      initAutoScroll();
+    })
+    .catch(err => console.warn('Products data not loaded yet.'));
+}
 
     function loadProducts() {
       fetch('/data/products.json')

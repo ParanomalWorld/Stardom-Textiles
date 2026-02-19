@@ -6,8 +6,7 @@
   <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
   <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
   <!-- ✅ ADD THIS: Netlify Identity Widget -->
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <style>
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  <style>
     /* ----- modern reset & design tokens (light + dark) ----- */
     * {
       margin: 0;
@@ -659,47 +658,40 @@
           document.getElementById('heroSubheading').textContent = data.subheading;
           document.getElementById('heroImage').src = data.image;
         })
-        .catch(err => console.warn('Hero data not loaded yet (local dev).'));
+        .catch(err => console.warn('Hero data not loaded yet.'));
     }
 
- function loadProducts() {
-  fetch('/data/products.json')
-    .then(res => res.json())
-    .then(data => {
-      // If data is an array, use it directly; if it's an object with a "products" property, use that.
-      const products = Array.isArray(data) ? data : (data.products || []);
-      const container = document.getElementById('productHorizontal');
-      container.innerHTML = products.map(prod => {
-        const catAttr = prod.categories ? prod.categories.join(' ') : '';
-        return `
-          <div class="product-card" data-category="${catAttr}">
-            <div class="product-image-container">
-              <img src="${prod.image}" alt="${prod.name}" class="product-image">
-            </div>
-            <div class="product-info">
-              <div class="product-category">${prod.category}</div>
-              <h3 class="product-name">${prod.name}</h3>
-              <p class="product-desc">${prod.description}</p>
-              <div class="product-actions">
-                <span class="product-price">${prod.price}</span>
-                <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
+    function loadSolutions() {
+      fetch('/data/solutions.json')
+        .then(res => res.json())
+        .then(data => {
+          // Handle both old array format and new object format { solutions: [...] }
+          const solutions = Array.isArray(data) ? data : (data.solutions || []);
+          const grid = document.getElementById('solutionsGrid');
+          if (!grid) return;
+          grid.innerHTML = solutions.map(sol => `
+            <div class="solution-card">
+              <img src="${sol.image}" alt="${sol.title}" class="solution-image">
+              <div class="solution-content">
+                <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
+                <h3>${sol.title}</h3>
+                <p>${sol.description}</p>
+                <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
               </div>
             </div>
-          </div>
-        `;
-      }).join('');
-
-      initFilters();
-      initAutoScroll();
-    })
-    .catch(err => console.warn('Products data not loaded yet.'));
-}
+          `).join('');
+        })
+        .catch(err => console.warn('Solutions data not loaded yet.'));
+    }
 
     function loadProducts() {
       fetch('/data/products.json')
         .then(res => res.json())
-        .then(products => {
+        .then(data => {
+          // Handle both old array format and new object format { products: [...] }
+          const products = Array.isArray(data) ? data : (data.products || []);
           const container = document.getElementById('productHorizontal');
+          if (!container) return;
           container.innerHTML = products.map(prod => {
             const catAttr = prod.categories ? prod.categories.join(' ') : '';
             return `
@@ -720,9 +712,8 @@
             `;
           }).join('');
 
-          // Re-attach filter functionality (since product cards are now in DOM)
+          // Re-attach filter and auto-scroll after products are loaded
           initFilters();
-          // Re-init auto-scroll with new cards (the container ID is same)
           initAutoScroll();
         })
         .catch(err => console.warn('Products data not loaded yet.'));
@@ -832,8 +823,7 @@
     loadSolutions();
     loadProducts(); // this will call initFilters and initAutoScroll after products load
 
-    // ✅ ADD THIS: Netlify Identity token handling and redirect
-    // Handle invite token and auto-redirect to admin after login
+      // ---------- NETLIFY IDENTITY HANDLING ----------
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on('init', user => {
         if (!user) {
@@ -843,13 +833,10 @@
         }
       });
     }
-
-    // If the URL contains an invite token, open the Identity modal automatically
     if (window.location.hash.includes('invite_token')) {
       if (window.netlifyIdentity) {
         window.netlifyIdentity.open();
       } else {
-        // Wait for the widget to load if it's not ready yet
         document.addEventListener('netlifyIdentityReady', function() {
           window.netlifyIdentity.open();
         });

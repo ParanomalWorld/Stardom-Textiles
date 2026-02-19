@@ -648,76 +648,74 @@
     </div>
   </footer>
 
-  <script>
-    // ---------- LOAD DYNAMIC CONTENT FROM JSON ----------
-    function loadHero() {
-      fetch('/data/hero.json')
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('heroHeading').textContent = data.heading;
-          document.getElementById('heroSubheading').textContent = data.subheading;
-          document.getElementById('heroImage').src = data.image;
-        })
-        .catch(err => console.warn('Hero data not loaded yet.'));
-    }
+<script>
+  // ---------- LOAD DYNAMIC CONTENT ----------
+  function loadHero() {
+    fetch('/data/hero.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('heroHeading').textContent = data.heading;
+        document.getElementById('heroSubheading').textContent = data.subheading;
+        document.getElementById('heroImage').src = data.image;
+      })
+      .catch(err => console.warn('Hero data not loaded.'));
+  }
 
-    function loadSolutions() {
-      fetch('/data/solutions.json')
-        .then(res => res.json())
-        .then(data => {
-          // Handle both old array format and new object format { solutions: [...] }
-          const solutions = Array.isArray(data) ? data : (data.solutions || []);
-          const grid = document.getElementById('solutionsGrid');
-          if (!grid) return;
-          grid.innerHTML = solutions.map(sol => `
-            <div class="solution-card">
-              <img src="${sol.image}" alt="${sol.title}" class="solution-image">
-              <div class="solution-content">
-                <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
-                <h3>${sol.title}</h3>
-                <p>${sol.description}</p>
-                <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
+  function loadSolutions() {
+    fetch('/data/solutions.json')
+      .then(res => res.json())
+      .then(data => {
+        // If data is array, use directly; if object with "solutions" property, use that
+        const solutions = Array.isArray(data) ? data : (data.solutions || []);
+        const grid = document.getElementById('solutionsGrid');
+        if (!grid) return;
+        grid.innerHTML = solutions.map(sol => `
+          <div class="solution-card">
+            <img src="${sol.image}" alt="${sol.title}" class="solution-image">
+            <div class="solution-content">
+              <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
+              <h3>${sol.title}</h3>
+              <p>${sol.description}</p>
+              <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
+            </div>
+          </div>
+        `).join('');
+      })
+      .catch(err => console.warn('Solutions data not loaded.'));
+  }
+
+  function loadProducts() {
+    fetch('/data/products.json')
+      .then(res => res.json())
+      .then(data => {
+        const products = Array.isArray(data) ? data : (data.products || []);
+        const container = document.getElementById('productHorizontal');
+        if (!container) return;
+        container.innerHTML = products.map(prod => {
+          const catAttr = prod.categories ? prod.categories.join(' ') : '';
+          return `
+            <div class="product-card" data-category="${catAttr}">
+              <div class="product-image-container">
+                <img src="${prod.image}" alt="${prod.name}" class="product-image">
+              </div>
+              <div class="product-info">
+                <div class="product-category">${prod.category}</div>
+                <h3 class="product-name">${prod.name}</h3>
+                <p class="product-desc">${prod.description}</p>
+                <div class="product-actions">
+                  <span class="product-price">${prod.price}</span>
+                  <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
+                </div>
               </div>
             </div>
-          `).join('');
-        })
-        .catch(err => console.warn('Solutions data not loaded yet.'));
-    }
+          `;
+        }).join('');
 
-    function loadProducts() {
-      fetch('/data/products.json')
-        .then(res => res.json())
-        .then(data => {
-          // Handle both old array format and new object format { products: [...] }
-          const products = Array.isArray(data) ? data : (data.products || []);
-          const container = document.getElementById('productHorizontal');
-          if (!container) return;
-          container.innerHTML = products.map(prod => {
-            const catAttr = prod.categories ? prod.categories.join(' ') : '';
-            return `
-              <div class="product-card" data-category="${catAttr}">
-                <div class="product-image-container">
-                  <img src="${prod.image}" alt="${prod.name}" class="product-image">
-                </div>
-                <div class="product-info">
-                  <div class="product-category">${prod.category}</div>
-                  <h3 class="product-name">${prod.name}</h3>
-                  <p class="product-desc">${prod.description}</p>
-                  <div class="product-actions">
-                    <span class="product-price">${prod.price}</span>
-                    <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
-                  </div>
-                </div>
-              </div>
-            `;
-          }).join('');
-
-          // Re-attach filter and auto-scroll after products are loaded
-          initFilters();
-          initAutoScroll();
-        })
-        .catch(err => console.warn('Products data not loaded yet.'));
-    }
+        initFilters();
+        initAutoScroll();
+      })
+      .catch(err => console.warn('Products data not loaded.'));
+  }
 
     // ---------- EXISTING FUNCTIONALITY (PRESERVED) ----------
     // mobile menu
@@ -756,46 +754,28 @@
     });
 
     // product filter (will be called after products load)
-    function initFilters() {
-      const chips = document.querySelectorAll('.filter-chip');
-      const products = document.querySelectorAll('.product-card');
-      chips.forEach(chip => {
-        chip.removeEventListener('click', filterHandler); // avoid duplicates
-        chip.addEventListener('click', filterHandler);
-      });
-
-      function filterHandler(e) {
-        const chips = document.querySelectorAll('.filter-chip');
+     function initFilters() {
+    const chips = document.querySelectorAll('.filter-chip');
+    const products = document.querySelectorAll('.product-card');
+    chips.forEach(chip => {
+      chip.addEventListener('click', function() {
         chips.forEach(c => c.classList.remove('active'));
         this.classList.add('active');
         const filter = this.dataset.filter;
-        const products = document.querySelectorAll('.product-card');
         products.forEach(card => {
           const cat = card.dataset.category || '';
           card.style.display = (filter === 'all' || cat.split(' ').includes(filter)) ? 'block' : 'none';
         });
-      }
-    }
-
-    // auto-scroll and scroll buttons
-    function initAutoScroll() {
-      const container = document.getElementById('productHorizontal');
-      const leftBtn = document.getElementById('scrollLeft');
-      const rightBtn = document.getElementById('scrollRight');
-
-      // remove old listeners to avoid duplicates
-      const newLeft = leftBtn.cloneNode(true);
-      const newRight = rightBtn.cloneNode(true);
-      leftBtn.parentNode.replaceChild(newLeft, leftBtn);
-      rightBtn.parentNode.replaceChild(newRight, rightBtn);
-
-      newLeft.addEventListener('click', () => {
-        container.scrollBy({ left: -300, behavior: 'smooth' });
       });
-      newRight.addEventListener('click', () => {
-        container.scrollBy({ left: 300, behavior: 'smooth' });
-      });
+    });
+  }
 
+  function initAutoScroll() {
+    const container = document.getElementById('productHorizontal');
+    const leftBtn = document.getElementById('scrollLeft');
+    const rightBtn = document.getElementById('scrollRight');
+    leftBtn.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
+    rightBtn.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
       // clear any existing interval
       if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
       window.autoScrollInterval = setInterval(() => {
@@ -818,30 +798,25 @@
       });
     }
 
-    // initial load of dynamic content
-    loadHero();
-    loadSolutions();
-    loadProducts(); // this will call initFilters and initAutoScroll after products load
+  // ---------- INITIAL LOAD ----------
+  loadHero();
+  loadSolutions();
+  loadProducts();
 
-      // ---------- NETLIFY IDENTITY HANDLING ----------
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-    if (window.location.hash.includes('invite_token')) {
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.open();
-      } else {
-        document.addEventListener('netlifyIdentityReady', function() {
-          window.netlifyIdentity.open();
+  // ---------- NETLIFY IDENTITY ----------
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
         });
       }
-    }
-  </script>
+    });
+  }
+  if (window.location.hash.includes('invite_token')) {
+    if (window.netlifyIdentity) window.netlifyIdentity.open();
+    else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
+  }
+</script>
 </body>
 </html>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
   <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
+  <!-- ✅ ADD THIS: Netlify Identity Widget -->
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     /* ----- modern reset & design tokens (light + dark) ----- */
     * {
@@ -816,6 +818,30 @@
     loadHero();
     loadSolutions();
     loadProducts(); // this will call initFilters and initAutoScroll after products load
+
+    // ✅ ADD THIS: Netlify Identity token handling and redirect
+    // Handle invite token and auto-redirect to admin after login
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+
+    // If the URL contains an invite token, open the Identity modal automatically
+    if (window.location.hash.includes('invite_token')) {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.open();
+      } else {
+        // Wait for the widget to load if it's not ready yet
+        document.addEventListener('netlifyIdentityReady', function() {
+          window.netlifyIdentity.open();
+        });
+      }
+    }
   </script>
 </body>
 </html>

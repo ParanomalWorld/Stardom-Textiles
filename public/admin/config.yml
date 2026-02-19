@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master   # important: use your actual default branch  # important: use your actual default branch   # or master, if your default branch is master
+  branch: master   # use your actual default branch
 
 media_folder: "images"
 public_folder: "/images"
@@ -19,37 +19,42 @@ collections:
 
   - name: "solutions"
     label: "Solutions"
-    folder: "data/"
-    create: true
-    slug: "{{slug}}"
-    extension: json
-    fields:
-      - label: "Badge"
-        name: "badge"
-        widget: "select"
-        options: ["B2B", "B2C", "B2C/B2B"]
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn more" }
-      - { label: "Button Link", name: "buttonLink", widget: "string", default: "#" }
+    files:
+      - label: "Solutions List"
+        name: "solutions"
+        file: "data/solutions.json"
+        fields:
+          - label: "Solutions"
+            name: "solutions"
+            widget: "list"
+            fields:
+              - { label: "Badge", name: "badge", widget: "select", options: ["B2B", "B2C", "B2C/B2B"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn more" }
+              - { label: "Button Link", name: "buttonLink", widget: "string", default: "#" }
 
   - name: "products"
     label: "Products"
-    folder: "data/"
-    create: true
-    slug: "{{slug}}"
-    extension: json
-    fields:
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Price", name: "price", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Button Text", name: "buttonText", widget: "string", default: "Enquire" }
-      - label: "Categories (for filtering)"
-        name: "categories"
-        widget: "select"
-        options: ["b2b", "b2c", "best"]
-        multiple: true
-        required: false
+    files:
+      - label: "Products List"
+        name: "products"
+        file: "data/products.json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            fields:
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Button Text", name: "buttonText", widget: "string", default: "Enquire" }
+              - label: "Categories (for filtering)"
+                name: "categories"
+                widget: "select"
+                options: ["b2b", "b2c", "best"]
+                multiple: true
+                required: false

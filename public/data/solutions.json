@@ -1,12 +1,14 @@
 [
-  {
+   {
     "badge": "B2B",
     "title": "School Uniforms",
-    "description": "Durable, comfortable uniform fabrics in any colour or style. Bulk orders with custom printing.",
+    "description": "...",
     "image": "/images/solution1.jpg",
     "buttonText": "Learn more",
     "buttonLink": "#uniforms"
   },
+  
+
   {
     "badge": "B2B",
     "title": "Sports Kit & Track Suits",

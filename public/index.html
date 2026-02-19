@@ -1,1392 +1,821 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standard Textile | Premium Textile Solutions for Hospitality & Healthcare</title>
-    <meta name="description" content="Premium textile solutions for Hospitality & Healthcare. Serving B2B and B2C customers worldwide with innovative, sustainable products since 1940.">
-    
-    <style>
-        /* ======================
-           CSS RESET & BASE VARIABLES
-        ====================== */
-        :root {
-            --primary-color: #3d3935;
-            --secondary-color: #000000;
-            --accent-red: #e61733;
-            --accent-red-dark: #c1132b;
-            --accent-gold: #FBB117;
-            --white: #ffffff;
-            --light-bg: #f7f7f7;
-            --light-gray: #ebebeb;
-            --medium-gray: #d9d7d5;
-            --dark-gray: #76716b;
-            --border-color: #c9c9c9;
-            
-            --font-light: 'Acronym-Light', 'Helvetica Neue', Arial, sans-serif;
-            --font-regular: 'Acronym-Regular', 'Helvetica Neue', Arial, sans-serif;
-            --font-semibold: 'Acronym-Semibold', 'Helvetica Neue', Arial, sans-serif;
-            
-            --container-max-width: 1320px;
-            --section-padding: 80px 0;
-            --mobile-section-padding: 60px 0;
-            --card-padding: 32px;
-            --mobile-card-padding: 24px;
-            
-            --border-radius: 4px;
-            --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: var(--font-light);
-            color: var(--primary-color);
-            line-height: 1.6;
-            letter-spacing: 0.75px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: var(--white);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-regular);
-            font-weight: normal;
-            line-height: 1.3;
-            letter-spacing: 0.75px;
-            color: var(--primary-color);
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .container {
-            max-width: var(--container-max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 48px;
-            font-weight: 500;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            font-family: var(--font-regular);
-            text-transform: uppercase;
-            letter-spacing: 1.75px;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            font-size: 14px;
-            min-height: 56px;
-            line-height: 1;
-            border-radius: var(--border-radius);
-            min-width: 200px;
-        }
-        
-        .btn-primary {
-            background-color: var(--accent-red);
-            color: var(--white);
-            font-family: var(--font-semibold);
-            border: 1px solid var(--accent-red);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--accent-red-dark);
-            border-color: var(--accent-red-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .btn-small {
-            padding: 12px 24px;
-            min-height: 44px;
-            min-width: 160px;
-        }
-        
-        /* ======================
-           MESSAGE BAR
-        ====================== */
-        .mes-bar {
-            background-color: var(--primary-color);
-            height: 50px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .mes-bar-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-        
-        .mes-bar-info-message {
-            color: var(--white);
-            font-size: 14px;
-        }
-        
-        .mes-bar-info-link {
-            color: var(--white);
-            text-decoration: underline;
-            margin-left: 8px;
-        }
-        
-        .mes-bar-info-link:hover {
-            color: var(--accent-gold);
-        }
-        
-        .mes-bar-cta-link {
-            background-color: var(--accent-red);
-            color: var(--white);
-            padding: 12px 24px;
-            text-decoration: none;
-            font-size: 14px;
-            border-radius: var(--border-radius);
-            display: inline-block;
-            min-height: 38px;
-            line-height: 1.4;
-        }
-        
-        .mes-bar-cta-link:hover {
-            background-color: var(--accent-red-dark);
-        }
-        
-        /* ======================
-           HEADER & NAVIGATION
-        ====================== */
-        .header {
-            position: sticky;
-            top: 0;
-            background-color: var(--white);
-            z-index: 1000;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            padding: 0;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-family: var(--font-semibold);
-            color: var(--primary-color);
-            letter-spacing: 2px;
-        }
-        
-        .logo span {
-            color: var(--accent-red);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav-menu a {
-            font-family: var(--font-regular);
-            font-size: 16px;
-            position: relative;
-            padding: 8px 0;
-            color: var(--primary-color);
-        }
-        
-        .nav-menu a:hover {
-            color: var(--accent-red);
-        }
-        
-        .nav-menu a:hover::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent-red);
-        }
-        
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-        
-        .header-actions a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            color: var(--primary-color);
-        }
-        
-        .header-actions a:hover {
-            color: var(--accent-red);
-        }
-        
-        .cart-badge {
-            position: relative;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--accent-red);
-            color: var(--white);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-family: var(--font-semibold);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary-color);
-            width: 40px;
-            height: 40px;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* ======================
-           HERO SECTION
-        ====================== */
-        .hero {
-            position: relative;
-            background: linear-gradient(rgba(61, 57, 53, 0.85), rgba(61, 57, 53, 0.85)),
-                        url('https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=1920/sfsites/c/cms/delivery/media/MCUPSHX6UNQNG57DIPQGVJ2TVMGA?version=2.1&channelId=0apRk00000006i9');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-            padding: var(--section-padding);
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 24px;
-            line-height: 1.2;
-            color: var(--white);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            color: var(--light-gray);
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        /* ======================
-           SOLUTIONS SECTION
-        ====================== */
-        .solutions {
-            padding: var(--section-padding);
-            background-color: var(--light-bg);
-        }
-        
-        .solutions-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 64px;
-            font-size: 1.125rem;
-            line-height: 1.7;
-            padding: 0 20px;
-        }
-        
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-        }
-        
-        .solution-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            height: 100%;
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-        
-        .solution-image {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-        
-        .solution-content {
-            padding: var(--card-padding);
-        }
-        
-        .solution-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background-color: var(--light-bg);
-            color: var(--primary-color);
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 20px;
-            border-radius: 20px;
-            font-family: var(--font-semibold);
-        }
-        
-        .solution-badge.b2b {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .solution-badge.b2c {
-            background-color: var(--accent-red);
-            color: var(--white);
-        }
-        
-        .solution-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        
-        .solution-card p {
-            margin-bottom: 24px;
-            line-height: 1.6;
-            color: var(--dark-gray);
-        }
-        
-        /* ======================
-           PRODUCTS SHOWCASE
-        ====================== */
-        .products-showcase {
-            padding: var(--section-padding);
-        }
-        
-        .products-filter {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 48px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 10px 24px;
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--primary-color);
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: var(--font-regular);
-            border-radius: var(--border-radius);
-            font-size: 14px;
-        }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        
-        .product-card {
-            border: 1px solid var(--medium-gray);
-            background: var(--white);
-            transition: var(--transition);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-        
-        .product-card:hover {
-            box-shadow: var(--box-shadow);
-            border-color: transparent;
-        }
-        
-        .product-image-container {
-            position: relative;
-            overflow: hidden;
-            height: 280px;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        
-        .product-info {
-            padding: 24px;
-        }
-        
-        .product-category {
-            color: var(--dark-gray);
-            font-size: 13px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-        
-        .product-name {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        
-        .product-desc {
-            color: var(--dark-gray);
-            margin-bottom: 20px;
-            font-size: 0.9375rem;
-            line-height: 1.6;
-        }
-        
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .product-price {
-            font-family: var(--font-semibold);
-            font-size: 1.25rem;
-            color: var(--primary-color);
-        }
-        
-        /* ======================
-           INDUSTRY SOLUTIONS
-        ====================== */
-        .industries {
-            padding: var(--section-padding);
-            background: linear-gradient(rgba(61, 57, 53, 0.95), rgba(61, 57, 53, 0.95)),
-                        url('https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=1920/sfsites/c/cms/delivery/media/MCR5QJJHKI2ZDMBLP7SAKI4OBOBY?version=2.1&channelId=0apRk00000006i9');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-        }
-        
-        .industries .section-title {
-            color: var(--white);
-        }
-        
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
-        
-        .industry-card {
-            text-align: center;
-            padding: 40px 24px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .industry-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .industry-icon {
-            font-size: 3rem;
-            margin-bottom: 24px;
-            display: block;
-        }
-        
-        .industry-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-            color: var(--white);
-        }
-        
-        .industry-card p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-        
-        /* ======================
-           VALUES & COMMITMENT
-        ====================== */
-        .values {
-            padding: var(--section-padding);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        
-        .value-item {
-            padding: 32px 24px;
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 24px;
-            color: var(--accent-gold);
-            display: block;
-        }
-        
-        .value-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        
-        .value-item p {
-            color: var(--dark-gray);
-            line-height: 1.7;
-        }
-        
-        /* ======================
-           CTA SECTION
-        ====================== */
-        .cta-section {
-            padding: var(--section-padding);
-            background: linear-gradient(rgba(61, 57, 53, 0.9), rgba(61, 57, 53, 0.9)),
-                        url('https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=1920/sfsites/c/cms/delivery/media/MCMZGYVKQSKNAVLBM6B2OI2TW464?version=2.1&channelId=0apRk00000006i9');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-section .section-title {
-            color: var(--white);
-            margin-bottom: 24px;
-        }
-        
-        .cta-section p {
-            font-size: 1.125rem;
-            margin-bottom: 48px;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .cta-buttons .btn-outline {
-            color: var(--white);
-            border-color: var(--white);
-        }
-        
-        .cta-buttons .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-        }
-        
-        /* ======================
-           FOOTER (BLACK BACKGROUND)
-        ====================== */
-        .footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 80px 0 40px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
-            margin-bottom: 60px;
-        }
-        
-        .footer-column h4 {
-            font-size: 1.25rem;
-            margin-bottom: 28px;
-            color: var(--white);
-            font-family: var(--font-regular);
-            position: relative;
-            padding-bottom: 12px;
-        }
-        
-        .footer-column h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent-red);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 16px;
-        }
-        
-        .footer-links a {
-            color: var(--medium-gray);
-            transition: var(--transition);
-            font-size: 15px;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-gold);
-            padding-left: 4px;
-        }
-        
-        .footer-social-links {
-            display: flex;
-            gap: 20px;
-            margin-top: 28px;
-        }
-        
-        .footer-social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-        
-        .footer-social-links a:hover {
-            background-color: var(--accent-red);
-            transform: translateY(-3px);
-        }
-        
-        .footer-social-links img {
-            width: 20px;
-            height: 20px;
-            filter: brightness(0) invert(1);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--medium-gray);
-            font-size: 14px;
-        }
-        
-        .copyright a {
-            color: var(--medium-gray);
-            margin: 0 12px;
-            transition: var(--transition);
-        }
-        
-        .copyright a:hover {
-            color: var(--accent-gold);
-        }
-        
-        /* ======================
-           RESPONSIVE DESIGN
-        ====================== */
-        @media (max-width: 1200px) {
-            .container {
-                padding: 0 32px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .section-title {
-                font-size: 2.25rem;
-            }
-            .nav-menu {
-                gap: 24px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: flex;
-            }
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 130px;
-                left: 0;
-                right: 0;
-                background-color: var(--white);
-                flex-direction: column;
-                padding: 32px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-                z-index: 1000;
-                gap: 0;
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-            .nav-menu li {
-                width: 100%;
-            }
-            .nav-menu a {
-                display: block;
-                padding: 16px 0;
-                border-bottom: 1px solid var(--light-gray);
-                font-size: 16px;
-            }
-            .nav-menu li:last-child a {
-                border-bottom: none;
-            }
-            .hero {
-                padding: 60px 0;
-                min-height: auto;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-            .solutions-intro {
-                margin-bottom: 48px;
-            }
-            .products-grid,
-            .solutions-grid,
-            .industries-grid,
-            .values-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .hero-buttons,
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .mes-bar-cta {
-                display: none;
-            }
-            .mes-bar-info {
-                text-align: center;
-            }
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .footer {
-                padding: 60px 0 40px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 20px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1.125rem;
-            }
-            .section-title {
-                font-size: 1.75rem;
-                margin-bottom: 32px;
-            }
-            .btn {
-                padding: 14px 28px;
-                min-width: 180px;
-                width: 100%;
-                max-width: 280px;
-            }
-            .product-image-container {
-                height: 240px;
-            }
-            .value-item,
-            .industry-card {
-                padding: 24px 20px;
-            }
-            .solution-content,
-            .product-info {
-                padding: 20px;
-            }
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
+  <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
+  <style>
+    /* ----- modern reset & design tokens (light + dark) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Animation styles */
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-        .product-card {
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-    </style>
+    :root {
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --light-gray: #f0f0f0;
+      --mid-gray: #dddddd;
+      --text-primary: #222222;
+      --text-secondary: #555555;
+      --text-light: #777777;
+      --accent: #c4282b;
+      --accent-hover: #a01e20;
+      --border-subtle: #eaeaea;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 12px rgba(0, 0, 0, 0.03);
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-light: 300;
+      --font-regular: 400;
+      --font-medium: 500;
+      --bg-body: var(--white);
+      --bg-soft: var(--off-white);
+      --text-main: var(--text-primary);
+      --text-muted: var(--text-secondary);
+      --card-bg: var(--white);
+      --footer-bg: #111;
+      --footer-text: #ddd;
+      transition: background-color 0.3s, color 0.2s;
+    }
+
+    body.dark-mode {
+      --white: #1e1e1e;
+      --off-white: #2a2a2a;
+      --light-gray: #333;
+      --mid-gray: #444;
+      --text-primary: #eee;
+      --text-secondary: #ccc;
+      --text-light: #aaa;
+      --accent: #e05a5d;
+      --accent-hover: #c44b4e;
+      --border-subtle: #3a3a3a;
+      --shadow-sm: 0 8px 20px rgba(0,0,0,0.4);
+      --shadow-hover: 0 15px 30px rgba(0,0,0,0.5);
+      --bg-body: #1e1e1e;
+      --bg-soft: #252525;
+      --text-main: #eee;
+      --text-muted: #ccc;
+      --card-bg: #2a2a2a;
+      --footer-bg: #0a0a0a;
+      --footer-text: #aaa;
+    }
+
+    body {
+      font-family: var(--font-base);
+      font-weight: var(--font-light);
+      color: var(--text-main);
+      line-height: 1.5;
+      background-color: var(--bg-body);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s, color 0.2s;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: var(--font-medium);
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ----- utility ----- */
+    .section-title {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: var(--font-medium);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2.2rem;
+      font-weight: var(--font-medium);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      line-height: 1.2;
+      background: transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 2px 8px rgba(196, 40, 43, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(196, 40, 43, 0.25);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--text-main);
+      color: var(--text-main);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--text-main);
+      color: var(--bg-body);
+      transform: translateY(-2px);
+    }
+
+    .btn-small {
+      padding: 0.6rem 1.8rem;
+      font-size: 0.85rem;
+    }
+
+    /* top bar */
+    .top-bar {
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.7rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+    .top-bar-info {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .top-bar-info span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .top-bar-info i { font-style: normal; color: var(--accent); font-weight: var(--font-medium); }
+    .top-bar-cta .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1.8rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
+
+    /* header */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .dark-mode .header {
+      background: rgba(30, 30, 30, 0.96);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      font-size: 1.9rem;
+      font-weight: var(--font-medium);
+      color: var(--text-main);
+    }
+    .logo span { color: var(--accent); }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+    .nav-menu a {
+      font-weight: var(--font-regular);
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-menu a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+    .dark-toggle {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-main);
+      margin-left: 1rem;
+    }
+
+    /* hero (modified for dynamic image) */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 4rem 0;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 3.5rem; color: white; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+
+    /* solutions */
+    .solutions { padding: 6rem 0; background: var(--bg-body); }
+    .solutions-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+    .solution-card {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      transition: 0.25s;
+    }
+    .solution-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .solution-image { width: 100%; height: 240px; object-fit: cover; }
+    .solution-content { padding: 2rem; }
+    .solution-badge {
+      display: inline-block; font-size: 0.75rem; font-weight: var(--font-medium);
+      text-transform: uppercase; padding: 0.3rem 1.2rem; border-radius: 40px;
+      background: var(--light-gray); color: var(--text-secondary); margin-bottom: 1.2rem;
+    }
+    .solution-badge.b2b { background: var(--text-primary); color: white; }
+    .solution-badge.b2c { background: var(--accent); color: white; }
+
+    /* about local */
+    .about-local {
+      padding: 5rem 0;
+      background: var(--bg-soft);
+      text-align: center;
+    }
+    .brand-badge {
+      background: var(--card-bg); padding: 2.5rem; border-radius: 48px; max-width: 800px; margin: 0 auto;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle);
+    }
+    .brand-badge p { font-size: 1.2rem; margin: 0.5rem 0; color: var(--text-muted); }
+    .brand-badge .big-phone { font-size: 1.8rem; color: var(--accent); }
+
+    /* delivered section */
+    .delivered-section {
+      padding: 6rem 0;
+      background: var(--bg-body);
+      position: relative;
+    }
+    .filter-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 2rem;
+      border-radius: 40px;
+      font-weight: var(--font-regular);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: var(--text-main);
+      color: var(--bg-body);
+      border-color: var(--text-main);
+    }
+
+    .horizontal-wrapper {
+      position: relative;
+      margin: 2rem 0 2rem;
+    }
+    .product-horizontal {
+      display: flex;
+      gap: 1.8rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding: 0.5rem 0.2rem 1.5rem;
+    }
+    .product-horizontal .product-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      background: var(--card-bg);
+      transition: 0.2s;
+    }
+    .product-horizontal .product-card:hover { box-shadow: var(--shadow-hover); }
+    .product-image-container { height: 240px; overflow: hidden; border-radius: 24px 24px 0 0; }
+    .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+    .product-card:hover .product-image { transform: scale(1.04); }
+    .product-info { padding: 1.5rem; }
+    .product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); }
+    .product-name { font-size: 1.2rem; font-weight: var(--font-medium); }
+
+    .scroll-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .scroll-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s;
+    }
+    .scroll-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .explore-btn-wrapper {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* why us */
+    .why-us {
+      padding: 6rem 0;
+      background: var(--bg-soft);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .why-card {
+      background: var(--card-bg);
+      padding: 2.2rem 1.5rem;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+    }
+    .why-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 0;
+      background: var(--text-main);
+      color: var(--bg-body);
+    }
+    .cta-section .section-title { color: var(--bg-body); }
+    .cta-section p { color: rgba(0,0,0,0.7); }
+    .dark-mode .cta-section p { color: rgba(255,255,255,0.8); }
+    .cta-buttons .btn-outline { border-color: var(--bg-body); color: var(--bg-body); }
+    .cta-buttons .btn-outline:hover { background: var(--bg-body); color: var(--text-main); }
+
+    /* footer */
+    .footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 5rem 0 2.5rem;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-column h4 { color: white; }
+    .footer-links a { color: #aaa; }
+    .footer-links a:hover { color: white; }
+    .footer-social-links a { background: #2a2a2a; }
+    .copyright { border-top-color: #2a2a2a; }
+
+    /* trust popup */
+    .trust-popup {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      max-width: 320px;
+      z-index: 999;
+      border: 1px solid var(--border-subtle);
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .trust-popup.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+    .trust-popup .rating { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .trust-popup .stars { color: #f5b342; }
+    .trust-popup .verified { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; }
+    .trust-popup .info-row { display: flex; gap: 10px; margin-bottom: 10px; color: var(--text-muted); }
+    .trust-popup .phone { font-size: 1.2rem; font-weight: var(--font-medium); color: var(--text-main); }
+    .trust-popup .actions { display: flex; gap: 10px; margin-top: 15px; }
+    .trust-popup .actions a { flex: 1; padding: 10px; text-align: center; border-radius: 40px; font-weight: var(--font-medium); }
+    .enquire-btn { background: var(--accent); color: white; }
+    .whatsapp-btn { background: #25D366; color: white; }
+    .trust-popup .close {
+      position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 1.2rem; color: #aaa;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-menu {
+        display: none; flex-direction: column; background: var(--card-bg); position: absolute; top: 80px;
+        left: 0; width: 100%; padding: 2rem; box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border-subtle);
+      }
+      .nav-menu.active { display: flex; }
+      .hero h1 { font-size: 2.5rem; }
+      .trust-popup { max-width: 280px; right: 15px; bottom: 15px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="mes-bar">
-        <div class="container">
-            <div class="mes-bar-row">
-                <div class="mes-bar-info">
-                    <p class="mes-bar-info-message">
-                        Free shipping on orders over $100
-                        <a href="tel:1-800-782-6943" class="mes-bar-info-link">Contact us: 1-800-782-6943</a>
-                    </p>
-                </div>
-                <div class="mes-bar-cta">
-                    <a href="#quote" class="mes-bar-cta-link">REQUEST A QUOTE</a>
-                </div>
-            </div>
-        </div>
+  <!-- floating trust popup (smart hide) -->
+  <div class="trust-popup" id="trustPopup">
+    <span class="close" onclick="this.parentElement.classList.add('hidden')">✕</span>
+    <div class="rating">
+      <span class="stars">⭐⭐⭐⭐☆</span> <span>4.3 ★ (17 ratings)</span>
     </div>
-    
-    <!-- Main Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    STANDARD<span>TEXTILE</span>
-                </div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
-                    <span>☰</span>
-                </button>
-                
-                <nav class="nav" id="mainNav">
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#industries">Industries</a></li>
-                        <li><a href="#innovation">Innovation</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#resources">Resources</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="header-actions">
-                    <a href="#search" aria-label="Search">
-                        <span>🔍</span>
-                    </a>
-                    <a href="#account" aria-label="Account">
-                        <span>👤</span>
-                    </a>
-                    <a href="#cart" aria-label="Cart" class="cart-badge">
-                        <span>🛒</span>
-                        <span class="cart-count">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Premium Textile Solutions for Hospitality & Healthcare</h1>
-                <p>Discover innovative textile products designed for durability, comfort, and sustainability. Serving B2B and B2C customers worldwide since 1940.</p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">Explore Products</a>
-                    <a href="#contact" class="btn btn-outline">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Solutions Section (Static) -->
-    <section class="solutions" id="solutions">
-        <div class="container">
-            <h2 class="section-title">Tailored Solutions for Every Need</h2>
-            <p class="solutions-intro">We provide premium textile solutions for both business clients and individual consumers, combining industrial expertise with consumer-focused quality.</p>
-            
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCJ65RHH4MIVHRXNUALPOLCX5DLA?version=2.1&channelId=0apRk00000006i9" 
-                         alt="Hospitality Textiles" 
-                         class="solution-image">
-                    <div class="solution-content">
-                        <span class="solution-badge b2b">B2B Focus</span>
-                        <h3>Hospitality Textiles</h3>
-                        <p>Premium linens, bedding, and drapery for hotels and resorts worldwide. Custom solutions for large-scale operations.</p>
-                        <a href="#hospitality" class="btn btn-primary btn-small">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="solution-card">
-                    <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MC4VULF7JH7JCSHL3MDKOKLSX77I?version=1.1&channelId=0apRk00000006i9" 
-                         alt="Healthcare Textiles" 
-                         class="solution-image">
-                    <div class="solution-content">
-                        <span class="solution-badge b2b">B2B Focus</span>
-                        <h3>Healthcare Textiles</h3>
-                        <p>Medical-grade fabrics and linens for hospitals and healthcare facilities. Meeting strict hygiene and durability standards.</p>
-                        <a href="#healthcare" class="btn btn-primary btn-small">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="solution-card">
-                    <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCZCQ4Z3K7XBCEVJK5AKIJYLHV3Q?version=1.1&channelId=0apRk00000006i9" 
-                         alt="Premium Home Textiles" 
-                         class="solution-image">
-                    <div class="solution-content">
-                        <span class="solution-badge b2c">B2C Focus</span>
-                        <h3>Premium Home Textiles</h3>
-                        <p>High-quality bedding, towels, and home fabrics for discerning consumers. Direct-to-consumer luxury collections.</p>
-                        <a href="#home-textiles" class="btn btn-primary btn-small">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Products Showcase – STATIC CARDS (NO API) -->
-    <section class="products-showcase" id="products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            
-            <div class="products-filter">
-                <button class="filter-btn active" data-filter="all">All Products</button>
-                <button class="filter-btn" data-filter="b2b">B2B Products</button>
-                <button class="filter-btn" data-filter="b2c">B2C Products</button>
-                <button class="filter-btn" data-filter="best">Best Sellers</button>
-            </div>
-            
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card" data-category="b2b best">
-                    <div class="product-image-container">
-                        <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCUXD573TGFFFW7L7TJEKAD2XOGU?version=1.1&channelId=0apRk00000006i9" 
-                             alt="Luxury Hotel Bed Linens" 
-                             class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Bedding · B2B</div>
-                        <h3 class="product-name">Luxury Hotel Bed Linens</h3>
-                        <p class="product-desc">High-thread count cotton linens for ultimate guest comfort and durability.</p>
-                        <div class="product-actions">
-                            <div class="product-price">From $45.00</div>
-                            <a href="#product1" class="btn btn-primary btn-small">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card" data-category="b2b">
-                    <div class="product-image-container">
-                        <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCSAB43L23QJBAFFT4IQHXQQZPLY?version=1.1&channelId=0apRk00000006i9" 
-                             alt="Healthcare Uniforms" 
-                             class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Uniforms · B2B</div>
-                        <h3 class="product-name">Healthcare Scrubs & Uniforms</h3>
-                        <p class="product-desc">Comfortable, durable medical uniforms with advanced fabric technology.</p>
-                        <div class="product-actions">
-                            <div class="product-price">From $29.99</div>
-                            <a href="#product2" class="btn btn-primary btn-small">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card" data-category="b2c best">
-                    <div class="product-image-container">
-                        <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCACUOZ2HZGBE2FMFZPIGBBK3VCI?version=1.1&channelId=0apRk00000006i9" 
-                             alt="Luxury Bath Towels" 
-                             class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Bath · B2C</div>
-                        <h3 class="product-name">Premium Egyptian Cotton Towels</h3>
-                        <p class="product-desc">Ultra-absorbent, soft towels for luxury home experience.</p>
-                        <div class="product-actions">
-                            <div class="product-price">$39.99</div>
-                            <a href="#product3" class="btn btn-primary btn-small">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card" data-category="b2b">
-                    <div class="product-image-container">
-                        <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=1920/sfsites/c/cms/delivery/media/MCNMUGY3ZGZVHWXHVVRCW2E3GWFA?version=1.1&channelId=0apRk00000006i9" 
-                             alt="Restaurant Table Linens" 
-                             class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Table Linen · B2B</div>
-                        <h3 class="product-name">Restaurant Table Linens</h3>
-                        <p class="product-desc">Stain-resistant and easy-care tablecloths for food service industry.</p>
-                        <div class="product-actions">
-                            <div class="product-price">From $22.50</div>
-                            <a href="#product4" class="btn btn-primary btn-small">Request Sample</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Industry Solutions -->
-    <section class="industries" id="industries">
-        <div class="container">
-            <h2 class="section-title">Industry Solutions</h2>
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <span class="industry-icon">🏨</span>
-                    <h3>Hospitality</h3>
-                    <p>Complete textile solutions for hotels, resorts, and restaurants with custom branding options.</p>
-                </div>
-                <div class="industry-card">
-                    <span class="industry-icon">🏥</span>
-                    <h3>Healthcare</h3>
-                    <p>Medical-grade textiles meeting strict healthcare standards, infection control, and durability requirements.</p>
-                </div>
-                <div class="industry-card">
-                    <span class="industry-icon">🎓</span>
-                    <h3>Education</h3>
-                    <p>Durable, easy-maintenance textiles for universities, schools, dormitories, and campus facilities.</p>
-                </div>
-                <div class="industry-card">
-                    <span class="industry-icon">🏭</span>
-                    <h3>Corporate</h3>
-                    <p>Professional textiles for offices, corporate facilities, and business environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Values Section -->
-    <section class="values" id="innovation">
-        <div class="container">
-            <h2 class="section-title">Our Commitment to Excellence</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <span class="value-icon">🌱</span>
-                    <h3>Sustainability</h3>
-                    <p>Eco-friendly manufacturing and sustainable materials across all product lines with certified processes.</p>
-                </div>
-                <div class="value-item">
-                    <span class="value-icon">⭐</span>
-                    <h3>Quality</h3>
-                    <p>Superior craftsmanship and rigorous quality control standards ensuring long-lasting performance.</p>
-                </div>
-                <div class="value-item">
-                    <span class="value-icon">💡</span>
-                    <h3>Innovation</h3>
-                    <p>Continuous research and development in textile technology and fabric engineering.</p>
-                </div>
-                <div class="value-item">
-                    <span class="value-icon">🌍</span>
-                    <h3>Global Reach</h3>
-                    <p>Serving customers in over 60 countries worldwide with dedicated local support teams.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="section-title">Ready to Elevate Your Textile Experience?</h2>
-                <p>Whether you're a business looking for bulk solutions or an individual seeking premium home textiles, we have the expertise and products to meet your needs.</p>
-                <div class="cta-buttons">
-                    <a href="#b2b-contact" class="btn btn-primary">B2B: Request a Quote</a>
-                    <a href="#b2c-shop" class="btn btn-outline">B2C: Shop Collection</a>
-                    <a href="#catalog" class="btn btn-outline">Download Catalog</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>Products</h4>
-                    <ul class="footer-links">
-                        <li><a href="#hospitality">Hospitality Textiles</a></li>
-                        <li><a href="#healthcare">Healthcare Textiles</a></li>
-                        <li><a href="#home-textiles">Home Textiles (B2C)</a></li>
-                        <li><a href="#industrial">Industrial Textiles</a></li>
-                        <li><a href="#uniforms">Uniforms & Workwear</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Business Solutions</h4>
-                    <ul class="footer-links">
-                        <li><a href="#bulk-orders">Bulk & Wholesale</a></li>
-                        <li><a href="#custom-manufacturing">Custom Manufacturing</a></li>
-                        <li><a href="#sustainability">Sustainability Programs</a></li>
-                        <li><a href="#laundry-solutions">Laundry Solutions</a></li>
-                        <li><a href="#technical-support">Technical Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#sustainability">Sustainability</a></li>
-                        <li><a href="#news">News & Press</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="#faq">FAQs</a></li>
-                        <li><a href="#shipping">Shipping Information</a></li>
-                        <li><a href="#returns">Returns & Exchanges</a></li>
-                        <li><a href="#size-guides">Size Guides</a></li>
-                        <li><a href="#care-instructions">Care Instructions</a></li>
-                    </ul>
-                    
-                    <div class="footer-social-links">
-                        <a href="#pinterest" aria-label="Pinterest">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNi45MSAzNSI+PHBhdGggZD0iTTUuODQsMjYuOGMuMzktMS42NCwyLjQ3LTEwLjQ2LDIuNDctMTAuNDZhNy42LDcuNiwwLDAsMS0uNjMtMy4xMmMwLTIuOTMsMS43LTUuMTIsMy44MS01LjEyLDEuOCwwLDIuNjYsMS4zNSwyLjY2LDMsMCwxLjgtMS4xNSw0LjUtMS43NCw3YTMuMDYsMy4wNiwwLDAsMCwzLjEyLDMuOGMzLjc0LDAsNi42MS0zLjk0LDYuNjEtOS42NCwwLTUtMy42Mi04LjU2LTguNzktOC41NmE5LjEsOS4xLDAsMCwwLTkuNDksOC42OWMwLC4xNSwwLC4yOSwwLC40NGE4LjI0LDguMjQsMCwwLDAsMS41Nyw0Ljc5LjYzLjYzLDAsMCwxLC4xNC42Yy0uMTYuNjYtLjUxLDIuMDktLjU4LDIuMzlzLS4zMS40Ni0uNzEuMjhjLTEuNjQtLjQ5LTMuMjgtNC4zMy0zLjI4LTcuNDIsMC02LjYzLDQuODItMTIuNzMsMTMuOTEtMTIuNzM3LjMsMCwxMyw1LjIsMTMsMTIuMTUsMCw3LjI2LTQuNTcsMTMuMDktMTAuOTIsMTMuMDlhNS42Miw1LjYyLDAsMCwxLTQuODItMi40MXMtMSw0LTEuMzEsNEEyNC4zNSwyNC4zNSwwLDAsMSw2LjA4LDM1cy0uMTgtMS4zLS4yOC0yLjE0QTIwLjc5LDIwLjc5LDAsMCwxLDUuODQsMjYuOFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" alt="Pinterest">
-                        </a>
-                        <a href="#instagram" aria-label="Instagram">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTggNi4wMDAxNlY2LjAxMzVNMS4zMzMzMyA2LjY2NjgzQzEuMzMzMzMgNS4yNTIzNCAxLjg5NTIzIDMuODk1NzkgMi44OTU0MyAyLjg5NTU5QzMuODk1NjIgMS44OTU0IDUuMjUyMTcgMS4zMzM1IDYuNjY2NjYgMS4zMzM1SDE3LjMzMzNDMTguNzQ3OCAxLjMzMzUgMjAuMTA0NCAxLjg5NTQgMjEuMTA0NiAyLjg5NTU5QzIyLjEwNDggMy44OTU3OSAyMi42NjY3IDUuMjUyMzQgMjIuNjY2NyA2LjY2NjgzVjE3LjMzMzVDMjIuNjY2NyAxOC43NDggMjIuMTA0OCAyMC4xMDQ1IDIxLjEwNDYgMjEuMTA0N0MyMC4xMDQ0IDIyLjEwNDkgMTguNzQ3OCAyMi42NjY4IDE3LjMzMzMgMjIuNjY2OEg2LjY2NjY2QzUuMjUyMTcgMjIuNjY2OCAzLjg5NTYyIDIyLjEwNDkgMi44OTU0MyAyMS4xMDQ3QzEuODk1MjMgMjAuMTA0NSAxLjMzMzMzIDE4Ljc0OCAxLjMzMzMzIDE3LjMzMzVWNi42NjY4M1pNNy45OTk5OSAxMi4wMDAyQzcuOTk5OTkgMTMuMDYxIDguNDIxNDIgMTQuMDc4NCA5LjE3MTU3IDE0LjgyODZDOS45MjE3MSAxNS41Nzg3IDEwLjkzOTEgMTYuMDAwMiAxMiAxNi4wMDAyQzEzLjA2MDkgMTYuMDAwMiAxNC4wNzgzIDE1LjU3ODcgMTQuODI4NCAxNC44Mjg2QzE1LjU3ODYgMTQuMDc4NCAxNiAxMy4wNjEgMTYgMTIuMDAwMkMxNiAxMC45MzkzIDE1LjU3ODYgOS45MjE4OCAxNC44Mjg0IDkuMTcxNzNDMTQuMDc4MyA4LjQyMTU5IDEzLjA2MDkgOC4wMDAxNiAxMiA4LjAwMDE2QzEwLjkzOTEgOC4wMDAxNiA5LjkyMTcxIDguNDIxNTkgOS4xNzE1NyA5LjE3MTczQzguNDIxNDIgOS45MjE4OCA3Ljk5OTk5IDEwLjkzOTMgNy45OTk5OSAxMi4wMDAyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=" alt="Instagram">
-                        </a>
-                        <a href="#linkedin" aria-label="LinkedIn">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIuNDk4OTQgMi4zODkyIDE1LjQzIDE0LjczIj48cGF0aCBkPSJNNiw3LjE3djkuOTRIMi43VjcuMTdaTTYuMjIsNC4xYTEuNTksMS41OSwwLDAsMS0uNTEsMS4yMiwxLjg5LDEuODksMCwwLDEtMS4zNi40OWgwQTEuODEsMS44MSwwLDAsMSwzLDUuMzNhMS42NCwxLjY0LDAsMCwxLS41LTEuMjJBMS42MiwxLjYyLDAsMCwxLDMsMi44OGExLjg4LDEuODgsMCwwLDEsMS4zNS0uNDksMS44NCwxLjg0LDAsMCwxLDEuMzMuNDlBMS42NywxLjY3LDAsMCwxLDYuMjIsNC4xWm0xMS42OSw3LjMxdjUuN2gtMy4zVjExLjhhMi45LDIuOSwwLDAsMC0uNDEtMS42NSwxLjQzLDEuNDMsMCwwLDAtMS4yNy0uNiwxLjYyLDEuNjIsMCwwLDAtMS4wNi4zNSwyLjEzLDIuMTMsMCwwLDAtLjY0Ljg2LDIuNDMsMi40MywwLDAsMC0uMTEuODN2NS41NUg3Ljg0cTAtNCwwLTYuNDl0MC0zVjcuMTdoMy4zVjguNjJoMGE0LjM4LDQuMzgsMCwwLDEsLjQxLS41Niw0LjI2LDQuMjYsMCwwLDEsLjU3LS41MkEyLjYxLDIuNjEsMCwwLDEsMTMsNy4xYTQsNCwwLDAsMSwxLjE1LS4xNiwzLjU2LDMuNTYsMCwwLDEsMi43NiwxLjE0LDQuNzgsNC43OCwwLDAsMSwxLDMuMzNaIiBmaWxsPSIjZmZmZmZmIi8+PC9zdmc+" alt="LinkedIn">
-                        </a>
-                        <a href="#facebook" aria-label="Facebook">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjUuOCAxLjM5MDAxIDguNDUgMTcuMjEiPjxwYXRoIGQ9Ik0xMy43Niw3LjEybC0wLjIsMi41NEgxMVYxOC41SDcuNjZWOS42Nkg1LjlWNy4xMkg3LjY2VjUuNDFhNC41Nyw0LjU3LDAsMCwxLC41Ny0yLjY0QTMuMTMsMy4xMywwLDAsMSwxMSwxLjVhMTEuMDUsMTEuMDUsMCwwLDEsMy4xNS4zMkwxMy42Niw0LjQyYTUuOTQsNS45NCwwLDAsMC0xLjQyLS4yMSwxLjA2LDEuMDYsMCwwLDAtMS4zLjkzdjJoMi44WiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==" alt="Facebook">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 Standard Textile. All rights reserved.</p>
-                <p>
-                    <a href="#privacy">Privacy Policy</a> | 
-                    <a href="#terms">Terms of Service</a> | 
-                    <a href="#cookies">Cookie Policy</a> | 
-                    <a href="#accessibility">Accessibility</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- JavaScript – ONLY static interactions (no API) -->
-    <script>
-        // ============================================
-        // STATIC SITE FUNCTIONALITY – NO BACKEND
-        // ============================================
+    <div class="verified">Trust Verified ✓ Claimed</div>
+    <div class="info-row"><span>📍 Karanja (Gh.)</span> <span>🕐 Open until 10:30 pm</span></div>
+    <div class="info-row"><span>⏳ 11 Years in Business</span></div>
+    <div class="phone">📞 7510000000</div>
+    <div class="actions">
+      <a href="#enquire" class="enquire-btn">Enquire Now</a>
+      <a href="https://wa.me/917510000000" class="whatsapp-btn">WhatsApp</a>
+    </div>
+  </div>
 
-        // ---------- Mobile Menu Toggle ----------
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        if (mobileBtn) {
-            mobileBtn.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                this.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-            });
-        }
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!navMenu.contains(event.target) && !mobileBtn.contains(event.target)) {
-                navMenu.classList.remove('active');
-                if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
+  <!-- top bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>👕 Tshirts, Uniforms, Sports Kit</span>
+        <span class="separator">|</span>
+        <span>📍 Karanja (Gh.)</span>
+        <span>|</span>
+        <span>📞 7510000000</span>
+        <span>|</span>
+        <span>✈️ Delivering All Over India</span>
+      </div>
+      <div class="top-bar-cta">
+        <a href="#enquire" class="btn">ENQUIRE NOW</a>
+      </div>
+    </div>
+  </div>
 
-        // ---------- Product Filtering (works with static cards) ----------
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('.product-card');
+  <!-- header with dark mode toggle -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">STARDOM<span>TEXTILES</span></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivered">We Delivered</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="dark-toggle" id="darkToggle" aria-label="Dark mode">🌓</button>
+      </div>
+    </div>
+  </header>
 
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // Update active button
-                filterButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                const filter = this.getAttribute('data-filter');
-                
-                productCards.forEach(card => {
-                    const categories = card.getAttribute('data-category').split(' ');
-                    if (filter === 'all' || categories.includes(filter)) {
-                        card.style.display = 'block';
-                        setTimeout(() => card.style.opacity = '1', 10);
-                    } else {
-                        card.style.opacity = '0';
-                        setTimeout(() => card.style.display = 'none', 300);
-                    }
-                });
-            });
-        });
+  <!-- hero (dynamic) -->
+  <section class="hero" id="home">
+    <img id="heroImage" class="hero-bg" src="" alt="Hero Banner">
+    <div class="hero-content">
+      <h1 id="heroHeading"></h1>
+      <p id="heroSubheading"></p>
+      <div class="hero-buttons">
+        <a href="#delivered" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-outline">Contact Owner</a>
+      </div>
+    </div>
+  </section>
 
-        // ---------- Smooth Scroll for Anchor Links ----------
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#' || this.classList.contains('filter-btn')) return;
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
+  <!-- tailored solutions (dynamic) -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <h2 class="section-title">Tailored Solutions for Every Need</h2>
+      <p class="solutions-intro">From school uniforms to sports teams and corporate wear – we deliver quality fabrics across India.</p>
+      <div class="solutions-grid" id="solutionsGrid"></div>
+    </div>
+  </section>
 
-        // ---------- Simple Cart Counter (static simulation) ----------
-        const cartCount = document.querySelector('.cart-count');
-        let cartItems = 0;
+  <!-- about section (static) -->
+  <section class="about-local" id="about">
+    <div class="container">
+      <div class="brand-badge">
+        <h2>Stardom Textiles – Clothing Brand</h2>
+        <p>👕 T-shirt, Lowers, Track Suits, Sports Kit</p>
+        <p>🧵 Uniform & T-shirt Manufacturing & Printing</p>
+        <p class="location">📍 Karanja (Gh.)</p>
+        <p class="big-phone">📞 7510000000</p>
+        <p>✈️ Delivering All Over India</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;">Contact Owner</a>
+      </div>
+    </div>
+  </section>
 
-        // Only attach to buttons that say "Add to Cart"
-        document.querySelectorAll('.product-card .btn-primary').forEach(btn => {
-            if (btn.textContent.includes('Add to Cart')) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    cartItems++;
-                    cartCount.textContent = cartItems;
-                    
-                    // Animation
-                    cartCount.style.transform = 'scale(1.5)';
-                    setTimeout(() => cartCount.style.transform = 'scale(1)', 300);
-                    
-                    // Show notification
-                    showNotification('Product added to cart!');
-                });
-            }
-        });
+  <!-- we delivered section (dynamic products) -->
+  <section class="delivered-section" id="delivered">
+    <div class="container">
+      <h2 class="section-title">Our Delivered Products</h2>
+      <!-- filter chips -->
+      <div class="filter-row" id="productFilterRow">
+        <button class="filter-chip active" data-filter="all">All Products</button>
+        <button class="filter-chip" data-filter="b2b">B2B Products</button>
+        <button class="filter-chip" data-filter="b2c">B2C Products</button>
+        <button class="filter-chip" data-filter="best">Best Sellers</button>
+      </div>
 
-        // ---------- Notification Helper ----------
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: var(--accent-red);
-                color: white;
-                padding: 16px 24px;
-                border-radius: var(--border-radius);
-                box-shadow: var(--box-shadow);
-                z-index: 9999;
-                animation: slideIn 0.3s ease;
+      <!-- horizontal scroll wrapper -->
+      <div class="horizontal-wrapper">
+        <div class="product-horizontal" id="productHorizontal"></div>
+      </div>
+
+      <!-- scroll controls -->
+      <div class="scroll-controls">
+        <button class="scroll-btn" id="scrollLeft">←</button>
+        <button class="scroll-btn" id="scrollRight">→</button>
+      </div>
+
+      <!-- explore button -->
+      <div class="explore-btn-wrapper">
+        <a href="/full-catalog.html" class="btn btn-primary">Explore All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- why choose us (static) -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="why-grid">
+        <div class="why-card"><span class="why-icon">🧵</span><h3>Strong & Durable Fabric</h3><p>Made using reliable materials suitable for daily wear.</p></div>
+        <div class="why-card"><span class="why-icon">🏭</span><h3>Modern Production</h3><p>Efficient manufacturing ensuring consistent finishing.</p></div>
+        <div class="why-card"><span class="why-icon">💰</span><h3>Fair Pricing</h3><p>Competitive rates for bulk & retail customers.</p></div>
+        <div class="why-card"><span class="why-icon">🚚</span><h3>On-Time Delivery</h3><p>Reliable dispatch across India.</p></div>
+        <div class="why-card"><span class="why-icon">✔</span><h3>Quality Checked</h3><p>Each batch carefully inspected.</p></div>
+        <div class="why-card"><span class="why-icon">♻</span><h3>Responsible Production</h3><p>Efficient resource usage, minimal waste.</p></div>
+        <div class="why-card"><span class="why-icon">🤝</span><h3>Long-Term Trust</h3><p>Building relationships since 11+ years.</p></div>
+        <div class="why-card"><span class="why-icon">📦</span><h3>Bulk Orders Welcome</h3><p>Special handling for large quantities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (static) -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title">Ready to place your order?</h2>
+      <p>Whether you need school uniforms, sports kit, or custom t-shirts – we’re just a call away.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">B2B: Request Quote</a>
+        <a href="#" class="btn btn-outline">B2C: Shop Collection</a>
+        <a href="#" class="btn btn-outline">Download Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer (static) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">Tshirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
+        <div class="footer-column"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Custom Manufacturing</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Technical Support</a></li></ul></div>
+        <div class="footer-column"><h4>Company</h4><ul class="footer-links"><li><a href="#">About Stardom</a></li><li><a href="#">Careers</a></li><li><a href="#">Sustainability</a></li><li><a href="#">News</a></li><li><a href="#">Contact</a></li></ul></div>
+        <div class="footer-column"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Care Instructions</a></li></ul>
+          <div class="footer-social-links"> <a href="#">📘</a> <a href="#">📷</a> <a href="#">📌</a> </div>
+        </div>
+      </div>
+      <div class="copyright"><p>© 2025 Stardom Textiles. Karanja (Gh.)</p><p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Refund</a></p></div>
+    </div>
+  </footer>
+
+  <script>
+    // ---------- LOAD DYNAMIC CONTENT FROM JSON ----------
+    function loadHero() {
+      fetch('/data/hero.json')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('heroHeading').textContent = data.heading;
+          document.getElementById('heroSubheading').textContent = data.subheading;
+          document.getElementById('heroImage').src = data.image;
+        })
+        .catch(err => console.warn('Hero data not loaded yet (local dev).'));
+    }
+
+    function loadSolutions() {
+      fetch('/data/solutions.json')
+        .then(res => res.json())
+        .then(solutions => {
+          const grid = document.getElementById('solutionsGrid');
+          grid.innerHTML = solutions.map(sol => `
+            <div class="solution-card">
+              <img src="${sol.image}" alt="${sol.title}" class="solution-image">
+              <div class="solution-content">
+                <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
+                <h3>${sol.title}</h3>
+                <p>${sol.description}</p>
+                <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
+              </div>
+            </div>
+          `).join('');
+        })
+        .catch(err => console.warn('Solutions data not loaded yet.'));
+    }
+
+    function loadProducts() {
+      fetch('/data/products.json')
+        .then(res => res.json())
+        .then(products => {
+          const container = document.getElementById('productHorizontal');
+          container.innerHTML = products.map(prod => {
+            const catAttr = prod.categories ? prod.categories.join(' ') : '';
+            return `
+              <div class="product-card" data-category="${catAttr}">
+                <div class="product-image-container">
+                  <img src="${prod.image}" alt="${prod.name}" class="product-image">
+                </div>
+                <div class="product-info">
+                  <div class="product-category">${prod.category}</div>
+                  <h3 class="product-name">${prod.name}</h3>
+                  <p class="product-desc">${prod.description}</p>
+                  <div class="product-actions">
+                    <span class="product-price">${prod.price}</span>
+                    <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
+                  </div>
+                </div>
+              </div>
             `;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => document.body.removeChild(notification), 300);
-            }, 3000);
-        }
+          }).join('');
 
-        console.log('Static Standard Textile website ready');
-    </script>
+          // Re-attach filter functionality (since product cards are now in DOM)
+          initFilters();
+          // Re-init auto-scroll with new cards (the container ID is same)
+          initAutoScroll();
+        })
+        .catch(err => console.warn('Products data not loaded yet.'));
+    }
+
+    // ---------- EXISTING FUNCTIONALITY (PRESERVED) ----------
+    // mobile menu
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn && navMenu) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+      });
+      document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) navMenu.classList.remove('active');
+      });
+    }
+
+    // dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // trust popup auto hide on scroll, show after stop
+    const popup = document.getElementById('trustPopup');
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+      popup.classList.add('hidden');
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        popup.classList.remove('hidden');
+      }, 2000);
+    });
+
+    // close popup with X
+    document.querySelector('.trust-popup .close').addEventListener('click', function() {
+      popup.classList.add('hidden');
+    });
+
+    // product filter (will be called after products load)
+    function initFilters() {
+      const chips = document.querySelectorAll('.filter-chip');
+      const products = document.querySelectorAll('.product-card');
+      chips.forEach(chip => {
+        chip.removeEventListener('click', filterHandler); // avoid duplicates
+        chip.addEventListener('click', filterHandler);
+      });
+
+      function filterHandler(e) {
+        const chips = document.querySelectorAll('.filter-chip');
+        chips.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        const products = document.querySelectorAll('.product-card');
+        products.forEach(card => {
+          const cat = card.dataset.category || '';
+          card.style.display = (filter === 'all' || cat.split(' ').includes(filter)) ? 'block' : 'none';
+        });
+      }
+    }
+
+    // auto-scroll and scroll buttons
+    function initAutoScroll() {
+      const container = document.getElementById('productHorizontal');
+      const leftBtn = document.getElementById('scrollLeft');
+      const rightBtn = document.getElementById('scrollRight');
+
+      // remove old listeners to avoid duplicates
+      const newLeft = leftBtn.cloneNode(true);
+      const newRight = rightBtn.cloneNode(true);
+      leftBtn.parentNode.replaceChild(newLeft, leftBtn);
+      rightBtn.parentNode.replaceChild(newRight, rightBtn);
+
+      newLeft.addEventListener('click', () => {
+        container.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      newRight.addEventListener('click', () => {
+        container.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+
+      // clear any existing interval
+      if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
+      window.autoScrollInterval = setInterval(() => {
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      }, 4000);
+
+      container.addEventListener('mouseenter', () => clearInterval(window.autoScrollInterval));
+      container.addEventListener('mouseleave', () => {
+        window.autoScrollInterval = setInterval(() => {
+          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+          }
+        }, 4000);
+      });
+    }
+
+    // initial load of dynamic content
+    loadHero();
+    loadSolutions();
+    loadProducts(); // this will call initFilters and initAutoScroll after products load
+  </script>
 </body>
 </html>

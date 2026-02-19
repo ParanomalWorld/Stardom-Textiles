@@ -1,192 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Callback - YodhaPlay</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
+  <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
+  <style>
+    /* ----- modern reset & design tokens (light + dark) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background: #f5f5f5;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    :root {
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --light-gray: #f0f0f0;
+      --mid-gray: #dddddd;
+      --text-primary: #222222;
+      --text-secondary: #555555;
+      --text-light: #777777;
+      --accent: #c4282b;
+      --accent-hover: #a01e20;
+      --border-subtle: #eaeaea;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 12px rgba(0, 0, 0, 0.03);
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-light: 300;
+      --font-regular: 400;
+      --font-medium: 500;
+      --bg-body: var(--white);
+      --bg-soft: var(--off-white);
+      --text-main: var(--text-primary);
+      --text-muted: var(--text-secondary);
+      --card-bg: var(--white);
+      --footer-bg: #111;
+      --footer-text: #ddd;
+      transition: background-color 0.3s, color 0.2s;
+    }
 
-        .app-bar {
-            background: #8F21BE;
-            color: #fff;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+    body.dark-mode {
+      --white: #1e1e1e;
+      --off-white: #2a2a2a;
+      --light-gray: #333;
+      --mid-gray: #444;
+      --text-primary: #eee;
+      --text-secondary: #ccc;
+      --text-light: #aaa;
+      --accent: #e05a5d;
+      --accent-hover: #c44b4e;
+      --border-subtle: #3a3a3a;
+      --shadow-sm: 0 8px 20px rgba(0,0,0,0.4);
+      --shadow-hover: 0 15px 30px rgba(0,0,0,0.5);
+      --bg-body: #1e1e1e;
+      --bg-soft: #252525;
+      --text-main: #eee;
+      --text-muted: #ccc;
+      --card-bg: #2a2a2a;
+      --footer-bg: #0a0a0a;
+      --footer-text: #aaa;
+    }
 
-        .app-bar-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
+    body {
+      font-family: var(--font-base);
+      font-weight: var(--font-light);
+      color: var(--text-main);
+      line-height: 1.5;
+      background-color: var(--bg-body);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s, color 0.2s;
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            flex: 1;
-            padding: 1rem;
-            max-width: 480px;
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;
-        }
+    h1, h2, h3, h4 {
+      font-weight: var(--font-medium);
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
 
-        .status-icon {
-            font-size: 4rem;
-            margin: 2rem 0;
-        }
+    a { text-decoration: none; color: inherit; }
 
-        .success .status-icon {
-            color: #28a745;
-        }
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-        .failure .status-icon {
-            color: #ff4d4d;
-        }
+    /* ----- utility ----- */
+    .section-title {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: var(--font-medium);
+    }
 
-        .status-message {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2.2rem;
+      font-weight: var(--font-medium);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      line-height: 1.2;
+      background: transparent;
+      white-space: nowrap;
+    }
 
-        .status-details {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 2px 8px rgba(196, 40, 43, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(196, 40, 43, 0.25);
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: #8F21BE;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
+    .btn-outline {
+      border: 1px solid var(--text-main);
+      color: var(--text-main);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--text-main);
+      color: var(--bg-body);
+      transform: translateY(-2px);
+    }
 
-        .btn:hover {
-            background: #6b1891;
-        }
+    .btn-small {
+      padding: 0.6rem 1.8rem;
+      font-size: 0.85rem;
+    }
 
-        @media (max-width: 480px) {
-            .app-bar-title {
-                font-size: 1.25rem;
-            }
+    /* top bar */
+    .top-bar {
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.7rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+    .top-bar-info {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .top-bar-info span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .top-bar-info i { font-style: normal; color: var(--accent); font-weight: var(--font-medium); }
+    .top-bar-cta .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1.8rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
 
-            .status-icon {
-                font-size: 3rem;
-            }
+    /* header */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(var(--bg-body-rgb), 0.96);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    body:not(.dark-mode) .header { background: rgba(255,255,255,0.96); }
+    .dark-mode .header { background: rgba(30,30,30,0.96); }
 
-            .status-message {
-                font-size: 1.1rem;
-            }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      font-size: 1.9rem;
+      font-weight: var(--font-medium);
+      color: var(--text-main);
+    }
+    .logo span { color: var(--accent); }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+    .nav-menu a {
+      font-weight: var(--font-regular);
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-menu a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+    .dark-toggle {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-main);
+      margin-left: 1rem;
+    }
 
-            .status-details {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    /* hero */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                  url('https://i.pinimg.com/736x/72/32/58/723258011aed43ec7b5da95e644f182b.jpg') center/cover fixed;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 4rem 0;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 3.5rem; color: white; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+
+    /* solutions */
+    .solutions { padding: 6rem 0; background: var(--bg-body); }
+    .solutions-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+    .solution-card {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      transition: 0.25s;
+    }
+    .solution-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .solution-image { width: 100%; height: 240px; object-fit: cover; }
+    .solution-content { padding: 2rem; }
+    .solution-badge {
+      display: inline-block; font-size: 0.75rem; font-weight: var(--font-medium);
+      text-transform: uppercase; padding: 0.3rem 1.2rem; border-radius: 40px;
+      background: var(--light-gray); color: var(--text-secondary); margin-bottom: 1.2rem;
+    }
+    .solution-badge.b2b { background: var(--text-primary); color: white; }
+    .solution-badge.b2c { background: var(--accent); color: white; }
+
+    /* about local */
+    .about-local {
+      padding: 5rem 0;
+      background: var(--bg-soft);
+      text-align: center;
+    }
+    .brand-badge {
+      background: var(--card-bg); padding: 2.5rem; border-radius: 48px; max-width: 800px; margin: 0 auto;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle);
+    }
+    .brand-badge p { font-size: 1.2rem; margin: 0.5rem 0; color: var(--text-muted); }
+    .brand-badge .big-phone { font-size: 1.8rem; color: var(--accent); }
+
+    /* ----- delivered section with horizontal auto-scroll + explore button ----- */
+    .delivered-section {
+      padding: 6rem 0;
+      background: var(--bg-body);
+      position: relative;
+    }
+    .filter-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 2rem;
+      border-radius: 40px;
+      font-weight: var(--font-regular);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: var(--text-main);
+      color: var(--bg-body);
+      border-color: var(--text-main);
+    }
+
+    .horizontal-wrapper {
+      position: relative;
+      margin: 2rem 0 2rem;
+    }
+    .product-horizontal {
+      display: flex;
+      gap: 1.8rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding: 0.5rem 0.2rem 1.5rem;
+    }
+    .product-horizontal .product-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      background: var(--card-bg);
+      transition: 0.2s;
+    }
+    .product-horizontal .product-card:hover { box-shadow: var(--shadow-hover); }
+    .product-image-container { height: 240px; overflow: hidden; border-radius: 24px 24px 0 0; }
+    .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+    .product-card:hover .product-image { transform: scale(1.04); }
+    .product-info { padding: 1.5rem; }
+    .product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); }
+    .product-name { font-size: 1.2rem; font-weight: var(--font-medium); }
+
+    .scroll-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .scroll-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s;
+    }
+    .scroll-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .explore-btn-wrapper {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* why us */
+    .why-us {
+      padding: 6rem 0;
+      background: var(--bg-soft);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .why-card {
+      background: var(--card-bg);
+      padding: 2.2rem 1.5rem;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+    }
+    .why-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 0;
+      background: var(--text-main);
+      color: var(--bg-body);
+    }
+    .cta-section .section-title { color: var(--bg-body); }
+    .cta-section p { color: rgba(0,0,0,0.7); }
+    .dark-mode .cta-section p { color: rgba(255,255,255,0.8); }
+    .cta-buttons .btn-outline { border-color: var(--bg-body); color: var(--bg-body); }
+    .cta-buttons .btn-outline:hover { background: var(--bg-body); color: var(--text-main); }
+
+    /* footer */
+    .footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 5rem 0 2.5rem;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-column h4 { color: white; }
+    .footer-links a { color: #aaa; }
+    .footer-links a:hover { color: white; }
+    .footer-social-links a { background: #2a2a2a; }
+    .copyright { border-top-color: #2a2a2a; }
+
+    /* trust popup – smart hide on scroll */
+    .trust-popup {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      max-width: 320px;
+      z-index: 999;
+      border: 1px solid var(--border-subtle);
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .trust-popup.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+    .trust-popup .rating { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .trust-popup .stars { color: #f5b342; }
+    .trust-popup .verified { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; }
+    .trust-popup .info-row { display: flex; gap: 10px; margin-bottom: 10px; color: var(--text-muted); }
+    .trust-popup .phone { font-size: 1.2rem; font-weight: var(--font-medium); color: var(--text-main); }
+    .trust-popup .actions { display: flex; gap: 10px; margin-top: 15px; }
+    .trust-popup .actions a { flex: 1; padding: 10px; text-align: center; border-radius: 40px; font-weight: var(--font-medium); }
+    .enquire-btn { background: var(--accent); color: white; }
+    .whatsapp-btn { background: #25D366; color: white; }
+    .trust-popup .close {
+      position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 1.2rem; color: #aaa;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-menu {
+        display: none; flex-direction: column; background: var(--card-bg); position: absolute; top: 80px;
+        left: 0; width: 100%; padding: 2rem; box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border-subtle);
+      }
+      .nav-menu.active { display: flex; }
+      .hero h1 { font-size: 2.5rem; }
+      .trust-popup { max-width: 280px; right: 15px; bottom: 15px; }
+    }
+  </style>
 </head>
 <body>
-    <header class="app-bar">
-        <a href="/public" class="back-btn">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <h1 class="app-bar-title">Payment Status</h1>
-        <div style="width: 24px;"></div>
-    </header>
-
-    <div class="container">
-        <div id="loading" class="loading">
-            <div class="spinner" style="border: 4px solid rgba(143, 33, 190, 0.2); border-top: 4px solid #8F21BE; border-radius: 50%; width: 32px; height: 32px; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
-            Verifying payment...
-        </div>
-        <div id="status" style="display: none;">
-            <i id="statusIcon" class="fas"></i>
-            <div id="statusMessage" class="status-message"></div>
-            <div id="statusDetails" class="status-details"></div>
-            <a href="/public" class="btn">Back to Home</a>
-        </div>
+  <!-- floating trust popup (smart hide) -->
+  <div class="trust-popup" id="trustPopup">
+    <span class="close" onclick="this.parentElement.classList.add('hidden')">✕</span>
+    <div class="rating">
+      <span class="stars">⭐⭐⭐⭐☆</span> <span>4.3 ★ (17 ratings)</span>
     </div>
+    <div class="verified">Trust Verified ✓ Claimed</div>
+    <div class="info-row"><span>📍 Karanja (Gh.)</span> <span>🕐 Open until 10:30 pm</span></div>
+    <div class="info-row"><span>⏳ 11 Years in Business</span></div>
+    <div class="phone">📞 7510000000</div>
+    <div class="actions">
+      <a href="#enquire" class="enquire-btn">Enquire Now</a>
+      <a href="https://wa.me/917510000000" class="whatsapp-btn">WhatsApp</a>
+    </div>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const loading = document.getElementById('loading');
-            const status = document.getElementById('status');
-            const statusIcon = document.getElementById('statusIcon');
-            const statusMessage = document.getElementById('statusMessage');
-            const statusDetails = document.getElementById('statusDetails');
+  <!-- top bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>👕 Tshirts, Uniforms, Sports Kit</span>
+        <span class="separator">|</span>
+        <span>📍 Karanja (Gh.)</span>
+        <span>|</span>
+        <span>📞 7510000000</span>
+        <span>|</span>
+        <span>✈️ Delivering All Over India</span>
+      </div>
+      <div class="top-bar-cta">
+        <a href="#enquire" class="btn">ENQUIRE NOW</a>
+      </div>
+    </div>
+  </div>
 
-            // Get order_id from URL query
-            const urlParams = new URLSearchParams(window.location.search);
-            const orderId = urlParams.get('order_id');
+  <!-- header with dark mode toggle -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">STARDOM<span>TEXTILES</span></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+ <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivered">We Delivered</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="dark-toggle" id="darkToggle" aria-label="Dark mode">🌓</button>
+      </div>
+    </div>
+  </header>
 
-            if (!orderId) {
-                loading.style.display = 'none';
-                status.style.display = 'block';
-                statusIcon.className = 'fas fa-exclamation-circle failure';
-                statusMessage.textContent = 'Invalid Request';
-                statusDetails.textContent = 'No order ID provided.';
-                return;
-            }
+  <!-- hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Stardom Textiles – Tshirts, Uniforms & Sports Kit</h1>
+        <p>👕 Manufacturing & Printing in Karanja (Gh.). Premium quality T-shirts, Track Suits, Lowers, and Corporate Uniforms. B2B & B2C pan India.</p>
+        <div class="hero-buttons">
+          <a href="#delivered" class="btn btn-primary">Explore Products</a>
+          <a href="#contact" class="btn btn-outline">Contact Owner</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            try {
-                const response = await fetch('/api/cashfree/verify', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ orderId }),
-                });
+  <!-- tailored solutions -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <h2 class="section-title">Tailored Solutions for Every Need</h2>
+      <p class="solutions-intro">From school uniforms to sports teams and corporate wear – we deliver quality fabrics across India.</p>
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCJ65RHH4MIVHRXNUALPOLCX5DLA?version=2.1&channelId=0apRk00000006i9" alt="School Uniforms" class="solution-image">
+          <div class="solution-content">
+            <span class="solution-badge b2b">B2B</span>
+            <h3>School Uniforms</h3>
+            <p>Durable, comfortable uniform fabrics in any colour or style. Bulk orders with custom printing.</p>
+            <a href="#uniforms" class="btn btn-primary btn-small">Learn more</a>
+          </div>
+        </div>
+        <div class="solution-card">
+          <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MC4VULF7JH7JCSHL3MDKOKLSX77I?version=1.1&channelId=0apRk00000006i9" alt="Sports Kit" class="solution-image">
+          <div class="solution-content">
+            <span class="solution-badge b2b">B2B</span>
+            <h3>Sports Kit & Track Suits</h3>
+            <p>Breathable, high-performance sportswear for teams, events, and institutions.</p>
+            <a href="#sports" class="btn btn-primary btn-small">Learn more</a>
+          </div>
+        </div>
+        <div class="solution-card">
+          <img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCZCQ4Z3K7XBCEVJK5AKIJYLHV3Q?version=1.1&channelId=0apRk00000006i9" alt="Corporate & Custom" class="solution-image">
+          <div class="solution-content">
+            <span class="solution-badge b2c">B2C/B2B</span>
+            <h3>Corporate Wear & T-shirts</h3>
+            <p>Polo t-shirts, lowers, and custom printed merchandise for events and staff.</p>
+            <a href="#custom" class="btn btn-primary btn-small">Shop now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
+  <!-- about section -->
+  <section class="about-local" id="about">
+    <div class="container">
+      <div class="brand-badge">
+        <h2>Stardom Textiles – Clothing Brand</h2>
+        <p>👕 T-shirt, Lowers, Track Suits, Sports Kit</p>
+        <p>🧵 Uniform & T-shirt Manufacturing & Printing</p>
+        <p class="location">📍 Karanja (Gh.)</p>
+        <p class="big-phone">📞 7510000000</p>
+        <p>✈️ Delivering All Over India</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;">Contact Owner</a>
+      </div>
+    </div>
+  </section>
 
-                const { order, paymentDetails } = await response.json();
-                loading.style.display = 'none';
-                status.style.display = 'block';
+  <!-- we delivered section with auto-scroll, controls, and explore button -->
+  <section class="delivered-section" id="delivered">
+    <div class="container">
+      <h2 class="section-title">Our Delivered Products</h2>
+      <!-- filter chips -->
+      <div class="filter-row" id="productFilterRow">
+        <button class="filter-chip active" data-filter="all">All Products</button>
+        <button class="filter-chip" data-filter="b2b">B2B Products</button>
+        <button class="filter-chip" data-filter="b2c">B2C Products</button>
+        <button class="filter-chip" data-filter="best">Best Sellers</button>
+      </div>
 
-                if (order.status === 'paid') {
-                    statusIcon.className = 'fas fa-check-circle success';
-                    statusMessage.textContent = 'Payment Successful!';
-                    statusDetails.textContent = `Order ID: ${order.orderId}, Amount: ₹${order.amount}`;
-                } else {
-                    statusIcon.className = 'fas fa-times-circle failure';
-                    statusMessage.textContent = 'Payment Failed';
-                    statusDetails.textContent = `Order ID: ${order.orderId}, Status: ${order.status}`;
-                }
-            } catch (err) {
-                console.error('Error verifying payment:', err);
-                loading.style.display = 'none';
-                status.style.display = 'block';
-                statusIcon.className = 'fas fa-exclamation-circle failure';
-                statusMessage.textContent = 'Verification Failed';
-                statusDetails.textContent = 'Unable to verify payment. Please try again later.';
-            }
+      <!-- horizontal scroll wrapper with navigation -->
+      <div class="horizontal-wrapper">
+        <div class="product-horizontal" id="productHorizontal">
+          <div class="product-card" data-category="b2b best">
+            <div class="product-image-container"><img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCUXD573TGFFFW7L7TJEKAD2XOGU?version=1.1&channelId=0apRk00000006i9" alt="Uniform Shirt" class="product-image"></div>
+            <div class="product-info"><div class="product-category">Uniforms · B2B</div><h3 class="product-name">School Uniform Shirt</h3><p class="product-desc">Premium cotton, custom sizes.</p><div class="product-actions"><span class="product-price">From ₹299</span><a href="#" class="btn btn-primary btn-small">Enquire</a></div></div>
+          </div>
+          <div class="product-card" data-category="b2b">
+            <div class="product-image-container"><img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCSAB43L23QJBAFFT4IQHXQQZPLY?version=1.1&channelId=0apRk00000006i9" alt="Track Suit" class="product-image"></div>
+            <div class="product-info"><div class="product-category">Sports · B2B</div><h3 class="product-name">Polyester Track Suit</h3><p class="product-desc">Breathable, for teams.</p><div class="product-actions"><span class="product-price">From ₹549</span><a href="#" class="btn btn-primary btn-small">Enquire</a></div></div>
+          </div>
+          <div class="product-card" data-category="b2c best">
+            <div class="product-image-container"><img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCACUOZ2HZGBE2FMFZPIGBBK3VCI?version=1.1&channelId=0apRk00000006i9" alt="Cotton Tshirt" class="product-image"></div>
+            <div class="product-info"><div class="product-category">Tshirt · B2C</div><h3 class="product-name">Premium Cotton Tshirt</h3><p class="product-desc">Soft, printed or plain.</p><div class="product-actions"><span class="product-price">₹399</span><a href="#" class="btn btn-primary btn-small">Add to Cart</a></div></div>
+          </div>
+          <div class="product-card" data-category="b2b">
+            <div class="product-image-container"><img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=1920/sfsites/c/cms/delivery/media/MCNMUGY3ZGZVHWXHVVRCW2E3GWFA?version=1.1&channelId=0apRk00000006i9" alt="Sports Lower" class="product-image"></div>
+            <div class="product-info"><div class="product-category">Lower · B2B</div><h3 class="product-name">Sports Track Lower</h3><p class="product-desc">Elastic, durable.</p><div class="product-actions"><span class="product-price">From ₹349</span><a href="#" class="btn btn-primary btn-small">Request Sample</a></div></div>
+          </div>
+          <div class="product-card" data-category="b2c">
+            <div class="product-image-container"><img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCUXD573TGFFFW7L7TJEKAD2XOGU?version=1.1&channelId=0apRk00000006i9" alt="Custom Hoodie" class="product-image"></div>
+            <div class="product-info"><div class="product-category">Hoodie · B2C</div><h3 class="product-name">Custom Printed Hoodie</h3><p class="product-desc">Unisex, warm.</p><div class="product-actions"><span class="product-price">₹899</span><a href="#" class="btn btn-primary btn-small">Buy</a></div></div>
+          </div>
+          <div class="product-card" data-category="best">
+            <div class="product-image-container"><img src="https://www.standardtextile.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=640/sfsites/c/cms/delivery/media/MCSAB43L23QJBAFFT4IQHXQQZPLY?version=1.1&channelId=0apRk00000006i9" alt="Kids Uniform" class="product-image"></div>
+            <div class="product-info"><div class="product-category">Uniform · B2B</div><h3 class="product-name">Kids School Uniform</h3><p class="product-desc">Comfy, washable.</p><div class="product-actions"><span class="product-price">₹279</span><a href="#" class="btn btn-primary btn-small">Enquire</a></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- scroll controls -->
+      <div class="scroll-controls">
+        <button class="scroll-btn" id="scrollLeft">←</button>
+        <button class="scroll-btn" id="scrollRight">→</button>
+      </div>
+
+      <!-- explore button (redirects to another page) -->
+      <div class="explore-btn-wrapper">
+        <a href="/full-catalog.html" class="btn btn-primary">Explore All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- why choose us (8 cards) -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="why-grid">
+        <div class="why-card"><span class="why-icon">🧵</span><h3>Strong & Durable Fabric</h3><p>Made using reliable materials suitable for daily wear.</p></div>
+        <div class="why-card"><span class="why-icon">🏭</span><h3>Modern Production</h3><p>Efficient manufacturing ensuring consistent finishing.</p></div>
+        <div class="why-card"><span class="why-icon">💰</span><h3>Fair Pricing</h3><p>Competitive rates for bulk & retail customers.</p></div>
+        <div class="why-card"><span class="why-icon">🚚</span><h3>On-Time Delivery</h3><p>Reliable dispatch across India.</p></div>
+        <div class="why-card"><span class="why-icon">✔</span><h3>Quality Checked</h3><p>Each batch carefully inspected.</p></div>
+        <div class="why-card"><span class="why-icon">♻</span><h3>Responsible Production</h3><p>Efficient resource usage, minimal waste.</p></div>
+        <div class="why-card"><span class="why-icon">🤝</span><h3>Long-Term Trust</h3><p>Building relationships since 11+ years.</p></div>
+        <div class="why-card"><span class="why-icon">📦</span><h3>Bulk Orders Welcome</h3><p>Special handling for large quantities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title">Ready to place your order?</h2>
+      <p>Whether you need school uniforms, sports kit, or custom t-shirts – we’re just a call away.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">B2B: Request Quote</a>
+        <a href="#" class="btn btn-outline">B2C: Shop Collection</a>
+        <a href="#" class="btn btn-outline">Download Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">Tshirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
+        <div class="footer-column"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Custom Manufacturing</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Technical Support</a></li></ul></div>
+        <div class="footer-column"><h4>Company</h4><ul class="footer-links"><li><a href="#">About Stardom</a></li><li><a href="#">Careers</a></li><li><a href="#">Sustainability</a></li><li><a href="#">News</a></li><li><a href="#">Contact</a></li></ul></div>
+        <div class="footer-column"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Care Instructions</a></li></ul>
+          <div class="footer-social-links"> <!-- simplified social icons --> <a href="#">📘</a> <a href="#">📷</a> <a href="#">📌</a> </div>
+        </div>
+      </div>
+      <div class="copyright"><p>© 2025 Stardom Textiles. Karanja (Gh.)</p><p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Refund</a></p></div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn && navMenu) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+      });
+      document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) navMenu.classList.remove('active');
+      });
+    }
+
+    // dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // trust popup auto hide on scroll, show after stop
+    const popup = document.getElementById('trustPopup');
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+      popup.classList.add('hidden');
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        popup.classList.remove('hidden');
+      }, 2000); // show after 2 sec of no scroll
+    });
+    // initial visible
+
+    // horizontal scroll controls & auto-scroll
+    const container = document.getElementById('productHorizontal');
+    const leftBtn = document.getElementById('scrollLeft');
+    const rightBtn = document.getElementById('scrollRight');
+
+    leftBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+    rightBtn.addEventListener('click', () => {
+      container.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    // auto scroll every 4 seconds
+    let autoScroll = setInterval(() => {
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: 300, behavior: 'smooth' });
+      }
+    }, 4000);
+
+    // pause auto-scroll on hover
+    container.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    container.addEventListener('mouseleave', () => {
+      autoScroll = setInterval(() => {
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      }, 4000);
+    });
+
+    // product filter
+    const chips = document.querySelectorAll('.filter-chip');
+    const products = document.querySelectorAll('.product-card');
+    chips.forEach(chip => {
+      chip.addEventListener('click', function() {
+        chips.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        products.forEach(card => {
+          const cat = card.dataset.category || '';
+          card.style.display = (filter === 'all' || cat.split(' ').includes(filter)) ? 'block' : 'none';
         });
-    </script>
+      });
+    });
+
+    // close popup with X
+    document.querySelector('.trust-popup .close').addEventListener('click', function() {
+      popup.classList.add('hidden');
+    });
+  </script>
 </body>
 </html>

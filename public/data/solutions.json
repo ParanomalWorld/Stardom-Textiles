@@ -1,0 +1,26 @@
+[
+  {
+    "badge": "B2B",
+    "title": "School Uniforms",
+    "description": "Durable, comfortable uniform fabrics in any colour or style. Bulk orders with custom printing.",
+    "image": "/images/solution1.jpg",
+    "buttonText": "Learn more",
+    "buttonLink": "#uniforms"
+  },
+  {
+    "badge": "B2B",
+    "title": "Sports Kit & Track Suits",
+    "description": "Breathable, high-performance sportswear for teams, events, and institutions.",
+    "image": "/images/solution2.jpg",
+    "buttonText": "Learn more",
+    "buttonLink": "#sports"
+  },
+  {
+    "badge": "B2C/B2B",
+    "title": "Corporate Wear & T-shirts",
+    "description": "Polo t-shirts, lowers, and custom printed merchandise for events and staff.",
+    "image": "/images/solution3.jpg",
+    "buttonText": "Shop now",
+    "buttonLink": "#custom"
+  }
+]

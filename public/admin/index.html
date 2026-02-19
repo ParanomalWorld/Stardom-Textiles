@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <title>Content Manager</title>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- no need to load netlify-cms from CDN separately; it's imported in admin.js -->
 </head>
-<body></body>
+<body>
+  <script src="admin.js" type="module"></script>
+</body>
 </html>

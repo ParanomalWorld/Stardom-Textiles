@@ -1,10 +1,16 @@
 {
   "heading": "Heading",
   "subheading": "Subheadingd",
-  "image": "/images/91-751747-8765_20251011_222926_0000.png",
   "badge": "B2B",
+  "price": "fdf",
+  "name": "fdf",
+  "buttonLink": "dfd",
   "title": "d",
-  "description": "ddf",
-  "buttonText": "fdf",
-  "buttonLink": "dfd"
+  "image": "/images/91-751747-8765_20251011_222926_0000.png",
+  "categories": [
+    "b2c"
+  ],
+  "description": "ddfd",
+  "category": "Product",
+  "buttonText": "fdf"
 }

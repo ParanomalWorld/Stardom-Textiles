@@ -1,5 +1,62 @@
 // /admin/admin.js
-import CMS from 'netlify-cms-app';
-import config from './config.yml';
-
-CMS.init({ config });
+window.CMS.init({
+  config: {
+    backend: {
+      name: "git-gateway",
+      branch: "master"
+    },
+    media_folder: "images",
+    public_folder: "/images",
+    collections: [
+      {
+        name: "homepage",
+        label: "Homepage",
+        files: [
+          {
+            label: "Hero Section",
+            name: "hero",
+            file: "data/hero.json",
+            fields: [
+              { label: "Heading", name: "heading", widget: "string" },
+              { label: "Subheading", name: "subheading", widget: "text" },
+              { label: "Hero Image", name: "image", widget: "image" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "solutions",
+        label: "Solutions",
+        folder: "data/",
+        create: true,
+        slug: "{{slug}}",
+        extension: "json",
+        fields: [
+          { label: "Badge", name: "badge", widget: "select", options: ["B2B", "B2C", "B2C/B2B"] },
+          { label: "Title", name: "title", widget: "string" },
+          { label: "Description", name: "description", widget: "text" },
+          { label: "Image", name: "image", widget: "image" },
+          { label: "Button Text", name: "buttonText", widget: "string", default: "Learn more" },
+          { label: "Button Link", name: "buttonLink", widget: "string", default: "#" }
+        ]
+      },
+      {
+        name: "products",
+        label: "Products",
+        folder: "data/",
+        create: true,
+        slug: "{{slug}}",
+        extension: "json",
+        fields: [
+          { label: "Category", name: "category", widget: "string" },
+          { label: "Name", name: "name", widget: "string" },
+          { label: "Description", name: "description", widget: "text" },
+          { label: "Price", name: "price", widget: "string" },
+          { label: "Image", name: "image", widget: "image" },
+          { label: "Button Text", name: "buttonText", widget: "string", default: "Enquire" },
+          { label: "Categories (for filtering)", name: "categories", widget: "select", options: ["b2b", "b2c", "best"], multiple: true, required: false }
+        ]
+      }
+    ]
+  }
+});

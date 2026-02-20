@@ -27,6 +27,7 @@ collections:
           - label: "Solutions"
             name: "solutions"
             widget: "list"
+            summary: "{{fields.title}} ({{fields.badge}})"   # shows a nice label in the list
             fields:
               - { label: "Badge", name: "badge", widget: "select", options: ["B2B", "B2C", "B2C/B2B"] }
               - { label: "Title", name: "title", widget: "string" }
@@ -45,6 +46,7 @@ collections:
           - label: "Products"
             name: "products"
             widget: "list"
+            summary: "{{fields.name}} – {{fields.category}}"
             fields:
               - { label: "Category", name: "category", widget: "string" }
               - { label: "Name", name: "name", widget: "string" }

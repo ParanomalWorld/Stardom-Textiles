@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
   <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
-  <!-- ✅ ADD THIS: Netlify Identity Widget -->
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  <style>
+  <!-- Netlify Identity Widget -->
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
     /* ----- modern reset & design tokens (light + dark) ----- */
     * {
       margin: 0;
@@ -140,6 +141,15 @@
       font-size: 0.85rem;
     }
 
+    /* Compact button for solution cards */
+    .btn-compact {
+      padding: 0.4rem 1.2rem;
+      font-size: 0.8rem;
+      border-radius: 30px;
+      min-width: auto;
+      margin-top: 0.5rem;
+    }
+
     /* top bar */
     .top-bar {
       background: var(--bg-soft);
@@ -258,29 +268,83 @@
     /* solutions */
     .solutions { padding: 6rem 0; background: var(--bg-body); }
     .solutions-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); }
+    /* Fixed 4 columns grid */
     .solutions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
     }
     .solution-card {
-      border-radius: 24px;
+      border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--shadow-sm);
       background: var(--card-bg);
       border: 1px solid var(--border-subtle);
       transition: 0.25s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
-    .solution-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-    .solution-image { width: 100%; height: 240px; object-fit: cover; }
-    .solution-content { padding: 2rem; }
+    .solution-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .solution-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .solution-content {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    /* Chip style – uniform and minimal */
     .solution-badge {
-      display: inline-block; font-size: 0.75rem; font-weight: var(--font-medium);
-      text-transform: uppercase; padding: 0.3rem 1.2rem; border-radius: 40px;
-      background: var(--light-gray); color: var(--text-secondary); margin-bottom: 1.2rem;
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: var(--font-medium);
+      text-transform: uppercase;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      background: var(--light-gray);
+      color: var(--text-secondary);
+      letter-spacing: 0.3px;
+      width: fit-content;
+      border: none;
     }
-    .solution-badge.b2b { background: var(--text-primary); color: white; }
-    .solution-badge.b2c { background: var(--accent); color: white; }
+    /* Remove colored variants – keep all chips uniform */
+    .solution-badge.b2b,
+    .solution-badge.b2c {
+      background: var(--light-gray);
+      color: var(--text-secondary);
+    }
+    .solution-card h3 {
+      font-size: 1.2rem;
+      font-weight: var(--font-medium);
+      margin: 0;
+      line-height: 1.3;
+    }
+    /* Hide description and other metadata */
+    .solution-card .solution-content p {
+      display: none;
+    }
+    /* Explore more button wrapper */
+    .explore-more-wrapper {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    /* Responsive grid */
+    @media (max-width: 992px) {
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     /* about local */
     .about-local {
@@ -555,6 +619,10 @@
       <h2 class="section-title">Tailored Solutions for Every Need</h2>
       <p class="solutions-intro">From school uniforms to sports teams and corporate wear – we deliver quality fabrics across India.</p>
       <div class="solutions-grid" id="solutionsGrid"></div>
+      <!-- Explore More button wrapper (hidden by default) -->
+      <div id="exploreMoreWrapper" class="explore-more-wrapper" style="display: none;">
+        <a href="explore_product.html" class="btn btn-outline">Explore More →</a>
+      </div>
     </div>
   </section>
 
@@ -665,21 +733,35 @@
     fetch('/data/solutions.json')
       .then(res => res.json())
       .then(data => {
-        // If data is array, use directly; if object with "solutions" property, use that
-        const solutions = Array.isArray(data) ? data : (data.solutions || []);
+        // Handle both array and object with "solutions" property
+        let allSolutions = Array.isArray(data) ? data : (data.solutions || []);
+        const totalCount = allSolutions.length;
+        // Limit to first 8 for display
+        const displaySolutions = allSolutions.slice(0, 8);
         const grid = document.getElementById('solutionsGrid');
         if (!grid) return;
-        grid.innerHTML = solutions.map(sol => `
-          <div class="solution-card">
-            <img src="${sol.image}" alt="${sol.title}" class="solution-image">
-            <div class="solution-content">
-              <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
-              <h3>${sol.title}</h3>
-              <p>${sol.description}</p>
-              <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
+        grid.innerHTML = displaySolutions.map(sol => {
+          // Determine badge text (use sol.badge if present, else fallback)
+          const badgeText = sol.badge || 'Category';
+          // Create WhatsApp link with product title
+          const whatsappLink = `https://wa.me/917510000000?text=I%20want%20to%20order%20${encodeURIComponent(sol.title)}`;
+          return `
+            <div class="solution-card" onclick="window.open('${whatsappLink}', '_blank')">
+              <img src="${sol.image}" alt="${sol.title}" class="solution-image">
+              <div class="solution-content">
+                <span class="solution-badge">${badgeText}</span>
+                <h3>${sol.title}</h3>
+                <a href="${whatsappLink}" class="btn btn-primary btn-small btn-compact shop-btn" onclick="event.stopPropagation(); window.open('${whatsappLink}', '_blank'); return false;">Order</a>
+              </div>
             </div>
-          </div>
-        `).join('');
+          `;
+        }).join('');
+
+        // Show "Explore More" button if there are more than 8 solutions
+        const exploreWrapper = document.getElementById('exploreMoreWrapper');
+        if (exploreWrapper) {
+          exploreWrapper.style.display = totalCount > 8 ? 'block' : 'none';
+        }
       })
       .catch(err => console.warn('Solutions data not loaded.'));
   }

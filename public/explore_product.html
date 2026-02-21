@@ -1,492 +1,822 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - YodhaPlay</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* ========== GLOBAL STYLES ========== */
-        :root {
-            --primary: #1A4D8F;
-            --primary-dark: #0f2a50;
-            --accent: #FF6B35;
-            --accent-dark: #d45226;
-            --dark: #0A1128;
-            --light: #FFFFFF;
-            --text-light: rgba(255, 255, 255, 0.85);
-            --text-muted: rgba(255, 255, 255, 0.65);
-            --divider: rgba(255, 255, 255, 0.1);
-            --gradient: linear-gradient(135deg, var(--primary) 0%, #2D82CF 100%);
-            --accent-gradient: linear-gradient(135deg, var(--accent) 0%, #FF8C61 100%);
-            --bg-light: #E5E7EB;
-            --text-dark: #1F2937;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
+  <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
+  <!-- ✅ ADD THIS: Netlify Identity Widget -->
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  <style>
+    /* ----- modern reset & design tokens (light + dark) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    :root {
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --light-gray: #f0f0f0;
+      --mid-gray: #dddddd;
+      --text-primary: #222222;
+      --text-secondary: #555555;
+      --text-light: #777777;
+      --accent: #c4282b;
+      --accent-hover: #a01e20;
+      --border-subtle: #eaeaea;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 12px rgba(0, 0, 0, 0.03);
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-light: 300;
+      --font-regular: 400;
+      --font-medium: 500;
+      --bg-body: var(--white);
+      --bg-soft: var(--off-white);
+      --text-main: var(--text-primary);
+      --text-muted: var(--text-secondary);
+      --card-bg: var(--white);
+      --footer-bg: #111;
+      --footer-text: #ddd;
+      transition: background-color 0.3s, color 0.2s;
+    }
 
-        body {
-            background: var(--dark);
-            color: var(--light);
-            overflow-x: hidden;
-            transition: background 0.5s ease, color 0.5s ease;
-        }
+    body.dark-mode {
+      --white: #1e1e1e;
+      --off-white: #2a2a2a;
+      --light-gray: #333;
+      --mid-gray: #444;
+      --text-primary: #eee;
+      --text-secondary: #ccc;
+      --text-light: #aaa;
+      --accent: #e05a5d;
+      --accent-hover: #c44b4e;
+      --border-subtle: #3a3a3a;
+      --shadow-sm: 0 8px 20px rgba(0,0,0,0.4);
+      --shadow-hover: 0 15px 30px rgba(0,0,0,0.5);
+      --bg-body: #1e1e1e;
+      --bg-soft: #252525;
+      --text-main: #eee;
+      --text-muted: #ccc;
+      --card-bg: #2a2a2a;
+      --footer-bg: #0a0a0a;
+      --footer-text: #aaa;
+    }
 
-        body.light-mode {
-            background: var(--bg-light);
-            color: var(--text-dark);
-            --text-light: #1F2937;
-            --text-muted: #6B7280;
-            --dark: #F3F4F6;
-            --divider: rgba(0, 0, 0, 0.1);
-        }
+    body {
+      font-family: var(--font-base);
+      font-weight: var(--font-light);
+      color: var(--text-main);
+      line-height: 1.5;
+      background-color: var(--bg-body);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.2s, color 0.2s;
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
+    h1, h2, h3, h4 {
+      font-weight: var(--font-medium);
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
 
-        /* ========== HEADER ========== */
-        .main-header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 17, 40, 0.96);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
-            transition: background 0.5s ease;
-        }
+    a { text-decoration: none; color: inherit; }
 
-        .main-header.light-mode {
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-        .top-policy-bar {
-            padding: 1rem 0;
-        }
+    /* ----- utility ----- */
+    .section-title {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: var(--font-medium);
+    }
 
-        .policy-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2.2rem;
+      font-weight: var(--font-medium);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      line-height: 1.2;
+      background: transparent;
+      white-space: nowrap;
+    }
 
-        .policy-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 2px 8px rgba(196, 40, 43, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(196, 40, 43, 0.25);
+    }
 
-        .policy-links a:hover {
-            color: var(--accent);
-        }
+    .btn-outline {
+      border: 1px solid var(--text-main);
+      color: var(--text-main);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--text-main);
+      color: var(--bg-body);
+      transform: translateY(-2px);
+    }
 
-        /* ========== MODE TOGGLE ========== */
-        .mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            background: var(--primary);
-            padding: 0.5rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    .btn-small {
+      padding: 0.6rem 1.8rem;
+      font-size: 0.85rem;
+    }
 
-        .mode-toggle i {
-            color: var(--light);
-            font-size: 1.2rem;
-        }
+    /* top bar */
+    .top-bar {
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.7rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+    .top-bar-info {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .top-bar-info span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .top-bar-info i { font-style: normal; color: var(--accent); font-weight: var(--font-medium); }
+    .top-bar-cta .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1.8rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
 
-        .mode-toggle:hover {
-            background: var(--accent);
-        }
+    /* header */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .dark-mode .header {
+      background: rgba(30, 30, 30, 0.96);
+    }
 
-        /* ========== PRIVACY POLICY STYLES ========== */
-        .policy-container {
-            max-width: 900px;
-            margin: 100px auto 40px;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      font-size: 1.9rem;
+      font-weight: var(--font-medium);
+      color: var(--text-main);
+    }
+    .logo span { color: var(--accent); }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+    .nav-menu a {
+      font-weight: var(--font-regular);
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-menu a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+    .dark-toggle {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-main);
+      margin-left: 1rem;
+    }
 
-        .breadcrumb {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
+    /* hero (modified for dynamic image) */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 4rem 0;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 3.5rem; color: white; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
 
-        .breadcrumb a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    /* solutions */
+    .solutions { padding: 6rem 0; background: var(--bg-body); }
+    .solutions-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+    .solution-card {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      transition: 0.25s;
+    }
+    .solution-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .solution-image { width: 100%; height: 240px; object-fit: cover; }
+    .solution-content { padding: 2rem; }
+    .solution-badge {
+      display: inline-block; font-size: 0.75rem; font-weight: var(--font-medium);
+      text-transform: uppercase; padding: 0.3rem 1.2rem; border-radius: 40px;
+      background: var(--light-gray); color: var(--text-secondary); margin-bottom: 1.2rem;
+    }
+    .solution-badge.b2b { background: var(--text-primary); color: white; }
+    .solution-badge.b2c { background: var(--accent); color: white; }
 
-        .breadcrumb a:hover {
-            color: var(--accent-dark);
-        }
+    /* about local */
+    .about-local {
+      padding: 5rem 0;
+      background: var(--bg-soft);
+      text-align: center;
+    }
+    .brand-badge {
+      background: var(--card-bg); padding: 2.5rem; border-radius: 48px; max-width: 800px; margin: 0 auto;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle);
+    }
+    .brand-badge p { font-size: 1.2rem; margin: 0.5rem 0; color: var(--text-muted); }
+    .brand-badge .big-phone { font-size: 1.8rem; color: var(--accent); }
 
-        .policy-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px var(--accent);
-        }
+    /* delivered section */
+    .delivered-section {
+      padding: 6rem 0;
+      background: var(--bg-body);
+      position: relative;
+    }
+    .filter-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 2rem;
+      border-radius: 40px;
+      font-weight: var(--font-regular);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: var(--text-main);
+      color: var(--bg-body);
+      border-color: var(--text-main);
+    }
 
-        .policy-section {
-            margin-bottom: 2.5rem;
-            border-bottom: 1px solid var(--divider);
-            padding-bottom: 1.5rem;
-        }
+    .horizontal-wrapper {
+      position: relative;
+      margin: 2rem 0 2rem;
+    }
+    .product-horizontal {
+      display: flex;
+      gap: 1.8rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding: 0.5rem 0.2rem 1.5rem;
+    }
+    .product-horizontal .product-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      background: var(--card-bg);
+      transition: 0.2s;
+    }
+    .product-horizontal .product-card:hover { box-shadow: var(--shadow-hover); }
+    .product-image-container { height: 240px; overflow: hidden; border-radius: 24px 24px 0 0; }
+    .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+    .product-card:hover .product-image { transform: scale(1.04); }
+    .product-info { padding: 1.5rem; }
+    .product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); }
+    .product-name { font-size: 1.2rem; font-weight: var(--font-medium); }
 
-        .policy-section h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Orbitron', sans-serif;
-        }
+    .scroll-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .scroll-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s;
+    }
+    .scroll-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .explore-btn-wrapper {
+      text-align: center;
+      margin-top: 2rem;
+    }
 
-        .policy-section h2 i {
-            transition: transform 0.3s ease;
-        }
+    /* why us */
+    .why-us {
+      padding: 6rem 0;
+      background: var(--bg-soft);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .why-card {
+      background: var(--card-bg);
+      padding: 2.2rem 1.5rem;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+    }
+    .why-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
 
-        .policy-section.active h2 i {
-            transform: rotate(90deg);
-        }
+    /* CTA */
+    .cta-section {
+      padding: 5rem 0;
+      background: var(--text-main);
+      color: var(--bg-body);
+    }
+    .cta-section .section-title { color: var(--bg-body); }
+    .cta-section p { color: rgba(0,0,0,0.7); }
+    .dark-mode .cta-section p { color: rgba(255,255,255,0.8); }
+    .cta-buttons .btn-outline { border-color: var(--bg-body); color: var(--bg-body); }
+    .cta-buttons .btn-outline:hover { background: var(--bg-body); color: var(--text-main); }
 
-        .policy-section .content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+    /* footer */
+    .footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 5rem 0 2.5rem;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-column h4 { color: white; }
+    .footer-links a { color: #aaa; }
+    .footer-links a:hover { color: white; }
+    .footer-social-links a { background: #2a2a2a; }
+    .copyright { border-top-color: #2a2a2a; }
 
-        .policy-section.active .content {
-            max-height: 1000px;
-        }
+    /* trust popup */
+    .trust-popup {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      max-width: 320px;
+      z-index: 999;
+      border: 1px solid var(--border-subtle);
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .trust-popup.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+    .trust-popup .rating { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .trust-popup .stars { color: #f5b342; }
+    .trust-popup .verified { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; }
+    .trust-popup .info-row { display: flex; gap: 10px; margin-bottom: 10px; color: var(--text-muted); }
+    .trust-popup .phone { font-size: 1.2rem; font-weight: var(--font-medium); color: var(--text-main); }
+    .trust-popup .actions { display: flex; gap: 10px; margin-top: 15px; }
+    .trust-popup .actions a { flex: 1; padding: 10px; text-align: center; border-radius: 40px; font-weight: var(--font-medium); }
+    .enquire-btn { background: var(--accent); color: white; }
+    .whatsapp-btn { background: #25D366; color: white; }
+    .trust-popup .close {
+      position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 1.2rem; color: #aaa;
+    }
 
-        .policy-section p {
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .policy-section ol, .policy-section ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .policy-section li {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-        }
-
-        .copyright {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--divider);
-            margin-top: 3rem;
-        }
-
-        /* ========== BACK TO TOP ========== */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 0.8rem;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .back-to-top:hover {
-            background: var(--accent-dark);
-            transform: translateY(-5px);
-        }
-
-        /* ========== PARTICLE EFFECT ========== */
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* ========== RESPONSIVE ADJUSTMENTS ========== */
-        @media (max-width: 768px) {
-            .policy-container {
-                margin: 80px 1rem 2rem;
-                padding: 1.5rem;
-            }
-
-            .policy-content h1 {
-                font-size: 2rem;
-            }
-
-            .policy-section h2 {
-                font-size: 1.3rem;
-            }
-
-            .policy-links {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-        }
-    </style>
+    /* responsive */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-menu {
+        display: none; flex-direction: column; background: var(--card-bg); position: absolute; top: 80px;
+        left: 0; width: 100%; padding: 2rem; box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--border-subtle);
+      }
+      .nav-menu.active { display: flex; }
+      .hero h1 { font-size: 2.5rem; }
+      .trust-popup { max-width: 280px; right: 15px; bottom: 15px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Mode Toggle -->
-    <div class="mode-toggle" id="modeToggle">
-        <i class="fas fa-moon"></i>
+  <!-- floating trust popup (smart hide) -->
+  <div class="trust-popup" id="trustPopup">
+    <span class="close" onclick="this.parentElement.classList.add('hidden')">✕</span>
+    <div class="rating">
+      <span class="stars">⭐⭐⭐⭐☆</span> <span>4.3 ★ (17 ratings)</span>
     </div>
-
-    <!-- Particle Background -->
-    <div id="particles"></div>
-
-    <!-- Header Section -->
-    <header class="main-header">
-        <!-- Top Policy Bar -->
-        <div class="top-policy-bar">
-            <div class="container">
-                <div class="policy-links">
-                    <a href="/terms.html" target="_blank">Terms</a>
-                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
-                    <a href="/fairplay-policy.html" target="_blank">Fair Play Policy</a>
-                    <a href="/return-policy.html" target="_blank">Refund Policy</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Privacy Policy Content -->
-    <main class="policy-container">
-        <div class="breadcrumb">
-            <a href="/index.html">Home</a> / Privacy Policy
-        </div>
-
-        <div class="policy-content">
-            <h1 style="text-align: center; color: #FF6B35;">Privacy Policy</h1>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> Introduction</h2>
-                <div class="content">
-                    <p>Welcome to YodhaPlay, a skill-based entertainment app for Android offering interactive challenges and secure wallet top-ups for enhanced user experiences. This Privacy Policy outlines how we collect, use, and protect your personal information in compliance with the Digital Personal Data Protection Act, 2023 (DPDP Act). By using our platform, you consent to the practices described herein, designed to safeguard your data while enhancing your engagement with our skill-based activities.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 1. Information Collection and Use</h2>
-                <div class="content">
-                    <p>We collect minimal personal information to provide a seamless experience. This includes:</p>
-                    <ol>
-                        <li><strong>Username and Email:</strong> To manage your account and participation in interactive challenges.</li>
-                        <li><strong>Device Information:</strong> Such as device ID, operating system, and app usage data to ensure compatibility and improve performance.</li>
-                    </ol>
-                    <p>We may collaborate with third-party services like Google Play Services, AdMob, and Firebase Analytics to enhance functionality, such as analytics and crash reporting. Your data is used solely to personalize your experience, manage challenges, and improve our platform.</p>
-                    <p><strong>Consent:</strong> By using YodhaPlay, you consent to the collection and use of your data as outlined in this policy. You may withdraw consent at any time by contacting us, though this may limit access to certain features.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 2. Log Data</h2>
-                <div class="content">
-                    <p>In the event of an app error, we collect diagnostic data to troubleshoot and improve our services. This log data may include:</p>
-                    <ul>
-                        <li>Device IP address</li>
-                        <li>Device name and operating system version</li>
-                        <li>App configuration and usage timestamps</li>
-                        <li>Other technical details relevant to the error</li>
-                    </ul>
-                    <p>This information is used exclusively to resolve issues and maintain platform stability, and it is not shared with unauthorized parties.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 3. Cookies</h2>
-                <div class="content">
-                    <p>YodhaPlay does not directly use cookies. However, third-party services integrated into our platform (e.g., Firebase Analytics) may use cookies or similar technologies to enhance functionality. Cookies are small data files used as unique identifiers. You can accept or decline these cookies through your browser settings, though declining may affect some features of our platform.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 4. Service Providers</h2>
-                <div class="content">
-                    <p>We partner with third-party service providers to support our platform’s operations, including hosting, analytics, and error tracking. These providers may have access to your personal information to perform their tasks but are contractually obligated to:</p>
-                    <ul>
-                        <li>Use your data only for the intended purpose.</li>
-                        <li>Comply with the DPDP Act and other applicable privacy laws.</li>
-                        <li>Not disclose or use your data for unauthorized purposes.</li>
-                    </ul>
-                    <p>We carefully vet our service providers to ensure they meet our privacy and security standards.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 5. Security</h2>
-                <div class="content">
-                    <p>We prioritize your privacy and employ industry-standard security measures, such as encryption, to protect your personal information. However, no method of internet transmission or electronic storage is 100% secure. While we strive to minimize risks, we cannot guarantee absolute security. We continuously update our protocols to enhance protection and comply with evolving legal standards.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 6. Data Retention and Deletion</h2>
-                <div class="content">
-                    <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy, such as managing your account and complying with legal obligations. If you request deletion of your data, we will remove it from our systems within 30 days, unless retention is required by law. To request data deletion, please contact us at the details provided below.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 7. User Rights</h2>
-                <div class="content">
-                    <p>Under the DPDP Act, 2023, you have the following rights regarding your personal information:</p>
-                    <ol>
-                        <li><strong>Right to Access:</strong> You can request a copy of the data we hold about you.</li>
-                        <li><strong>Right to Correction:</strong> You can request correction of inaccurate or incomplete data.</li>
-                        <li><strong>Right to Deletion:</strong> You can request deletion of your data, subject to legal requirements.</li>
-                        <li><strong>Right to Withdraw Consent:</strong> You can withdraw consent for data processing at any time.</li>
-                    </ol>
-                    <p>To exercise these rights, please contact us at the details provided below.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 8. Age and Regional Restrictions</h2>
-                <div class="content">
-                    <p>YodhaPlay is intended for users aged 18 and above. We implement strict age verification processes to ensure compliance. Additionally, due to state-specific regulations, YodhaPlay is not available in Andhra Pradesh, Arunachal Pradesh, Assam, Odisha, and Telangana. We promote responsible engagement and encourage users to participate within their limits.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 9. Changes to This Privacy Policy</h2>
-                <div class="content">
-                    <p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. Any updates will be posted on this page with an updated effective date. We encourage you to review this policy regularly to stay informed about how we protect your data.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2><i class="fas fa-chevron-right"></i> 10. Contact Us</h2>
-                <div class="content">
-                    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us at:</p>
-                    <ul>
-                        <li><strong>Email:</strong> <a href="mailto:privacy@yodhaplay.com" style="color: var(--accent);">privacy@yodhaplay.com</a></li>
-                        <li><strong>Support:</strong> Available 24/7 via our <a href="/help-center.html" style="color: var(--accent);">Help Center</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="copyright">
-                Copyright ©2025 YodhaVerse Innovations. All Rights Reserved.
-            </div>
-        </div>
-    </main>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
+    <div class="verified">Trust Verified ✓ Claimed</div>
+    <div class="info-row"><span>📍 Karanja (Gh.)</span> <span>🕐 Open until 10:30 pm</span></div>
+    <div class="info-row"><span>⏳ 11 Years in Business</span></div>
+    <div class="phone">📞 7510000000</div>
+    <div class="actions">
+      <a href="#enquire" class="enquire-btn">Enquire Now</a>
+      <a href="https://wa.me/917510000000" class="whatsapp-btn">WhatsApp</a>
     </div>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modeToggle = document.querySelector('#modeToggle');
-            const body = document.body;
-            const backToTop = document.querySelector('#backToTop');
+  <!-- top bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>👕 Tshirts, Uniforms, Sports Kit</span>
+        <span class="separator">|</span>
+        <span>📍 Karanja (Gh.)</span>
+        <span>|</span>
+        <span>📞 7510000000</span>
+        <span>|</span>
+        <span>✈️ Delivering All Over India</span>
+      </div>
+      <div class="top-bar-cta">
+        <a href="#enquire" class="btn">ENQUIRE NOW</a>
+      </div>
+    </div>
+  </div>
 
-            // Dark/Light Mode Toggle
-            modeToggle.addEventListener('click', () => {
-                body.classList.toggle('light-mode');
-                const isLightMode = body.classList.contains('light-mode');
-                modeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-            });
+  <!-- header with dark mode toggle -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">STARDOM<span>TEXTILES</span></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivered">We Delivered</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="dark-toggle" id="darkToggle" aria-label="Dark mode">🌓</button>
+      </div>
+    </div>
+  </header>
 
-            // Load Theme Preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                body.classList.add('light-mode');
-                modeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            }
+  <!-- hero (dynamic) -->
+  <section class="hero" id="home">
+    <img id="heroImage" class="hero-bg" src="" alt="Hero Banner">
+    <div class="hero-content">
+      <h1 id="heroHeading"></h1>
+      <p id="heroSubheading"></p>
+      <div class="hero-buttons">
+        <a href="#delivered" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-outline">Contact Owner</a>
+      </div>
+    </div>
+  </section>
 
-            // Collapsible Sections
-            document.querySelectorAll('.policy-section h2').forEach(header => {
-                header.addEventListener('click', () => {
-                    const section = header.parentElement;
-                    section.classList.toggle('active');
-                });
-            });
+  <!-- tailored solutions (dynamic) -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <h2 class="section-title">Tailored Solutions for Every Need</h2>
+      <p class="solutions-intro">From school uniforms to sports teams and corporate wear – we deliver quality fabrics across India.</p>
+      <div class="solutions-grid" id="solutionsGrid"></div>
+    </div>
+  </section>
 
-            // Back to Top
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTop.style.display = 'block';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
+  <!-- about section (static) -->
+  <section class="about-local" id="about">
+    <div class="container">
+      <div class="brand-badge">
+        <h2>Stardom Textiles – Clothing Brand</h2>
+        <p>👕 T-shirt, Lowers, Track Suits, Sports Kit</p>
+        <p>🧵 Uniform & T-shirt Manufacturing & Printing</p>
+        <p class="location">📍 Karanja (Gh.)</p>
+        <p class="big-phone">📞 7510000000</p>
+        <p>✈️ Delivering All Over India</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;">Contact Owner</a>
+      </div>
+    </div>
+  </section>
 
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
+  <!-- we delivered section (dynamic products) -->
+  <section class="delivered-section" id="delivered">
+    <div class="container">
+      <h2 class="section-title">Our Delivered Products</h2>
+      <!-- filter chips -->
+      <div class="filter-row" id="productFilterRow">
+        <button class="filter-chip active" data-filter="all">All Products</button>
+        <button class="filter-chip" data-filter="b2b">B2B Products</button>
+        <button class="filter-chip" data-filter="b2c">B2C Products</button>
+        <button class="filter-chip" data-filter="best">Best Sellers</button>
+      </div>
 
-            // Simple Particle Effect
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.width = '2px';
-                particle.style.height = '2px';
-                particle.style.background = 'rgba(255, 107, 53, 0.5)';
-                particle.style.borderRadius = '50%';
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.animation = `float ${Math.random() * 5 + 3}s infinite`;
-                particlesContainer.appendChild(particle);
-            }
+      <!-- horizontal scroll wrapper -->
+      <div class="horizontal-wrapper">
+        <div class="product-horizontal" id="productHorizontal"></div>
+      </div>
+
+      <!-- scroll controls -->
+      <div class="scroll-controls">
+        <button class="scroll-btn" id="scrollLeft">←</button>
+        <button class="scroll-btn" id="scrollRight">→</button>
+      </div>
+
+      <!-- explore button -->
+      <div class="explore-btn-wrapper">
+        <a href="/full-catalog.html" class="btn btn-primary">Explore All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- why choose us (static) -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="why-grid">
+        <div class="why-card"><span class="why-icon">🧵</span><h3>Strong & Durable Fabric</h3><p>Made using reliable materials suitable for daily wear.</p></div>
+        <div class="why-card"><span class="why-icon">🏭</span><h3>Modern Production</h3><p>Efficient manufacturing ensuring consistent finishing.</p></div>
+        <div class="why-card"><span class="why-icon">💰</span><h3>Fair Pricing</h3><p>Competitive rates for bulk & retail customers.</p></div>
+        <div class="why-card"><span class="why-icon">🚚</span><h3>On-Time Delivery</h3><p>Reliable dispatch across India.</p></div>
+        <div class="why-card"><span class="why-icon">✔</span><h3>Quality Checked</h3><p>Each batch carefully inspected.</p></div>
+        <div class="why-card"><span class="why-icon">♻</span><h3>Responsible Production</h3><p>Efficient resource usage, minimal waste.</p></div>
+        <div class="why-card"><span class="why-icon">🤝</span><h3>Long-Term Trust</h3><p>Building relationships since 11+ years.</p></div>
+        <div class="why-card"><span class="why-icon">📦</span><h3>Bulk Orders Welcome</h3><p>Special handling for large quantities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (static) -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title">Ready to place your order?</h2>
+      <p>Whether you need school uniforms, sports kit, or custom t-shirts – we’re just a call away.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">B2B: Request Quote</a>
+        <a href="#" class="btn btn-outline">B2C: Shop Collection</a>
+        <a href="#" class="btn btn-outline">Download Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer (static) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">Tshirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
+        <div class="footer-column"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Custom Manufacturing</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Technical Support</a></li></ul></div>
+        <div class="footer-column"><h4>Company</h4><ul class="footer-links"><li><a href="#">About Stardom</a></li><li><a href="#">Careers</a></li><li><a href="#">Sustainability</a></li><li><a href="#">News</a></li><li><a href="#">Contact</a></li></ul></div>
+        <div class="footer-column"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Care Instructions</a></li></ul>
+          <div class="footer-social-links"> <a href="#">📘</a> <a href="#">📷</a> <a href="#">📌</a> </div>
+        </div>
+      </div>
+      <div class="copyright"><p>© 2025 Stardom Textiles. Karanja (Gh.)</p><p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Refund</a></p></div>
+    </div>
+  </footer>
+
+<script>
+  // ---------- LOAD DYNAMIC CONTENT ----------
+  function loadHero() {
+    fetch('/data/hero.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('heroHeading').textContent = data.heading;
+        document.getElementById('heroSubheading').textContent = data.subheading;
+        document.getElementById('heroImage').src = data.image;
+      })
+      .catch(err => console.warn('Hero data not loaded.'));
+  }
+
+  function loadSolutions() {
+    fetch('/data/solutions.json')
+      .then(res => res.json())
+      .then(data => {
+        // If data is array, use directly; if object with "solutions" property, use that
+        const solutions = Array.isArray(data) ? data : (data.solutions || []);
+        const grid = document.getElementById('solutionsGrid');
+        if (!grid) return;
+        grid.innerHTML = solutions.map(sol => `
+          <div class="solution-card">
+            <img src="${sol.image}" alt="${sol.title}" class="solution-image">
+            <div class="solution-content">
+              <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
+              <h3>${sol.title}</h3>
+              <p>${sol.description}</p>
+              <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
+            </div>
+          </div>
+        `).join('');
+      })
+      .catch(err => console.warn('Solutions data not loaded.'));
+  }
+
+  function loadProducts() {
+    fetch('/data/products.json')
+      .then(res => res.json())
+      .then(data => {
+        const products = Array.isArray(data) ? data : (data.products || []);
+        const container = document.getElementById('productHorizontal');
+        if (!container) return;
+        container.innerHTML = products.map(prod => {
+          const catAttr = prod.categories ? prod.categories.join(' ') : '';
+          return `
+            <div class="product-card" data-category="${catAttr}">
+              <div class="product-image-container">
+                <img src="${prod.image}" alt="${prod.name}" class="product-image">
+              </div>
+              <div class="product-info">
+                <div class="product-category">${prod.category}</div>
+                <h3 class="product-name">${prod.name}</h3>
+                <p class="product-desc">${prod.description}</p>
+                <div class="product-actions">
+                  <span class="product-price">${prod.price}</span>
+                  <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        initFilters();
+        initAutoScroll();
+      })
+      .catch(err => console.warn('Products data not loaded.'));
+  }
+
+    // ---------- EXISTING FUNCTIONALITY (PRESERVED) ----------
+    // mobile menu
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn && navMenu) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+      });
+      document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) navMenu.classList.remove('active');
+      });
+    }
+
+    // dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // trust popup auto hide on scroll, show after stop
+    const popup = document.getElementById('trustPopup');
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+      popup.classList.add('hidden');
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        popup.classList.remove('hidden');
+      }, 2000);
+    });
+
+    // close popup with X
+    document.querySelector('.trust-popup .close').addEventListener('click', function() {
+      popup.classList.add('hidden');
+    });
+
+    // product filter (will be called after products load)
+     function initFilters() {
+    const chips = document.querySelectorAll('.filter-chip');
+    const products = document.querySelectorAll('.product-card');
+    chips.forEach(chip => {
+      chip.addEventListener('click', function() {
+        chips.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        products.forEach(card => {
+          const cat = card.dataset.category || '';
+          card.style.display = (filter === 'all' || cat.split(' ').includes(filter)) ? 'block' : 'none';
         });
+      });
+    });
+  }
 
-        // Particle Animation
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes float {
-                0% { transform: translateY(0); opacity: 0.5; }
-                50% { opacity: 1; }
-                100% { transform: translateY(-50vh); opacity: 0.5; }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+  function initAutoScroll() {
+    const container = document.getElementById('productHorizontal');
+    const leftBtn = document.getElementById('scrollLeft');
+    const rightBtn = document.getElementById('scrollRight');
+    leftBtn.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
+    rightBtn.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
+      // clear any existing interval
+      if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
+      window.autoScrollInterval = setInterval(() => {
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      }, 4000);
+
+      container.addEventListener('mouseenter', () => clearInterval(window.autoScrollInterval));
+      container.addEventListener('mouseleave', () => {
+        window.autoScrollInterval = setInterval(() => {
+          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+          }
+        }, 4000);
+      });
+    }
+
+  // ---------- INITIAL LOAD ----------
+  loadHero();
+  loadSolutions();
+  loadProducts();
+
+  // ---------- NETLIFY IDENTITY ----------
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+  if (window.location.hash.includes('invite_token')) {
+    if (window.netlifyIdentity) window.netlifyIdentity.open();
+    else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
+  }
+</script>
 </body>
 </html>

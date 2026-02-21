@@ -1,3 +1,12 @@
 {
-  "solutions": []
+  "solutions": [
+    {
+      "buttonText": "Learn more",
+      "buttonLink": "#",
+      "badge": "B2B",
+      "title": "rrr",
+      "description": "rr",
+      "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
+    }
+  ]
 }

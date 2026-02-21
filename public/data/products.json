@@ -1,3 +1,15 @@
 {
-  "products": []
+  "products": [
+    {
+      "buttonText": "Enquire",
+      "category": "f",
+      "name": "ff",
+      "description": "f",
+      "price": "ff",
+      "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg",
+      "categories": [
+        "b2b"
+      ]
+    }
+  ]
 }

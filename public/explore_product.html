@@ -116,7 +116,7 @@ body.dark .logo-icon{background:var(--crimson);}
 .controls-bar.stuck{box-shadow:var(--s1);}
 .controls-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
 
-/* Filter chips */
+/* Filter chips - simplified */
 .filter-chips{display:flex;gap:.5rem;flex-wrap:wrap;}
 .chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem 1rem;border:1.5px solid var(--border-strong);border-radius:40px;font-size:.74rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--ink-80);transition:all .18s;}
 .chip:hover{border-color:var(--crimson);color:var(--crimson);}
@@ -202,14 +202,16 @@ body.dark .logo-icon{background:var(--crimson);}
 }
 @media(max-width:640px){
   .container{padding:0 20px;}
-  .catalog-grid{grid-template-columns:1fr 1fr;}
+  .catalog-grid{grid-template-columns:repeat(2,1fr); gap:1rem;}
   .filter-chips{gap:.35rem;}
   .chip{padding:.3rem .75rem;font-size:.7rem;}
   .page-hero{padding:2.5rem 0 2rem;}
   .controls-bar{top:0;}
   .footer-grid{grid-template-columns:1fr;gap:2rem;}
 }
-@media(max-width:400px){.catalog-grid{grid-template-columns:1fr;}}
+@media(max-width:400px){
+  .catalog-grid{grid-template-columns:1fr;}
+}
 :focus-visible{outline:2px solid var(--crimson);outline-offset:3px;}
 </style>
 </head>
@@ -291,14 +293,12 @@ body.dark .logo-icon{background:var(--crimson);}
   </div>
 </div>
 
-<!-- CONTROLS BAR -->
+<!-- CONTROLS BAR (simplified chips) -->
 <div class="controls-bar" id="controlsBar">
   <div class="container">
     <div class="controls-inner">
       <div class="filter-chips" id="filterChips" role="group" aria-label="Filter by type">
         <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="b2b">B2B / Bulk</button>
-        <button class="chip" data-filter="b2c">B2C / Retail</button>
         <button class="chip" data-filter="uniform">Uniforms</button>
         <button class="chip" data-filter="sports">Sports</button>
         <button class="chip" data-filter="custom">Custom Print</button>
@@ -359,8 +359,6 @@ window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>24)
 
 /* ── STICKY CONTROLS BAR ── */
 const ctrlBar = document.getElementById('controlsBar');
-const observer = new IntersectionObserver(([e])=>ctrlBar.classList.toggle('stuck',!e.isIntersecting),{threshold:1});
-// Just use scroll for this
 window.addEventListener('scroll',()=>ctrlBar.classList.toggle('stuck',scrollY>200),{passive:true});
 
 /* ── MOBILE NAV ── */
@@ -376,7 +374,6 @@ const revObs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInt
 document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
 
 /* ── SOLUTIONS DATA ── */
-/* Fallback categories if solutions.json missing */
 const DEMO_SOLUTIONS = [
   {title:'School Uniforms',badge:'B2B',image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80',description:'Custom school uniform sets for any institution. Available in bulk with custom sizing, school logos and colour options.',moq:'Min. 50 pcs',tags:['uniform','b2b']},
   {title:'Sports Jersey Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80',description:'Breathable drifit sports kits for football, cricket, kabaddi and more. Custom name & number printing available.',moq:'Min. 12 pcs',tags:['sports','b2b','custom']},
@@ -457,9 +454,8 @@ function applyFilterSort() {
   if(activeFilter !== 'all') {
     items = items.filter(s => {
       const tags = s.tags || [];
-      const badge = (s.badge || '').toLowerCase();
-      const title = (s.title || '').toLowerCase();
-      return tags.includes(activeFilter) || badge.includes(activeFilter) || title.includes(activeFilter);
+      // match if any tag includes the filter string (uniform, sports, custom)
+      return tags.some(t => t.includes(activeFilter));
     });
   }
   const sort = document.getElementById('sortSelect').value;

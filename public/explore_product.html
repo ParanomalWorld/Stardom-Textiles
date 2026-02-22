@@ -3,820 +3,508 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
-  <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
-  <!-- ✅ ADD THIS: Netlify Identity Widget -->
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>  <style>
-    /* ----- modern reset & design tokens (light + dark) ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>All Categories — Stardom Textiles</title>
+  <meta name="description" content="Browse all product categories at Stardom Textiles — School Uniforms, Sports Kits, T-Shirts, Track Suits & more. Delivered pan-India.">
+  <meta name="theme-color" content="#0f0f0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+<style>
+/* ── SHARED TOKENS ── */
+:root {
+  --ink:#141410; --ink-80:rgba(20,20,16,0.8); --ink-40:rgba(20,20,16,0.4);
+  --parchment:#f5f2ec; --parchment-d:#ede9e1;
+  --stone:#d4cfc6; --stone-d:#b0a99e;
+  --crimson:#c4282b; --crimson-d:#9e2022; --crimson-glow:rgba(196,40,43,0.18);
+  --green-live:#22c55e;
+  --bg:#faf8f5; --bg-alt:#f0ede6; --bg-deep:#141410;
+  --card:#ffffff; --border:rgba(20,20,16,0.08); --border-strong:rgba(20,20,16,0.16);
+  --ff-display:'Fraunces',Georgia,serif; --ff-body:'Outfit',system-ui,sans-serif;
+  --s1:0 2px 8px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.03);
+  --s2:0 8px 32px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.04);
+  --s3:0 20px 60px rgba(0,0,0,0.10),0 4px 16px rgba(0,0,0,0.06);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+body.dark {
+  --ink:#f0ede8; --ink-80:rgba(240,237,232,0.8); --ink-40:rgba(240,237,232,0.4);
+  --parchment:#1c1c18; --parchment-d:#242420;
+  --stone:#3a3a34; --stone-d:#4e4e46;
+  --crimson:#e05a5d; --crimson-d:#c44b4e; --crimson-glow:rgba(224,90,93,0.22);
+  --bg:#1c1c18; --bg-alt:#242420; --bg-deep:#0c0c0a;
+  --card:#252520; --border:rgba(240,237,232,0.08); --border-strong:rgba(240,237,232,0.15);
+  --s1:0 2px 8px rgba(0,0,0,0.3); --s2:0 8px 32px rgba(0,0,0,0.4); --s3:0 20px 60px rgba(0,0,0,0.5);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);font-weight:300;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:var(--ink);}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+button{font-family:var(--ff-body);}
+.container{max-width:1380px;margin:0 auto;padding:0 36px;}
 
-    :root {
-      --white: #ffffff;
-      --off-white: #fafafa;
-      --light-gray: #f0f0f0;
-      --mid-gray: #dddddd;
-      --text-primary: #222222;
-      --text-secondary: #555555;
-      --text-light: #777777;
-      --accent: #c4282b;
-      --accent-hover: #a01e20;
-      --border-subtle: #eaeaea;
-      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
-      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 12px rgba(0, 0, 0, 0.03);
-      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      --font-light: 300;
-      --font-regular: 400;
-      --font-medium: 500;
-      --bg-body: var(--white);
-      --bg-soft: var(--off-white);
-      --text-main: var(--text-primary);
-      --text-muted: var(--text-secondary);
-      --card-bg: var(--white);
-      --footer-bg: #111;
-      --footer-text: #ddd;
-      transition: background-color 0.3s, color 0.2s;
-    }
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 2.1rem;font-family:var(--ff-body);font-weight:600;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;border:1.5px solid transparent;cursor:pointer;transition:all .22s var(--ease-out);white-space:nowrap;line-height:1;}
+.btn-primary{background:var(--crimson);color:#fff;border-color:var(--crimson);box-shadow:0 2px 12px var(--crimson-glow);}
+.btn-primary:hover{background:var(--crimson-d);border-color:var(--crimson-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--crimson-glow);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--border-strong);}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px);}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366;}
+.btn-wa:hover{background:#1da955;border-color:#1da955;transform:translateY(-2px);}
+.btn-sm{padding:.6rem 1.4rem;font-size:.76rem;}
 
-    body.dark-mode {
-      --white: #1e1e1e;
-      --off-white: #2a2a2a;
-      --light-gray: #333;
-      --mid-gray: #444;
-      --text-primary: #eee;
-      --text-secondary: #ccc;
-      --text-light: #aaa;
-      --accent: #e05a5d;
-      --accent-hover: #c44b4e;
-      --border-subtle: #3a3a3a;
-      --shadow-sm: 0 8px 20px rgba(0,0,0,0.4);
-      --shadow-hover: 0 15px 30px rgba(0,0,0,0.5);
-      --bg-body: #1e1e1e;
-      --bg-soft: #252525;
-      --text-main: #eee;
-      --text-muted: #ccc;
-      --card-bg: #2a2a2a;
-      --footer-bg: #0a0a0a;
-      --footer-text: #aaa;
-    }
+/* ── TOP BAR ── */
+.top-bar{background:var(--bg-deep);color:var(--stone-d);font-size:.78rem;letter-spacing:.02em;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.top-bar .container{display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;}
+.top-bar-chips{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.top-bar-chip{display:flex;align-items:center;gap:.35rem;color:var(--stone-d);}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--crimson);flex-shrink:0;}
+.top-bar-cta .btn{padding:.4rem 1.2rem;font-size:.72rem;border-radius:2px;background:var(--crimson);color:white;border-color:var(--crimson);}
 
-    body {
-      font-family: var(--font-base);
-      font-weight: var(--font-light);
-      color: var(--text-main);
-      line-height: 1.5;
-      background-color: var(--bg-body);
-      -webkit-font-smoothing: antialiased;
-      transition: background-color 0.2s, color 0.2s;
-      scroll-behavior: smooth;
-    }
+/* ── HEADER ── */
+.site-header{position:sticky;top:0;z-index:200;background:rgba(250,248,245,0.96);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--border);transition:box-shadow .3s,background .25s;}
+body.dark .site-header{background:rgba(28,28,24,0.96);}
+.site-header.scrolled{box-shadow:var(--s2);}
+.header-inner{display:grid;grid-template-columns:220px 1fr 220px;align-items:center;height:68px;gap:1rem;}
+.logo-wrap{display:flex;align-items:center;gap:.7rem;}
+.logo-icon{width:34px;height:34px;background:var(--ink);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-weight:900;font-size:1rem;flex-shrink:0;transition:background .25s;}
+body.dark .logo-icon{background:var(--crimson);}
+.logo-text{font-family:var(--ff-display);font-weight:900;font-size:1.4rem;letter-spacing:-0.04em;color:var(--ink);line-height:1;}
+.logo-text em{font-style:normal;color:var(--crimson);}
+.main-nav{display:flex;justify-content:center;}
+.nav-list{list-style:none;display:flex;gap:0;}
+.nav-list a{font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-80);padding:.5rem 1rem;position:relative;transition:color .2s;}
+.nav-list a::after{content:'';position:absolute;bottom:0;left:1rem;right:1rem;height:2px;background:var(--crimson);transform:scaleX(0);transform-origin:center;transition:transform .22s var(--ease-out);}
+.nav-list a:hover{color:var(--crimson);}
+.nav-list a:hover::after{transform:scaleX(1);}
+.header-right{display:flex;align-items:center;justify-content:flex-end;gap:.8rem;}
+.header-phone-chip{display:flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:500;color:var(--ink-80);}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green-live);animation:livePulse 2s ease-in-out infinite;flex-shrink:0;}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}50%{box-shadow:0 0 0 4px rgba(34,197,94,0);}}
+.icon-btn{width:36px;height:36px;border:1px solid var(--border-strong);border-radius:3px;background:transparent;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:.2s;}
+.icon-btn:hover{border-color:var(--crimson);color:var(--crimson);}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink);padding:.25rem;}
+.mobile-nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--card);border-bottom:1px solid var(--border);box-shadow:var(--s2);z-index:199;}
+.mobile-nav.open{display:block;}
+.mobile-nav ul{list-style:none;padding:1rem 36px;}
+.mobile-nav ul li a{display:block;padding:.75rem 0;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-80);border-bottom:1px solid var(--border);transition:color .2s;}
+.mobile-nav ul li:last-child a{border-bottom:none;}
+.mobile-nav ul li a:hover{color:var(--crimson);}
 
-    h1, h2, h3, h4 {
-      font-weight: var(--font-medium);
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-    }
+/* ── BREADCRUMB ── */
+.breadcrumb{padding:1.2rem 0;border-bottom:1px solid var(--border);background:var(--bg);}
+.breadcrumb-inner{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--ink-80);}
+.breadcrumb-inner a{color:var(--ink-80);transition:color .2s;}
+.breadcrumb-inner a:hover{color:var(--crimson);}
+.breadcrumb-inner .sep{color:var(--stone-d);}
+.breadcrumb-inner .current{color:var(--crimson);font-weight:500;}
 
-    a { text-decoration: none; color: inherit; }
+/* ── PAGE HERO (slim) ── */
+.page-hero{padding:4rem 0 3rem;background:var(--bg-alt);border-bottom:1px solid var(--border);}
+.page-hero-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.page-hero-text .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:.6rem;}
+.page-hero-text h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:.5rem;}
+.page-hero-text p{font-size:1rem;color:var(--ink-80);max-width:520px;line-height:1.65;}
+.page-hero-meta{display:flex;gap:2rem;flex-shrink:0;}
+.meta-stat{text-align:center;}
+.meta-stat-n{font-family:var(--ff-display);font-size:1.8rem;font-weight:900;color:var(--crimson);}
+.meta-stat-l{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-80);margin-top:.2rem;}
 
-    .container {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+/* ── CONTROLS BAR ── */
+.controls-bar{padding:1.5rem 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:68px;z-index:100;transition:box-shadow .3s;}
+.controls-bar.stuck{box-shadow:var(--s1);}
+.controls-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
 
-    /* ----- utility ----- */
-    .section-title {
-      font-size: 2.4rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: var(--font-medium);
-    }
+/* Filter chips */
+.filter-chips{display:flex;gap:.5rem;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem 1rem;border:1.5px solid var(--border-strong);border-radius:40px;font-size:.74rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--ink-80);transition:all .18s;}
+.chip:hover{border-color:var(--crimson);color:var(--crimson);}
+.chip.active{background:var(--crimson);border-color:var(--crimson);color:#fff;}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.9rem 2.2rem;
-      font-weight: var(--font-medium);
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      border-radius: 40px;
-      transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
-      line-height: 1.2;
-      background: transparent;
-      white-space: nowrap;
-    }
+/* Sort + count */
+.controls-right{display:flex;align-items:center;gap:1rem;}
+.results-count{font-size:.82rem;color:var(--ink-80);}
+.sort-select{font-family:var(--ff-body);font-size:.8rem;padding:.4rem .8rem;border:1.5px solid var(--border-strong);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;outline:none;appearance:none;}
+.sort-select:focus{border-color:var(--crimson);}
 
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 2px 8px rgba(196, 40, 43, 0.2);
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 22px rgba(196, 40, 43, 0.25);
-    }
+/* ── CATALOG GRID ── */
+.catalog-section{padding:3rem 0 6rem;}
+.catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
 
-    .btn-outline {
-      border: 1px solid var(--text-main);
-      color: var(--text-main);
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: var(--text-main);
-      color: var(--bg-body);
-      transform: translateY(-2px);
-    }
+/* Product card — ecommerce style */
+.cat-card{border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--s1);transition:transform .3s var(--ease-out),box-shadow .3s;cursor:pointer;display:flex;flex-direction:column;position:relative;}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--s3);}
+.cat-card:hover .cat-img{transform:scale(1.06);}
 
-    .btn-small {
-      padding: 0.6rem 1.8rem;
-      font-size: 0.85rem;
-    }
+.cat-img-wrap{position:relative;overflow:hidden;height:220px;}
+.cat-img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out);}
 
-    /* top bar */
-    .top-bar {
-      background: var(--bg-soft);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 0.7rem 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-    .top-bar .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-    }
-    .top-bar-info {
-      display: flex;
-      align-items: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-    }
-    .top-bar-info span { display: inline-flex; align-items: center; gap: 0.4rem; }
-    .top-bar-info i { font-style: normal; color: var(--accent); font-weight: var(--font-medium); }
-    .top-bar-cta .btn {
-      background: var(--accent);
-      color: white;
-      padding: 0.5rem 1.8rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-    }
+.cat-badge-wrap{position:absolute;top:.75rem;left:.75rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.cat-badge{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .7rem;border-radius:2px;line-height:1.4;}
+.cat-badge.b2b{background:var(--ink);color:#fff;}
+.cat-badge.b2c{background:var(--crimson);color:#fff;}
+.cat-badge.new{background:#22c55e;color:#fff;}
+.cat-badge.sale{background:#f59e0b;color:#fff;}
+.cat-badge.popular{background:#8b5cf6;color:#fff;}
 
-    /* header */
-    .header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(6px);
-      z-index: 100;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .dark-mode .header {
-      background: rgba(30, 30, 30, 0.96);
-    }
+.cat-body{padding:1.1rem 1.2rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
+.cat-tag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);background:var(--parchment-d);padding:.15rem .6rem;border-radius:2px;width:fit-content;}
+.cat-name{font-size:1rem;font-weight:700;line-height:1.25;margin-top:.1rem;}
+.cat-desc{font-size:.8rem;color:var(--ink-80);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.cat-footer{margin-top:auto;padding-top:.8rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
+.cat-moq{font-size:.7rem;color:var(--ink-40);letter-spacing:.04em;}
+.cat-order{display:inline-flex;align-items:center;gap:.25rem;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--crimson);transition:gap .2s;}
+.cat-card:hover .cat-order{gap:.5rem;}
 
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-    .logo {
-      font-size: 1.9rem;
-      font-weight: var(--font-medium);
-      color: var(--text-main);
-    }
-    .logo span { color: var(--accent); }
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-    .nav-menu a {
-      font-weight: var(--font-regular);
-      font-size: 1rem;
-      color: var(--text-muted);
-      transition: color 0.2s;
-      padding: 0.5rem 0;
-      border-bottom: 2px solid transparent;
-    }
-    .nav-menu a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--text-main);
-    }
-    .dark-toggle {
-      background: none;
-      border: 1px solid var(--border-subtle);
-      border-radius: 40px;
-      padding: 0.4rem 1.2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: var(--text-main);
-      margin-left: 1rem;
-    }
+/* Section header inside grid */
+.section-label{grid-column:1/-1;margin-bottom:-.25rem;padding-top:1rem;}
+.section-label h3{font-size:1.3rem;font-weight:700;position:relative;display:inline-block;padding-bottom:.4rem;}
+.section-label h3::after{content:'';position:absolute;bottom:0;left:0;width:36px;height:3px;background:var(--crimson);border-radius:2px;}
+.section-label p{font-size:.85rem;color:var(--ink-80);margin-top:.5rem;}
 
-    /* hero (modified for dynamic image) */
-    .hero {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      color: white;
-      padding: 4rem 0;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
-    .hero h1 { font-size: 3.5rem; color: white; }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+/* Empty state */
+.empty-state{grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--ink-80);}
+.empty-state .icon{font-size:3rem;margin-bottom:1rem;}
+.empty-state h3{font-size:1.2rem;margin-bottom:.5rem;}
 
-    /* solutions */
-    .solutions { padding: 6rem 0; background: var(--bg-body); }
-    .solutions-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); }
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-    }
-    .solution-card {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      transition: 0.25s;
-    }
-    .solution-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-    .solution-image { width: 100%; height: 240px; object-fit: cover; }
-    .solution-content { padding: 2rem; }
-    .solution-badge {
-      display: inline-block; font-size: 0.75rem; font-weight: var(--font-medium);
-      text-transform: uppercase; padding: 0.3rem 1.2rem; border-radius: 40px;
-      background: var(--light-gray); color: var(--text-secondary); margin-bottom: 1.2rem;
-    }
-    .solution-badge.b2b { background: var(--text-primary); color: white; }
-    .solution-badge.b2c { background: var(--accent); color: white; }
+/* ── FOOTER ── */
+.footer{background:var(--bg-deep);color:#7a7570;padding:5rem 0 2rem;}
+.footer-logo{font-family:var(--ff-display);font-size:1.5rem;font-weight:900;color:#f0ede8;margin-bottom:.4rem;letter-spacing:-0.03em;}
+.footer-logo em{font-style:normal;color:var(--crimson);}
+.footer-tagline{font-size:.82rem;margin-bottom:3rem;}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+.footer-col h4{font-family:var(--ff-body);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#f0ede8;margin-bottom:1.2rem;font-weight:600;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.footer-links a{font-size:.85rem;color:#7a7570;transition:color .2s;}
+.footer-links a:hover{color:#f0ede8;}
+.footer-contact{font-size:.85rem;line-height:2;color:#7a7570;}
+.footer-contact a{color:#f0ede8;font-weight:600;}
+.footer-socials{display:flex;gap:.6rem;margin-top:1.5rem;}
+.footer-socials a{width:34px;height:34px;border-radius:4px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#7a7570;transition:.2s;}
+.footer-socials a:hover{background:var(--crimson);border-color:var(--crimson);color:#fff;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding-top:2rem;font-size:.78rem;}
+.footer-bottom a{color:#5a5a56;transition:color .2s;}
+.footer-bottom a:hover{color:#9e9990;}
 
-    /* about local */
-    .about-local {
-      padding: 5rem 0;
-      background: var(--bg-soft);
-      text-align: center;
-    }
-    .brand-badge {
-      background: var(--card-bg); padding: 2.5rem; border-radius: 48px; max-width: 800px; margin: 0 auto;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle);
-    }
-    .brand-badge p { font-size: 1.2rem; margin: 0.5rem 0; color: var(--text-muted); }
-    .brand-badge .big-phone { font-size: 1.8rem; color: var(--accent); }
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
-    /* delivered section */
-    .delivered-section {
-      padding: 6rem 0;
-      background: var(--bg-body);
-      position: relative;
-    }
-    .filter-row {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .filter-chip {
-      background: none;
-      border: 1px solid var(--border-subtle);
-      padding: 0.6rem 2rem;
-      border-radius: 40px;
-      font-weight: var(--font-regular);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .filter-chip.active, .filter-chip:hover {
-      background: var(--text-main);
-      color: var(--bg-body);
-      border-color: var(--text-main);
-    }
-
-    .horizontal-wrapper {
-      position: relative;
-      margin: 2rem 0 2rem;
-    }
-    .product-horizontal {
-      display: flex;
-      gap: 1.8rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      padding: 0.5rem 0.2rem 1.5rem;
-    }
-    .product-horizontal .product-card {
-      flex: 0 0 280px;
-      scroll-snap-align: start;
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      background: var(--card-bg);
-      transition: 0.2s;
-    }
-    .product-horizontal .product-card:hover { box-shadow: var(--shadow-hover); }
-    .product-image-container { height: 240px; overflow: hidden; border-radius: 24px 24px 0 0; }
-    .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-    .product-card:hover .product-image { transform: scale(1.04); }
-    .product-info { padding: 1.5rem; }
-    .product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); }
-    .product-name { font-size: 1.2rem; font-weight: var(--font-medium); }
-
-    .scroll-controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0 1.5rem;
-    }
-    .scroll-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text-main);
-      box-shadow: var(--shadow-sm);
-      transition: 0.2s;
-    }
-    .scroll-btn:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-    .explore-btn-wrapper {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    /* why us */
-    .why-us {
-      padding: 6rem 0;
-      background: var(--bg-soft);
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-    .why-card {
-      background: var(--card-bg);
-      padding: 2.2rem 1.5rem;
-      border-radius: 28px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-subtle);
-    }
-    .why-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
-
-    /* CTA */
-    .cta-section {
-      padding: 5rem 0;
-      background: var(--text-main);
-      color: var(--bg-body);
-    }
-    .cta-section .section-title { color: var(--bg-body); }
-    .cta-section p { color: rgba(0,0,0,0.7); }
-    .dark-mode .cta-section p { color: rgba(255,255,255,0.8); }
-    .cta-buttons .btn-outline { border-color: var(--bg-body); color: var(--bg-body); }
-    .cta-buttons .btn-outline:hover { background: var(--bg-body); color: var(--text-main); }
-
-    /* footer */
-    .footer {
-      background: var(--footer-bg);
-      color: var(--footer-text);
-      padding: 5rem 0 2.5rem;
-    }
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-    .footer-column h4 { color: white; }
-    .footer-links a { color: #aaa; }
-    .footer-links a:hover { color: white; }
-    .footer-social-links a { background: #2a2a2a; }
-    .copyright { border-top-color: #2a2a2a; }
-
-    /* trust popup */
-    .trust-popup {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--card-bg);
-      border-radius: 32px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      padding: 1.5rem;
-      max-width: 320px;
-      z-index: 999;
-      border: 1px solid var(--border-subtle);
-      transition: opacity 0.3s, transform 0.3s;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    .trust-popup.hidden {
-      opacity: 0;
-      transform: translateY(20px);
-      pointer-events: none;
-    }
-    .trust-popup .rating { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .trust-popup .stars { color: #f5b342; }
-    .trust-popup .verified { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; }
-    .trust-popup .info-row { display: flex; gap: 10px; margin-bottom: 10px; color: var(--text-muted); }
-    .trust-popup .phone { font-size: 1.2rem; font-weight: var(--font-medium); color: var(--text-main); }
-    .trust-popup .actions { display: flex; gap: 10px; margin-top: 15px; }
-    .trust-popup .actions a { flex: 1; padding: 10px; text-align: center; border-radius: 40px; font-weight: var(--font-medium); }
-    .enquire-btn { background: var(--accent); color: white; }
-    .whatsapp-btn { background: #25D366; color: white; }
-    .trust-popup .close {
-      position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 1.2rem; color: #aaa;
-    }
-
-    /* responsive */
-    @media (max-width: 768px) {
-      .mobile-menu-btn { display: flex; }
-      .nav-menu {
-        display: none; flex-direction: column; background: var(--card-bg); position: absolute; top: 80px;
-        left: 0; width: 100%; padding: 2rem; box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-        border-top: 1px solid var(--border-subtle);
-      }
-      .nav-menu.active { display: flex; }
-      .hero h1 { font-size: 2.5rem; }
-      .trust-popup { max-width: 280px; right: 15px; bottom: 15px; }
-    }
-  </style>
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){.catalog-grid{grid-template-columns:repeat(3,1fr);}  .footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){
+  .header-inner{grid-template-columns:auto 1fr auto;}
+  .main-nav{display:none;}.mobile-toggle{display:flex;}
+  .catalog-grid{grid-template-columns:repeat(2,1fr);}
+  .page-hero-inner{flex-direction:column;align-items:flex-start;}
+  .page-hero-meta{gap:1.5rem;}
+}
+@media(max-width:640px){
+  .container{padding:0 20px;}
+  .catalog-grid{grid-template-columns:1fr 1fr;}
+  .filter-chips{gap:.35rem;}
+  .chip{padding:.3rem .75rem;font-size:.7rem;}
+  .page-hero{padding:2.5rem 0 2rem;}
+  .controls-bar{top:0;}
+  .footer-grid{grid-template-columns:1fr;gap:2rem;}
+}
+@media(max-width:400px){.catalog-grid{grid-template-columns:1fr;}}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:3px;}
+</style>
 </head>
 <body>
-  <!-- floating trust popup (smart hide) -->
-  <div class="trust-popup" id="trustPopup">
-    <span class="close" onclick="this.parentElement.classList.add('hidden')">✕</span>
-    <div class="rating">
-      <span class="stars">⭐⭐⭐⭐☆</span> <span>4.3 ★ (17 ratings)</span>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-chips">
+      <span class="top-bar-chip"><span class="dot"></span>👕 T-shirts · Uniforms · Sports Kit</span>
+      <span class="top-bar-chip"><span class="dot"></span>📍 Karanja (Gh.)</span>
+      <span class="top-bar-chip"><span class="dot"></span>📞 7510000000</span>
     </div>
-    <div class="verified">Trust Verified ✓ Claimed</div>
-    <div class="info-row"><span>📍 Karanja (Gh.)</span> <span>🕐 Open until 10:30 pm</span></div>
-    <div class="info-row"><span>⏳ 11 Years in Business</span></div>
-    <div class="phone">📞 7510000000</div>
-    <div class="actions">
-      <a href="#enquire" class="enquire-btn">Enquire Now</a>
-      <a href="https://wa.me/917510000000" class="whatsapp-btn">WhatsApp</a>
+    <div class="top-bar-cta"><a href="index.html#contact" class="btn">ENQUIRE NOW</a></div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="Stardom Textiles — Home">
+        <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">STARDOM<em>.</em></span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore_product.html" style="color:var(--crimson)">Categories</a></li>
+          <li><a href="explore_catalog.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="header-phone-chip"><span class="live-dot" aria-hidden="true"></span><span>7510000000</span></div>
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">🌓</button>
+      </div>
     </div>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore_product.html">Categories</a></li>
+      <li><a href="explore_catalog.html">All Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- top bar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-info">
-        <span>👕 Tshirts, Uniforms, Sports Kit</span>
-        <span class="separator">|</span>
-        <span>📍 Karanja (Gh.)</span>
-        <span>|</span>
-        <span>📞 7510000000</span>
-        <span>|</span>
-        <span>✈️ Delivering All Over India</span>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">All Categories</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-text reveal">
+        <div class="eyebrow">Full Product Range</div>
+        <h1>All Categories</h1>
+        <p>From school uniforms to corporate wear — browse our complete range of manufactured textiles, available for B2B bulk and B2C individual orders.</p>
       </div>
-      <div class="top-bar-cta">
-        <a href="#enquire" class="btn">ENQUIRE NOW</a>
+      <div class="page-hero-meta reveal">
+        <div class="meta-stat"><div class="meta-stat-n" id="totalCatCount">—</div><div class="meta-stat-l">Categories</div></div>
+        <div class="meta-stat"><div class="meta-stat-n">PAN</div><div class="meta-stat-l">India Delivery</div></div>
+        <div class="meta-stat"><div class="meta-stat-n">11+</div><div class="meta-stat-l">Years Active</div></div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- header with dark mode toggle -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">STARDOM<span>TEXTILES</span></div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-        <nav>
-          <ul class="nav-menu" id="navMenu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#delivered">We Delivered</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="dark-toggle" id="darkToggle" aria-label="Dark mode">🌓</button>
+<!-- CONTROLS BAR -->
+<div class="controls-bar" id="controlsBar">
+  <div class="container">
+    <div class="controls-inner">
+      <div class="filter-chips" id="filterChips" role="group" aria-label="Filter by type">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="b2b">B2B / Bulk</button>
+        <button class="chip" data-filter="b2c">B2C / Retail</button>
+        <button class="chip" data-filter="uniform">Uniforms</button>
+        <button class="chip" data-filter="sports">Sports</button>
+        <button class="chip" data-filter="custom">Custom Print</button>
+      </div>
+      <div class="controls-right">
+        <span class="results-count" id="resultsCount"></span>
+        <select class="sort-select" id="sortSelect" aria-label="Sort products">
+          <option value="default">Default</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
       </div>
     </div>
-  </header>
+  </div>
+</div>
 
-  <!-- hero (dynamic) -->
-  <section class="hero" id="home">
-    <img id="heroImage" class="hero-bg" src="" alt="Hero Banner">
-    <div class="hero-content">
-      <h1 id="heroHeading"></h1>
-      <p id="heroSubheading"></p>
-      <div class="hero-buttons">
-        <a href="#delivered" class="btn btn-primary">Explore Products</a>
-        <a href="#contact" class="btn btn-outline">Contact Owner</a>
-      </div>
+<!-- CATALOG GRID -->
+<section class="catalog-section">
+  <div class="container">
+    <div class="catalog-grid" id="catalogGrid" role="list" aria-label="Product categories">
+      <!-- Injected by JS -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- tailored solutions (dynamic) -->
-  <section class="solutions" id="solutions">
-    <div class="container">
-      <h2 class="section-title">Tailored Solutions for Every Need</h2>
-      <p class="solutions-intro">From school uniforms to sports teams and corporate wear – we deliver quality fabrics across India.</p>
-      <div class="solutions-grid" id="solutionsGrid"></div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">STARDOM<em>.</em></div>
+    <p class="footer-tagline">Premium Textile Manufacturing · Karanja (Gh.) · Delivering Pan-India</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-contact">📍 Karanja (Gh.), Maharashtra<br>📞 <a href="tel:7510000000">7510000000</a><br>🕐 Mon–Sat · 10am – 10:30pm<br>✈️ All Over India</p>
+        <div class="footer-socials"><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="Pinterest">📌</a></div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">T-Shirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
+      <div class="footer-col"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Custom Manufacturing</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li><li><a href="#">Size Guide</a></li></ul></div>
     </div>
-  </section>
-
-  <!-- about section (static) -->
-  <section class="about-local" id="about">
-    <div class="container">
-      <div class="brand-badge">
-        <h2>Stardom Textiles – Clothing Brand</h2>
-        <p>👕 T-shirt, Lowers, Track Suits, Sports Kit</p>
-        <p>🧵 Uniform & T-shirt Manufacturing & Printing</p>
-        <p class="location">📍 Karanja (Gh.)</p>
-        <p class="big-phone">📞 7510000000</p>
-        <p>✈️ Delivering All Over India</p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;">Contact Owner</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- we delivered section (dynamic products) -->
-  <section class="delivered-section" id="delivered">
-    <div class="container">
-      <h2 class="section-title">Our Delivered Products</h2>
-      <!-- filter chips -->
-      <div class="filter-row" id="productFilterRow">
-        <button class="filter-chip active" data-filter="all">All Products</button>
-        <button class="filter-chip" data-filter="b2b">B2B Products</button>
-        <button class="filter-chip" data-filter="b2c">B2C Products</button>
-        <button class="filter-chip" data-filter="best">Best Sellers</button>
-      </div>
-
-      <!-- horizontal scroll wrapper -->
-      <div class="horizontal-wrapper">
-        <div class="product-horizontal" id="productHorizontal"></div>
-      </div>
-
-      <!-- scroll controls -->
-      <div class="scroll-controls">
-        <button class="scroll-btn" id="scrollLeft">←</button>
-        <button class="scroll-btn" id="scrollRight">→</button>
-      </div>
-
-      <!-- explore button -->
-      <div class="explore-btn-wrapper">
-        <a href="/full-catalog.html" class="btn btn-primary">Explore All Products →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- why choose us (static) -->
-  <section class="why-us" id="why-us">
-    <div class="container">
-      <h2 class="section-title">Why Choose Us</h2>
-      <div class="why-grid">
-        <div class="why-card"><span class="why-icon">🧵</span><h3>Strong & Durable Fabric</h3><p>Made using reliable materials suitable for daily wear.</p></div>
-        <div class="why-card"><span class="why-icon">🏭</span><h3>Modern Production</h3><p>Efficient manufacturing ensuring consistent finishing.</p></div>
-        <div class="why-card"><span class="why-icon">💰</span><h3>Fair Pricing</h3><p>Competitive rates for bulk & retail customers.</p></div>
-        <div class="why-card"><span class="why-icon">🚚</span><h3>On-Time Delivery</h3><p>Reliable dispatch across India.</p></div>
-        <div class="why-card"><span class="why-icon">✔</span><h3>Quality Checked</h3><p>Each batch carefully inspected.</p></div>
-        <div class="why-card"><span class="why-icon">♻</span><h3>Responsible Production</h3><p>Efficient resource usage, minimal waste.</p></div>
-        <div class="why-card"><span class="why-icon">🤝</span><h3>Long-Term Trust</h3><p>Building relationships since 11+ years.</p></div>
-        <div class="why-card"><span class="why-icon">📦</span><h3>Bulk Orders Welcome</h3><p>Special handling for large quantities.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA (static) -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="section-title">Ready to place your order?</h2>
-      <p>Whether you need school uniforms, sports kit, or custom t-shirts – we’re just a call away.</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary">B2B: Request Quote</a>
-        <a href="#" class="btn btn-outline">B2C: Shop Collection</a>
-        <a href="#" class="btn btn-outline">Download Catalogue</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer (static) -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">Tshirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
-        <div class="footer-column"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Custom Manufacturing</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Technical Support</a></li></ul></div>
-        <div class="footer-column"><h4>Company</h4><ul class="footer-links"><li><a href="#">About Stardom</a></li><li><a href="#">Careers</a></li><li><a href="#">Sustainability</a></li><li><a href="#">News</a></li><li><a href="#">Contact</a></li></ul></div>
-        <div class="footer-column"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Care Instructions</a></li></ul>
-          <div class="footer-social-links"> <a href="#">📘</a> <a href="#">📷</a> <a href="#">📌</a> </div>
-        </div>
-      </div>
-      <div class="copyright"><p>© 2025 Stardom Textiles. Karanja (Gh.)</p><p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Refund</a></p></div>
-    </div>
-  </footer>
+    <div class="footer-bottom"><p>© 2025 Stardom Textiles. All rights reserved.</p><p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refund</a></p></div>
+  </div>
+</footer>
 
 <script>
-  // ---------- LOAD DYNAMIC CONTENT ----------
-  function loadHero() {
-    fetch('/data/hero.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('heroHeading').textContent = data.heading;
-        document.getElementById('heroSubheading').textContent = data.subheading;
-        document.getElementById('heroImage').src = data.image;
-      })
-      .catch(err => console.warn('Hero data not loaded.'));
+'use strict';
+
+/* ── DARK MODE ── */
+const darkBtn = document.getElementById('darkToggle');
+const DARK_KEY = 'st-dark';
+function applyDark(v){ document.body.classList.toggle('dark',v); darkBtn.setAttribute('aria-pressed',String(v)); }
+const stored = localStorage.getItem(DARK_KEY);
+applyDark(stored !== null ? stored==='1' : window.matchMedia('(prefers-color-scheme:dark)').matches);
+darkBtn.addEventListener('click',()=>{ const d=!document.body.classList.contains('dark'); applyDark(d); try{localStorage.setItem(DARK_KEY,d?'1':'0');}catch{} });
+
+/* ── HEADER SCROLL ── */
+const hdr = document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>24),{passive:true});
+
+/* ── STICKY CONTROLS BAR ── */
+const ctrlBar = document.getElementById('controlsBar');
+const observer = new IntersectionObserver(([e])=>ctrlBar.classList.toggle('stuck',!e.isIntersecting),{threshold:1});
+// Just use scroll for this
+window.addEventListener('scroll',()=>ctrlBar.classList.toggle('stuck',scrollY>200),{passive:true});
+
+/* ── MOBILE NAV ── */
+const mToggle = document.getElementById('mobileToggle');
+const mNav = document.getElementById('mobileNav');
+function closeMNav(){ mNav.classList.remove('open'); mNav.setAttribute('aria-hidden','true'); mToggle.setAttribute('aria-expanded','false'); mToggle.textContent='☰'; }
+mToggle.addEventListener('click',e=>{ e.stopPropagation(); const o=mNav.classList.toggle('open'); mNav.setAttribute('aria-hidden',String(!o)); mToggle.setAttribute('aria-expanded',String(o)); mToggle.textContent=o?'✕':'☰'; });
+document.addEventListener('click',e=>{ if(!mNav.contains(e.target)&&!mToggle.contains(e.target)) closeMNav(); });
+mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMNav));
+
+/* ── REVEAL ── */
+const revObs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ── SOLUTIONS DATA ── */
+/* Fallback categories if solutions.json missing */
+const DEMO_SOLUTIONS = [
+  {title:'School Uniforms',badge:'B2B',image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80',description:'Custom school uniform sets for any institution. Available in bulk with custom sizing, school logos and colour options.',moq:'Min. 50 pcs',tags:['uniform','b2b']},
+  {title:'Sports Jersey Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80',description:'Breathable drifit sports kits for football, cricket, kabaddi and more. Custom name & number printing available.',moq:'Min. 12 pcs',tags:['sports','b2b','custom']},
+  {title:'Custom T-Shirts',badge:'B2C',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80',description:'Round neck and polo tees in all sizes with screen or digital print. Perfect for events, teams and gifting.',moq:'Min. 12 pcs',tags:['custom','b2c']},
+  {title:'Track Suits',badge:'B2C',image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80',description:'Comfortable track suits for school, corporate and personal use. Available in fleece, nylon and polyester.',moq:'Min. 10 pcs',tags:['b2c','b2b']},
+  {title:'Corporate Uniforms',badge:'B2B',image:'https://images.unsplash.com/photo-1542744095-291d1f67b221?w=600&q=80',description:'Professional corporate uniforms for offices, hotels, hospitals and institutions. Custom branding included.',moq:'Min. 25 pcs',tags:['uniform','b2b']},
+  {title:'Cricket Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80',description:'Full cricket uniform sets including jersey, trousers and cap. Sublimation printing with team names.',moq:'Min. 11 pcs',tags:['sports','b2b','custom']},
+  {title:'Polo T-Shirts',badge:'B2C',image:'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80',description:'Premium polo shirts for corporate gifting, events and daily wear. Available in 20+ colours.',moq:'Min. 6 pcs',tags:['b2c','custom']},
+  {title:'Football Jersey',badge:'B2B',image:'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80',description:'Lightweight drifit football jerseys with custom number and name printing. Club and tournament orders welcome.',moq:'Min. 11 pcs',tags:['sports','b2b','custom']},
+  {title:'Lowers / Track Pants',badge:'B2C',image:'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80',description:'Comfortable track pants for gyms, schools and daily wear. Elastic waist with drawstring.',moq:'Min. 10 pcs',tags:['b2c']},
+  {title:'Kabaddi Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1617280614715-ef9b37e0e5c5?w=600&q=80',description:'Traditional and modern kabaddi uniform sets with custom printing and colour combinations.',moq:'Min. 12 pcs',tags:['sports','b2b']},
+  {title:'Hoodie & Sweatshirt',badge:'B2C',image:'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80',description:'Custom printed hoodies and sweatshirts for colleges, events and brand merchandise.',moq:'Min. 12 pcs',tags:['b2c','custom']},
+  {title:'Gym Vest & Shorts',badge:'B2C',image:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80',description:'Breathable gym wear sets for fitness centres and athletic use. Drifit and cotton variants available.',moq:'Min. 10 pcs',tags:['sports','b2c']},
+];
+
+let allSolutions = [];
+let filteredSolutions = [];
+let activeFilter = 'all';
+
+function getBadgeClass(badge='') {
+  const b = badge.toLowerCase();
+  if(b.includes('b2b')) return 'b2b';
+  if(b.includes('b2c')) return 'b2c';
+  return 'b2b';
+}
+
+function cardHTML(sol, i) {
+  const wa = `https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: ' + sol.title)}`;
+  const badgeClass = getBadgeClass(sol.badge);
+  const isNew = i < 2 ? ' <span class="cat-badge new">New</span>' : '';
+  const isPopular = [1,3,5].includes(i) ? ' <span class="cat-badge popular">Popular</span>' : '';
+  return `
+    <article class="cat-card reveal" role="listitem" tabindex="0"
+      onclick="window.open('${wa}','_blank')"
+      onkeypress="if(event.key==='Enter') window.open('${wa}','_blank')"
+      aria-label="${sol.title} — click to order via WhatsApp">
+      <div class="cat-img-wrap">
+        <img src="${sol.image}" alt="${sol.title}" class="cat-img" loading="lazy" width="400" height="220">
+        <div class="cat-badge-wrap">
+          <span class="cat-badge ${badgeClass}">${sol.badge || 'B2B'}</span>
+          ${isNew}${isPopular}
+        </div>
+      </div>
+      <div class="cat-body">
+        <span class="cat-tag">${sol.badge || 'Collection'}</span>
+        <h3 class="cat-name">${sol.title}</h3>
+        <p class="cat-desc">${sol.description || 'Premium quality textile product available for bulk and retail orders.'}</p>
+        <div class="cat-footer">
+          <span class="cat-moq">${sol.moq || 'MOQ: Ask Us'}</span>
+          <span class="cat-order">Order Now →</span>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderGrid(items) {
+  const grid = document.getElementById('catalogGrid');
+  const count = document.getElementById('resultsCount');
+  if(!grid) return;
+
+  if(!items.length) {
+    grid.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><h3>No categories found</h3><p>Try a different filter.</p></div>`;
+    count.textContent = '0 results';
+    return;
   }
 
-  function loadSolutions() {
-    fetch('/data/solutions.json')
-      .then(res => res.json())
-      .then(data => {
-        // If data is array, use directly; if object with "solutions" property, use that
-        const solutions = Array.isArray(data) ? data : (data.solutions || []);
-        const grid = document.getElementById('solutionsGrid');
-        if (!grid) return;
-        grid.innerHTML = solutions.map(sol => `
-          <div class="solution-card">
-            <img src="${sol.image}" alt="${sol.title}" class="solution-image">
-            <div class="solution-content">
-              <span class="solution-badge ${sol.badge === 'B2B' ? 'b2b' : 'b2c'}">${sol.badge}</span>
-              <h3>${sol.title}</h3>
-              <p>${sol.description}</p>
-              <a href="${sol.buttonLink}" class="btn btn-primary btn-small">${sol.buttonText}</a>
-            </div>
-          </div>
-        `).join('');
-      })
-      .catch(err => console.warn('Solutions data not loaded.'));
-  }
+  grid.innerHTML = items.map((s,i) => cardHTML(s,i)).join('');
+  count.textContent = `${items.length} ${items.length === 1 ? 'category' : 'categories'}`;
 
-  function loadProducts() {
-    fetch('/data/products.json')
-      .then(res => res.json())
-      .then(data => {
-        const products = Array.isArray(data) ? data : (data.products || []);
-        const container = document.getElementById('productHorizontal');
-        if (!container) return;
-        container.innerHTML = products.map(prod => {
-          const catAttr = prod.categories ? prod.categories.join(' ') : '';
-          return `
-            <div class="product-card" data-category="${catAttr}">
-              <div class="product-image-container">
-                <img src="${prod.image}" alt="${prod.name}" class="product-image">
-              </div>
-              <div class="product-info">
-                <div class="product-category">${prod.category}</div>
-                <h3 class="product-name">${prod.name}</h3>
-                <p class="product-desc">${prod.description}</p>
-                <div class="product-actions">
-                  <span class="product-price">${prod.price}</span>
-                  <a href="#" class="btn btn-primary btn-small">${prod.buttonText}</a>
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('');
+  // Trigger reveals
+  requestAnimationFrame(()=>{
+    grid.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+  });
+}
 
-        initFilters();
-        initAutoScroll();
-      })
-      .catch(err => console.warn('Products data not loaded.'));
-  }
-
-    // ---------- EXISTING FUNCTIONALITY (PRESERVED) ----------
-    // mobile menu
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    if (menuBtn && navMenu) {
-      menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-      });
-      document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) navMenu.classList.remove('active');
-      });
-    }
-
-    // dark mode toggle
-    const darkToggle = document.getElementById('darkToggle');
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    // trust popup auto hide on scroll, show after stop
-    const popup = document.getElementById('trustPopup');
-    let scrollTimer;
-    window.addEventListener('scroll', () => {
-      popup.classList.add('hidden');
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => {
-        popup.classList.remove('hidden');
-      }, 2000);
-    });
-
-    // close popup with X
-    document.querySelector('.trust-popup .close').addEventListener('click', function() {
-      popup.classList.add('hidden');
-    });
-
-    // product filter (will be called after products load)
-     function initFilters() {
-    const chips = document.querySelectorAll('.filter-chip');
-    const products = document.querySelectorAll('.product-card');
-    chips.forEach(chip => {
-      chip.addEventListener('click', function() {
-        chips.forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        const filter = this.dataset.filter;
-        products.forEach(card => {
-          const cat = card.dataset.category || '';
-          card.style.display = (filter === 'all' || cat.split(' ').includes(filter)) ? 'block' : 'none';
-        });
-      });
-    });
-  }
-
-  function initAutoScroll() {
-    const container = document.getElementById('productHorizontal');
-    const leftBtn = document.getElementById('scrollLeft');
-    const rightBtn = document.getElementById('scrollRight');
-    leftBtn.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
-    rightBtn.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
-      // clear any existing interval
-      if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
-      window.autoScrollInterval = setInterval(() => {
-        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-          container.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          container.scrollBy({ left: 300, behavior: 'smooth' });
-        }
-      }, 4000);
-
-      container.addEventListener('mouseenter', () => clearInterval(window.autoScrollInterval));
-      container.addEventListener('mouseleave', () => {
-        window.autoScrollInterval = setInterval(() => {
-          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-            container.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            container.scrollBy({ left: 300, behavior: 'smooth' });
-          }
-        }, 4000);
-      });
-    }
-
-  // ---------- INITIAL LOAD ----------
-  loadHero();
-  loadSolutions();
-  loadProducts();
-
-  // ---------- NETLIFY IDENTITY ----------
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
+function applyFilterSort() {
+  let items = [...allSolutions];
+  if(activeFilter !== 'all') {
+    items = items.filter(s => {
+      const tags = s.tags || [];
+      const badge = (s.badge || '').toLowerCase();
+      const title = (s.title || '').toLowerCase();
+      return tags.includes(activeFilter) || badge.includes(activeFilter) || title.includes(activeFilter);
     });
   }
-  if (window.location.hash.includes('invite_token')) {
-    if (window.netlifyIdentity) window.netlifyIdentity.open();
-    else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
-  }
+  const sort = document.getElementById('sortSelect').value;
+  if(sort === 'az') items.sort((a,b)=>a.title.localeCompare(b.title));
+  if(sort === 'za') items.sort((a,b)=>b.title.localeCompare(a.title));
+  filteredSolutions = items;
+  renderGrid(items);
+}
+
+/* Filter chips */
+document.getElementById('filterChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if(!chip) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  chip.classList.add('active');
+  activeFilter = chip.dataset.filter;
+  applyFilterSort();
+});
+
+document.getElementById('sortSelect').addEventListener('change', applyFilterSort);
+
+/* Load solutions */
+fetch('/data/solutions.json')
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(data => {
+    allSolutions = (Array.isArray(data) ? data : (data.solutions || [])).map(s => ({
+      ...s,
+      description: s.description || '',
+      moq: s.moq || '',
+      tags: s.tags || []
+    }));
+    document.getElementById('totalCatCount').textContent = allSolutions.length;
+    applyFilterSort();
+  })
+  .catch(() => {
+    allSolutions = DEMO_SOLUTIONS;
+    document.getElementById('totalCatCount').textContent = allSolutions.length;
+    applyFilterSort();
+    console.info('[Stardom] solutions.json not found — demo data loaded.');
+  });
+
+/* Netlify Identity */
+if(window.netlifyIdentity){
+  window.netlifyIdentity.on('init',user=>{if(!user)window.netlifyIdentity.on('login',()=>{document.location.href='/admin/';});});
+}
 </script>
 </body>
 </html>

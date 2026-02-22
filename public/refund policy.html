@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -266,5 +266,1873 @@
             </div>
         </div>
     </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stardom Textiles | T-shirts, Uniforms & Sports Kit — Karanja (Gh.)</title>
+  <meta name="description" content="Stardom Textiles – Premium T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
+  <meta name="theme-color" content="#0f0f0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+<style>
+/* ═══════════════════════════════════════════════
+   1. DESIGN TOKENS
+═══════════════════════════════════════════════ */
+:root {
+  --ink:          #141410;
+  --ink-80:       rgba(20,20,16,0.8);
+  --ink-40:       rgba(20,20,16,0.4);
+  --parchment:    #f5f2ec;
+  --parchment-d:  #ede9e1;
+  --stone:        #d4cfc6;
+  --stone-d:      #b0a99e;
+  --crimson:      #c4282b;
+  --crimson-d:    #9e2022;
+  --crimson-glow: rgba(196,40,43,0.18);
+  --green-live:   #22c55e;
+  --wa-green:     #25D366;
+  --bg:           #faf8f5;
+  --bg-alt:       #f0ede6;
+  --bg-deep:      #141410;
+  --card:         #ffffff;
+  --border:       rgba(20,20,16,0.08);
+  --border-strong:rgba(20,20,16,0.16);
+  --ff-display: 'Fraunces', Georgia, serif;
+  --ff-body:    'Outfit', system-ui, sans-serif;
+  --s1: 0 2px 8px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+  --s2: 0 8px 32px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+  --s3: 0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --ease-in-out: cubic-bezier(0.76,0,0.24,1);
+  --header-h: 60px;
+}
+body.dark {
+  --ink:          #f0ede8;
+  --ink-80:       rgba(240,237,232,0.8);
+  --ink-40:       rgba(240,237,232,0.4);
+  --parchment:    #1c1c18;
+  --parchment-d:  #242420;
+  --stone:        #3a3a34;
+  --stone-d:      #4e4e46;
+  --crimson:      #e05a5d;
+  --crimson-d:    #c44b4e;
+  --crimson-glow: rgba(224,90,93,0.22);
+  --bg:           #1c1c18;
+  --bg-alt:       #242420;
+  --bg-deep:      #0c0c0a;
+  --card:         #252520;
+  --border:       rgba(240,237,232,0.08);
+  --border-strong:rgba(240,237,232,0.15);
+  --s1: 0 2px 8px rgba(0,0,0,0.3);
+  --s2: 0 8px 32px rgba(0,0,0,0.4);
+  --s3: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ═══════════════════════════════════════════════
+   2. RESET & BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-body);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s, color 0.25s;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4 { font-family: var(--ff-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font-family: var(--ff-body); }
+.container { max-width: 1380px; margin: 0 auto; padding: 0 36px; }
+
+/* ═══════════════════════════════════════════════
+   3. UTILITIES
+═══════════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* Label pill — compact by default */
+.label-pill {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: var(--ff-body); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 0.25rem 0.8rem; border-radius: 2px;
+  background: var(--parchment-d); color: var(--ink-80); width: fit-content;
+}
+.label-pill.accent { background: var(--crimson); color: white; }
+
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+.section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.65rem; }
+.section-head p { color: var(--ink-80); font-size: 0.97rem; }
+.rule { width: 40px; height: 3px; background: var(--crimson); border-radius: 2px; margin: 0 auto 1.25rem; }
+.explore-row { text-align: center; margin-top: 2.5rem; }
+
+/* ═══════════════════════════════════════════════
+   4. BUTTONS
+═══════════════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+  padding: 0.8rem 1.9rem; font-family: var(--ff-body); font-weight: 600;
+  font-size: 0.8rem; letter-spacing: 0.07em; text-transform: uppercase;
+  border-radius: 3px; border: 1.5px solid transparent; cursor: pointer;
+  transition: all 0.22s var(--ease-out); white-space: nowrap; line-height: 1;
+}
+.btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+.btn-primary { background: var(--crimson); color: #fff; border-color: var(--crimson); box-shadow: 0 2px 12px var(--crimson-glow); }
+.btn-primary:hover { background: var(--crimson-d); border-color: var(--crimson-d); transform: translateY(-2px); box-shadow: 0 8px 28px var(--crimson-glow); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--border-strong); }
+.btn-ghost:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); transform: translateY(-2px); }
+.btn-sm { padding: 0.55rem 1.25rem; font-size: 0.74rem; }
+.btn-xs { padding: 0.38rem 0.9rem; font-size: 0.7rem; }
+.btn-wa { background: var(--wa-green); color: #fff; border-color: var(--wa-green); }
+.btn-wa:hover { background: #1da955; border-color: #1da955; transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════════════
+   5. TOP BAR
+   Mobile: collapsible, hidden when scrolled down
+═══════════════════════════════════════════════ */
+.top-bar {
+  background: var(--bg-deep); color: var(--stone-d);
+  font-size: 0.76rem; letter-spacing: 0.02em;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  overflow: hidden;
+  max-height: 60px;
+  transition: max-height 0.35s var(--ease-out), opacity 0.3s;
+  opacity: 1;
+}
+.top-bar.tb-hidden { max-height: 0; opacity: 0; pointer-events: none; }
+.top-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; flex-wrap: wrap; }
+.top-bar-chips { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.top-bar-chip { display: flex; align-items: center; gap: 0.35rem; color: var(--stone-d); white-space: nowrap; }
+.top-bar-chip .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
+/* Top bar CTA — visible desktop only */
+.top-bar-cta .btn {
+  padding: 0.35rem 1rem; font-size: 0.7rem; border-radius: 2px;
+  background: var(--crimson); color: white; border-color: var(--crimson); letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════════════════
+   6. HEADER — Mobile-first
+═══════════════════════════════════════════════ */
+.site-header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(250,248,245,0.97);
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s, background 0.25s;
+}
+body.dark .site-header { background: rgba(28,28,24,0.97); }
+.site-header.scrolled { box-shadow: var(--s2); }
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: var(--header-h);
+  gap: 1rem;
+}
+
+/* Logo */
+.logo-wrap { display: flex; align-items: center; gap: 0.65rem; }
+.logo-icon {
+  width: 32px; height: 32px; background: var(--ink); color: var(--bg);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: var(--ff-display); font-weight: 900; font-size: 0.95rem;
+  flex-shrink: 0; transition: background 0.25s;
+}
+body.dark .logo-icon { background: var(--crimson); }
+.logo-text { font-family: var(--ff-display); font-weight: 900; font-size: 1.3rem; letter-spacing: -0.04em; color: var(--ink); line-height: 1; }
+.logo-text em { font-style: normal; color: var(--crimson); }
+
+/* Desktop nav */
+.main-nav { display: flex; justify-content: center; }
+.nav-list { list-style: none; display: flex; gap: 0; }
+.nav-list a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-80); padding: 0.5rem 0.9rem; position: relative; transition: color 0.2s; }
+.nav-list a::after { content: ''; position: absolute; bottom: 0; left: 0.9rem; right: 0.9rem; height: 2px; background: var(--crimson); transform: scaleX(0); transform-origin: center; transition: transform 0.22s var(--ease-out); }
+.nav-list a:hover { color: var(--crimson); }
+.nav-list a:hover::after { transform: scaleX(1); }
+
+/* Header right — desktop */
+.header-right { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; }
+.header-phone-chip { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 500; color: var(--ink-80); }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-live); animation: livePulse 2s ease-in-out infinite; flex-shrink: 0; }
+@keyframes livePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); } 50% { box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
+
+/* Icon button — dark toggle */
+.icon-btn {
+  width: 34px; height: 34px; border: 1px solid var(--border-strong);
+  border-radius: 50%; background: transparent; color: var(--ink);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.22s; flex-shrink: 0;
+}
+.icon-btn:hover { border-color: var(--crimson); background: var(--crimson); color: #fff; }
+.icon-btn svg { width: 16px; height: 16px; }
+/* Sun/moon icons */
+.icon-sun { display: none; }
+.icon-moon { display: block; }
+body.dark .icon-sun { display: block; }
+body.dark .icon-moon { display: none; }
+
+/* Mobile header actions group */
+.mobile-actions { display: none; align-items: center; gap: 0.5rem; }
+
+/* Hamburger */
+.mobile-toggle {
+  width: 36px; height: 36px; background: none; border: 1px solid var(--border-strong);
+  border-radius: 6px; cursor: pointer; color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  flex-shrink: 0; transition: border-color 0.2s;
+}
+.mobile-toggle:hover { border-color: var(--crimson); }
+.hamburger-line {
+  width: 18px; height: 1.5px; background: var(--ink);
+  border-radius: 2px; transition: transform 0.3s var(--ease-out), opacity 0.2s;
+  transform-origin: center;
+}
+.mobile-toggle.open .hamburger-line:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+.mobile-toggle.open .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-toggle.open .hamburger-line:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.mobile-nav {
+  display: none;
+  position: absolute; top: var(--header-h); left: 0; right: 0;
+  background: var(--card); border-bottom: 1px solid var(--border);
+  box-shadow: var(--s3); z-index: 199;
+  transform: translateY(-8px); opacity: 0;
+  transition: transform 0.3s var(--ease-out), opacity 0.25s;
+}
+.mobile-nav.open { display: block; transform: translateY(0); opacity: 1; }
+.mobile-nav ul { list-style: none; padding: 0.5rem 0; }
+.mobile-nav ul li a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.85rem 20px; font-weight: 500; font-size: 0.88rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ink-80); border-bottom: 1px solid var(--border);
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-nav ul li:last-child a { border-bottom: none; }
+.mobile-nav ul li a:hover { color: var(--crimson); background: var(--parchment-d); }
+.mobile-nav ul li a::after { content: '›'; font-size: 1.2rem; opacity: 0.4; }
+/* Mobile nav WA CTA */
+.mobile-nav-cta {
+  padding: 1rem 20px 1.2rem;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 0.6rem;
+}
+.mobile-nav-cta a { flex: 1; text-align: center; font-size: 0.75rem; padding: 0.7rem 0.5rem; }
+
+/* ═══════════════════════════════════════════════
+   7. ANNOUNCEMENT TICKER
+═══════════════════════════════════════════════ */
+.ticker { background: #0f0f0d; height: 34px; overflow: hidden; display: flex; align-items: center; position: relative; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.ticker::before, .ticker::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+.ticker::before { left: 0; background: linear-gradient(to right, #0f0f0d, transparent); }
+.ticker::after { right: 0; background: linear-gradient(to left, #0f0f0d, transparent); }
+.ticker-badge { flex-shrink: 0; background: var(--crimson); color: #fff; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0 0.9rem; height: 100%; display: flex; align-items: center; z-index: 3; white-space: nowrap; font-family: var(--ff-body); }
+.ticker-viewport { overflow: hidden; flex: 1; height: 100%; }
+.ticker-track { display: flex; align-items: center; height: 100%; white-space: nowrap; animation: ticker-scroll 32s linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-item { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0 2.2rem; font-size: 0.74rem; letter-spacing: 0.02em; color: #9e9990; font-family: var(--ff-body); }
+.ticker-item strong { color: #e8e4dc; font-weight: 500; }
+.ticker-item .tdot { width: 3px; height: 3px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════
+   8. HERO
+═══════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: min(78vh, 640px);
+  display: flex; align-items: center;
+  overflow: hidden; color: #fff;
+  padding: 4rem 0 5rem;
+}
+/* fallback dark bg so hero never looks blank */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background: #1a1a16;
+}
+
+/* Single-image bg */
+.hero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  z-index: 1;
+}
+
+/* Crossfade carousel */
+.hero-carousel-bg { position: absolute; inset: 0; z-index: 1; }
+.hero-carousel-bg .hc-slide {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1.4s ease-in-out;
+}
+.hero-carousel-bg .hc-slide.active { opacity: 1; }
+
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(125deg, rgba(14,13,10,0.85) 0%, rgba(14,13,10,0.55) 55%, rgba(196,40,43,0.1) 100%);
+}
+.hero-grain {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* Hero carousel dots */
+.hero-carousel-dots { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 6px; }
+.hc-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); border: none; cursor: pointer; padding: 0; transition: all 0.3s; }
+.hc-dot.active { width: 20px; border-radius: 3px; background: #fff; }
+
+.hero .container { position: relative; z-index: 4; }
+.hero-content { max-width: 700px; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: rgba(255,255,255,0.09); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 2px;
+  padding: 0.35rem 0.9rem; font-size: 0.68rem; letter-spacing: 0.11em;
+  text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.85);
+  margin-bottom: 1.5rem; animation: fadeUp 0.8s var(--ease-out) both;
+}
+.hero-eyebrow .live-dot { background: var(--green-live); }
+
+.hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 900; color: #fff;
+  line-height: 1.04; letter-spacing: -0.03em;
+  margin-bottom: 1.2rem; animation: fadeUp 0.8s 0.12s var(--ease-out) both;
+}
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.7); }
+
+.hero p {
+  font-size: 1rem; line-height: 1.65;
+  color: rgba(255,255,255,0.76); max-width: 520px;
+  margin-bottom: 2rem; animation: fadeUp 0.8s 0.22s var(--ease-out) both;
+}
+
+.hero-actions {
+  display: flex; gap: 0.8rem; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s var(--ease-out) both;
+}
+.hero-actions .btn-ghost { border-color: rgba(255,255,255,0.38); color: rgba(255,255,255,0.9); }
+.hero-actions .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
+
+/* Hero stats */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 1.6rem;
+  animation: fadeUp 0.8s 0.4s var(--ease-out) both;
+}
+.hero-stat { text-align: center; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1); }
+.hero-stat:last-child { border-right: none; }
+.hero-stat-n { font-family: var(--ff-display); font-size: 1.75rem; font-weight: 900; color: #fff; line-height: 1; }
+.hero-stat-l { font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.48); margin-top: 0.3rem; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ═══════════════════════════════════════════════
+   9. SOLUTIONS GRID
+═══════════════════════════════════════════════ */
+.solutions { padding: 5.5rem 0; background: var(--bg); }
+.solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+.sol-card {
+  border-radius: 8px; overflow: hidden; background: var(--card);
+  border: 1px solid var(--border); box-shadow: var(--s1);
+  cursor: pointer; display: flex; flex-direction: column;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.sol-card:hover { transform: translateY(-5px); box-shadow: var(--s3); }
+.sol-card:hover .sol-img { transform: scale(1.06); }
+.sol-img-wrap { height: 180px; overflow: hidden; }
+.sol-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s var(--ease-out); }
+.sol-body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+.sol-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-40); background: var(--parchment-d); padding: 0.12rem 0.6rem; border-radius: 2px; width: fit-content; }
+.sol-name { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
+.sol-order { margin-top: auto; padding-top: 0.5rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--crimson); display: inline-flex; align-items: center; gap: 0.25rem; transition: gap 0.2s; }
+.sol-card:hover .sol-order { gap: 0.5rem; }
+
+/* ═══════════════════════════════════════════════
+   10. ABOUT SECTION
+═══════════════════════════════════════════════ */
+.about { padding: 5.5rem 0; background: var(--bg-alt); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+.about-media { display: flex; flex-direction: column; gap: 1rem; }
+.about-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center; border-radius: 8px; box-shadow: var(--s3); }
+.about-video { position: relative; border-radius: 8px; overflow: hidden; box-shadow: var(--s2); }
+.about-video iframe { width: 100%; height: 200px; display: block; border: none; }
+.about-body { display: flex; flex-direction: column; gap: 1.2rem; }
+.about-body h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 900; }
+.about-body p { color: var(--ink-80); line-height: 1.75; font-size: 0.94rem; }
+.about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.3rem; }
+.about-fact { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; box-shadow: var(--s1); }
+.about-fact-n { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 900; color: var(--crimson); }
+.about-fact-l { font-size: 0.74rem; color: var(--ink-80); margin-top: 0.12rem; }
+
+/* ═══════════════════════════════════════════════
+   11. PRODUCT CAROUSEL
+═══════════════════════════════════════════════ */
+.products { padding: 5.5rem 0; background: var(--bg); }
+.products-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; gap: 1rem; flex-wrap: wrap; }
+.products-header .section-head { text-align: left; margin: 0; max-width: 540px; }
+.products-header .section-head h2 { margin-bottom: 0.45rem; }
+
+.carousel-wrap { position: relative; overflow: hidden; border-radius: 8px; }
+.carousel-track { display: flex; transition: transform 0.65s var(--ease-in-out); will-change: transform; }
+.c-slide { flex: 0 0 100%; display: grid; grid-template-columns: 1.1fr 1fr; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; min-height: 460px; }
+.c-slide-img { position: relative; overflow: hidden; }
+.c-slide-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-out); }
+.c-slide:hover .c-slide-img img { transform: scale(1.04); }
+.c-slide-img-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.15), transparent); pointer-events: none; }
+.c-slide-body { padding: 2.5rem 3rem; display: flex; flex-direction: column; justify-content: center; gap: 0.9rem; }
+.c-slide-num { font-family: var(--ff-display); font-size: 5rem; font-weight: 900; color: var(--parchment-d); line-height: 1; letter-spacing: -0.05em; margin-bottom: -0.5rem; transition: color 0.25s; }
+body.dark .c-slide-num { color: var(--stone); }
+.c-slide-cat { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); }
+.c-slide-name { font-family: var(--ff-display); font-size: clamp(1.35rem, 2.2vw, 2rem); font-weight: 900; line-height: 1.1; }
+.c-slide-desc { font-size: 0.87rem; color: var(--ink-80); line-height: 1.68; max-width: 360px; }
+.c-slide-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; padding-top: 0.4rem; }
+
+.carousel-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; gap: 1rem; flex-wrap: wrap; }
+.c-dots { display: flex; gap: 5px; align-items: center; }
+.c-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--stone); border: none; cursor: pointer; padding: 0; transition: all 0.3s var(--ease-out); }
+.c-dot.active { width: 22px; border-radius: 4px; background: var(--crimson); }
+.c-progress { flex: 1; height: 2px; background: var(--stone); border-radius: 2px; overflow: hidden; min-width: 60px; }
+.c-progress-fill { height: 100%; background: var(--crimson); border-radius: 2px; transition: width 0.5s var(--ease-out); }
+.c-arrows { display: flex; gap: 0.5rem; }
+.c-arrow { width: 42px; height: 42px; border-radius: 4px; border: 1.5px solid var(--border-strong); background: var(--card); color: var(--ink); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; box-shadow: var(--s1); }
+.c-arrow:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════════════
+   12. WHY US
+═══════════════════════════════════════════════ */
+.why { padding: 5.5rem 0; background: var(--bg-alt); }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto auto; gap: 1.1rem; }
+.why-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1.5rem 1.4rem; box-shadow: var(--s1);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--s2); }
+.why-card.featured {
+  grid-row: 1 / 3; background: var(--ink); color: var(--bg);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 2.2rem;
+}
+body.dark .why-card.featured { background: var(--crimson); }
+.why-card.featured h3 { color: #fff; font-size: 1.25rem; }
+.why-card.featured p { color: rgba(255,255,255,0.7); }
+.why-icon { font-size: 1.7rem; margin-bottom: 0.75rem; display: block; line-height: 1; }
+.why-card.featured .why-icon { font-size: 3rem; margin-bottom: auto; padding-bottom: 1.2rem; }
+.why-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.3rem; }
+.why-card p { font-size: 0.8rem; color: var(--ink-80); line-height: 1.5; }
+.why-tag { display: inline-block; font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); padding: 0.18rem 0.65rem; border-radius: 2px; margin-bottom: 0.9rem; font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   13. CONTACT SECTION — Streamlined
+═══════════════════════════════════════════════ */
+.contact { padding: 5.5rem 0; background: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 4.5rem; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 1.8rem; }
+.contact-info h2 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 900; }
+.contact-info p { color: var(--ink-80); line-height: 1.72; font-size: 0.94rem; }
+.contact-channels { display: flex; flex-direction: column; gap: 0.8rem; }
+.channel-card {
+  display: flex; align-items: center; gap: 0.9rem; background: var(--card);
+  border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1.1rem;
+  box-shadow: var(--s1); transition: transform 0.2s, box-shadow 0.2s;
+}
+.channel-card:hover { transform: translateX(3px); box-shadow: var(--s2); }
+.channel-icon { width: 38px; height: 38px; border-radius: 50%; background: var(--parchment-d); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.channel-label { font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 0.1rem; }
+.channel-val { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+
+/* Enquiry form */
+.enquiry-form { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2.2rem; box-shadow: var(--s2); }
+.enquiry-form h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.enquiry-form .form-sub { font-size: 0.85rem; color: var(--ink-80); margin-bottom: 1.6rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.9rem; }
+.form-group label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-80); }
+.form-group input, .form-group select, .form-group textarea {
+  font-family: var(--ff-body); font-size: 0.88rem; font-weight: 400;
+  padding: 0.7rem 0.9rem; border: 1.5px solid var(--border-strong); border-radius: 5px;
+  background: var(--bg); color: var(--ink); transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none; appearance: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--crimson); box-shadow: 0 0 0 3px var(--crimson-glow); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-submit-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.form-success { display: none; text-align: center; padding: 1.8rem; }
+.form-success .check { font-size: 2.8rem; margin-bottom: 0.8rem; }
+.form-success h4 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.form-success p { color: var(--ink-80); font-size: 0.88rem; }
+
+/* ═══════════════════════════════════════════════
+   14. CTA BAND
+═══════════════════════════════════════════════ */
+.cta-band { padding: 5rem 0; background: var(--ink); position: relative; overflow: hidden; }
+body.dark .cta-band { background: #0c0c0a; }
+.cta-band::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: var(--crimson-glow); filter: blur(60px); pointer-events: none; }
+.cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-band h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; color: #fff; max-width: 520px; }
+.cta-band h2 em { font-style: italic; color: rgba(255,255,255,0.52); }
+.cta-band-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; flex-shrink: 0; }
+.cta-band .btn-ghost { border-color: rgba(255,255,255,0.28); color: rgba(255,255,255,0.85); }
+.cta-band .btn-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════════════
+   15. FOOTER
+═══════════════════════════════════════════════ */
+.footer { background: var(--bg-deep); color: #7a7570; padding: 4.5rem 0 2rem; }
+.footer-brand { margin-bottom: 2.5rem; }
+.footer-logo { font-family: var(--ff-display); font-size: 1.45rem; font-weight: 900; color: #f0ede8; margin-bottom: 0.35rem; letter-spacing: -0.03em; }
+.footer-logo em { font-style: normal; color: var(--crimson); }
+.footer-tagline { font-size: 0.8rem; margin-bottom: 1.2rem; }
+.footer-socials { display: flex; gap: 0.5rem; }
+.footer-socials a { width: 32px; height: 32px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #7a7570; transition: 0.2s; }
+.footer-socials a:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.footer-col h4 { font-family: var(--ff-body); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #f0ede8; margin-bottom: 1rem; font-weight: 600; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { font-size: 0.83rem; color: #7a7570; transition: color 0.2s; }
+.footer-links a:hover { color: #f0ede8; }
+.footer-contact { font-size: 0.82rem; line-height: 2.1; color: #7a7570; }
+.footer-contact a { color: #f0ede8; font-weight: 600; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; padding-top: 1.8rem; font-size: 0.76rem; }
+.footer-bottom a { color: #5a5a56; transition: color 0.2s; }
+.footer-bottom a:hover { color: #9e9990; }
+
+/* ═══════════════════════════════════════════════
+   16. TRUST POPUP — Right side card
+═══════════════════════════════════════════════ */
+.trust-popup {
+  position: fixed; bottom: 20px; right: 20px;
+  background: var(--card); border: 1px solid var(--border-strong);
+  border-radius: 10px; box-shadow: var(--s3);
+  padding: 1.1rem 1.2rem 1rem;
+  max-width: 270px; z-index: 500;
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+.trust-popup.hide { opacity: 0; transform: translateY(16px); pointer-events: none; }
+.trust-popup-close { position: absolute; top: 8px; right: 10px; background: none; border: none; font-size: 0.9rem; color: var(--stone-d); cursor: pointer; line-height: 1; padding: 0.2rem; }
+.tp-rating { display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.6rem; }
+.tp-stars { color: #f59e0b; font-size: 0.8rem; }
+.tp-badge { background: #e8f5e9; color: #1e7d34; font-size: 0.62rem; font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 2px; letter-spacing: 0.03em; }
+.tp-info { font-size: 0.75rem; color: var(--ink-80); margin-bottom: 0.3rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.tp-phone { font-family: var(--ff-display); font-size: 1rem; font-weight: 700; color: var(--ink); margin: 0.3rem 0; }
+.tp-actions { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+.tp-actions a { flex: 1; padding: 0.55rem 0.4rem; text-align: center; border-radius: 5px; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.03em; transition: opacity 0.2s; }
+.tp-actions a:hover { opacity: 0.87; }
+.tp-enquire { background: var(--crimson); color: #fff; }
+.tp-wa { background: var(--wa-green); color: #fff; }
+
+/* ═══════════════════════════════════════════════
+   17. RESPONSIVE — TABLET 1100px
+═══════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .solutions-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-card.featured { grid-row: auto; }
+  .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+  .footer-grid .footer-col:last-child { grid-column: 2 / 4; }
+}
+
+/* ═══════════════════════════════════════════════
+   18. RESPONSIVE — TABLET 900px
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  :root { --header-h: 56px; }
+  .container { padding: 0 24px; }
+
+  /* Header */
+  .main-nav { display: none; }
+  .mobile-actions { display: flex; }
+  .header-right { display: none; }
+  .header-inner { grid-template-columns: auto 1fr auto; }
+
+  /* Top bar — simplified on tablet */
+  .top-bar-chip:nth-child(3),
+  .top-bar-chip:nth-child(4) { display: none; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-video iframe { height: 240px; }
+
+  /* Carousel */
+  .c-slide { grid-template-columns: 1fr; min-height: auto; }
+  .c-slide-img { height: 260px; }
+  .c-slide-body { padding: 1.8rem; }
+  .c-slide-num { font-size: 3rem; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* CTA */
+  .cta-band-inner { flex-direction: column; text-align: center; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-grid .footer-col:first-child { grid-column: 1 / -1; }
+  .footer-grid .footer-col:last-child { grid-column: auto; }
+}
+
+/* ═══════════════════════════════════════════════
+   19. RESPONSIVE — MOBILE 640px (critical)
+═══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  :root { --header-h: 52px; }
+  .container { padding: 0 16px; }
+
+  /* ── TOP BAR — mobile minimal ── */
+  .top-bar { padding: 0.45rem 0; }
+  .top-bar .container { flex-wrap: nowrap; gap: 0.5rem; }
+  /* Show only one chip on mobile */
+  .top-bar-chips { gap: 0.5rem; }
+  .top-bar-chip { font-size: 0.68rem; }
+  .top-bar-chip:nth-child(1) { display: none; } /* hide product types */
+  .top-bar-chip:nth-child(3),
+  .top-bar-chip:nth-child(4) { display: none; }
+  /* Hide "Enquire Now" CTA on mobile — popup handles it */
+  .top-bar-cta { display: none; }
+
+  /* ── LOGO ── */
+  .logo-text { font-size: 1.15rem; }
+  .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; }
+
+  /* ── HERO — full bleed, properly fitted ── */
+  .hero {
+    min-height: 100svh;
+    min-height: 100vh;
+    padding: 2.5rem 0 3rem;
+    align-items: flex-end;
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(14,13,10,0.95) 0%,
+      rgba(14,13,10,0.72) 45%,
+      rgba(14,13,10,0.28) 100%
+    );
+  }
+  .hero-content { max-width: 100%; }
+  .hero-eyebrow { font-size: 0.6rem; padding: 0.28rem 0.7rem; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); margin-bottom: 0.9rem; }
+  .hero p { font-size: 0.88rem; margin-bottom: 1.5rem; max-width: 100%; }
+  .hero-actions { gap: 0.6rem; }
+  .hero-actions .btn { font-size: 0.72rem; padding: 0.7rem 1.3rem; }
+
+  /* Hero stats — 2x2 on mobile */
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0; margin-top: 2rem; padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-stat { padding: 0.6rem 0.5rem; border-right: 1px solid rgba(255,255,255,0.1); }
+  .hero-stat:nth-child(2) { border-right: none; }
+  .hero-stat:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.1); border-top: 1px solid rgba(255,255,255,0.1); }
+  .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); }
+  .hero-stat-n { font-size: 1.4rem; }
+  .hero-stat-l { font-size: 0.58rem; }
+
+  /* ── SECTION PADDING ── */
+  .solutions, .about, .products, .why, .contact { padding: 4rem 0; }
+
+  /* ── SECTION HEAD ── */
+  .section-head { margin-bottom: 2rem; }
+  .section-head h2 { font-size: 1.55rem; }
+  .section-head p { font-size: 0.88rem; }
+  .label-pill { font-size: 0.62rem; padding: 0.22rem 0.65rem; }
+
+  /* ── SOLUTIONS — 2-column compact, app-style ── */
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+  .sol-card { border-radius: 6px; }
+  .sol-img-wrap { height: 110px; }
+  .sol-body { padding: 0.65rem 0.7rem 0.75rem; gap: 0.25rem; }
+  .sol-tag { font-size: 0.52rem; padding: 0.1rem 0.45rem; }
+  .sol-name { font-size: 0.78rem; line-height: 1.2; font-weight: 700; }
+  .sol-order { font-size: 0.6rem; padding-top: 0.35rem; }
+
+  /* ── ABOUT — mobile ── */
+  .about { padding: 3.5rem 0; }
+  .about-grid { gap: 2rem; }
+  .about-img { aspect-ratio: 16/9; border-radius: 6px; }
+  .about-video iframe { height: 200px; }
+  .about-body h2 { font-size: 1.5rem; }
+  .about-body p { font-size: 0.88rem; }
+  .about-facts { gap: 0.6rem; }
+  .about-fact { padding: 0.75rem 0.85rem; }
+  .about-fact-n { font-size: 1.25rem; }
+  .about-fact-l { font-size: 0.7rem; }
+
+  /* ── PRODUCTS CAROUSEL ── */
+  .products-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .c-slide-img { height: 220px; }
+  .c-slide-body { padding: 1.3rem 1.2rem 1.5rem; gap: 0.6rem; }
+  .c-slide-num { font-size: 2.5rem; margin-bottom: -0.3rem; }
+  .c-slide-name { font-size: 1.2rem; }
+  .c-slide-desc { font-size: 0.82rem; line-height: 1.58; }
+  .c-slide-actions { gap: 0.5rem; }
+  .c-slide-actions .btn { font-size: 0.7rem; padding: 0.6rem 1rem; }
+  .c-arrow { width: 36px; height: 36px; font-size: 1rem; }
+
+  /* ── WHY US — 2-column compact chips on mobile ── */
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+  /* Featured card spans full width at top */
+  .why-card.featured {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    flex-direction: row; align-items: center; gap: 1rem;
+    padding: 1.2rem 1.3rem;
+    min-height: auto;
+  }
+  .why-card.featured .why-tag { display: none; }
+  .why-card.featured .why-icon { font-size: 2rem; margin-bottom: 0; padding-bottom: 0; flex-shrink: 0; }
+  .why-card.featured h3 { font-size: 1rem; margin-bottom: 0.2rem; }
+  .why-card.featured p { font-size: 0.76rem; line-height: 1.45; color: rgba(255,255,255,0.72); }
+  .why-card { padding: 1rem 0.9rem; border-radius: 6px; }
+  .why-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .why-card h3 { font-size: 0.76rem; margin-bottom: 0.2rem; }
+  .why-card p { font-size: 0.7rem; line-height: 1.45; }
+
+  /* ── CONTACT — remove redundant WA, keep form ── */
+  .form-row { grid-template-columns: 1fr; }
+  .enquiry-form { padding: 1.5rem; border-radius: 8px; }
+  .enquiry-form h3 { font-size: 1.15rem; }
+  .form-group input, .form-group select, .form-group textarea { font-size: 0.84rem; padding: 0.65rem 0.8rem; }
+  .form-submit-row { flex-direction: column; }
+  .form-submit-row .btn { width: 100%; justify-content: center; }
+  .channel-card { padding: 0.75rem 0.9rem; gap: 0.7rem; border-radius: 6px; }
+  .channel-icon { width: 34px; height: 34px; font-size: 1rem; }
+  .channel-val { font-size: 0.84rem; }
+
+  /* ── CTA BAND ── */
+  .cta-band { padding: 3.5rem 0; }
+  .cta-band h2 { font-size: 1.5rem; }
+  .cta-band-actions { width: 100%; justify-content: center; }
+  .cta-band-actions .btn { font-size: 0.74rem; padding: 0.75rem 1.4rem; }
+
+  /* ── FOOTER mobile — 2-col links ── */
+  .footer { padding: 3.5rem 0 2rem; }
+  .footer-brand { margin-bottom: 2rem; }
+  .footer-logo { font-size: 1.25rem; }
+  .footer-tagline { font-size: 0.76rem; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.2rem;
+  }
+  .footer-grid .footer-col:first-child { grid-column: 1 / -1; }
+  .footer-col h4 { font-size: 0.62rem; margin-bottom: 0.75rem; }
+  .footer-links a { font-size: 0.78rem; }
+  .footer-contact { font-size: 0.78rem; line-height: 1.9; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 0.3rem; padding-top: 1.2rem; font-size: 0.72rem; }
+
+  /* ── TRUST POPUP — bottom sheet on mobile ── */
+  .trust-popup {
+    bottom: 0; right: 0; left: 0;
+    max-width: 100%;
+    border-radius: 14px 14px 0 0;
+    padding: 1rem 1.1rem 1.3rem;
+    border: none;
+    border-top: 1px solid var(--border-strong);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    column-gap: 0.8rem;
+    row-gap: 0.4rem;
+  }
+  .tp-rating { grid-column: 1; margin-bottom: 0; }
+  .trust-popup-close { position: static; grid-column: 2; grid-row: 1; align-self: center; }
+  .tp-info { grid-column: 1 / -1; margin-bottom: 0.2rem; }
+  .tp-phone { grid-column: 1; font-size: 0.95rem; margin: 0; }
+  .tp-actions { grid-column: 1 / -1; margin-top: 0.4rem; gap: 0.6rem; }
+  .tp-actions a { font-size: 0.74rem; padding: 0.65rem; }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .solutions-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .sol-img-wrap { height: 90px; }
+  .sol-name { font-size: 0.72rem; }
+}
+
+:focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; }
+</style>
+</head>
+
+<body>
+
+<!-- ─────────────────────────────────────────────
+     TRUST POPUP
+───────────────────────────────────────────── -->
+<aside class="trust-popup hide" id="trustPopup" role="complementary" aria-label="Quick contact">
+  <div class="tp-rating">
+    <span class="tp-stars" id="tpStars" aria-label="4.3 out of 5 stars">⭐⭐⭐⭐☆</span>
+    <span class="tp-badge">Verified ✓</span>
+  </div>
+  <button class="trust-popup-close" id="tpClose" aria-label="Close">✕</button>
+  <div class="tp-info">
+    <span id="tpCity">📍 Karanja (Gh.)</span>
+    <span id="tpHoursShort">🕐 Open till 10:30 pm</span>
+  </div>
+  <div class="tp-phone" id="tpPhone">📞 7510000000</div>
+  <div class="tp-actions">
+    <a href="#contact" class="tp-enquire" id="tpEnquireLink">Enquire Now</a>
+    <a href="https://wa.me/917510000000" class="tp-wa" id="tpWaLink" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+</aside>
+
+<!-- ─────────────────────────────────────────────
+     TOP BAR
+───────────────────────────────────────────── -->
+<div class="top-bar" id="topBar" role="banner">
+  <div class="container">
+    <div class="top-bar-chips" id="topBarChips">
+      <span class="top-bar-chip"><span class="dot"></span>👕 T-shirts · Uniforms · Sports Kit</span>
+      <span class="top-bar-chip" id="tbCity"><span class="dot"></span>📍 Karanja (Gh.)</span>
+      <span class="top-bar-chip" id="tbPhone"><span class="dot"></span>📞 7510000000</span>
+      <span class="top-bar-chip"><span class="dot"></span>✈️ Pan-India Delivery</span>
+    </div>
+    <div class="top-bar-cta">
+      <a href="#contact" class="btn">ENQUIRE NOW</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────
+     HEADER
+───────────────────────────────────────────── -->
+<header class="site-header" id="siteHeader" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="#home" class="logo-wrap" aria-label="Stardom Textiles — Home">
+        <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">STARDOM<em>.</em></span>
+      </a>
+
+      <!-- Desktop nav (center) -->
+      <nav class="main-nav" aria-label="Site sections">
+        <ul class="nav-list" role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop right (phone + dark toggle) -->
+      <div class="header-right">
+        <div class="header-phone-chip" aria-label="Call us">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="headerPhone">7510000000</span>
+        </div>
+        <!-- Dark toggle -->
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode" title="Dark mode">
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile actions (dark toggle + hamburger) — replaces header-right on mobile -->
+      <div class="mobile-actions">
+        <button class="icon-btn" id="darkToggleMob" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="#contact" class="btn btn-primary btn-sm">📋 Enquire Now</a>
+      <a href="https://wa.me/917510000000" class="btn btn-wa btn-sm" id="mobileNavWa" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ─────────────────────────────────────────────
+     TICKER
+───────────────────────────────────────────── -->
+<div class="ticker" role="marquee" aria-label="Announcements" aria-live="off">
+  <span class="ticker-badge">LIVE</span>
+  <div class="ticker-viewport">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="ticker-item"><span class="tdot"></span><strong>New Arrival:</strong> Premium Drifit Sports Kits — bulk orders welcome</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Free Delivery</strong> on orders above ₹5,000 across India</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Custom Printing</strong> on T-shirts, Uniforms &amp; Jerseys — min. 12 pcs</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>School Season Sale:</strong> Bulk uniforms — special rates for institutions</span>
+      <span class="ticker-item"><span class="tdot"></span>📍 Karanja (Gh.) — <strong>Open Mon–Sat 10am to 10:30pm</strong></span>
+      <span class="ticker-item"><span class="tdot"></span><strong>WhatsApp Orders</strong> — send requirements to 7510000000</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>New Arrival:</strong> Premium Drifit Sports Kits — bulk orders welcome</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Free Delivery</strong> on orders above ₹5,000 across India</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Custom Printing</strong> on T-shirts, Uniforms &amp; Jerseys — min. 12 pcs</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>School Season Sale:</strong> Bulk uniforms — special rates for institutions</span>
+      <span class="ticker-item"><span class="tdot"></span>📍 Karanja (Gh.) — <strong>Open Mon–Sat 10am to 10:30pm</strong></span>
+      <span class="ticker-item"><span class="tdot"></span><strong>WhatsApp Orders</strong> — send requirements to 7510000000</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────
+     HERO
+───────────────────────────────────────────── -->
+<main id="main-content">
+<section class="hero" id="home" aria-label="Hero banner">
+  <img id="heroImage" class="hero-bg" src="" alt="Stardom Textiles — Premium Fabric Manufacturing" style="display:none;">
+  <div class="hero-carousel-bg" id="heroBgCarousel" style="display:none;" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-carousel-dots" id="heroCarouselDots" style="display:none;" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="live-dot" aria-hidden="true"></span>
+        🏭 <span id="heroEyebrowCity">Karanja (Gh.)</span> · Est. <span id="heroEyebrowYears">11+</span> Years
+      </div>
+      <h1 id="heroHeading">Fabric That<br>Fits <em>Every Story</em></h1>
+      <p id="heroSubheading">Premium T-shirts, Uniforms &amp; Sports Kits — delivered pan-India for B2B &amp; B2C customers.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          Explore Products
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contact Us</a>
+      </div>
+      <div class="hero-stats" aria-label="Key statistics">
+        <div class="hero-stat"><div class="hero-stat-n" id="statYears">11+</div><div class="hero-stat-l">Years Active</div></div>
+        <div class="hero-stat"><div class="hero-stat-n" id="statOrders">500+</div><div class="hero-stat-l">Orders Done</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">PAN</div><div class="hero-stat-l">India Delivery</div></div>
+        <div class="hero-stat"><div class="hero-stat-n" id="statRating">4.3★</div><div class="hero-stat-l">Rated</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SOLUTIONS
+───────────────────────────────────────────── -->
+<section class="solutions" id="solutions" aria-labelledby="sol-h2">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="label-pill">Our Range</span>
+      <h2 id="sol-h2">Tailored Solutions<br>for Every Need</h2>
+      <div class="rule"></div>
+      <p>School uniforms, sports kits, corporate wear — quality delivered across India.</p>
+    </div>
+    <div class="solutions-grid" id="solutionsGrid" role="list" aria-label="Product categories"></div>
+    <div id="exploreMoreRow" class="explore-row" style="display:none;">
+      <a href="explore_product.html" class="btn btn-ghost">View All Categories →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     ABOUT
+───────────────────────────────────────────── -->
+<section class="about" id="about" aria-labelledby="about-h2">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <img
+          class="about-img"
+          src="https://i.pinimg.com/736x/e5/55/81/e5558138553c5ca5f9a3c6b03624a5ae.jpg"
+          alt="Premium textile fabric at Stardom Textiles"
+          loading="lazy"
+        >
+        <div class="about-video">
+          <iframe
+            src="https://www.youtube.com/embed/xzQR-nVmj0g"
+            title="Stardom Textiles — Factory & Textile Fair"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="about-body reveal reveal-d2">
+        <span class="label-pill">Our Story</span>
+        <h2 id="about-h2">स्टारडम टेक्सटाइल्स बद्दल</h2>
+        <p>For over a decade, Stardom Textiles has led fabric innovation in Karanja (Gh.) — blending traditional craftsmanship with modern manufacturing to deliver textiles that endure.</p>
+        <p>From school uniforms to sports kits and custom t-shirts — we deliver products built to last, at prices that work for businesses and individuals alike.</p>
+        <div class="about-facts" role="list" aria-label="Company highlights">
+          <div class="about-fact reveal reveal-d1" role="listitem"><div class="about-fact-n" id="factYears">11+</div><div class="about-fact-l">Years in Business</div></div>
+          <div class="about-fact reveal reveal-d2" role="listitem"><div class="about-fact-n" id="factOrders">500+</div><div class="about-fact-l">Batches Delivered</div></div>
+          <div class="about-fact reveal reveal-d3" role="listitem"><div class="about-fact-n">B2B</div><div class="about-fact-l">Bulk &amp; Institutional</div></div>
+          <div class="about-fact reveal reveal-d4" role="listitem"><div class="about-fact-n">PAN IN</div><div class="about-fact-l">Delivery Coverage</div></div>
+        </div>
+        <a href="about.html" class="btn btn-primary" style="width:fit-content;">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     PRODUCTS CAROUSEL
+───────────────────────────────────────────── -->
+<section class="products" id="products" aria-labelledby="prod-h2">
+  <div class="container">
+    <div class="products-header">
+      <div class="section-head reveal">
+        <span class="label-pill">Delivered Batches</span>
+        <h2 id="prod-h2">Our Delivered Products</h2>
+        <p>Browse what we've made — tap to order via WhatsApp.</p>
+      </div>
+      <a href="explore_catalog.html" class="btn btn-ghost btn-sm reveal reveal-d2" style="flex-shrink:0;">Explore All →</a>
+    </div>
+
+    <div class="carousel-wrap reveal" id="carouselWrap">
+      <div class="carousel-track" id="carouselTrack" role="list" aria-label="Product slides"></div>
+    </div>
+
+    <div class="carousel-footer">
+      <div class="c-dots" id="cDots" role="tablist" aria-label="Slide navigation"></div>
+      <div class="c-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="cProgressBar">
+        <div class="c-progress-fill" id="cProgressFill"></div>
+      </div>
+      <div class="c-arrows">
+        <button class="c-arrow" id="cPrev" aria-label="Previous slide">←</button>
+        <button class="c-arrow" id="cNext" aria-label="Next slide">→</button>
+      </div>
+    </div>
+    <div class="explore-row" style="margin-top:2.5rem;">
+      <a href="explore_catalog.html" class="btn btn-primary">View Full Catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     WHY US
+───────────────────────────────────────────── -->
+<section class="why" id="why" aria-labelledby="why-h2">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="label-pill">Why Stardom</span>
+      <h2 id="why-h2">What Sets Us Apart</h2>
+      <div class="rule"></div>
+      <p>Trusted by institutions, teams and individuals for over a decade.</p>
+    </div>
+    <div class="why-grid" role="list">
+      <div class="why-card featured reveal" role="listitem">
+        <span class="why-tag">Our Promise</span>
+        <span class="why-icon" aria-hidden="true">🧵</span>
+        <div>
+          <h3>Craftsmanship That Lasts</h3>
+          <p>11+ years of excellence — every stitch built for daily demands and bulk wash cycles.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-d1" role="listitem"><span class="why-icon" aria-hidden="true">🏭</span><h3>Modern Production</h3><p>Consistent quality and finishing across every batch.</p></div>
+      <div class="why-card reveal reveal-d2" role="listitem"><span class="why-icon" aria-hidden="true">💰</span><h3>Fair Pricing</h3><p>Competitive rates for bulk B2B and retail B2C alike.</p></div>
+      <div class="why-card reveal reveal-d3" role="listitem"><span class="why-icon" aria-hidden="true">🚚</span><h3>On-Time Delivery</h3><p>Reliable dispatch across all Indian states.</p></div>
+      <div class="why-card reveal reveal-d1" role="listitem"><span class="why-icon" aria-hidden="true">✔️</span><h3>Quality Checked</h3><p>Each batch inspected before dispatch.</p></div>
+      <div class="why-card reveal reveal-d2" role="listitem"><span class="why-icon" aria-hidden="true">♻️</span><h3>Eco Responsible</h3><p>Minimal waste, efficient resource usage.</p></div>
+      <div class="why-card reveal reveal-d3" role="listitem"><span class="why-icon" aria-hidden="true">📦</span><h3>Bulk Ready</h3><p>Special pricing and packaging for large orders.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     CONTACT — Single WhatsApp CTA (no repetition)
+───────────────────────────────────────────── -->
+<section class="contact" id="contact" aria-labelledby="contact-h2">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div>
+          <span class="label-pill">Get In Touch</span>
+          <h2 id="contact-h2" style="margin-top:0.9rem;">Let's Make<br>Something Great</h2>
+          <p style="margin-top:0.9rem;">Need bulk uniforms, a sports kit, or custom t-shirts? Tell us your requirements — we respond same day.</p>
+        </div>
+        <div class="contact-channels" id="contactChannels" role="list" aria-label="Contact channels">
+          <a href="tel:7510000000" class="channel-card" id="channelPhone" role="listitem">
+            <div class="channel-icon" aria-hidden="true">📞</div>
+            <div><div class="channel-label">Call Us</div><div class="channel-val" id="contactPhoneVal">7510000000</div></div>
+          </a>
+          <div class="channel-card" id="channelAddress" role="listitem">
+            <div class="channel-icon" aria-hidden="true">📍</div>
+            <div><div class="channel-label">Visit Us</div><div class="channel-val" id="contactAddressVal">Karanja (Gh.), Maharashtra</div></div>
+          </div>
+          <div class="channel-card" id="channelHours" role="listitem">
+            <div class="channel-icon" aria-hidden="true">🕐</div>
+            <div><div class="channel-label">Working Hours</div><div class="channel-val" id="contactHoursVal">Mon–Sat · 10:00 am – 10:30 pm</div></div>
+          </div>
+          <!-- Single WA button — not repeated elsewhere in this section -->
+        </div>
+      </div>
+
+      <div class="enquiry-form reveal reveal-d2" id="enquiryFormWrap">
+        <h3>Send an Enquiry</h3>
+        <p class="form-sub">Fill in your details and we'll reach out with pricing and availability.</p>
+        <form id="enquiryForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Your Name <span aria-hidden="true" style="color:var(--crimson)">*</span></label>
+              <input type="text" id="f-name" name="name" placeholder="Rahul Sharma" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Phone / WhatsApp <span aria-hidden="true" style="color:var(--crimson)">*</span></label>
+              <input type="tel" id="f-phone" name="phone" placeholder="98765 43210" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-product">Product Required</label>
+            <select id="f-product" name="product">
+              <option value="">Select a product…</option>
+              <option>School Uniforms</option>
+              <option>Sports Kit / Jersey</option>
+              <option>Custom T-Shirts</option>
+              <option>Track Suits / Lowers</option>
+              <option>Corporate Uniforms</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-qty">Approximate Quantity</label>
+              <select id="f-qty" name="quantity">
+                <option value="">Select…</option>
+                <option>Less than 50 pcs</option>
+                <option>50 – 200 pcs</option>
+                <option>200 – 1000 pcs</option>
+                <option>1000+ pcs (Bulk)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-city">Your City</label>
+              <input type="text" id="f-city" name="city" placeholder="Nagpur" autocomplete="address-level2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-msg">Additional Requirements</label>
+            <textarea id="f-msg" name="message" placeholder="Custom colours, logo printing, delivery deadline…"></textarea>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary">Send Enquiry →</button>
+            <a id="waDirectLink" href="https://wa.me/917510000000?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20products." class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp Instead</a>
+          </div>
+        </form>
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <div class="check" aria-hidden="true">✅</div>
+          <h4>Enquiry Sent!</h4>
+          <p>We'll reach out on your WhatsApp within a few hours. Call us at <strong id="successPhone">7510000000</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     CTA BAND — Primary conversion, one WA button
+───────────────────────────────────────────── -->
+<section class="cta-band" aria-label="Call to action">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>Ready to place<br><em>your order?</em></h2>
+      <div class="cta-band-actions">
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        <a href="https://wa.me/917510000000" class="btn btn-wa" id="ctaWaBtn" target="_blank" rel="noopener">💬 WhatsApp Order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────────── -->
+<footer class="footer" id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="footer-logo">STARDOM<em>.</em></div>
+      <p class="footer-tagline" id="footerTagline">Premium Textile Manufacturing · Karanja (Gh.) · Pan-India</p>
+      <div class="footer-socials" id="footerSocials">
+        <a href="#" id="fSocFb" aria-label="Facebook">📘</a>
+        <a href="#" id="fSocIg" aria-label="Instagram">📷</a>
+        <a href="#" id="fSocPt" aria-label="Pinterest">📌</a>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p class="footer-contact" id="footerContact">
+          📍 Karanja (Gh.), Maharashtra<br>
+          📞 <a href="tel:7510000000" id="footerPhoneLink">7510000000</a><br>
+          🕐 Mon–Sat · 10am – 10:30pm<br>
+          ✈️ Delivering All Over India
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="explore_product.html">School Uniforms</a></li>
+          <li><a href="explore_product.html">Sports Kit</a></li>
+          <li><a href="explore_product.html">T-Shirts</a></li>
+          <li><a href="explore_product.html">Track Suits</a></li>
+          <li><a href="explore_product.html">Custom Printing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Business</h4>
+        <ul class="footer-links">
+          <li><a href="explore_catalog.html">Bulk Orders</a></li>
+          <li><a href="explore_catalog.html">Corporate Uniforms</a></li>
+          <li><a href="explore_catalog.html">Institutional Supply</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span id="footerShopName">Stardom Textiles</span>. All rights reserved.</p>
+      <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refunds</a></p>
+    </div>
+  </div>
+</footer>
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────────
+   GLOBAL CONTACT STATE
+───────────────────────────────────────────── */
+const SITE = {
+  primaryPhone:    '7510000000',
+  primaryWaCode:   '91',
+  shopName:        'Stardom Textiles',
+  city:            'Karanja (Gh.)',
+  address:         'Karanja (Gh.), Maharashtra',
+  hours:           'Mon–Sat · 10:00 am – 10:30 pm',
+  hoursShort:      'Open till 10:30 pm',
+  yearsInBusiness: '11+',
+  ordersDelivered: '500+',
+  rating:          { value: 4.3, stars: '⭐⭐⭐⭐☆' },
+  social:          { facebook: '#', instagram: '#', pinterest: '#' },
+
+  waLink(msg = '') {
+    const num = this.primaryWaCode + this.primaryPhone.replace(/\D/g, '');
+    return msg ? `https://wa.me/${num}?text=${encodeURIComponent(msg)}` : `https://wa.me/${num}`;
+  },
+  waOrder(productName) { return this.waLink(`Hi, I want to order: ${productName}`); },
+  waEnquiry(fields = {}) {
+    const lines = [
+      'Hi, I want to enquire about Stardom Textiles products.',
+      fields.name    ? `Name: ${fields.name}`       : '',
+      fields.phone   ? `Phone: ${fields.phone}`     : '',
+      fields.product ? `Product: ${fields.product}` : '',
+      fields.qty     ? `Qty: ${fields.qty}`         : '',
+      fields.city    ? `City: ${fields.city}`       : '',
+      fields.msg     ? `Note: ${fields.msg}`        : '',
+    ].filter(Boolean);
+    return this.waLink(lines.join('\n'));
+  }
+};
+
+/* ─────────────────────────────────────────────
+   MODULE: Dark Mode — synced across both toggles
+───────────────────────────────────────────── */
+const DarkMode = (() => {
+  const btns = [
+    document.getElementById('darkToggle'),
+    document.getElementById('darkToggleMob')
+  ].filter(Boolean);
+  const body = document.body;
+  const KEY  = 'st-dark';
+
+  function apply(v) {
+    body.classList.toggle('dark', v);
+    btns.forEach(b => b && b.setAttribute('aria-pressed', String(v)));
+  }
+
+  const stored = localStorage.getItem(KEY);
+  apply(stored !== null ? stored === '1' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  btns.forEach(btn => btn && btn.addEventListener('click', () => {
+    const v = !body.classList.contains('dark');
+    apply(v);
+    try { localStorage.setItem(KEY, v ? '1' : '0'); } catch {}
+  }));
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: Top Bar — hide on scroll down, show on scroll up / at top
+   Mobile: keep it simple, just slides away
+───────────────────────────────────────────── */
+const TopBar = (() => {
+  const bar = document.getElementById('topBar');
+  if (!bar) return;
+  let lastY = 0;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < 60) {
+          bar.classList.remove('tb-hidden');
+        } else if (y > lastY + 5) {
+          bar.classList.add('tb-hidden');    // scrolling down
+        } else if (y < lastY - 5) {
+          bar.classList.remove('tb-hidden'); // scrolling up
+        }
+        lastY = y;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: Header scroll shadow
+───────────────────────────────────────────── */
+const Header = (() => {
+  const el = document.getElementById('siteHeader');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { el.classList.toggle('scrolled', window.scrollY > 24); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: Mobile nav — animated hamburger
+───────────────────────────────────────────── */
+const MobileNav = (() => {
+  const toggle = document.getElementById('mobileToggle');
+  const nav    = document.getElementById('mobileNav');
+  if (!toggle || !nav) return;
+
+  function close() {
+    nav.classList.remove('open');
+    nav.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.classList.remove('open');
+  }
+
+  toggle.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = nav.classList.toggle('open');
+    nav.setAttribute('aria-hidden', String(!open));
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.classList.toggle('open', open);
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: Scroll Reveal
+───────────────────────────────────────────── */
+const Reveal = (() => {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => obs.observe(el));
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: Trust Popup
+   Shows after 4s on desktop, 3s on mobile.
+   Hides while scrolling, shows after pause.
+   On mobile it's a bottom sheet.
+───────────────────────────────────────────── */
+const TrustPopup = (() => {
+  const popup   = document.getElementById('trustPopup');
+  const closeBtn= document.getElementById('tpClose');
+  const enquire = document.getElementById('tpEnquireLink');
+  if (!popup || !closeBtn) return;
+
+  let userClosed = false;
+  let showTimer, scrollTimer;
+
+  const hide = () => popup.classList.add('hide');
+  const show = () => { if (!userClosed) popup.classList.remove('hide'); };
+
+  /* Initial show after delay */
+  showTimer = setTimeout(show, 4000);
+
+  /* Hide while scrolling, re-show on pause */
+  window.addEventListener('scroll', () => {
+    hide();
+    clearTimeout(scrollTimer);
+    if (!userClosed) scrollTimer = setTimeout(show, 3000);
+  }, { passive: true });
+
+  closeBtn.addEventListener('click', () => {
+    hide();
+    userClosed = true;
+    clearTimeout(showTimer);
+    clearTimeout(scrollTimer);
+  });
+
+  /* Close popup when user clicks Enquire (navigates to form) */
+  enquire && enquire.addEventListener('click', () => { hide(); userClosed = true; });
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: loadContact()
+───────────────────────────────────────────── */
+function loadContact() {
+  fetch('/data/contact.json')
+    .then(r => r.ok ? r.json() : Promise.reject('no contact.json'))
+    .then(data => {
+      if (data.shopName)        SITE.shopName        = data.shopName;
+      if (data.city)            SITE.city            = data.city;
+      if (data.address)         SITE.address         = data.address;
+      if (data.hours)           SITE.hours           = data.hours;
+      if (data.hoursShort)      SITE.hoursShort      = data.hoursShort;
+      if (data.yearsInBusiness) SITE.yearsInBusiness = data.yearsInBusiness;
+      if (data.ordersDelivered) SITE.ordersDelivered = data.ordersDelivered;
+      if (data.rating?.stars)   SITE.rating.stars    = data.rating.stars;
+      if (data.rating?.value)   SITE.rating.value    = data.rating.value;
+      if (data.social)          SITE.social          = { ...SITE.social, ...data.social };
+
+      if (Array.isArray(data.phones) && data.phones.length) {
+        const primary = data.phones.find(p => p.whatsapp !== false) || data.phones[0];
+        SITE.primaryPhone  = primary.number || SITE.primaryPhone;
+        SITE.primaryWaCode = primary.countryCode || '91';
+      }
+
+      /* Top bar */
+      const tbCity  = document.getElementById('tbCity');
+      const tbPhone = document.getElementById('tbPhone');
+      if (tbCity)  tbCity.innerHTML  = `<span class="dot"></span>📍 ${SITE.city}`;
+      if (tbPhone) tbPhone.innerHTML = `<span class="dot"></span>📞 ${SITE.primaryPhone}`;
+
+      /* Header phone */
+      const hp = document.getElementById('headerPhone');
+      if (hp) hp.textContent = SITE.primaryPhone;
+
+      /* Trust popup */
+      const tpCity  = document.getElementById('tpCity');
+      const tpHours = document.getElementById('tpHoursShort');
+      const tpPhone = document.getElementById('tpPhone');
+      const tpWa    = document.getElementById('tpWaLink');
+      const tpStars = document.getElementById('tpStars');
+      if (tpCity)  tpCity.textContent  = `📍 ${SITE.city}`;
+      if (tpHours) tpHours.textContent = `🕐 ${SITE.hoursShort}`;
+      if (tpPhone) tpPhone.textContent = `📞 ${SITE.primaryPhone}`;
+      if (tpWa)    tpWa.href           = SITE.waLink();
+      if (tpStars) { tpStars.textContent = SITE.rating.stars; tpStars.setAttribute('aria-label', `${SITE.rating.value} out of 5`); }
+
+      /* Mobile nav WA */
+      const mobNavWa = document.getElementById('mobileNavWa');
+      if (mobNavWa) mobNavWa.href = SITE.waLink();
+
+      /* Contact channels */
+      const cpv   = document.getElementById('contactPhoneVal');
+      const cav   = document.getElementById('contactAddressVal');
+      const chv   = document.getElementById('contactHoursVal');
+      const cpCard= document.getElementById('channelPhone');
+      if (cpv)    cpv.textContent  = SITE.primaryPhone;
+      if (cav)    cav.textContent  = SITE.address;
+      if (chv)    chv.textContent  = SITE.hours;
+      if (cpCard) cpCard.href      = `tel:${SITE.primaryPhone}`;
+
+      /* Optional email card injection */
+      if (data.email) {
+        const ec = document.createElement('a');
+        ec.href = `mailto:${data.email}`; ec.className = 'channel-card'; ec.setAttribute('role','listitem');
+        ec.innerHTML = `<div class="channel-icon" aria-hidden="true">📧</div><div><div class="channel-label">Email Us</div><div class="channel-val">${data.email}</div></div>`;
+        const ch = document.getElementById('contactChannels');
+        if (ch) ch.appendChild(ec);
+      }
+
+      /* Hero eyebrow & stats */
+      const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+      setTxt('heroEyebrowCity',  SITE.city);
+      setTxt('heroEyebrowYears', SITE.yearsInBusiness);
+      setTxt('statYears',        SITE.yearsInBusiness);
+      setTxt('statOrders',       SITE.ordersDelivered);
+      setTxt('statRating',       `${SITE.rating.value}★`);
+      setTxt('factYears',        SITE.yearsInBusiness);
+      setTxt('factOrders',       SITE.ordersDelivered);
+
+      /* Footer */
+      setTxt('footerShopName', SITE.shopName);
+      const fTag = document.getElementById('footerTagline');
+      if (fTag) fTag.textContent = `Premium Textile Manufacturing · ${SITE.city} · Pan-India`;
+      const fPL = document.getElementById('footerPhoneLink');
+      if (fPL) { fPL.textContent = SITE.primaryPhone; fPL.href = `tel:${SITE.primaryPhone}`; }
+      const fCont = document.getElementById('footerContact');
+      if (fCont) {
+        const emailLine = data.email ? `📧 <a href="mailto:${data.email}" style="color:#f0ede8;font-weight:600">${data.email}</a><br>` : '';
+        const mapA = data.mapsUrl ? `href="${data.mapsUrl}" target="_blank" rel="noopener"` : '';
+        fCont.innerHTML = `📍 <a ${mapA} style="color:#7a7570">${SITE.address}</a><br>📞 <a href="tel:${SITE.primaryPhone}" style="color:#f0ede8;font-weight:600">${SITE.primaryPhone}</a><br>🕐 ${SITE.hours}<br>${emailLine}✈️ Delivering All Over India`;
+      }
+
+      /* Social */
+      const fFb = document.getElementById('fSocFb');
+      const fIg = document.getElementById('fSocIg');
+      const fPt = document.getElementById('fSocPt');
+      if (fFb && SITE.social.facebook)  fFb.href = SITE.social.facebook;
+      if (fIg && SITE.social.instagram) fIg.href = SITE.social.instagram;
+      if (fPt && SITE.social.pinterest) fPt.href = SITE.social.pinterest;
+
+      /* CTA WA */
+      const ctaWa = document.getElementById('ctaWaBtn');
+      if (ctaWa) ctaWa.href = SITE.waLink('Hi, I want to place an order.');
+
+      /* Form WA + success */
+      const waD = document.getElementById('waDirectLink');
+      if (waD) waD.href = SITE.waLink('Hi, I want to enquire about your products.');
+      setTxt('successPhone', SITE.primaryPhone);
+    })
+    .catch(() => console.info('[Stardom] contact.json not found — using defaults.'));
+}
+
+/* ─────────────────────────────────────────────
+   MODULE: loadTicker()
+───────────────────────────────────────────── */
+function loadTicker() {
+  fetch('/data/ticker.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const items = Array.isArray(data) ? data : (data.items || []);
+      if (!items.length) return;
+      const track = document.getElementById('tickerTrack');
+      if (!track) return;
+      const html = items.map(item => {
+        const hl = item.highlight ? `<strong>${item.highlight}</strong> ` : '';
+        return `<span class="ticker-item"><span class="tdot"></span>${hl}${item.text || ''}</span>`;
+      }).join('');
+      track.innerHTML = html + html;
+      track.style.animationDuration = Math.max(18, items.length * 6) + 's';
+    })
+    .catch(() => console.info('[Stardom] ticker.json not found — using fallback.'));
+}
+
+/* ─────────────────────────────────────────────
+   MODULE: loadHero()
+───────────────────────────────────────────── */
+function loadHero() {
+  fetch('/data/hero.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      if (data.heading)    document.getElementById('heroHeading').innerHTML = data.heading;
+      if (data.subheading) document.getElementById('heroSubheading').textContent = data.subheading;
+
+      const bgImg      = document.getElementById('heroImage');
+      const bgCarousel = document.getElementById('heroBgCarousel');
+      const dotsWrap   = document.getElementById('heroCarouselDots');
+
+      const images = [];
+      if (Array.isArray(data.images) && data.images.length >= 2) {
+        data.images.forEach(img => {
+          const url = typeof img === 'string' ? img : (img.url || img.image || '');
+          const alt = (typeof img === 'object' && img.alt) ? img.alt : 'Stardom Textiles';
+          if (url) images.push({ url, alt });
+        });
+      }
+
+      if (images.length >= 2) {
+        bgImg.style.display = 'none';
+        bgCarousel.style.display = 'block';
+        bgCarousel.innerHTML = images.map((img, i) =>
+          `<div class="hc-slide${i===0?' active':''}" style="background-image:url('${img.url}')" role="img" aria-label="${img.alt}"></div>`
+        ).join('');
+        dotsWrap.style.display = 'flex';
+        dotsWrap.innerHTML = images.map((_,i) =>
+          `<button class="hc-dot${i===0?' active':''}" data-i="${i}" aria-label="Image ${i+1}"></button>`
+        ).join('');
+
+        const slides = bgCarousel.querySelectorAll('.hc-slide');
+        const dots   = dotsWrap.querySelectorAll('.hc-dot');
+        let cur = 0, hcT;
+
+        function goBg(n) {
+          slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+          cur = (n + slides.length) % slides.length;
+          slides[cur].classList.add('active'); dots[cur].classList.add('active');
+        }
+        function startBg() { hcT = setInterval(() => goBg(cur+1), 5000); }
+        function stopBg()  { clearInterval(hcT); }
+
+        dots.forEach(d => d.addEventListener('click', () => { stopBg(); goBg(+d.dataset.i); startBg(); }));
+        bgCarousel.addEventListener('mouseenter', stopBg);
+        bgCarousel.addEventListener('mouseleave', startBg);
+        startBg();
+
+      } else if (data.image) {
+        bgImg.src = data.image; bgImg.style.display = 'block';
+      } else if (Array.isArray(data.images) && data.images.length === 1) {
+        const url = typeof data.images[0]==='string' ? data.images[0] : (data.images[0].url||'');
+        if (url) { bgImg.src = url; bgImg.style.display = 'block'; }
+      }
+    })
+    .catch(() => console.info('[Stardom] hero.json not found — using defaults.'));
+}
+
+/* ─────────────────────────────────────────────
+   MODULE: loadSolutions()
+───────────────────────────────────────────── */
+function loadSolutions() {
+  fetch('/data/solutions.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const all     = Array.isArray(data) ? data : (data.solutions || []);
+      const display = all.slice(0, 8);
+      const grid    = document.getElementById('solutionsGrid');
+      if (!grid) return;
+
+      grid.innerHTML = display.map(sol => {
+        const href    = (sol.buttonLink && sol.buttonLink !== '#') ? sol.buttonLink : SITE.waOrder(sol.title);
+        const btnText = sol.buttonText || 'Order Now';
+        return `
+          <article class="sol-card" role="listitem" tabindex="0"
+            onclick="window.open('${href}','_blank')"
+            onkeypress="if(event.key==='Enter') window.open('${href}','_blank')"
+            aria-label="${sol.title}">
+            <div class="sol-img-wrap">
+              <img src="${sol.image}" alt="${sol.title}" class="sol-img" loading="lazy" width="400" height="200">
+            </div>
+            <div class="sol-body">
+              <span class="sol-tag">${sol.badge || 'Collection'}</span>
+              <h3 class="sol-name">${sol.title}</h3>
+              <span class="sol-order" aria-hidden="true">${btnText} →</span>
+            </div>
+          </article>`;
+      }).join('');
+
+      const row = document.getElementById('exploreMoreRow');
+      if (row) row.style.display = all.length > 8 ? 'block' : 'none';
+    })
+    .catch(() => console.info('[Stardom] solutions.json not found.'));
+}
+
+/* ─────────────────────────────────────────────
+   MODULE: Product Carousel
+───────────────────────────────────────────── */
+const Carousel = (() => {
+  let idx=0, total=0, timer=null;
+
+  const DEMO = [
+    { name:'School Uniform Set', image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=75', category:'Uniforms', description:'Premium school uniform sets — customisable sizing and colours. Minimum 50 pcs.' },
+    { name:'Sports Jersey Kit',  image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=900&q=75', category:'Sports Kit', description:'Breathable drifit kits for football, cricket and kabaddi. Custom printing available.' },
+    { name:'Custom T-Shirt',     image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&q=75', category:'T-Shirts', description:'Round neck and polo tees in all sizes. Screen or digital print. Min. 12 pcs.' },
+    { name:'Track Suit',         image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=900&q=75', category:'Track Suits', description:'Comfortable track suits for school, corporate or personal use. Fleece and nylon.' }
+  ];
+
+  function build(products) {
+    total = products.length;
+    const track = document.getElementById('carouselTrack');
+    const dots  = document.getElementById('cDots');
+    if (!track || !dots) return;
+
+    track.innerHTML = products.map((p, i) => {
+      const waHref  = (p.buttonLink && p.buttonLink !== '#') ? p.buttonLink : SITE.waOrder(p.name);
+      const btnText = p.buttonText || 'Order via WhatsApp';
+      const cat     = Array.isArray(p.categories) ? p.categories.join(' · ') : (p.category || 'Collection');
+      const num     = String(i+1).padStart(2,'0');
+      return `
+        <article class="c-slide" role="listitem" aria-label="Product ${i+1}: ${p.name}">
+          <div class="c-slide-img">
+            <img src="${p.image}" alt="${p.name}" loading="${i===0?'eager':'lazy'}" width="600" height="480">
+            <div class="c-slide-img-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="c-slide-body">
+            <div class="c-slide-num" aria-hidden="true">${num}</div>
+            <div class="c-slide-cat">${cat}</div>
+            <h3 class="c-slide-name">${p.name}</h3>
+            <p class="c-slide-desc">${p.description || 'Premium quality, bulk & retail. Contact us for custom sizes, colours and branding.'}</p>
+            <div class="c-slide-actions">
+              <a href="${waHref}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">${btnText}</a>
+              <a href="explore_catalog.html" class="btn btn-ghost btn-sm">View Details</a>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+
+    dots.innerHTML = products.map((_,i) =>
+      `<button class="c-dot${i===0?' active':''}" data-i="${i}" role="tab" aria-label="Slide ${i+1}" aria-selected="${i===0}"></button>`
+    ).join('');
+
+    dots.querySelectorAll('.c-dot').forEach(d => d.addEventListener('click', () => { stop(); go(+d.dataset.i); start(); }));
+    updateUI(); start();
+  }
+
+  function go(n) {
+    idx = (n + total) % total;
+    const t = document.getElementById('carouselTrack');
+    if (t) t.style.transform = `translateX(-${idx*100}%)`;
+    updateUI();
+  }
+
+  function updateUI() {
+    document.querySelectorAll('.c-dot').forEach((d,i) => { d.classList.toggle('active',i===idx); d.setAttribute('aria-selected',String(i===idx)); });
+    const pct  = total > 0 ? ((idx+1)/total)*100 : 0;
+    const fill = document.getElementById('cProgressFill');
+    const bar  = document.getElementById('cProgressBar');
+    if (fill) fill.style.width = pct+'%';
+    if (bar)  bar.setAttribute('aria-valuenow', Math.round(pct));
+  }
+
+  function start() { stop(); timer = setInterval(() => go(idx+1), 5500); }
+  function stop()  { clearInterval(timer); }
+
+  document.getElementById('cPrev').addEventListener('click', () => { stop(); go(idx-1); start(); });
+  document.getElementById('cNext').addEventListener('click', () => { stop(); go(idx+1); start(); });
+
+  const wrap = document.getElementById('carouselWrap');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', stop);
+    wrap.addEventListener('mouseleave', start);
+    wrap.addEventListener('focusin', stop);
+    wrap.addEventListener('focusout', start);
+    let tx = 0;
+    wrap.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, {passive:true});
+    wrap.addEventListener('touchend', e => {
+      const diff = tx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 44) { stop(); go(idx + (diff>0?1:-1)); start(); }
+    }, {passive:true});
+  }
+
+  fetch('/data/products.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => build(Array.isArray(data) ? data : (data.products || [])))
+    .catch(() => { console.info('[Stardom] products.json not found — using demo.'); build(DEMO); });
+
+  return { go, stop, start };
+})();
+
+/* ─────────────────────────────────────────────
+   MODULE: Enquiry Form
+───────────────────────────────────────────── */
+const EnquiryForm = (() => {
+  const form    = document.getElementById('enquiryForm');
+  const success = document.getElementById('formSuccess');
+  const waLink  = document.getElementById('waDirectLink');
+  if (!form) return;
+
+  function updateWaLink() {
+    const fields = {
+      name:    form.querySelector('#f-name').value.trim(),
+      phone:   form.querySelector('#f-phone').value.trim(),
+      product: form.querySelector('#f-product').value,
+      qty:     form.querySelector('#f-qty').value,
+      city:    form.querySelector('#f-city').value.trim(),
+      msg:     form.querySelector('#f-msg').value.trim(),
+    };
+    if (waLink) waLink.href = SITE.waEnquiry(fields);
+  }
+
+  form.querySelectorAll('input, select, textarea').forEach(el => el.addEventListener('input', updateWaLink));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name  = form.querySelector('#f-name').value.trim();
+    const phone = form.querySelector('#f-phone').value.trim();
+    if (!name || !phone) { form.querySelector(!name ? '#f-name' : '#f-phone').focus(); return; }
+    updateWaLink();
+    window.open(waLink.href, '_blank');
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+})();
+
+/* ─────────────────────────────────────────────
+   BOOT
+───────────────────────────────────────────── */
+loadContact();
+setTimeout(() => { loadHero(); loadTicker(); loadSolutions(); }, 50);
+
+/* Netlify Identity */
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+  });
+}
+if (window.location.hash.includes('invite_token')) {
+  if (window.netlifyIdentity) window.netlifyIdentity.open();
+  else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
+}
+</script>
 </body>
 </html>

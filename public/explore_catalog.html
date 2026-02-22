@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalogue — Stardom Textiles</title>
+  <meta name="description" content="Browse all delivered products at Stardom Textiles — School Uniforms, Sports Kits, T-Shirts & more. Order via WhatsApp.">
+  <meta name="theme-color" content="#0f0f0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+<style>
+:root{
+  --ink:#141410;--ink-80:rgba(20,20,16,0.8);--ink-40:rgba(20,20,16,0.4);
+  --parchment:#f5f2ec;--parchment-d:#ede9e1;
+  --stone:#d4cfc6;--stone-d:#b0a99e;
+  --crimson:#c4282b;--crimson-d:#9e2022;--crimson-glow:rgba(196,40,43,0.18);
+  --green-live:#22c55e;
+  --bg:#faf8f5;--bg-alt:#f0ede6;--bg-deep:#141410;
+  --card:#ffffff;--border:rgba(20,20,16,0.08);--border-strong:rgba(20,20,16,0.16);
+  --ff-display:'Fraunces',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;
+  --s1:0 2px 8px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.03);
+  --s2:0 8px 32px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.04);
+  --s3:0 20px 60px rgba(0,0,0,0.10),0 4px 16px rgba(0,0,0,0.06);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+body.dark{
+  --ink:#f0ede8;--ink-80:rgba(240,237,232,0.8);--ink-40:rgba(240,237,232,0.4);
+  --parchment:#1c1c18;--parchment-d:#242420;
+  --stone:#3a3a34;--stone-d:#4e4e46;
+  --crimson:#e05a5d;--crimson-d:#c44b4e;--crimson-glow:rgba(224,90,93,0.22);
+  --bg:#1c1c18;--bg-alt:#242420;--bg-deep:#0c0c0a;
+  --card:#252520;--border:rgba(240,237,232,0.08);--border-strong:rgba(240,237,232,0.15);
+  --s1:0 2px 8px rgba(0,0,0,0.3);--s2:0 8px 32px rgba(0,0,0,0.4);--s3:0 20px 60px rgba(0,0,0,0.5);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);font-weight:300;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:var(--ink);}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+button{font-family:var(--ff-body);}
+.container{max-width:1380px;margin:0 auto;padding:0 36px;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 2.1rem;font-family:var(--ff-body);font-weight:600;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;border:1.5px solid transparent;cursor:pointer;transition:all .22s var(--ease-out);white-space:nowrap;line-height:1;}
+.btn-primary{background:var(--crimson);color:#fff;border-color:var(--crimson);box-shadow:0 2px 12px var(--crimson-glow);}
+.btn-primary:hover{background:var(--crimson-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--crimson-glow);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--border-strong);}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px);}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366;}
+.btn-wa:hover{background:#1da955;transform:translateY(-2px);}
+.btn-sm{padding:.6rem 1.4rem;font-size:.76rem;}
+
+/* TOP BAR */
+.top-bar{background:var(--bg-deep);color:var(--stone-d);font-size:.78rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.top-bar .container{display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;}
+.top-bar-chips{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.top-bar-chip{display:flex;align-items:center;gap:.35rem;color:var(--stone-d);}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--crimson);flex-shrink:0;}
+.top-bar-cta .btn{padding:.4rem 1.2rem;font-size:.72rem;border-radius:2px;background:var(--crimson);color:white;border-color:var(--crimson);}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:200;background:rgba(250,248,245,0.96);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--border);transition:box-shadow .3s,background .25s;}
+body.dark .site-header{background:rgba(28,28,24,0.96);}
+.site-header.scrolled{box-shadow:var(--s2);}
+.header-inner{display:grid;grid-template-columns:220px 1fr 220px;align-items:center;height:68px;gap:1rem;}
+.logo-wrap{display:flex;align-items:center;gap:.7rem;}
+.logo-icon{width:34px;height:34px;background:var(--ink);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-weight:900;font-size:1rem;flex-shrink:0;transition:background .25s;}
+body.dark .logo-icon{background:var(--crimson);}
+.logo-text{font-family:var(--ff-display);font-weight:900;font-size:1.4rem;letter-spacing:-0.04em;color:var(--ink);line-height:1;}
+.logo-text em{font-style:normal;color:var(--crimson);}
+.main-nav{display:flex;justify-content:center;}
+.nav-list{list-style:none;display:flex;gap:0;}
+.nav-list a{font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-80);padding:.5rem 1rem;position:relative;transition:color .2s;}
+.nav-list a::after{content:'';position:absolute;bottom:0;left:1rem;right:1rem;height:2px;background:var(--crimson);transform:scaleX(0);transform-origin:center;transition:transform .22s var(--ease-out);}
+.nav-list a:hover,.nav-list a.active{color:var(--crimson);}
+.nav-list a:hover::after,.nav-list a.active::after{transform:scaleX(1);}
+.header-right{display:flex;align-items:center;justify-content:flex-end;gap:.8rem;}
+.header-phone-chip{display:flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:500;color:var(--ink-80);}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green-live);animation:livePulse 2s ease-in-out infinite;flex-shrink:0;}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}50%{box-shadow:0 0 0 4px rgba(34,197,94,0);}}
+.icon-btn{width:36px;height:36px;border:1px solid var(--border-strong);border-radius:3px;background:transparent;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:.2s;}
+.icon-btn:hover{border-color:var(--crimson);color:var(--crimson);}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink);padding:.25rem;}
+.mobile-nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--card);border-bottom:1px solid var(--border);box-shadow:var(--s2);z-index:199;}
+.mobile-nav.open{display:block;}
+.mobile-nav ul{list-style:none;padding:1rem 36px;}
+.mobile-nav ul li a{display:block;padding:.75rem 0;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-80);border-bottom:1px solid var(--border);transition:color .2s;}
+.mobile-nav ul li:last-child a{border-bottom:none;}
+.mobile-nav ul li a:hover{color:var(--crimson);}
+
+/* BREADCRUMB */
+.breadcrumb{padding:1.2rem 0;border-bottom:1px solid var(--border);}
+.breadcrumb-inner{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--ink-80);}
+.breadcrumb-inner a{color:var(--ink-80);transition:color .2s;}
+.breadcrumb-inner a:hover{color:var(--crimson);}
+.breadcrumb-inner .sep{color:var(--stone-d);}
+.breadcrumb-inner .current{color:var(--crimson);font-weight:500;}
+
+/* PAGE HERO */
+.page-hero{padding:4rem 0 3rem;background:var(--bg-alt);border-bottom:1px solid var(--border);}
+.page-hero-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.page-hero-text .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:.6rem;}
+.page-hero-text h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:.5rem;}
+.page-hero-text p{font-size:1rem;color:var(--ink-80);max-width:520px;line-height:1.65;}
+.page-hero-meta{display:flex;gap:2rem;flex-shrink:0;}
+.meta-stat{text-align:center;}
+.meta-stat-n{font-family:var(--ff-display);font-size:1.8rem;font-weight:900;color:var(--crimson);}
+.meta-stat-l{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-80);margin-top:.2rem;}
+
+/* CONTROLS */
+.controls-bar{padding:1.4rem 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:68px;z-index:100;transition:box-shadow .3s;}
+.controls-bar.stuck{box-shadow:var(--s1);}
+.controls-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.filter-chips{display:flex;gap:.45rem;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .9rem;border:1.5px solid var(--border-strong);border-radius:40px;font-size:.72rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--ink-80);transition:all .18s;}
+.chip:hover{border-color:var(--crimson);color:var(--crimson);}
+.chip.active{background:var(--crimson);border-color:var(--crimson);color:#fff;}
+.controls-right{display:flex;align-items:center;gap:1rem;}
+.results-count{font-size:.82rem;color:var(--ink-80);}
+.search-input{font-family:var(--ff-body);font-size:.82rem;padding:.42rem 1rem;border:1.5px solid var(--border-strong);border-radius:4px;background:var(--bg);color:var(--ink);outline:none;transition:border-color .2s;width:180px;}
+.search-input:focus{border-color:var(--crimson);}
+.sort-select{font-family:var(--ff-body);font-size:.8rem;padding:.42rem .8rem;border:1.5px solid var(--border-strong);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;outline:none;appearance:none;}
+.sort-select:focus{border-color:var(--crimson);}
+
+/* VIEW TOGGLE */
+.view-btns{display:flex;gap:.3rem;}
+.view-btn{width:32px;height:32px;border:1.5px solid var(--border-strong);border-radius:3px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--ink-80);transition:.2s;}
+.view-btn.active,.view-btn:hover{background:var(--crimson);border-color:var(--crimson);color:#fff;}
+
+/* LAYOUT: 3 COLUMNS (default) */
+.catalog-section{padding:3rem 0 6rem;}
+.catalog-grid{display:grid;gap:1.4rem;grid-template-columns:repeat(3,1fr);}
+
+/* List view */
+.catalog-grid.list-view{grid-template-columns:1fr;}
+
+/* PRODUCT CARD */
+.prod-card{border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--s1);transition:transform .3s var(--ease-out),box-shadow .3s;display:flex;flex-direction:column;cursor:pointer;}
+.prod-card:hover{transform:translateY(-5px);box-shadow:var(--s3);}
+.prod-card:hover .prod-img{transform:scale(1.05);}
+
+.prod-img-wrap{position:relative;height:240px;overflow:hidden;flex-shrink:0;}
+.prod-img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out);}
+
+.prod-badge-wrap{position:absolute;top:.7rem;left:.7rem;display:flex;gap:.3rem;flex-wrap:wrap;}
+.prod-badge{font-size:.56rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .65rem;border-radius:2px;}
+.prod-badge.cat{background:rgba(20,20,16,.75);color:#fff;backdrop-filter:blur(4px);}
+.prod-badge.wa{background:#25D366;color:#fff;}
+
+.prod-body{padding:1.1rem 1.2rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
+.prod-cat{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);}
+.prod-name{font-size:1.05rem;font-weight:700;line-height:1.25;}
+.prod-desc{font-size:.82rem;color:var(--ink-80);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.prod-footer{margin-top:auto;padding-top:.9rem;display:flex;gap:.6rem;flex-wrap:wrap;}
+.prod-wa-btn{display:inline-flex;align-items:center;gap:.3rem;background:#25D366;color:#fff;padding:.5rem 1rem;border-radius:3px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:.2s;}
+.prod-wa-btn:hover{background:#1da955;transform:translateY(-1px);}
+.prod-details-btn{display:inline-flex;align-items:center;gap:.3rem;background:transparent;color:var(--ink-80);border:1.5px solid var(--border-strong);padding:.5rem 1rem;border-radius:3px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:.2s;}
+.prod-details-btn:hover{border-color:var(--crimson);color:var(--crimson);}
+
+/* LIST VIEW CARD */
+.list-view .prod-card{flex-direction:row;min-height:140px;}
+.list-view .prod-img-wrap{width:180px;height:auto;flex-shrink:0;}
+.list-view .prod-img-wrap .prod-img{height:100%;}
+.list-view .prod-body{padding:1.2rem 1.5rem;}
+.list-view .prod-desc{-webkit-line-clamp:3;}
+
+/* EMPTY STATE */
+.empty-state{grid-column:1/-1;text-align:center;padding:5rem 2rem;color:var(--ink-80);}
+.empty-state .icon{font-size:3.5rem;margin-bottom:1rem;}
+.empty-state h3{font-size:1.3rem;margin-bottom:.6rem;}
+.empty-state p{font-size:.9rem;}
+
+/* SKELETON loader */
+.skeleton{animation:shimmer 1.6s infinite;}
+.skel-card{border-radius:8px;background:var(--parchment-d);height:340px;}
+@keyframes shimmer{0%{opacity:.6;}50%{opacity:1;}100%{opacity:.6;}}
+
+/* DETAIL MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:900;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal{background:var(--card);border-radius:12px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--s3);transform:translateY(20px);transition:transform .3s var(--ease-out);}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;}
+.modal-img{height:100%;min-height:300px;object-fit:cover;border-radius:12px 0 0 12px;}
+.modal-body{padding:2rem;}
+.modal-close{position:absolute;top:1rem;right:1rem;background:var(--parchment-d);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;color:var(--ink);display:flex;align-items:center;justify-content:center;transition:.2s;}
+.modal-close:hover{background:var(--crimson);color:#fff;}
+.modal-cat{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);margin-bottom:.5rem;}
+.modal-name{font-size:1.6rem;font-weight:900;margin-bottom:.8rem;}
+.modal-desc{font-size:.9rem;color:var(--ink-80);line-height:1.7;margin-bottom:1.2rem;}
+.modal-actions{display:flex;gap:.7rem;flex-wrap:wrap;}
+.modal-overlay .modal-body{position:relative;}
+
+/* FOOTER */
+.footer{background:var(--bg-deep);color:#7a7570;padding:5rem 0 2rem;}
+.footer-logo{font-family:var(--ff-display);font-size:1.5rem;font-weight:900;color:#f0ede8;margin-bottom:.4rem;letter-spacing:-0.03em;}
+.footer-logo em{font-style:normal;color:var(--crimson);}
+.footer-tagline{font-size:.82rem;margin-bottom:3rem;}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+.footer-col h4{font-family:var(--ff-body);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#f0ede8;margin-bottom:1.2rem;font-weight:600;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.footer-links a{font-size:.85rem;color:#7a7570;transition:color .2s;}
+.footer-links a:hover{color:#f0ede8;}
+.footer-contact{font-size:.85rem;line-height:2;color:#7a7570;}
+.footer-contact a{color:#f0ede8;font-weight:600;}
+.footer-socials{display:flex;gap:.6rem;margin-top:1.5rem;}
+.footer-socials a{width:34px;height:34px;border-radius:4px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#7a7570;transition:.2s;}
+.footer-socials a:hover{background:var(--crimson);border-color:var(--crimson);color:#fff;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding-top:2rem;font-size:.78rem;}
+.footer-bottom a{color:#5a5a56;transition:color .2s;}
+.footer-bottom a:hover{color:#9e9990;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease-out),transform .55s var(--ease-out);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.catalog-grid{grid-template-columns:repeat(2,1fr);}  .footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){
+  .header-inner{grid-template-columns:auto 1fr auto;} .main-nav{display:none;} .mobile-toggle{display:flex;}
+  .modal-grid{grid-template-columns:1fr;} .modal-img{border-radius:12px 12px 0 0;height:240px;}
+  .list-view .prod-card{flex-direction:column;} .list-view .prod-img-wrap{width:100%;height:200px;}
+  .page-hero-inner{flex-direction:column;align-items:flex-start;} .page-hero-meta{gap:1.5rem;}
+  .controls-bar{top:0;}
+}
+@media(max-width:640px){
+  .container{padding:0 20px;}
+  .catalog-grid{grid-template-columns:1fr 1fr;} .catalog-grid.list-view{grid-template-columns:1fr;}
+  .search-input{width:130px;} .page-hero{padding:2.5rem 0 2rem;}
+  .footer-grid{grid-template-columns:1fr;gap:2rem;}
+}
+@media(max-width:400px){.catalog-grid:not(.list-view){grid-template-columns:1fr;}}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-chips">
+      <span class="top-bar-chip"><span class="dot"></span>👕 T-shirts · Uniforms · Sports Kit</span>
+      <span class="top-bar-chip"><span class="dot"></span>📍 Karanja (Gh.)</span>
+      <span class="top-bar-chip"><span class="dot"></span>📞 7510000000</span>
+    </div>
+    <div class="top-bar-cta"><a href="index.html#contact" class="btn">ENQUIRE NOW</a></div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="Stardom Textiles — Home">
+        <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">STARDOM<em>.</em></span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore_product.html">Categories</a></li>
+          <li><a href="explore_catalog.html" class="active">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="header-phone-chip"><span class="live-dot" aria-hidden="true"></span><span>7510000000</span></div>
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">🌓</button>
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore_product.html">Categories</a></li>
+      <li><a href="explore_catalog.html">All Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a><span class="sep">›</span>
+      <a href="explore_product.html">Categories</a><span class="sep">›</span>
+      <span class="current">Product Catalogue</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-text">
+        <div class="eyebrow">Delivered Batches</div>
+        <h1>Product Catalogue</h1>
+        <p>Every product we've manufactured and delivered. Click any product to instantly enquire or order via WhatsApp.</p>
+      </div>
+      <div class="page-hero-meta">
+        <div class="meta-stat"><div class="meta-stat-n" id="totalCount">—</div><div class="meta-stat-l">Products</div></div>
+        <div class="meta-stat"><div class="meta-stat-n">500+</div><div class="meta-stat-l">Orders Done</div></div>
+        <div class="meta-stat"><div class="meta-stat-n">11+</div><div class="meta-stat-l">Years</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls-bar" id="controlsBar">
+  <div class="container">
+    <div class="controls-inner">
+      <div class="filter-chips" id="filterChips" role="group" aria-label="Filter products">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="uniforms">Uniforms</button>
+        <button class="chip" data-filter="sports">Sports</button>
+        <button class="chip" data-filter="tshirts">T-Shirts</button>
+        <button class="chip" data-filter="tracksuits">Track Suits</button>
+      </div>
+      <div class="controls-right">
+        <input type="search" class="search-input" id="searchInput" placeholder="🔍 Search…" aria-label="Search products">
+        <span class="results-count" id="resultsCount"></span>
+        <select class="sort-select" id="sortSelect" aria-label="Sort">
+          <option value="default">Default</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+        <div class="view-btns" role="group" aria-label="View mode">
+          <button class="view-btn active" id="gridViewBtn" aria-label="Grid view" title="Grid view">▦</button>
+          <button class="view-btn" id="listViewBtn" aria-label="List view" title="List view">☰</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section class="catalog-section">
+  <div class="container">
+    <div class="catalog-grid" id="catalogGrid" role="list" aria-label="Product catalogue">
+      <!-- Skeletons shown while loading -->
+      <div class="skel-card skeleton"></div>
+      <div class="skel-card skeleton"></div>
+      <div class="skel-card skeleton"></div>
+      <div class="skel-card skeleton"></div>
+      <div class="skel-card skeleton"></div>
+      <div class="skel-card skeleton"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Product detail">
+  <div class="modal">
+    <div class="modal-grid">
+      <img id="modalImg" src="" alt="" class="modal-img" loading="lazy">
+      <div class="modal-body">
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+        <div class="modal-cat" id="modalCat"></div>
+        <h2 class="modal-name" id="modalName"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">STARDOM<em>.</em></div>
+    <p class="footer-tagline">Premium Textile Manufacturing · Karanja (Gh.) · Delivering Pan-India</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-contact">📍 Karanja (Gh.), Maharashtra<br>📞 <a href="tel:7510000000">7510000000</a><br>🕐 Mon–Sat · 10am – 10:30pm</p>
+        <div class="footer-socials"><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="Pinterest">📌</a></div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">T-Shirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
+      <div class="footer-col"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li><li><a href="#">Size Guide</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Stardom Textiles. All rights reserved.</p><p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refund</a></p></div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* DARK MODE */
+const darkBtn=document.getElementById('darkToggle');
+function applyDark(v){document.body.classList.toggle('dark',v);darkBtn.setAttribute('aria-pressed',String(v));}
+const stored=localStorage.getItem('st-dark');
+applyDark(stored!==null?stored==='1':window.matchMedia('(prefers-color-scheme:dark)').matches);
+darkBtn.addEventListener('click',()=>{const d=!document.body.classList.contains('dark');applyDark(d);try{localStorage.setItem('st-dark',d?'1':'0');}catch{}});
+
+/* HEADER */
+const hdr=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>24),{passive:true});
+window.addEventListener('scroll',()=>document.getElementById('controlsBar').classList.toggle('stuck',scrollY>200),{passive:true});
+
+/* MOBILE NAV */
+const mT=document.getElementById('mobileToggle'),mN=document.getElementById('mobileNav');
+function closeMN(){mN.classList.remove('open');mN.setAttribute('aria-hidden','true');mT.setAttribute('aria-expanded','false');mT.textContent='☰';}
+mT.addEventListener('click',e=>{e.stopPropagation();const o=mN.classList.toggle('open');mN.setAttribute('aria-hidden',String(!o));mT.setAttribute('aria-expanded',String(o));mT.textContent=o?'✕':'☰';});
+document.addEventListener('click',e=>{if(!mN.contains(e.target)&&!mT.contains(e.target))closeMN();});
+mN.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMN));
+
+/* REVEAL */
+const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -32px 0px'});
+
+/* VIEW TOGGLE */
+const grid=document.getElementById('catalogGrid');
+document.getElementById('gridViewBtn').addEventListener('click',()=>{grid.classList.remove('list-view');document.getElementById('gridViewBtn').classList.add('active');document.getElementById('listViewBtn').classList.remove('active');});
+document.getElementById('listViewBtn').addEventListener('click',()=>{grid.classList.add('list-view');document.getElementById('listViewBtn').classList.add('active');document.getElementById('gridViewBtn').classList.remove('active');});
+
+/* MODAL */
+const overlay=document.getElementById('modalOverlay');
+document.getElementById('modalClose').addEventListener('click',()=>overlay.classList.remove('open'));
+overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('open');});
+
+function openModal(p){
+  document.getElementById('modalImg').src=p.image;
+  document.getElementById('modalImg').alt=p.name;
+  document.getElementById('modalCat').textContent=p.category||p.categories?.join(' · ')||'Collection';
+  document.getElementById('modalName').textContent=p.name;
+  document.getElementById('modalDesc').textContent=p.description||'Premium quality product, available in bulk & retail. Contact us for custom sizes, colours and branding.';
+  const wa=`https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: '+p.name)}`;
+  document.getElementById('modalActions').innerHTML=`<a href="${wa}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">💬 Order via WhatsApp</a><a href="index.html#contact" class="btn btn-ghost btn-sm">Send Enquiry</a>`;
+  overlay.classList.add('open');
+}
+
+/* DEMO DATA */
+const DEMO=[
+  {name:'School Uniform Set',image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=700&q=80',category:'Uniforms',description:'Custom school uniform sets for institutions. Bulk orders with custom sizing and colour options.',tags:['uniforms']},
+  {name:'Sports Jersey Kit',image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=700&q=80',category:'Sports Kit',description:'Breathable drifit sports kits for football, cricket and kabaddi. Custom name & number printing.',tags:['sports']},
+  {name:'Custom T-Shirt',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700&q=80',category:'T-Shirts',description:'Round neck and polo tees in all sizes with screen or digital print. Min. 12 pieces per colour.',tags:['tshirts']},
+  {name:'Track Suit',image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=700&q=80',category:'Track Suits',description:'Comfortable track suits for school, corporate and daily use.',tags:['tracksuits']},
+  {name:'Football Jersey',image:'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=700&q=80',category:'Sports Kit',description:'Lightweight drifit football jerseys with custom number and name printing.',tags:['sports']},
+  {name:'Polo T-Shirt',image:'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=700&q=80',category:'T-Shirts',description:'Premium polo shirts for corporate gifting, events and daily wear.',tags:['tshirts']},
+  {name:'Corporate Uniform',image:'https://images.unsplash.com/photo-1542744095-291d1f67b221?w=700&q=80',category:'Uniforms',description:'Professional corporate uniforms with custom branding for offices and institutions.',tags:['uniforms']},
+  {name:'Lower / Track Pant',image:'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=700&q=80',category:'Track Suits',description:'Comfortable track pants for gyms, schools and daily wear.',tags:['tracksuits']},
+  {name:'Gym Vest Set',image:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80',category:'Sports Kit',description:'Breathable gym wear sets for fitness centres and athletic use.',tags:['sports']},
+  {name:'Cricket Kit',image:'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=700&q=80',category:'Sports Kit',description:'Full cricket uniform sets including jersey, trousers and cap with sublimation printing.',tags:['sports']},
+  {name:'Event T-Shirt',image:'https://images.unsplash.com/photo-1503342394128-c104d54dba01?w=700&q=80',category:'T-Shirts',description:'Custom event and festival tees with high-quality screen or DTF printing.',tags:['tshirts']},
+  {name:'Hoodie',image:'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=700&q=80',category:'T-Shirts',description:'Custom printed hoodies for colleges, events and brand merchandise.',tags:['tshirts']},
+];
+
+let allProducts=[];
+let activeFilter='all';
+let searchTerm='';
+
+function cardHTML(p,i){
+  const wa=`https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: '+p.name)}`;
+  const cat=Array.isArray(p.categories)?p.categories.join(' · '):(p.category||'Collection');
+  return `
+    <article class="prod-card reveal" role="listitem" tabindex="0"
+      aria-label="${p.name}"
+      onclick="openModal(window._products[${i}])"
+      onkeypress="if(event.key==='Enter')openModal(window._products[${i}])">
+      <div class="prod-img-wrap">
+        <img src="${p.image}" alt="${p.name}" class="prod-img" loading="lazy" width="400" height="240">
+        <div class="prod-badge-wrap">
+          <span class="prod-badge cat">${cat}</span>
+        </div>
+      </div>
+      <div class="prod-body">
+        <div class="prod-cat">${cat}</div>
+        <h3 class="prod-name">${p.name}</h3>
+        <p class="prod-desc">${p.description||'Premium quality textile product. Contact us for sizes, colours and bulk pricing.'}</p>
+        <div class="prod-footer">
+          <a href="${wa}" class="prod-wa-btn" target="_blank" rel="noopener" onclick="event.stopPropagation()">💬 Order</a>
+          <button class="prod-details-btn" onclick="event.stopPropagation();openModal(window._products[${i}])">View Details</button>
+        </div>
+      </div>
+    </article>`;
+}
+
+function render(){
+  let items=[...allProducts];
+  if(activeFilter!=='all') items=items.filter(p=>{
+    const tags=p.tags||[];
+    const cat=(p.category||'').toLowerCase();
+    const cats=(p.categories||[]).join(' ').toLowerCase();
+    return tags.includes(activeFilter)||cat.includes(activeFilter)||cats.includes(activeFilter);
+  });
+  if(searchTerm) items=items.filter(p=>(p.name+' '+(p.category||'')+' '+(p.description||'')).toLowerCase().includes(searchTerm));
+  const sort=document.getElementById('sortSelect').value;
+  if(sort==='az') items.sort((a,b)=>a.name.localeCompare(b.name));
+  if(sort==='za') items.sort((a,b)=>b.name.localeCompare(a.name));
+
+  // Store indexed refs for modal
+  window._products=items;
+
+  document.getElementById('resultsCount').textContent=`${items.length} ${items.length===1?'product':'products'}`;
+
+  if(!items.length){
+    grid.innerHTML=`<div class="empty-state"><div class="icon">🔍</div><h3>No products found</h3><p>Try a different filter or search term.</p></div>`;
+    return;
+  }
+  grid.innerHTML=items.map((p,i)=>cardHTML(p,i)).join('');
+  requestAnimationFrame(()=>{grid.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));});
+}
+
+/* Filter chips */
+document.getElementById('filterChips').addEventListener('click',e=>{
+  const chip=e.target.closest('.chip');
+  if(!chip) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  chip.classList.add('active');
+  activeFilter=chip.dataset.filter;
+  render();
+});
+
+/* Search */
+let searchDebounce;
+document.getElementById('searchInput').addEventListener('input',e=>{
+  clearTimeout(searchDebounce);
+  searchDebounce=setTimeout(()=>{searchTerm=e.target.value.toLowerCase().trim();render();},250);
+});
+
+document.getElementById('sortSelect').addEventListener('change',render);
+
+/* Load products */
+fetch('/data/products.json')
+  .then(r=>r.ok?r.json():Promise.reject())
+  .then(data=>{
+    allProducts=Array.isArray(data)?data:(data.products||[]);
+    document.getElementById('totalCount').textContent=allProducts.length;
+    render();
+  })
+  .catch(()=>{
+    allProducts=DEMO;
+    document.getElementById('totalCount').textContent=allProducts.length;
+    render();
+    console.info('[Stardom] products.json not found — demo data loaded.');
+  });
+
+/* Netlify Identity */
+if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u)window.netlifyIdentity.on('login',()=>{document.location.href='/admin/';});});}
+</script>
+</body>
+</html>

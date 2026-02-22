@@ -16,7 +16,7 @@
       "description": "d",
       "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
     },
-     {
+    {
       "buttonText": "Learn more",
       "buttonLink": "#",
       "badge": "B2B",
@@ -32,23 +32,7 @@
       "description": "d",
       "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
     },
-     {
-      "buttonText": "Learn more",
-      "buttonLink": "#",
-      "badge": "B2B",
-      "title": "rrr",
-      "description": "rr",
-      "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
-    },
     {
-      "buttonText": "Learn more",
-      "buttonLink": "#",
-      "title": "d",
-      "badge": "B2B",
-      "description": "d",
-      "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
-    }
-    , {
       "buttonText": "Learn more",
       "buttonLink": "#",
       "badge": "B2B",
@@ -64,7 +48,7 @@
       "description": "d",
       "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
     },
-     {
+    {
       "buttonText": "Learn more",
       "buttonLink": "#",
       "badge": "B2B",
@@ -80,7 +64,7 @@
       "description": "d",
       "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
     },
-     {
+    {
       "buttonText": "Learn more",
       "buttonLink": "#",
       "badge": "B2B",
@@ -95,6 +79,34 @@
       "badge": "B2B",
       "description": "d",
       "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
+    },
+    {
+      "buttonText": "Learn more",
+      "buttonLink": "#",
+      "badge": "B2B",
+      "title": "rrr",
+      "description": "rr",
+      "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
+    },
+    {
+      "buttonText": "Learn more",
+      "buttonLink": "#",
+      "title": "d",
+      "badge": "B2B",
+      "description": "d",
+      "image": "https://i.pinimg.com/736x/f8/e3/b1/f8e3b17a96a0bc824911e1a2bcea5ef8.jpg"
+    },
+    {
+      "buttonText": "Order Now",
+      "buttonLink": "#",
+      "title": "School Uniforms",
+      "image": "https://i.pinimg.com/736x/62/9d/59/629d5920896b851d52a52ab67cb97076.jpg"
+    },
+    {
+      "buttonText": "Order Now",
+      "buttonLink": "#",
+      "title": "SO off",
+      "image": "https://i.pinimg.com/736x/62/9d/59/629d5920896b851d52a52ab67cb97076.jpg"
     }
   ]
 }

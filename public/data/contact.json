@@ -1,12 +1,28 @@
 {
-  "shopName": "Stardom Textiles",
+  "shopName": "Stardom Shop",
+  "phones": [
+    {
+      "number": "7517478765",
+      "label": "Call / WhatsApp",
+      "whatsapp": true,
+      "countryCode": "917517478765"
+    }
+  ],
   "city": "Karanja (Gh.)",
-  "address": "Karanja (Gh.), Maharashtra",
-  "hours": "Mon–Sat · 10:00 am – 10:30 pm",
   "hoursShort": "Open till 10:30 pm",
-  "yearsInBusiness": "11+",
-  "ordersDelivered": "500+",
-  "rating": { "value": 4.3, "stars": "⭐⭐⭐⭐☆" },
-  "phones": [{ "number": "7510000000", "label": "Call / WhatsApp", "whatsapp": true, "countryCode": "91" }],
-  "social": { "facebook": "#", "instagram": "#", "pinterest": "#" }
+  "social": {
+    "facebook": "#",
+    "instagram": "#https://in.pinterest.com/pin/776800635776075580/",
+    "pinterest": "#"
+  },
+  "hours": "Mon–Sat · 10:00 am – 9:30 pm",
+  "address": "Karanja (Gh.), Maharashtra",
+  "yearsInBusiness": "4+",
+  "rating": {
+    "value": 1.8,
+    "stars": "⭐⭐⭐⭐☆",
+    "count": 9
+  },
+  "ownerName": "B.",
+  "ordersDelivered": "2k+"
 }

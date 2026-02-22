@@ -5,21 +5,68 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
+# ─────────────────────────────────────────────────────────────────
+# Stardom Textiles — Netlify CMS Config
+# Admin can control: Hero, Solutions, Products, Ticker, Contact
+# ─────────────────────────────────────────────────────────────────
+
 collections:
+
+  # ═══════════════════════════════════════════════
+  # 1. HOMEPAGE
+  # ═══════════════════════════════════════════════
   - name: "homepage"
-    label: "Homepage"
+    label: "🏠 Homepage"
     files:
+
+      # ── HERO SECTION ──────────────────────────
       - label: "Hero Section"
         name: "hero"
         file: "public/data/hero.json"
         fields:
-          - { label: "Heading", name: "heading", widget: "string" }
-          - { label: "Subheading", name: "subheading", widget: "text" }
-          - { label: "Hero Image", name: "image", widget: "image" }
 
+          - label: "Heading"
+            name: "heading"
+            widget: "string"
+            required: false
+            hint: "Leave empty to keep the default headline. HTML allowed (e.g. Fabric That<br>Fits <em>Every Story</em>)"
+
+          - label: "Subheading"
+            name: "subheading"
+            widget: "text"
+            required: false
+            hint: "Leave empty to keep the default subheading."
+
+          - label: "Single Hero Image"
+            name: "image"
+            widget: "image"
+            required: false
+            hint: "Upload an image OR paste an external URL. Used when no carousel images are set below."
+
+          - label: "Hero Carousel Images (optional)"
+            name: "images"
+            widget: "list"
+            required: false
+            hint: "Add 2 or more images to enable a crossfade carousel on the hero. Leave empty to use the single image above."
+            summary: "Image {{count}}"
+            fields:
+              - label: "Image (upload or paste URL)"
+                name: "url"
+                widget: "image"
+                required: true
+              - label: "Alt Text"
+                name: "alt"
+                widget: "string"
+                required: false
+                default: "Stardom Textiles"
+
+  # ═══════════════════════════════════════════════
+  # 2. SOLUTIONS / CATEGORIES
+  # ═══════════════════════════════════════════════
   - name: "solutions"
-    label: "Solutions"
+    label: "📦 Solutions / Categories"
     files:
+
       - label: "Solutions List"
         name: "solutions"
         file: "public/data/solutions.json"
@@ -27,18 +74,83 @@ collections:
           - label: "Solutions"
             name: "solutions"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.badge}})"   # shows a nice label in the list
+            summary: "{{fields.title}}"
+            hint: "Each item appears as a category card on the homepage and explore page."
             fields:
-              - { label: "Badge", name: "badge", widget: "select", options: ["B2B", "B2C", "B2C/B2B"] }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn more" }
-              - { label: "Button Link", name: "buttonLink", widget: "string", default: "#" }
 
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                required: true
+                hint: "e.g. School Uniforms"
+
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: true
+                hint: "Upload an image or paste an external URL (Unsplash, Cloudinary, etc.)"
+
+              - label: "Badge / Type"
+                name: "badge"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "B2B (Bulk / Institutional)", value: "B2B" }
+                  - { label: "B2C (Retail / Individual)", value: "B2C" }
+                  - { label: "B2B & B2C", value: "B2B/B2C" }
+                  - { label: "New Arrival", value: "New" }
+                  - { label: "Popular", value: "Popular" }
+                  - { label: "On Sale", value: "Sale" }
+                hint: "Optional. Shows a coloured badge on the card."
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+                hint: "Optional short description shown on the detail/explore page."
+
+              - label: "MOQ (Minimum Order Quantity)"
+                name: "moq"
+                widget: "string"
+                required: false
+                hint: "Optional. e.g. Min. 50 pcs — shown on explore page."
+
+              - label: "Filter Tags"
+                name: "tags"
+                widget: "select"
+                multiple: true
+                required: false
+                options:
+                  - { label: "B2B / Bulk", value: "b2b" }
+                  - { label: "B2C / Retail", value: "b2c" }
+                  - { label: "Uniforms", value: "uniform" }
+                  - { label: "Sports", value: "sports" }
+                  - { label: "Custom Print", value: "custom" }
+                  - { label: "T-Shirts", value: "tshirts" }
+                  - { label: "Track Suits", value: "tracksuits" }
+                hint: "Optional. Controls which filter chips show this card."
+
+              - label: "Button Text"
+                name: "buttonText"
+                widget: "string"
+                required: false
+                default: "Order Now"
+                hint: "Optional. Defaults to 'Order Now'."
+
+              - label: "Button Link"
+                name: "buttonLink"
+                widget: "string"
+                required: false
+                default: "#"
+                hint: "Optional. Leave blank to auto-generate a WhatsApp order link."
+
+  # ═══════════════════════════════════════════════
+  # 3. PRODUCTS (Delivered catalogue)
+  # ═══════════════════════════════════════════════
   - name: "products"
-    label: "Products"
+    label: "🛍️ Products (Delivered Catalogue)"
     files:
+
       - label: "Products List"
         name: "products"
         file: "public/data/products.json"
@@ -46,17 +158,236 @@ collections:
           - label: "Products"
             name: "products"
             widget: "list"
-            summary: "{{fields.name}} – {{fields.category}}"
+            summary: "{{fields.name}}"
+            hint: "Each item appears in the homepage carousel and the full product catalogue page."
             fields:
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Button Text", name: "buttonText", widget: "string", default: "Enquire" }
-              - label: "Categories (for filtering)"
-                name: "categories"
+
+              - label: "Product Name"
+                name: "name"
+                widget: "string"
+                required: true
+                hint: "e.g. School Uniform Set"
+
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: true
+                hint: "Upload or paste an external URL. Recommended size: 800×600px."
+
+              - label: "Category"
+                name: "category"
+                widget: "string"
+                required: false
+                hint: "Optional. e.g. Uniforms, Sports Kit, T-Shirts"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+                hint: "Optional. Shown in the product carousel and detail modal."
+
+              - label: "Filter Tags"
+                name: "tags"
                 widget: "select"
-                options: ["b2b", "b2c", "best"]
                 multiple: true
                 required: false
+                options:
+                  - { label: "Uniforms", value: "uniforms" }
+                  - { label: "Sports", value: "sports" }
+                  - { label: "T-Shirts", value: "tshirts" }
+                  - { label: "Track Suits", value: "tracksuits" }
+                hint: "Optional. Controls filter chips on the catalogue page."
+
+              - label: "Button Text"
+                name: "buttonText"
+                widget: "string"
+                required: false
+                default: "Order via WhatsApp"
+                hint: "Optional. Defaults to 'Order via WhatsApp'."
+
+              - label: "Button Link"
+                name: "buttonLink"
+                widget: "string"
+                required: false
+                hint: "Optional. Leave blank to auto-generate a WhatsApp order link."
+
+  # ═══════════════════════════════════════════════
+  # 4. ANNOUNCEMENT TICKER
+  # ═══════════════════════════════════════════════
+  - name: "ticker"
+    label: "📢 Announcement Ticker"
+    files:
+
+      - label: "Ticker Announcements"
+        name: "ticker"
+        file: "public/data/ticker.json"
+        fields:
+          - label: "Announcements"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.text}}"
+            hint: "These items scroll automatically in the black announcement strip between the header and hero. Order matters — they scroll left to right."
+            fields:
+
+              - label: "Announcement Text"
+                name: "text"
+                widget: "string"
+                required: true
+                hint: "e.g. Free Delivery on orders above ₹5,000 across India"
+
+              - label: "Highlighted Prefix (Bold)"
+                name: "highlight"
+                widget: "string"
+                required: false
+                hint: "Optional. This part appears bold before the main text. e.g. 'New Arrival:' or 'Free Delivery'"
+
+  # ═══════════════════════════════════════════════
+  # 5. CONTACT INFO
+  # ═══════════════════════════════════════════════
+  - name: "contact"
+    label: "📞 Contact Info"
+    files:
+
+      - label: "Contact Details"
+        name: "contact"
+        file: "public/data/contact.json"
+        hint: "Changes here update the top bar, trust popup, contact section, footer, and all WhatsApp links automatically."
+        fields:
+
+          - label: "Shop / Business Name"
+            name: "shopName"
+            widget: "string"
+            default: "Stardom Textiles"
+            hint: "Appears in the trust popup and footer."
+
+          - label: "Owner Name"
+            name: "ownerName"
+            widget: "string"
+            required: false
+            hint: "Optional. Shown in the contact section."
+
+          - label: "Address"
+            name: "address"
+            widget: "string"
+            default: "Karanja (Gh.), Maharashtra"
+            hint: "Shown in top bar, trust popup, footer."
+
+          - label: "City / Town"
+            name: "city"
+            widget: "string"
+            default: "Karanja (Gh.)"
+            hint: "Short city name for compact display in top bar and trust popup."
+
+          - label: "Working Hours"
+            name: "hours"
+            widget: "string"
+            default: "Mon–Sat · 10:00 am – 10:30 pm"
+            hint: "Shown in trust popup and contact section."
+
+          - label: "Working Hours (short)"
+            name: "hoursShort"
+            widget: "string"
+            default: "Open till 10:30 pm"
+            hint: "Short version for the trust popup."
+
+          - label: "Email"
+            name: "email"
+            widget: "string"
+            required: false
+            hint: "Optional. Shown in the contact section if provided."
+
+          - label: "Google Maps Link"
+            name: "mapsUrl"
+            widget: "string"
+            required: false
+            hint: "Optional. Paste a Google Maps link to make the address clickable."
+
+          - label: "Phone Numbers"
+            name: "phones"
+            widget: "list"
+            summary: "{{fields.number}}"
+            hint: "First phone number is used as the primary contact everywhere. All numbers appear in the contact section."
+            fields:
+
+              - label: "Number"
+                name: "number"
+                widget: "string"
+                required: true
+                hint: "Digits only recommended. e.g. 7510000000"
+
+              - label: "Display Label"
+                name: "label"
+                widget: "string"
+                required: false
+                default: "Call / WhatsApp"
+                hint: "e.g. 'Primary Line' or 'WhatsApp Only'"
+
+              - label: "WhatsApp Enabled"
+                name: "whatsapp"
+                widget: "boolean"
+                default: true
+                hint: "If enabled, WhatsApp order links use this number."
+
+              - label: "Country Code"
+                name: "countryCode"
+                widget: "string"
+                default: "91"
+                required: false
+                hint: "For WhatsApp link. Default: 91 (India)"
+
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - label: "Facebook URL"
+                name: "facebook"
+                widget: "string"
+                required: false
+              - label: "Instagram URL"
+                name: "instagram"
+                widget: "string"
+                required: false
+              - label: "Pinterest URL"
+                name: "pinterest"
+                widget: "string"
+                required: false
+
+          - label: "Business Rating"
+            name: "rating"
+            widget: "object"
+            required: false
+            collapsed: true
+            hint: "Shown in the trust popup."
+            fields:
+              - label: "Rating Value"
+                name: "value"
+                widget: "number"
+                default: 4.3
+                value_type: "float"
+                min: 0
+                max: 5
+                step: 0.1
+              - label: "Rating Count"
+                name: "count"
+                widget: "number"
+                default: 17
+              - label: "Stars Display (e.g. ⭐⭐⭐⭐☆)"
+                name: "stars"
+                widget: "string"
+                default: "⭐⭐⭐⭐☆"
+
+          - label: "Years in Business"
+            name: "yearsInBusiness"
+            widget: "string"
+            default: "11+"
+            required: false
+            hint: "Shown in the trust popup and hero stats."
+
+          - label: "Orders Delivered"
+            name: "ordersDelivered"
+            widget: "string"
+            default: "500+"
+            required: false
+            hint: "Shown in the hero stats band."

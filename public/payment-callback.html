@@ -3,937 +3,1995 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stardom Textiles | Tshirts, Uniforms & Sports Kit</title>
-  <meta name="description" content="Stardom Textiles – T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
-  <!-- Netlify Identity Widget -->
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <style>
-    /* ----- modern reset & design tokens (light + dark) ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>Stardom Textiles | T-shirts, Uniforms & Sports Kit — Karanja (Gh.)</title>
+  <meta name="description" content="Stardom Textiles – Premium T-shirt, Uniform & Sports Kit manufacturing in Karanja (Gh.). Quality fabrics, B2B & B2C, delivered across India.">
+  <meta name="theme-color" content="#0f0f0d">
 
-    :root {
-      --white: #ffffff;
-      --off-white: #fafafa;
-      --light-gray: #f0f0f0;
-      --mid-gray: #dddddd;
-      --text-primary: #222222;
-      --text-secondary: #555555;
-      --text-light: #777777;
-      --accent: #c4282b;
-      --accent-hover: #a01e20;
-      --border-subtle: #eaeaea;
-      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
-      --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 12px rgba(0, 0, 0, 0.03);
-      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      --font-light: 300;
-      --font-regular: 400;
-      --font-medium: 500;
-      --bg-body: var(--white);
-      --bg-soft: var(--off-white);
-      --text-main: var(--text-primary);
-      --text-muted: var(--text-secondary);
-      --card-bg: var(--white);
-      --footer-bg: #111;
-      --footer-text: #ddd;
-      transition: background-color 0.3s, color 0.2s;
-    }
+  <!-- Fonts — display=swap for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    body.dark-mode {
-      --white: #1e1e1e;
-      --off-white: #2a2a2a;
-      --light-gray: #333;
-      --mid-gray: #444;
-      --text-primary: #eee;
-      --text-secondary: #ccc;
-      --text-light: #aaa;
-      --accent: #e05a5d;
-      --accent-hover: #c44b4e;
-      --border-subtle: #3a3a3a;
-      --shadow-sm: 0 8px 20px rgba(0,0,0,0.4);
-      --shadow-hover: 0 15px 30px rgba(0,0,0,0.5);
-      --bg-body: #1e1e1e;
-      --bg-soft: #252525;
-      --text-main: #eee;
-      --text-muted: #ccc;
-      --card-bg: #2a2a2a;
-      --footer-bg: #0a0a0a;
-      --footer-text: #aaa;
-    }
+  <!-- Netlify Identity -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 
-    body {
-      font-family: var(--font-base);
-      font-weight: var(--font-light);
-      color: var(--text-main);
-      line-height: 1.5;
-      background-color: var(--bg-body);
-      -webkit-font-smoothing: antialiased;
-      transition: background-color 0.2s, color 0.2s;
-      scroll-behavior: smooth;
-    }
+<style>
+/* ═══════════════════════════════════════════════
+   1. DESIGN TOKENS
+═══════════════════════════════════════════════ */
+:root {
+  /* Palette */
+  --ink:          #141410;
+  --ink-80:       rgba(20,20,16,0.8);
+  --ink-40:       rgba(20,20,16,0.4);
+  --parchment:    #f5f2ec;
+  --parchment-d:  #ede9e1;
+  --stone:        #d4cfc6;
+  --stone-d:      #b0a99e;
+  --crimson:      #c4282b;
+  --crimson-d:    #9e2022;
+  --crimson-glow: rgba(196,40,43,0.18);
+  --green-live:   #22c55e;
 
-    h1, h2, h3, h4 {
-      font-weight: var(--font-medium);
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-    }
+  /* Surfaces */
+  --bg:           #faf8f5;
+  --bg-alt:       #f0ede6;
+  --bg-deep:      #141410;
+  --card:         #ffffff;
+  --border:       rgba(20,20,16,0.08);
+  --border-strong:rgba(20,20,16,0.16);
 
-    a { text-decoration: none; color: inherit; }
+  /* Typography */
+  --ff-display: 'Fraunces', Georgia, serif;
+  --ff-body:    'Outfit', system-ui, sans-serif;
 
-    .container {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+  /* Shadows */
+  --s1: 0 2px 8px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+  --s2: 0 8px 32px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+  --s3: 0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
 
-    /* ----- utility ----- */
-    .section-title {
-      font-size: 2.4rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: var(--font-medium);
-    }
+  /* Easing */
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --ease-in-out: cubic-bezier(0.76,0,0.24,1);
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.9rem 2.2rem;
-      font-weight: var(--font-medium);
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      border-radius: 40px;
-      transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
-      line-height: 1.2;
-      background: transparent;
-      white-space: nowrap;
-    }
+/* Dark mode */
+body.dark {
+  --ink:          #f0ede8;
+  --ink-80:       rgba(240,237,232,0.8);
+  --ink-40:       rgba(240,237,232,0.4);
+  --parchment:    #1c1c18;
+  --parchment-d:  #242420;
+  --stone:        #3a3a34;
+  --stone-d:      #4e4e46;
+  --crimson:      #e05a5d;
+  --crimson-d:    #c44b4e;
+  --crimson-glow: rgba(224,90,93,0.22);
+  --bg:           #1c1c18;
+  --bg-alt:       #242420;
+  --bg-deep:      #0c0c0a;
+  --card:         #252520;
+  --border:       rgba(240,237,232,0.08);
+  --border-strong:rgba(240,237,232,0.15);
+  --s1: 0 2px 8px rgba(0,0,0,0.3);
+  --s2: 0 8px 32px rgba(0,0,0,0.4);
+  --s3: 0 20px 60px rgba(0,0,0,0.5);
+}
 
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 2px 8px rgba(196, 40, 43, 0.2);
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 22px rgba(196, 40, 43, 0.25);
-    }
+/* ═══════════════════════════════════════════════
+   2. RESET & BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-    .btn-outline {
-      border: 1px solid var(--text-main);
-      color: var(--text-main);
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: var(--text-main);
-      color: var(--bg-body);
-      transform: translateY(-2px);
-    }
+html { scroll-behavior: smooth; }
 
-    .btn-small {
-      padding: 0.6rem 1.8rem;
-      font-size: 0.85rem;
-    }
+body {
+  font-family: var(--ff-body);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s, color 0.25s;
+  overflow-x: hidden;
+}
 
-    /* Compact button for solution cards */
-    .btn-compact {
-      padding: 0.4rem 1.2rem;
-      font-size: 0.8rem;
-      border-radius: 30px;
-      min-width: auto;
-      margin-top: 0.5rem;
-    }
+h1,h2,h3,h4 {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
 
-    /* top bar */
-    .top-bar {
-      background: var(--bg-soft);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 0.7rem 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-    .top-bar .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-    }
-    .top-bar-info {
-      display: flex;
-      align-items: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-    }
-    .top-bar-info span { display: inline-flex; align-items: center; gap: 0.4rem; }
-    .top-bar-info i { font-style: normal; color: var(--accent); font-weight: var(--font-medium); }
-    .top-bar-cta .btn {
-      background: var(--accent);
-      color: white;
-      padding: 0.5rem 1.8rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-    }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font-family: var(--ff-body); }
 
-    /* header */
-    .header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(6px);
-      z-index: 100;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .dark-mode .header {
-      background: rgba(30, 30, 30, 0.96);
-    }
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
 
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-    .logo {
-      font-size: 1.9rem;
-      font-weight: var(--font-medium);
-      color: var(--text-main);
-    }
-    .logo span { color: var(--accent); }
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-    .nav-menu a {
-      font-weight: var(--font-regular);
-      font-size: 1rem;
-      color: var(--text-muted);
-      transition: color 0.2s;
-      padding: 0.5rem 0;
-      border-bottom: 2px solid transparent;
-    }
-    .nav-menu a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--text-main);
-    }
-    .dark-toggle {
-      background: none;
-      border: 1px solid var(--border-subtle);
-      border-radius: 40px;
-      padding: 0.4rem 1.2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: var(--text-main);
-      margin-left: 1rem;
-    }
+/* ═══════════════════════════════════════════════
+   3. UTILITY CLASSES
+═══════════════════════════════════════════════ */
 
-    /* hero (modified for dynamic image) */
-    .hero {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      color: white;
-      padding: 4rem 0;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
-    .hero h1 { font-size: 3.5rem; color: white; }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
 
-    /* solutions */
-    .solutions { padding: 6rem 0; background: var(--bg-body); }
-    .solutions-intro { text-align: center; max-width: 700px; margin: 0 auto 4rem; color: var(--text-muted); }
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-    .solution-card {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      transition: 0.25s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .solution-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-    .solution-image {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .solution-content {
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      flex: 1;
-    }
-    .solution-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: var(--font-medium);
-      text-transform: uppercase;
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      background: var(--light-gray);
-      color: var(--text-secondary);
-      letter-spacing: 0.3px;
-      width: fit-content;
-      border: none;
-    }
-    .solution-badge.b2b,
-    .solution-badge.b2c {
-      background: var(--light-gray);
-      color: var(--text-secondary);
-    }
-    .solution-card h3 {
-      font-size: 1.2rem;
-      font-weight: var(--font-medium);
-      margin: 0;
-      line-height: 1.3;
-    }
-    .solution-card .solution-content p {
-      display: none;
-    }
-    .explore-more-wrapper {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    @media (max-width: 992px) {
-      .solutions-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 576px) {
-      .solutions-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+/* Label pill */
+.label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 2px;
+  background: var(--parchment-d);
+  color: var(--ink-80);
+  width: fit-content;
+}
+.label-pill.accent { background: var(--crimson); color: white; }
+.label-pill.ghost  { background: transparent; border: 1px solid var(--border-strong); color: var(--ink-80); }
 
-    /* ----- NEW: About Us (Premium) ----- */
-    .about-premium {
-      padding: 80px 0;
-      background-color: #f8f9fa; /* light neutral */
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .about-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 24px;
-      box-shadow: var(--shadow-hover);
-      transition: transform 0.3s ease;
-    }
-    .about-image img:hover {
-      transform: scale(1.02);
-    }
-    .about-video iframe {
-      width: 100%;
-      height: 280px; /* adjust as needed */
-      border-radius: 20px;
-      border: 2px solid var(--border-subtle);
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow 0.3s ease;
-    }
-    .about-video iframe:hover {
-      box-shadow: var(--shadow-hover);
-    }
-    .about-content h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
-    }
-    .about-content p {
-      margin-bottom: 1.2rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .about-content .btn {
-      margin-top: 1rem;
-    }
-    @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .about-video iframe {
-        height: 240px;
-      }
-    }
+/* Section scaffold */
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 4rem; }
+.section-head h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+.section-head p { color: var(--ink-80); font-size: 1.05rem; }
 
-    /* about local (existing) */
-    .about-local {
-      padding: 5rem 0;
-      background: var(--bg-soft);
-      text-align: center;
-    }
-    .brand-badge {
-      background: var(--card-bg); padding: 2.5rem; border-radius: 48px; max-width: 800px; margin: 0 auto;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle);
-    }
-    .brand-badge p { font-size: 1.2rem; margin: 0.5rem 0; color: var(--text-muted); }
-    .brand-badge .big-phone { font-size: 1.8rem; color: var(--accent); }
+/* Divider line */
+.rule { width: 48px; height: 3px; background: var(--crimson); border-radius: 2px; margin: 0 auto 1.5rem; }
 
-    /* delivered section */
-    .delivered-section {
-      padding: 6rem 0;
-      background: var(--bg-body);
-      position: relative;
-    }
+/* ═══════════════════════════════════════════════
+   4. BUTTONS
+═══════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s var(--ease-out);
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
+.btn-primary {
+  background: var(--crimson);
+  color: #fff;
+  border-color: var(--crimson);
+  box-shadow: 0 2px 12px var(--crimson-glow);
+}
+.btn-primary:hover {
+  background: var(--crimson-d);
+  border-color: var(--crimson-d);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--crimson-glow);
+}
 
-    .horizontal-wrapper {
-      position: relative;
-      margin: 2rem 0 2rem;
-    }
-    .product-horizontal {
-      display: flex;
-      gap: 1.8rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      padding: 0.5rem 0.2rem 1.5rem;
-    }
-    .product-horizontal .product-card {
-      flex: 0 0 280px;
-      scroll-snap-align: start;
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      background: var(--card-bg);
-      transition: 0.2s;
-    }
-    .product-horizontal .product-card:hover { box-shadow: var(--shadow-hover); }
-    .product-image-container { height: 240px; overflow: hidden; border-radius: 24px 24px 0 0; }
-    .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-    .product-card:hover .product-image { transform: scale(1.04); }
-    
-    .product-name { font-size: 1.2rem; font-weight: var(--font-medium); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
 
-    .scroll-controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0 1.5rem;
-    }
-    .scroll-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text-main);
-      box-shadow: var(--shadow-sm);
-      transition: 0.2s;
-    }
-    .scroll-btn:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-    .explore-btn-wrapper {
-      text-align: center;
-      margin-top: 2rem;
-    }
+.btn-sm { padding: 0.6rem 1.4rem; font-size: 0.76rem; }
+.btn-xs { padding: 0.42rem 1rem; font-size: 0.72rem; }
 
-    /* why us */
-    .why-us {
-      padding: 6rem 0;
-      background: var(--bg-soft);
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-    .why-card {
-      background: var(--card-bg);
-      padding: 2.2rem 1.5rem;
-      border-radius: 28px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border-subtle);
-    }
-    .why-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+/* WhatsApp green */
+.btn-wa {
+  background: #25D366;
+  color: #fff;
+  border-color: #25D366;
+}
+.btn-wa:hover { background: #1da955; border-color: #1da955; transform: translateY(-2px); }
 
-    /* CTA */
-    .cta-section {
-      padding: 5rem 0;
-      background: var(--text-main);
-      color: var(--bg-body);
-    }
-    .cta-section .section-title { color: var(--bg-body); }
-    .cta-section p { color: rgba(0,0,0,0.7); }
-    .dark-mode .cta-section p { color: rgba(255,255,255,0.8); }
-    .cta-buttons .btn-outline { border-color: var(--bg-body); color: var(--bg-body); }
-    .cta-buttons .btn-outline:hover { background: var(--bg-body); color: var(--text-main); }
+/* ═══════════════════════════════════════════════
+   5. TOP BAR
+═══════════════════════════════════════════════ */
+.top-bar {
+  background: var(--bg-deep);
+  color: var(--stone-d);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.top-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+.top-bar-chips { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.top-bar-chip { display: flex; align-items: center; gap: 0.35rem; color: var(--stone-d); }
+.top-bar-chip .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
+.top-bar-cta .btn {
+  padding: 0.4rem 1.2rem;
+  font-size: 0.72rem;
+  border-radius: 2px;
+  background: var(--crimson);
+  color: white;
+  border-color: var(--crimson);
+  letter-spacing: 0.08em;
+}
 
-    /* footer */
-    .footer {
-      background: var(--footer-bg);
-      color: var(--footer-text);
-      padding: 5rem 0 2.5rem;
-    }
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-    .footer-column h4 { color: white; }
-    .footer-links a { color: #aaa; }
-    .footer-links a:hover { color: white; }
-    .footer-social-links a { background: #2a2a2a; }
-    .copyright { border-top-color: #2a2a2a; }
+/* ═══════════════════════════════════════════════
+   6. HEADER
+═══════════════════════════════════════════════ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(250,248,245,0.96);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s, background 0.25s;
+}
+body.dark .site-header { background: rgba(28,28,24,0.96); }
+.site-header.scrolled { box-shadow: var(--s2); }
 
-    /* trust popup */
-    .trust-popup {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--card-bg);
-      border-radius: 32px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      padding: 1.5rem;
-      max-width: 320px;
-      z-index: 999;
-      border: 1px solid var(--border-subtle);
-      transition: opacity 0.3s, transform 0.3s;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    .trust-popup.hidden {
-      opacity: 0;
-      transform: translateY(20px);
-      pointer-events: none;
-    }
-    .trust-popup .rating { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .trust-popup .stars { color: #f5b342; }
-    .trust-popup .verified { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; }
-    .trust-popup .info-row { display: flex; gap: 10px; margin-bottom: 10px; color: var(--text-muted); }
-    .trust-popup .phone { font-size: 1.2rem; font-weight: var(--font-medium); color: var(--text-main); }
-    .trust-popup .actions { display: flex; gap: 10px; margin-top: 15px; }
-    .trust-popup .actions a { flex: 1; padding: 10px; text-align: center; border-radius: 40px; font-weight: var(--font-medium); }
-    .enquire-btn { background: var(--accent); color: white; }
-    .whatsapp-btn { background: #25D366; color: white; }
-    .trust-popup .close {
-      position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 1.2rem; color: #aaa;
-    }
+.header-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  align-items: center;
+  height: 68px;
+  gap: 1rem;
+}
 
-    /* responsive */
-    @media (max-width: 768px) {
-      .mobile-menu-btn { display: flex; }
-      .nav-menu {
-        display: none; flex-direction: column; background: var(--card-bg); position: absolute; top: 80px;
-        left: 0; width: 100%; padding: 2rem; box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-        border-top: 1px solid var(--border-subtle);
-      }
-      .nav-menu.active { display: flex; }
-      .hero h1 { font-size: 2.5rem; }
-      .trust-popup { max-width: 280px; right: 15px; bottom: 15px; }
-    }
-  </style>
+/* Logo */
+.logo-wrap { display: flex; align-items: center; gap: 0.7rem; }
+.logo-icon {
+  width: 34px; height: 34px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: background 0.25s;
+}
+body.dark .logo-icon { background: var(--crimson); }
+.logo-text {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  line-height: 1;
+}
+.logo-text em { font-style: normal; color: var(--crimson); }
+
+/* Nav — centered */
+.main-nav { display: flex; justify-content: center; }
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0;
+}
+.nav-list a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-80);
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem; right: 1rem;
+  height: 2px;
+  background: var(--crimson);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s var(--ease-out);
+}
+.nav-list a:hover { color: var(--crimson); }
+.nav-list a:hover::after { transform: scaleX(1); }
+
+/* Header right */
+.header-right {
+  display: flex; align-items: center; justify-content: flex-end; gap: 0.8rem;
+}
+.header-phone-chip {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--ink-80);
+}
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--green-live);
+  animation: livePulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes livePulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50%      { box-shadow: 0 0 0 4px rgba(34,197,94,0); }
+}
+
+.icon-btn {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+.icon-btn:hover { border-color: var(--crimson); color: var(--crimson); }
+
+.mobile-toggle {
+  display: none;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer; color: var(--ink);
+  padding: 0.25rem;
+}
+
+/* Mobile nav drawer */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 68px; left: 0; right: 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--s2);
+  z-index: 199;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav ul { list-style: none; padding: 1rem 36px; }
+.mobile-nav ul li a {
+  display: block; padding: 0.75rem 0;
+  font-weight: 500; font-size: 0.9rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ink-80);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-nav ul li:last-child a { border-bottom: none; }
+.mobile-nav ul li a:hover { color: var(--crimson); }
+
+/* ═══════════════════════════════════════════════
+   7. ANNOUNCEMENT TICKER
+═══════════════════════════════════════════════ */
+.ticker {
+  background: #0f0f0d;
+  height: 36px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ticker::before, .ticker::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 72px; z-index: 2; pointer-events: none;
+}
+.ticker::before { left: 0;  background: linear-gradient(to right, #0f0f0d, transparent); }
+.ticker::after  { right: 0; background: linear-gradient(to left,  #0f0f0d, transparent); }
+
+.ticker-badge {
+  flex-shrink: 0;
+  background: var(--crimson);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0 1.2rem;
+  height: 100%;
+  display: flex; align-items: center;
+  z-index: 3;
+  white-space: nowrap;
+  font-family: var(--ff-body);
+}
+.ticker-viewport { overflow: hidden; flex: 1; height: 100%; }
+.ticker-track {
+  display: flex; align-items: center;
+  height: 100%; white-space: nowrap;
+  animation: ticker-scroll 32s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0 2.8rem;
+  font-size: 0.77rem; letter-spacing: 0.03em;
+  color: #9e9990;
+  font-family: var(--ff-body);
+}
+.ticker-item strong { color: #e8e4dc; font-weight: 500; }
+.ticker-item .tdot { width: 3px; height: 3px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════
+   8. HERO
+═══════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+  color: #fff;
+  padding: 5rem 0;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 8s ease-out;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    120deg,
+    rgba(14,13,10,0.82) 0%,
+    rgba(14,13,10,0.55) 55%,
+    rgba(196,40,43,0.12) 100%
+  );
+}
+
+/* Grain texture overlay */
+.hero-grain {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+.hero .container { position: relative; z-index: 3; }
+.hero-content { max-width: 760px; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  padding: 0.38rem 1rem;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; color: rgba(255,255,255,0.85);
+  margin-bottom: 1.8rem;
+  animation: fadeUp 0.8s var(--ease-out) both;
+}
+.hero-eyebrow .live-dot { background: var(--green-live); }
+
+.hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.4rem;
+  animation: fadeUp 0.8s 0.12s var(--ease-out) both;
+}
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.72); }
+
+.hero p {
+  font-size: 1.1rem; line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  max-width: 560px;
+  margin-bottom: 2.4rem;
+  animation: fadeUp 0.8s 0.22s var(--ease-out) both;
+}
+
+.hero-actions {
+  display: flex; gap: 0.9rem; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s var(--ease-out) both;
+}
+.hero-actions .btn-ghost {
+  border-color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.9);
+}
+.hero-actions .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
+
+/* Hero stats bar */
+.hero-stats {
+  display: flex; gap: 0; flex-wrap: wrap;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 2rem;
+  animation: fadeUp 0.8s 0.4s var(--ease-out) both;
+}
+.hero-stat {
+  flex: 1; min-width: 120px;
+  text-align: center;
+  padding: 0 1.5rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.hero-stat:first-child { padding-left: 0; }
+.hero-stat:last-child { border-right: none; }
+.hero-stat-n {
+  font-family: var(--ff-display);
+  font-size: 2rem; font-weight: 900; color: #fff;
+  line-height: 1;
+}
+.hero-stat-l {
+  font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-top: 0.35rem;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   9. SOLUTIONS GRID
+═══════════════════════════════════════════════ */
+.solutions { padding: 7rem 0; background: var(--bg); }
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.sol-card {
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--s1);
+  cursor: pointer;
+  display: flex; flex-direction: column;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.sol-card:hover { transform: translateY(-6px); box-shadow: var(--s3); }
+.sol-card:hover .sol-img { transform: scale(1.06); }
+.sol-img-wrap { height: 200px; overflow: hidden; }
+.sol-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease-out); }
+.sol-body { padding: 1.2rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.sol-tag {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-40);
+  background: var(--parchment-d); padding: 0.15rem 0.7rem; border-radius: 2px;
+  width: fit-content;
+}
+.sol-name { font-size: 1rem; font-weight: 700; line-height: 1.25; }
+.sol-order {
+  margin-top: auto; padding-top: 0.6rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--crimson);
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  transition: gap 0.2s;
+}
+.sol-card:hover .sol-order { gap: 0.6rem; }
+
+.explore-row { text-align: center; margin-top: 3rem; }
+
+/* ═══════════════════════════════════════════════
+   10. ABOUT SECTION
+═══════════════════════════════════════════════ */
+.about { padding: 7rem 0; background: var(--bg-alt); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-media { display: flex; flex-direction: column; gap: 1.2rem; }
+.about-img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  border-radius: 6px; box-shadow: var(--s3);
+}
+.about-video iframe {
+  width: 100%; height: 220px; border-radius: 6px;
+  border: 1px solid var(--border-strong); box-shadow: var(--s2);
+}
+
+.about-body { display: flex; flex-direction: column; gap: 1.4rem; }
+.about-body h2 { font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 900; }
+.about-body p { color: var(--ink-80); line-height: 1.78; font-size: 0.97rem; }
+.about-facts {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-top: 0.5rem;
+}
+.about-fact {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 1rem 1.2rem;
+  box-shadow: var(--s1);
+}
+.about-fact-n { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 900; color: var(--crimson); }
+.about-fact-l { font-size: 0.78rem; color: var(--ink-80); margin-top: 0.15rem; }
+
+/* ═══════════════════════════════════════════════
+   11. PRODUCT CAROUSEL
+═══════════════════════════════════════════════ */
+.products { padding: 7rem 0; background: var(--bg); }
+
+.products-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 3.5rem; gap: 1rem; flex-wrap: wrap;
+}
+.products-header .section-head { text-align: left; margin: 0; max-width: 560px; }
+.products-header .section-head h2 { margin-bottom: 0.5rem; }
+
+.carousel-wrap { position: relative; overflow: hidden; border-radius: 6px; }
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.65s var(--ease-in-out);
+  will-change: transform;
+}
+
+/* Each slide: full-width two-column */
+.c-slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.c-slide-img { position: relative; overflow: hidden; }
+.c-slide-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+.c-slide:hover .c-slide-img img { transform: scale(1.05); }
+.c-slide-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.18), transparent);
+  pointer-events: none;
+}
+
+.c-slide-body {
+  padding: 3rem 3.5rem;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.c-slide-num {
+  font-family: var(--ff-display);
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: var(--parchment-d);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: -0.5rem;
+  transition: color 0.25s;
+}
+body.dark .c-slide-num { color: var(--stone); }
+.c-slide-cat {
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--crimson);
+}
+.c-slide-name {
+  font-family: var(--ff-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+.c-slide-desc {
+  font-size: 0.9rem; color: var(--ink-80);
+  line-height: 1.7; max-width: 380px;
+}
+.c-slide-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; padding-top: 0.5rem; }
+
+/* Carousel controls */
+.carousel-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1.8rem; gap: 1rem; flex-wrap: wrap;
+}
+.c-dots { display: flex; gap: 6px; align-items: center; }
+.c-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--stone); border: none;
+  cursor: pointer; padding: 0;
+  transition: all 0.3s var(--ease-out);
+}
+.c-dot.active {
+  width: 26px; border-radius: 4px;
+  background: var(--crimson);
+}
+.c-progress {
+  flex: 1; height: 2px; background: var(--stone);
+  border-radius: 2px; overflow: hidden; min-width: 60px;
+}
+.c-progress-fill {
+  height: 100%; background: var(--crimson);
+  border-radius: 2px;
+  transition: width 0.5s var(--ease-out);
+}
+.c-arrows { display: flex; gap: 0.6rem; }
+.c-arrow {
+  width: 46px; height: 46px; border-radius: 4px;
+  border: 1.5px solid var(--border-strong);
+  background: var(--card);
+  color: var(--ink); font-size: 1.2rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  box-shadow: var(--s1);
+}
+.c-arrow:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════════════
+   12. WHY US — Distinctive Asymmetric Layout
+═══════════════════════════════════════════════ */
+.why { padding: 7rem 0; background: var(--bg-alt); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+/* Featured card — spans 2 rows */
+.why-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: var(--s1);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--s2); }
+.why-card.featured {
+  grid-row: 1 / 3;
+  background: var(--ink);
+  color: var(--bg);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 2.5rem;
+}
+body.dark .why-card.featured { background: var(--crimson); }
+.why-card.featured h3 { color: #fff; font-size: 1.4rem; }
+.why-card.featured p { color: rgba(255,255,255,0.7); }
+.why-icon {
+  font-size: 2rem; margin-bottom: 1rem; display: block;
+  line-height: 1;
+}
+.why-card.featured .why-icon { font-size: 3.5rem; margin-bottom: auto; padding-bottom: 1.5rem; }
+.why-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+.why-card p { font-size: 0.84rem; color: var(--ink-80); line-height: 1.55; }
+.why-card.featured p { color: rgba(255,255,255,0.7); }
+.why-tag {
+  display: inline-block;
+  font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+  background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7);
+  padding: 0.2rem 0.7rem; border-radius: 2px; margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════
+   13. CONTACT / ENQUIRY SECTION  ← NEW
+═══════════════════════════════════════════════ */
+.contact { padding: 7rem 0; background: var(--bg); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-info { display: flex; flex-direction: column; gap: 2rem; }
+.contact-info h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; }
+.contact-info p { color: var(--ink-80); line-height: 1.72; }
+
+.contact-channels { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+.channel-card {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 1rem 1.3rem;
+  box-shadow: var(--s1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.channel-card:hover { transform: translateX(4px); box-shadow: var(--s2); }
+.channel-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--parchment-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.channel-label { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 0.15rem; }
+.channel-val { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+
+/* Enquiry form */
+.enquiry-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: var(--s2);
+}
+.enquiry-form h3 {
+  font-size: 1.4rem; margin-bottom: 0.5rem;
+}
+.enquiry-form .form-sub { font-size: 0.88rem; color: var(--ink-80); margin-bottom: 1.8rem; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.form-group label {
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-80);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--ff-body);
+  font-size: 0.9rem; font-weight: 400;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--crimson);
+  box-shadow: 0 0 0 3px var(--crimson-glow);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+/* Form success state */
+.form-success {
+  display: none;
+  text-align: center; padding: 2rem;
+}
+.form-success .check { font-size: 3rem; margin-bottom: 1rem; }
+.form-success h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.form-success p { color: var(--ink-80); font-size: 0.9rem; }
+
+/* ═══════════════════════════════════════════════
+   14. CTA BAND
+═══════════════════════════════════════════════ */
+.cta-band {
+  padding: 5.5rem 0;
+  background: var(--ink);
+  position: relative; overflow: hidden;
+}
+body.dark .cta-band { background: #0c0c0a; }
+.cta-band::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: var(--crimson-glow);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.cta-band-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-band h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 900; color: #fff;
+  max-width: 560px;
+}
+.cta-band h2 em { font-style: italic; color: rgba(255,255,255,0.55); }
+.cta-band-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; flex-shrink: 0; }
+.cta-band .btn-ghost { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); }
+.cta-band .btn-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════════════
+   15. FOOTER
+═══════════════════════════════════════════════ */
+.footer {
+  background: var(--bg-deep);
+  color: #7a7570;
+  padding: 5rem 0 2rem;
+}
+.footer-logo {
+  font-family: var(--ff-display);
+  font-size: 1.5rem; font-weight: 900;
+  color: #f0ede8; margin-bottom: 0.4rem; letter-spacing: -0.03em;
+}
+.footer-logo em { font-style: normal; color: var(--crimson); }
+.footer-tagline { font-size: 0.82rem; margin-bottom: 3rem; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.footer-col h4 {
+  font-family: var(--ff-body);
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #f0ede8; margin-bottom: 1.2rem; font-weight: 600;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-links a { font-size: 0.85rem; color: #7a7570; transition: color 0.2s; }
+.footer-links a:hover { color: #f0ede8; }
+.footer-socials { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
+.footer-socials a {
+  width: 34px; height: 34px; border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem; color: #7a7570; transition: 0.2s;
+}
+.footer-socials a:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.footer-contact { font-size: 0.85rem; line-height: 2; color: #7a7570; }
+.footer-contact a { color: #f0ede8; font-weight: 600; }
+
+.footer-bottom {
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 0.5rem;
+  padding-top: 2rem;
+  font-size: 0.78rem;
+}
+.footer-bottom a { color: #5a5a56; transition: color 0.2s; }
+.footer-bottom a:hover { color: #9e9990; }
+
+/* ═══════════════════════════════════════════════
+   16. TRUST POPUP
+═══════════════════════════════════════════════ */
+.trust-popup {
+  position: fixed; bottom: 24px; right: 24px;
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: var(--s3);
+  padding: 1.3rem;
+  max-width: 290px; z-index: 500;
+  transition: opacity 0.35s, transform 0.35s;
+}
+.trust-popup.hide { opacity: 0; transform: translateY(16px); pointer-events: none; }
+.trust-popup-close {
+  position: absolute; top: 9px; right: 12px;
+  background: none; border: none; font-size: 1rem;
+  color: var(--stone-d); cursor: pointer; line-height: 1;
+}
+.tp-rating { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.7rem; }
+.tp-stars { color: #f59e0b; font-size: 0.85rem; }
+.tp-badge {
+  background: #e8f5e9; color: #1e7d34;
+  font-size: 0.66rem; font-weight: 700;
+  padding: 0.18rem 0.7rem; border-radius: 2px; letter-spacing: 0.04em;
+}
+.tp-row { display: flex; gap: 0.8rem; margin-bottom: 0.5rem; font-size: 0.78rem; color: var(--ink-80); }
+.tp-phone { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin: 0.3rem 0; }
+.tp-actions { display: flex; gap: 0.6rem; margin-top: 0.9rem; }
+.tp-actions a {
+  flex: 1; padding: 0.6rem; text-align: center; border-radius: 4px;
+  font-weight: 600; font-size: 0.76rem; letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+.tp-actions a:hover { opacity: 0.88; }
+.tp-enquire { background: var(--crimson); color: #fff; }
+.tp-wa { background: #25D366; color: #fff; }
+
+/* ═══════════════════════════════════════════════
+   17. RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-card.featured { grid-row: auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .header-inner { grid-template-columns: auto 1fr auto; }
+  .main-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .c-slide { grid-template-columns: 1fr; min-height: auto; }
+  .c-slide-img { height: 280px; }
+  .c-slide-body { padding: 2rem 1.8rem; }
+  .c-slide-num { font-size: 3.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .cta-band-inner { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero-stats { gap: 1.2rem; }
+  .hero-stat { min-width: 100px; }
+  .form-row { grid-template-columns: 1fr; }
+  .trust-popup { max-width: 248px; right: 12px; bottom: 12px; }
+  .top-bar-chips { gap: 0.6rem; }
+  .products-header { flex-direction: column; align-items: flex-start; }
+}
+
+/* Focus-visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--crimson);
+  outline-offset: 3px;
+}
+</style>
 </head>
+
 <body>
-  <!-- floating trust popup (smart hide) -->
-  <div class="trust-popup" id="trustPopup">
-    <span class="close" onclick="this.parentElement.classList.add('hidden')">✕</span>
-    <div class="rating">
-      <span class="stars">⭐⭐⭐⭐☆</span> <span>4.3 ★ (17 ratings)</span>
+
+<!-- ─────────────────────────────────────────────
+     TRUST POPUP
+───────────────────────────────────────────── -->
+<aside class="trust-popup" id="trustPopup" role="complementary" aria-label="Quick contact">
+  <button class="trust-popup-close" id="tpClose" aria-label="Close">✕</button>
+  <div class="tp-rating">
+    <span class="tp-stars" aria-label="4.3 out of 5 stars">⭐⭐⭐⭐☆</span>
+    <span class="tp-badge">Verified ✓</span>
+  </div>
+  <div class="tp-row"><span>📍 Karanja (Gh.)</span><span>🕐 Open till 10:30 pm</span></div>
+  <div class="tp-row"><span>⏳ 11 Years in Business</span></div>
+  <div class="tp-phone">📞 7510000000</div>
+  <div class="tp-actions">
+    <a href="#contact" class="tp-enquire">Enquire Now</a>
+    <a href="https://wa.me/917510000000" class="tp-wa" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</aside>
+
+<!-- ─────────────────────────────────────────────
+     TOP BAR
+───────────────────────────────────────────── -->
+<div class="top-bar" role="banner">
+  <div class="container">
+    <div class="top-bar-chips">
+      <span class="top-bar-chip"><span class="dot"></span> 👕 T-shirts · Uniforms · Sports Kit</span>
+      <span class="top-bar-chip"><span class="dot"></span> 📍 Karanja (Gh.)</span>
+      <span class="top-bar-chip"><span class="dot"></span> 📞 7510000000</span>
+      <span class="top-bar-chip"><span class="dot"></span> ✈️ Pan-India Delivery</span>
     </div>
-    <div class="verified">Trust Verified ✓ Claimed</div>
-    <div class="info-row"><span>📍 Karanja (Gh.)</span> <span>🕐 Open until 10:30 pm</span></div>
-    <div class="info-row"><span>⏳ 11 Years in Business</span></div>
-    <div class="phone">📞 7510000000</div>
-    <div class="actions">
-      <a href="#enquire" class="enquire-btn">Enquire Now</a>
-      <a href="https://wa.me/917510000000" class="whatsapp-btn">WhatsApp</a>
+    <div class="top-bar-cta">
+      <a href="#contact" class="btn">ENQUIRE NOW</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────
+     HEADER
+───────────────────────────────────────────── -->
+<header class="site-header" id="siteHeader" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="#home" class="logo-wrap" aria-label="Stardom Textiles — Home">
+        <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">STARDOM<em>.</em></span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">☰</button>
+
+      <!-- Desktop nav -->
+      <nav class="main-nav" aria-label="Site sections">
+        <ul class="nav-list" role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right actions -->
+      <div class="header-right">
+        <div class="header-phone-chip" aria-label="Call us">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>7510000000</span>
+        </div>
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode" title="Dark mode">🌓</button>
+      </div>
+
     </div>
   </div>
 
-  <!-- top bar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-info">
-        <span>👕 Tshirts, Uniforms, Sports Kit</span>
-        <span class="separator">|</span>
-        <span>📍 Karanja (Gh.)</span>
-        <span>|</span>
-        <span>📞 7510000000</span>
-        <span>|</span>
-        <span>✈️ Delivering All Over India</span>
-      </div>
-      <div class="top-bar-cta">
-        <a href="#enquire" class="btn">ENQUIRE NOW</a>
-      </div>
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ─────────────────────────────────────────────
+     TICKER
+───────────────────────────────────────────── -->
+<div class="ticker" role="marquee" aria-label="Announcements" aria-live="off">
+  <span class="ticker-badge">LIVE UPDATES</span>
+  <div class="ticker-viewport">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="tdot"></span><strong>New Arrival:</strong> Premium Drifit Sports Kits — bulk orders welcome</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Free Delivery</strong> on orders above ₹5,000 across India</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Custom Printing</strong> on T-shirts, Uniforms & Jerseys — min. 12 pcs</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>School Season Sale:</strong> Bulk uniforms — special rates for institutions</span>
+      <span class="ticker-item"><span class="tdot"></span>📍 Karanja (Gh.) — <strong>Open Mon–Sat 10am to 10:30pm</strong></span>
+      <span class="ticker-item"><span class="tdot"></span><strong>WhatsApp Orders</strong> — send requirements to 7510000000</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item"><span class="tdot"></span><strong>New Arrival:</strong> Premium Drifit Sports Kits — bulk orders welcome</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Free Delivery</strong> on orders above ₹5,000 across India</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>Custom Printing</strong> on T-shirts, Uniforms & Jerseys — min. 12 pcs</span>
+      <span class="ticker-item"><span class="tdot"></span><strong>School Season Sale:</strong> Bulk uniforms — special rates for institutions</span>
+      <span class="ticker-item"><span class="tdot"></span>📍 Karanja (Gh.) — <strong>Open Mon–Sat 10am to 10:30pm</strong></span>
+      <span class="ticker-item"><span class="tdot"></span><strong>WhatsApp Orders</strong> — send requirements to 7510000000</span>
     </div>
   </div>
+</div>
 
-  <!-- header with dark mode toggle -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">STARDOM<span>TEXTILES</span></div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-        <nav>
-          <ul class="nav-menu" id="navMenu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#about-premium">About</a></li>
-            <li><a href="#delivered">We Delivered</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="dark-toggle" id="darkToggle" aria-label="Dark mode">🌓</button>
-      </div>
-    </div>
-  </header>
+<!-- ─────────────────────────────────────────────
+     HERO
+───────────────────────────────────────────── -->
+<main id="main-content">
+<section class="hero" id="home" aria-label="Hero banner">
+  <img id="heroImage" class="hero-bg" src="" alt="Stardom Textiles — Premium Fabric Manufacturing">
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-grain"  aria-hidden="true"></div>
 
-  <!-- hero (dynamic) -->
-  <section class="hero" id="home">
-    <img id="heroImage" class="hero-bg" src="" alt="Hero Banner">
+  <div class="container">
     <div class="hero-content">
-      <h1 id="heroHeading"></h1>
-      <p id="heroSubheading"></p>
-      <div class="hero-buttons">
-        <a href="#delivered" class="btn btn-primary">Explore Products</a>
-        <a href="#contact" class="btn btn-outline">Contact Owner</a>
+      <div class="hero-eyebrow">
+        <span class="live-dot" aria-hidden="true"></span>
+        🏭 Karanja (Gh.) · Est. 11+ Years
+      </div>
+
+      <h1 id="heroHeading">
+        Fabric That<br>Fits <em>Every Story</em>
+      </h1>
+
+      <p id="heroSubheading">
+        Premium T-shirts, Uniforms &amp; Sports Kits manufactured with care —
+        delivered pan-India for B2B &amp; B2C customers.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l7 7-7 7M1 8h14"/></svg>
+          Explore Products
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contact Owner</a>
+      </div>
+
+      <div class="hero-stats" aria-label="Key statistics">
+        <div class="hero-stat"><div class="hero-stat-n">11+</div><div class="hero-stat-l">Years Active</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">500+</div><div class="hero-stat-l">Orders Delivered</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">PAN</div><div class="hero-stat-l">India Delivery</div></div>
+        <div class="hero-stat"><div class="hero-stat-n">4.3★</div><div class="hero-stat-l">Customer Rating</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- tailored solutions (dynamic) -->
-  <section class="solutions" id="solutions">
-    <div class="container">
-      <h2 class="section-title">Tailored Solutions for Every Need</h2>
-      <p class="solutions-intro">From school uniforms to sports teams and corporate wear – we deliver quality fabrics across India.</p>
-      <div class="solutions-grid" id="solutionsGrid"></div>
-      <!-- Explore More button wrapper -->
-      <div id="exploreMoreWrapper" class="explore-more-wrapper" style="display: none;">
-        <a href="explore_product.html" class="btn btn-outline">Explore More →</a>
-      </div>
+<!-- ─────────────────────────────────────────────
+     SOLUTIONS
+───────────────────────────────────────────── -->
+<section class="solutions" id="solutions" aria-labelledby="sol-h2">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="label-pill">Our Range</span>
+      <h2 id="sol-h2">Tailored Solutions<br>for Every Need</h2>
+      <div class="rule"></div>
+      <p>From school uniforms to sports teams and corporate wear — quality fabrics delivered across India.</p>
     </div>
-  </section>
+    <div class="solutions-grid" id="solutionsGrid" role="list" aria-label="Product categories">
+      <!-- Injected by JS -->
+    </div>
+    <div id="exploreMoreRow" class="explore-row" style="display:none;">
+      <a href="explore_catalog.html" class="btn btn-ghost">View All Categories →</a>
+    </div>
+  </div>
+</section>
 
-  <!-- NEW: About Us (Premium) -->
-  <section class="about-premium" id="about-premium">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="https://i.pinimg.com/736x/e5/55/81/e5558138553c5ca5f9a3c6b03624a5ae.jpg" alt="Premium textile fabric" loading="lazy">
+<!-- ─────────────────────────────────────────────
+     ABOUT
+───────────────────────────────────────────── -->
+<section class="about" id="about" aria-labelledby="about-h2">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-media reveal">
+        <img
+          class="about-img"
+          src="https://i.pinimg.com/736x/e5/55/81/e5558138553c5ca5f9a3c6b03624a5ae.jpg"
+          alt="Premium textile fabric at Stardom Textiles"
+          loading="lazy"
+        >
+        <iframe
+          src="https://www.youtube.com/embed/xzQR-nVmj0g"
+          title="Stardom Textiles — Factory & Textile Fair"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="about-body reveal reveal-d2">
+        <span class="label-pill">Our Story</span>
+        <h2 id="about-h2">स्टारडम टेक्सटाइल्स बद्दल</h2>
+
+        <p>For over a decade, Stardom Textiles has led fabric innovation in Karanja (Gh.) — blending traditional craftsmanship with modern manufacturing to deliver textiles that endure.</p>
+
+        <p>Every yard is produced with minimal waste and maximum care. Whether school uniforms, sports kits, or custom-printed t-shirts — we deliver products built to last, at prices that work for businesses and individuals alike.</p>
+
+        <p>We don't just manufacture fabric. We build lasting relationships across India.</p>
+
+        <div class="about-facts" role="list" aria-label="Company highlights">
+          <div class="about-fact reveal reveal-d1" role="listitem">
+            <div class="about-fact-n">11+</div>
+            <div class="about-fact-l">Years in Business</div>
+          </div>
+          <div class="about-fact reveal reveal-d2" role="listitem">
+            <div class="about-fact-n">500+</div>
+            <div class="about-fact-l">Batches Delivered</div>
+          </div>
+          <div class="about-fact reveal reveal-d3" role="listitem">
+            <div class="about-fact-n">B2B</div>
+            <div class="about-fact-l">Bulk & Institutional</div>
+          </div>
+          <div class="about-fact reveal reveal-d4" role="listitem">
+            <div class="about-fact-n">PAN IN</div>
+            <div class="about-fact-l">Delivery Coverage</div>
+          </div>
         </div>
-        <div class="about-video">
-          <iframe src="https://www.youtube.com/embed/xzQR-nVmj0g" title="Textile Fair Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <a href="about.html" class="btn btn-primary" style="width:fit-content;">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     PRODUCTS CAROUSEL
+───────────────────────────────────────────── -->
+<section class="products" id="products" aria-labelledby="prod-h2">
+  <div class="container">
+    <div class="products-header">
+      <div class="section-head reveal">
+        <span class="label-pill">Delivered Batches</span>
+        <h2 id="prod-h2">Our Delivered Products</h2>
+        <p>Browse what we've made — click to order directly via WhatsApp.</p>
+      </div>
+      <a href="explore_product.html" class="btn btn-ghost btn-sm reveal reveal-d2" style="flex-shrink:0;">Explore All →</a>
+    </div>
+
+    <div class="carousel-wrap reveal" id="carouselWrap">
+      <div class="carousel-track" id="carouselTrack" role="list" aria-label="Product slides"></div>
+    </div>
+
+    <div class="carousel-footer">
+      <div class="c-dots" id="cDots" role="tablist" aria-label="Slide navigation"></div>
+      <div class="c-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="cProgressBar">
+        <div class="c-progress-fill" id="cProgressFill"></div>
+      </div>
+      <div class="c-arrows">
+        <button class="c-arrow" id="cPrev" aria-label="Previous slide">←</button>
+        <button class="c-arrow" id="cNext" aria-label="Next slide">→</button>
+      </div>
+    </div>
+
+    <div class="explore-row" style="margin-top:3rem;">
+      <a href="explore_product.html" class="btn btn-primary">View Full Catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     WHY US
+───────────────────────────────────────────── -->
+<section class="why" id="why" aria-labelledby="why-h2">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="label-pill">Why Stardom</span>
+      <h2 id="why-h2">What Sets Us Apart</h2>
+      <div class="rule"></div>
+      <p>Trusted by institutions, teams and individuals for over a decade.</p>
+    </div>
+
+    <div class="why-grid" role="list">
+      <!-- Featured -->
+      <div class="why-card featured reveal" role="listitem">
+        <span class="why-tag">Our Promise</span>
+        <span class="why-icon" aria-hidden="true">🧵</span>
+        <h3>Craftsmanship That Lasts</h3>
+        <p>Over 11 years of manufacturing excellence — every stitch made to withstand daily demands and bulk wash cycles.</p>
+      </div>
+
+      <div class="why-card reveal reveal-d1" role="listitem">
+        <span class="why-icon" aria-hidden="true">🏭</span>
+        <h3>Modern Production</h3>
+        <p>Efficient manufacturing ensuring consistent quality and finishing across every batch.</p>
+      </div>
+
+      <div class="why-card reveal reveal-d2" role="listitem">
+        <span class="why-icon" aria-hidden="true">💰</span>
+        <h3>Fair Pricing</h3>
+        <p>Competitive rates for both bulk B2B orders and individual B2C customers.</p>
+      </div>
+
+      <div class="why-card reveal reveal-d3" role="listitem">
+        <span class="why-icon" aria-hidden="true">🚚</span>
+        <h3>On-Time Delivery</h3>
+        <p>Reliable dispatch and tracking across all Indian states — no delays.</p>
+      </div>
+
+      <div class="why-card reveal reveal-d1" role="listitem">
+        <span class="why-icon" aria-hidden="true">✔️</span>
+        <h3>Quality Checked</h3>
+        <p>Each batch inspected for colour consistency, stitching, and sizing before dispatch.</p>
+      </div>
+
+      <div class="why-card reveal reveal-d2" role="listitem">
+        <span class="why-icon" aria-hidden="true">♻️</span>
+        <h3>Responsible Production</h3>
+        <p>Minimal waste, efficient resource usage — we manufacture with the environment in mind.</p>
+      </div>
+
+      <div class="why-card reveal reveal-d3" role="listitem">
+        <span class="why-icon" aria-hidden="true">📦</span>
+        <h3>Bulk Orders Welcome</h3>
+        <p>Special handling, pricing, and packaging for institutions and large-volume orders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     CONTACT / ENQUIRY SECTION  ← NEW
+───────────────────────────────────────────── -->
+<section class="contact" id="contact" aria-labelledby="contact-h2">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left info column -->
+      <div class="contact-info reveal">
+        <div>
+          <span class="label-pill">Get In Touch</span>
+          <h2 id="contact-h2" style="margin-top:1rem;">Let's Make<br>Something Great</h2>
+          <p style="margin-top:1rem;">Whether you need bulk uniforms, a sports kit for your team, or custom-printed t-shirts — tell us what you need and we'll get back to you within the same day.</p>
+        </div>
+
+        <div class="contact-channels" role="list" aria-label="Contact channels">
+          <a href="tel:7510000000" class="channel-card" role="listitem">
+            <div class="channel-icon" aria-hidden="true">📞</div>
+            <div>
+              <div class="channel-label">Call / WhatsApp</div>
+              <div class="channel-val">7510000000</div>
+            </div>
+          </a>
+          <div class="channel-card" role="listitem">
+            <div class="channel-icon" aria-hidden="true">📍</div>
+            <div>
+              <div class="channel-label">Visit Us</div>
+              <div class="channel-val">Karanja (Gh.), Maharashtra</div>
+            </div>
+          </div>
+          <div class="channel-card" role="listitem">
+            <div class="channel-icon" aria-hidden="true">🕐</div>
+            <div>
+              <div class="channel-label">Working Hours</div>
+              <div class="channel-val">Mon–Sat · 10:00 am – 10:30 pm</div>
+            </div>
+          </div>
+          <a href="https://wa.me/917510000000" class="btn btn-wa" target="_blank" rel="noopener" style="width:fit-content;">
+            💬 &nbsp;Chat on WhatsApp
+          </a>
         </div>
       </div>
-      <div class="about-content" style="margin-top: 3rem;">
-        <h2>About Stardom Textiles</h2>
-        <p>For over a decade, Stardom Textiles has been at the forefront of fabric innovation, serving clients across India with premium quality materials. Our journey began in Karanja (Gh.) with a simple mission: to deliver textiles that combine traditional craftsmanship with modern technology.</p>
-        <p>We take pride in our sustainable practices – every yard of fabric is produced with minimal waste and maximum care for the environment. Our commitment to quality ensures that whether you need school uniforms, sports kits, or custom‑printed t‑shirts, you receive a product that lasts.</p>
-        <p>With a dedicated team and a passion for excellence, we continue to expand our reach, making high‑grade textiles accessible to businesses and individuals alike. We don’t just manufacture fabric – we build lasting relationships.</p>
-        <a href="about.html" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- about section (static – original brand badge) -->
-  <section class="about-local" id="about">
-    <div class="container">
-      <div class="brand-badge">
-        <h2>Stardom Textiles – Clothing Brand</h2>
-        <p>👕 T-shirt, Lowers, Track Suits, Sports Kit</p>
-        <p>🧵 Uniform & T-shirt Manufacturing & Printing</p>
-        <p class="location">📍 Karanja (Gh.)</p>
-        <p class="big-phone">📞 7510000000</p>
-        <p>✈️ Delivering All Over India</p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;">Contact Owner</a>
-      </div>
-    </div>
-  </section>
+      <!-- Right form -->
+      <div class="enquiry-form reveal reveal-d2" id="enquiryFormWrap">
+        <h3>Send an Enquiry</h3>
+        <p class="form-sub">Fill in your details and we'll reach out with pricing and availability.</p>
 
-  <!-- we delivered section (dynamic products) -->
-  <section class="delivered-section" id="delivered">
-    <div class="container">
-      <h2 class="section-title">Our Delivered Products</h2>
-      <!-- filter chips -->
-  
-      </div>
+        <form id="enquiryForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Your Name <span aria-hidden="true" style="color:var(--crimson)">*</span></label>
+              <input type="text" id="f-name" name="name" placeholder="Rahul Sharma" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Phone / WhatsApp <span aria-hidden="true" style="color:var(--crimson)">*</span></label>
+              <input type="tel" id="f-phone" name="phone" placeholder="98765 43210" required autocomplete="tel">
+            </div>
+          </div>
 
-      <!-- horizontal scroll wrapper -->
-      <div class="horizontal-wrapper">
-        <div class="product-horizontal" id="productHorizontal"></div>
-      </div>
+          <div class="form-group">
+            <label for="f-product">Product Required</label>
+            <select id="f-product" name="product">
+              <option value="">Select a product…</option>
+              <option>School Uniforms</option>
+              <option>Sports Kit / Jersey</option>
+              <option>Custom T-Shirts</option>
+              <option>Track Suits / Lowers</option>
+              <option>Corporate Uniforms</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
 
-      <!-- scroll controls -->
-      <div class="scroll-controls">
-        <button class="scroll-btn" id="scrollLeft">←</button>
-        <button class="scroll-btn" id="scrollRight">→</button>
-      </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-qty">Approximate Quantity</label>
+              <select id="f-qty" name="quantity">
+                <option value="">Select…</option>
+                <option>Less than 50 pcs</option>
+                <option>50 – 200 pcs</option>
+                <option>200 – 1000 pcs</option>
+                <option>1000+ pcs (Bulk)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-city">Your City</label>
+              <input type="text" id="f-city" name="city" placeholder="Nagpur" autocomplete="address-level2">
+            </div>
+          </div>
 
-      <!-- explore button -->
-      <div class="explore-btn-wrapper">
-        <a href="/full-catalog.html" class="btn btn-primary">Explore All Products →</a>
-      </div>
-    </div>
-  </section>
+          <div class="form-group">
+            <label for="f-msg">Additional Requirements</label>
+            <textarea id="f-msg" name="message" placeholder="Custom colours, logo printing, delivery deadline…"></textarea>
+          </div>
 
-  <!-- why choose us (static) -->
-  <section class="why-us" id="why-us">
-    <div class="container">
-      <h2 class="section-title">Why Choose Us</h2>
-      <div class="why-grid">
-        <div class="why-card"><span class="why-icon">🧵</span><h3>Strong & Durable Fabric</h3><p>Made using reliable materials suitable for daily wear.</p></div>
-        <div class="why-card"><span class="why-icon">🏭</span><h3>Modern Production</h3><p>Efficient manufacturing ensuring consistent finishing.</p></div>
-        <div class="why-card"><span class="why-icon">💰</span><h3>Fair Pricing</h3><p>Competitive rates for bulk & retail customers.</p></div>
-        <div class="why-card"><span class="why-icon">🚚</span><h3>On-Time Delivery</h3><p>Reliable dispatch across India.</p></div>
-        <div class="why-card"><span class="why-icon">✔</span><h3>Quality Checked</h3><p>Each batch carefully inspected.</p></div>
-        <div class="why-card"><span class="why-icon">♻</span><h3>Responsible Production</h3><p>Efficient resource usage, minimal waste.</p></div>
-        <div class="why-card"><span class="why-icon">🤝</span><h3>Long-Term Trust</h3><p>Building relationships since 11+ years.</p></div>
-        <div class="why-card"><span class="why-icon">📦</span><h3>Bulk Orders Welcome</h3><p>Special handling for large quantities.</p></div>
-      </div>
-    </div>
-  </section>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary">
+              Send Enquiry →
+            </button>
+            <a
+              id="waDirectLink"
+              href="https://wa.me/917510000000?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20products."
+              class="btn btn-wa"
+              target="_blank" rel="noopener"
+            >💬 WhatsApp Instead</a>
+          </div>
+        </form>
 
-  <!-- CTA (static) -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="section-title">Ready to place your order?</h2>
-      <p>Whether you need school uniforms, sports kit, or custom t-shirts – we’re just a call away.</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary">B2B: Request Quote</a>
-        <a href="#" class="btn btn-outline">B2C: Shop Collection</a>
-        <a href="#" class="btn btn-outline">Download Catalogue</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer (static) -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">Tshirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
-        <div class="footer-column"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Custom Manufacturing</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Technical Support</a></li></ul></div>
-        <div class="footer-column"><h4>Company</h4><ul class="footer-links"><li><a href="#">About Stardom</a></li><li><a href="#">Careers</a></li><li><a href="#">Sustainability</a></li><li><a href="#">News</a></li><li><a href="#">Contact</a></li></ul></div>
-        <div class="footer-column"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Care Instructions</a></li></ul>
-          <div class="footer-social-links"> <a href="#">📘</a> <a href="#">📷</a> <a href="#">📌</a> </div>
+        <!-- Success state -->
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <div class="check" aria-hidden="true">✅</div>
+          <h4>Enquiry Sent!</h4>
+          <p>We'll reach out on your WhatsApp within a few hours. Meanwhile, you can also call us directly at <strong>7510000000</strong>.</p>
         </div>
       </div>
-      <div class="copyright"><p>© 2025 Stardom Textiles. Karanja (Gh.)</p><p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Refund</a></p></div>
-    </div>
-  </footer>
 
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     CTA BAND
+───────────────────────────────────────────── -->
+<section class="cta-band" aria-label="Call to action">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <h2>Ready to place<br><em>your order?</em></h2>
+      <div class="cta-band-actions">
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        <a href="https://wa.me/917510000000" class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp Order</a>
+        <a href="#" class="btn btn-ghost">Download Catalogue</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────────── -->
+<footer class="footer" id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-logo">STARDOM<em>.</em></div>
+    <p class="footer-tagline">Premium Textile Manufacturing · Karanja (Gh.) · Delivering Pan-India</p>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-contact">
+          📍 Karanja (Gh.), Maharashtra<br>
+          📞 <a href="tel:7510000000">7510000000</a><br>
+          🕐 Mon–Sat · 10am – 10:30pm<br>
+          ✈️ Delivering All Over India
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="#">School Uniforms</a></li>
+          <li><a href="#">Sports Kit</a></li>
+          <li><a href="#">T-Shirts</a></li>
+          <li><a href="#">Track Suits</a></li>
+          <li><a href="#">Custom Printing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Business</h4>
+        <ul class="footer-links">
+          <li><a href="#">Bulk Orders</a></li>
+          <li><a href="#">Corporate Uniforms</a></li>
+          <li><a href="#">Institutional Supply</a></li>
+          <li><a href="#">Custom Manufacturing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Stardom Textiles. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> ·
+        <a href="#">Terms of Use</a> ·
+        <a href="#">Refund Policy</a>
+      </p>
+    </div>
+  </div>
+</footer>
+</main><!-- /main -->
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT — Clean modular structure
+═══════════════════════════════════════════════ -->
 <script>
-  // ---------- LOAD DYNAMIC CONTENT ----------
-  function loadHero() {
-    fetch('/data/hero.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('heroHeading').textContent = data.heading;
-        document.getElementById('heroSubheading').textContent = data.subheading;
-        document.getElementById('heroImage').src = data.image;
-      })
-      .catch(err => console.warn('Hero data not loaded.'));
+'use strict';
+
+/* ──────────────────────────────────────────────
+   MODULE: Dark Mode
+────────────────────────────────────────────── */
+const DarkMode = (() => {
+  const btn = document.getElementById('darkToggle');
+  const body = document.body;
+  const STORAGE_KEY = 'st-dark';
+
+  function apply(isDark) {
+    body.classList.toggle('dark', isDark);
+    btn.setAttribute('aria-pressed', String(isDark));
   }
 
-  function loadSolutions() {
-    fetch('/data/solutions.json')
-      .then(res => res.json())
-      .then(data => {
-        let allSolutions = Array.isArray(data) ? data : (data.solutions || []);
-        const totalCount = allSolutions.length;
-        const displaySolutions = allSolutions.slice(0, 8);
-        const grid = document.getElementById('solutionsGrid');
-        if (!grid) return;
-        grid.innerHTML = displaySolutions.map(sol => {
-          const badgeText = sol.badge || 'Category';
-          const whatsappLink = `https://wa.me/917510000000?text=I%20want%20to%20order%20${encodeURIComponent(sol.title)}`;
-          return `
-            <div class="solution-card" onclick="window.open('${whatsappLink}', '_blank')">
-              <img src="${sol.image}" alt="${sol.title}" class="solution-image">
-              <div class="solution-content">
-                <span class="solution-badge">${badgeText}</span>
-                <h3>${sol.title}</h3>
-                <a href="${whatsappLink}" class="btn btn-primary btn-small btn-compact shop-btn" onclick="event.stopPropagation(); window.open('${whatsappLink}', '_blank'); return false;">Order</a>
-              </div>
-            </div>
-          `;
-        }).join('');
+  // Respect OS preference or stored setting
+  const stored = localStorage.getItem(STORAGE_KEY);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  apply(stored !== null ? stored === '1' : prefersDark);
 
-        const exploreWrapper = document.getElementById('exploreMoreWrapper');
-        if (exploreWrapper) {
-          exploreWrapper.style.display = totalCount > 8 ? 'block' : 'none';
-        }
-      })
-      .catch(err => console.warn('Solutions data not loaded.'));
-  }
+  btn.addEventListener('click', () => {
+    const isDark = !body.classList.contains('dark');
+    apply(isDark);
+    try { localStorage.setItem(STORAGE_KEY, isDark ? '1' : '0'); } catch {}
+  });
+})();
 
-  function loadProducts() {
-    fetch('/data/products.json')
-      .then(res => res.json())
-      .then(data => {
-        const products = Array.isArray(data) ? data : (data.products || []);
-        const container = document.getElementById('productHorizontal');
-        if (!container) return;
-        container.innerHTML = products.map(prod => {
-          const catAttr = prod.categories ? prod.categories.join(' ') : '';
-          return `
-            <div class="product-card" data-category="${catAttr}">
-              <div class="product-image-container">
-                <img src="${prod.image}" alt="${prod.name}" class="product-image">
-              </div>
-              <div class="product-info">
-             
-                <h3 class="product-name">${prod.name}</h3>
-      
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('');
-
-        initFilters();
-        initAutoScroll();
-      })
-      .catch(err => console.warn('Products data not loaded.'));
-  }
-
-    // ---------- EXISTING FUNCTIONALITY (PRESERVED) ----------
-    // mobile menu
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    if (menuBtn && navMenu) {
-      menuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
+/* ──────────────────────────────────────────────
+   MODULE: Header scroll behaviour
+────────────────────────────────────────────── */
+const Header = (() => {
+  const el = document.getElementById('siteHeader');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        el.classList.toggle('scrolled', window.scrollY > 24);
+        ticking = false;
       });
-      document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) navMenu.classList.remove('active');
-      });
+      ticking = true;
     }
+  }, { passive: true });
+})();
 
-    // dark mode toggle
-    const darkToggle = document.getElementById('darkToggle');
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
+/* ──────────────────────────────────────────────
+   MODULE: Mobile nav
+────────────────────────────────────────────── */
+const MobileNav = (() => {
+  const toggle = document.getElementById('mobileToggle');
+  const nav    = document.getElementById('mobileNav');
 
-    // trust popup auto hide on scroll, show after stop
-    const popup = document.getElementById('trustPopup');
-    let scrollTimer;
-    window.addEventListener('scroll', () => {
-      popup.classList.add('hidden');
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => {
-        popup.classList.remove('hidden');
-      }, 2000);
-    });
-
-    // close popup with X
-    document.querySelector('.trust-popup .close').addEventListener('click', function() {
-      popup.classList.add('hidden');
-    });
-
-    // product filter
-     function initFilters() {
-    const chips = document.querySelectorAll('.filter-chip');
-    const products = document.querySelectorAll('.product-card');
-    chips.forEach(chip => {
-      chip.addEventListener('click', function() {
-        chips.forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        const filter = this.dataset.filter;
-        products.forEach(card => {
-          const cat = card.dataset.category || '';
-          card.style.display = (filter === 'all' || cat.split(' ').includes(filter)) ? 'block' : 'none';
-        });
-      });
-    });
+  function close() {
+    nav.classList.remove('open');
+    nav.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = '☰';
   }
 
-  function initAutoScroll() {
-    const container = document.getElementById('productHorizontal');
-    const leftBtn = document.getElementById('scrollLeft');
-    const rightBtn = document.getElementById('scrollRight');
-    leftBtn.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
-    rightBtn.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
-      if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
-      window.autoScrollInterval = setInterval(() => {
-        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-          container.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          container.scrollBy({ left: 300, behavior: 'smooth' });
-        }
-      }, 4000);
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = nav.classList.toggle('open');
+    nav.setAttribute('aria-hidden', String(!isOpen));
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.textContent = isOpen ? '✕' : '☰';
+  });
 
-      container.addEventListener('mouseenter', () => clearInterval(window.autoScrollInterval));
-      container.addEventListener('mouseleave', () => {
-        window.autoScrollInterval = setInterval(() => {
-          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-            container.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            container.scrollBy({ left: 300, behavior: 'smooth' });
-          }
-        }, 4000);
-      });
-    }
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) close();
+  });
 
-  // ---------- INITIAL LOAD ----------
-  loadHero();
-  loadSolutions();
-  loadProducts();
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
 
-  // ---------- NETLIFY IDENTITY ----------
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
+/* ──────────────────────────────────────────────
+   MODULE: Scroll Reveal (IntersectionObserver)
+────────────────────────────────────────────── */
+const Reveal = (() => {
+  const elements = document.querySelectorAll('.reveal');
+  if (!elements.length) return;
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
       }
     });
+  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+
+  elements.forEach(el => obs.observe(el));
+})();
+
+/* ──────────────────────────────────────────────
+   MODULE: Trust Popup
+────────────────────────────────────────────── */
+const TrustPopup = (() => {
+  const popup = document.getElementById('trustPopup');
+  const close = document.getElementById('tpClose');
+  let timer;
+
+  const hide = () => popup.classList.add('hide');
+  const show = () => popup.classList.remove('hide');
+
+  window.addEventListener('scroll', () => {
+    hide();
+    clearTimeout(timer);
+    timer = setTimeout(show, 2500);
+  }, { passive: true });
+
+  close.addEventListener('click', () => {
+    hide();
+    // Prevent re-showing if user dismissed manually
+    clearTimeout(timer);
+  });
+})();
+
+/* ──────────────────────────────────────────────
+   MODULE: Data loading — Hero
+────────────────────────────────────────────── */
+function loadHero() {
+  fetch('/data/hero.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      if (data.heading)    document.getElementById('heroHeading').innerHTML = data.heading;
+      if (data.subheading) document.getElementById('heroSubheading').textContent = data.subheading;
+      if (data.image)      document.getElementById('heroImage').src = data.image;
+    })
+    .catch(() => {
+      // Defaults already in HTML — no action needed
+      console.info('[Stardom] hero.json not found — using defaults.');
+    });
+}
+
+/* ──────────────────────────────────────────────
+   MODULE: Data loading — Solutions
+────────────────────────────────────────────── */
+function loadSolutions() {
+  fetch('/data/solutions.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const all     = Array.isArray(data) ? data : (data.solutions || []);
+      const display = all.slice(0, 8);
+      const grid    = document.getElementById('solutionsGrid');
+      if (!grid) return;
+
+      grid.innerHTML = display.map(sol => {
+        const waLink = `https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: ' + sol.title)}`;
+        return `
+          <article class="sol-card" role="listitem" tabindex="0"
+            onclick="window.open('${waLink}','_blank')"
+            onkeypress="if(event.key==='Enter') window.open('${waLink}','_blank')"
+            aria-label="${sol.title} — click to order">
+            <div class="sol-img-wrap">
+              <img src="${sol.image}" alt="${sol.title}" class="sol-img" loading="lazy" width="400" height="200">
+            </div>
+            <div class="sol-body">
+              <span class="sol-tag">${sol.badge || 'Collection'}</span>
+              <h3 class="sol-name">${sol.title}</h3>
+              <span class="sol-order" aria-hidden="true">Order Now →</span>
+            </div>
+          </article>`;
+      }).join('');
+
+      const row = document.getElementById('exploreMoreRow');
+      if (row) row.style.display = all.length > 8 ? 'block' : 'none';
+    })
+    .catch(() => console.info('[Stardom] solutions.json not found.'));
+}
+
+/* ──────────────────────────────────────────────
+   MODULE: Product Carousel
+────────────────────────────────────────────── */
+const Carousel = (() => {
+  let idx   = 0;
+  let total = 0;
+  let timer = null;
+
+  const DEMO = [
+    {
+      name: 'School Uniform Set',
+      image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=75',
+      category: 'Uniforms',
+      description: 'Premium school uniform sets — customisable sizing and colours for any institution. Minimum 50 pcs.'
+    },
+    {
+      name: 'Sports Jersey Kit',
+      image: 'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=900&q=75',
+      category: 'Sports Kit',
+      description: 'Breathable drifit kits for football, cricket and kabaddi. Custom name & number printing available.'
+    },
+    {
+      name: 'Custom T-Shirt',
+      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&q=75',
+      category: 'T-Shirts',
+      description: 'Round neck and polo tees in all sizes with screen / digital print. Min. 12 pieces per colour.'
+    },
+    {
+      name: 'Track Suit',
+      image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=900&q=75',
+      category: 'Track Suits',
+      description: 'Comfortable track suits for school, corporate and personal use. Available in fleece and nylon.'
+    }
+  ];
+
+  function build(products) {
+    total = products.length;
+    const track = document.getElementById('carouselTrack');
+    const dots  = document.getElementById('cDots');
+    if (!track || !dots) return;
+
+    track.innerHTML = products.map((p, i) => {
+      const wa  = `https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: ' + p.name)}`;
+      const cat = Array.isArray(p.categories) ? p.categories.join(' · ') : (p.category || 'Collection');
+      const num = String(i + 1).padStart(2, '0');
+      return `
+        <article class="c-slide" role="listitem" aria-label="Product ${i+1}: ${p.name}">
+          <div class="c-slide-img">
+            <img src="${p.image}" alt="${p.name}" loading="${i === 0 ? 'eager' : 'lazy'}" width="600" height="480">
+            <div class="c-slide-img-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="c-slide-body">
+            <div class="c-slide-num" aria-hidden="true">${num}</div>
+            <div class="c-slide-cat">${cat}</div>
+            <h3 class="c-slide-name">${p.name}</h3>
+            <p class="c-slide-desc">${p.description || 'Premium quality, available in bulk & retail. Contact us for custom sizes, colours and branding.'}</p>
+            <div class="c-slide-actions">
+              <a href="${wa}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Order via WhatsApp</a>
+              <a href="explore_product.html" class="btn btn-ghost btn-sm">View Details</a>
+            </div>
+          </div>
+        </article>`;
+    }).join('');
+
+    dots.innerHTML = products.map((_, i) =>
+      `<button class="c-dot${i === 0 ? ' active' : ''}" data-i="${i}"
+        role="tab" aria-label="Go to slide ${i + 1}" aria-selected="${i === 0}"></button>`
+    ).join('');
+
+    dots.querySelectorAll('.c-dot').forEach(d =>
+      d.addEventListener('click', () => { stop(); go(+d.dataset.i); start(); })
+    );
+
+    updateUI();
+    start();
   }
-  if (window.location.hash.includes('invite_token')) {
-    if (window.netlifyIdentity) window.netlifyIdentity.open();
-    else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
+
+  function go(n) {
+    idx = (n + total) % total;
+    const track = document.getElementById('carouselTrack');
+    if (track) track.style.transform = `translateX(-${idx * 100}%)`;
+    updateUI();
   }
+
+  function updateUI() {
+    // Dots
+    document.querySelectorAll('.c-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-selected', String(i === idx));
+    });
+    // Progress bar
+    const pct  = total > 0 ? ((idx + 1) / total) * 100 : 0;
+    const fill = document.getElementById('cProgressFill');
+    const bar  = document.getElementById('cProgressBar');
+    if (fill) fill.style.width = pct + '%';
+    if (bar)  bar.setAttribute('aria-valuenow', Math.round(pct));
+  }
+
+  function start() {
+    stop();
+    timer = setInterval(() => go(idx + 1), 5000);
+  }
+
+  function stop() { clearInterval(timer); }
+
+  // Wire up arrow buttons
+  document.getElementById('cPrev').addEventListener('click', () => { stop(); go(idx - 1); start(); });
+  document.getElementById('cNext').addEventListener('click', () => { stop(); go(idx + 1); start(); });
+
+  // Pause on hover/focus
+  const wrap = document.getElementById('carouselWrap');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', stop);
+    wrap.addEventListener('mouseleave', start);
+    wrap.addEventListener('focusin',  stop);
+    wrap.addEventListener('focusout', start);
+  }
+
+  // Touch swipe
+  let tx = 0;
+  if (wrap) {
+    wrap.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, { passive: true });
+    wrap.addEventListener('touchend', e => {
+      const diff = tx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 44) { stop(); go(idx + (diff > 0 ? 1 : -1)); start(); }
+    }, { passive: true });
+  }
+
+  // Load products
+  fetch('/data/products.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => build(Array.isArray(data) ? data : (data.products || [])))
+    .catch(() => {
+      console.info('[Stardom] products.json not found — using demo data.');
+      build(DEMO);
+    });
+
+  return { go, stop, start };
+})();
+
+/* ──────────────────────────────────────────────
+   MODULE: Enquiry Form
+────────────────────────────────────────────── */
+const EnquiryForm = (() => {
+  const form    = document.getElementById('enquiryForm');
+  const success = document.getElementById('formSuccess');
+  const waLink  = document.getElementById('waDirectLink');
+
+  if (!form) return;
+
+  // Update WhatsApp link dynamically as user fills form
+  function updateWaLink() {
+    const name    = form.querySelector('#f-name').value.trim();
+    const phone   = form.querySelector('#f-phone').value.trim();
+    const product = form.querySelector('#f-product').value;
+    const qty     = form.querySelector('#f-qty').value;
+    const city    = form.querySelector('#f-city').value.trim();
+    const msg     = form.querySelector('#f-msg').value.trim();
+
+    const text = [
+      'Hi, I want to enquire about Stardom Textiles products.',
+      name    ? `Name: ${name}`       : '',
+      phone   ? `Phone: ${phone}`     : '',
+      product ? `Product: ${product}` : '',
+      qty     ? `Qty: ${qty}`         : '',
+      city    ? `City: ${city}`       : '',
+      msg     ? `Note: ${msg}`        : '',
+    ].filter(Boolean).join('\n');
+
+    if (waLink) waLink.href = `https://wa.me/917510000000?text=${encodeURIComponent(text)}`;
+  }
+
+  form.querySelectorAll('input, select, textarea').forEach(el =>
+    el.addEventListener('input', updateWaLink)
+  );
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name  = form.querySelector('#f-name').value.trim();
+    const phone = form.querySelector('#f-phone').value.trim();
+
+    if (!name || !phone) {
+      const missing = !name ? '#f-name' : '#f-phone';
+      form.querySelector(missing).focus();
+      return;
+    }
+
+    // Build WhatsApp URL from form and redirect
+    updateWaLink();
+    window.open(waLink.href, '_blank');
+
+    // Show success
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+})();
+
+/* ──────────────────────────────────────────────
+   MODULE: Smooth close mobile nav on anchor click
+────────────────────────────────────────────── */
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.remove('open');
+  });
+});
+
+/* ──────────────────────────────────────────────
+   BOOT — load dynamic data
+────────────────────────────────────────────── */
+loadHero();
+loadSolutions();
+
+/* ──────────────────────────────────────────────
+   Netlify Identity
+────────────────────────────────────────────── */
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+  });
+}
+if (window.location.hash.includes('invite_token')) {
+  if (window.netlifyIdentity) window.netlifyIdentity.open();
+  else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
+}
 </script>
 </body>
 </html>

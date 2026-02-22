@@ -1,0 +1,12 @@
+{
+  "shopName": "Stardom Textiles",
+  "city": "Karanja (Gh.)",
+  "address": "Karanja (Gh.), Maharashtra",
+  "hours": "Mon–Sat · 10:00 am – 10:30 pm",
+  "hoursShort": "Open till 10:30 pm",
+  "yearsInBusiness": "11+",
+  "ordersDelivered": "500+",
+  "rating": { "value": 4.3, "stars": "⭐⭐⭐⭐☆" },
+  "phones": [{ "number": "7510000000", "label": "Call / WhatsApp", "whatsapp": true, "countryCode": "91" }],
+  "social": { "facebook": "#", "instagram": "#", "pinterest": "#" }
+}

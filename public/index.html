@@ -15,26 +15,26 @@
    1. DESIGN TOKENS
 ═══════════════════════════════════════════════ */
 :root {
-  --ink:          #141410;
-  --ink-80:       rgba(20,20,16,0.8);
-  --ink-40:       rgba(20,20,16,0.4);
-  --parchment:    #f5f2ec;
-  --parchment-d:  #ede9e1;
-  --stone:        #d4cfc6;
-  --stone-d:      #b0a99e;
-  --crimson:      #c4282b;
-  --crimson-d:    #9e2022;
+  --ink: #141410;
+  --ink-80: rgba(20,20,16,0.8);
+  --ink-40: rgba(20,20,16,0.4);
+  --parchment: #f5f2ec;
+  --parchment-d: #ede9e1;
+  --stone: #d4cfc6;
+  --stone-d: #b0a99e;
+  --crimson: #c4282b;
+  --crimson-d: #9e2022;
   --crimson-glow: rgba(196,40,43,0.18);
-  --green-live:   #22c55e;
-  --wa-green:     #25D366;
-  --bg:           #faf8f5;
-  --bg-alt:       #f0ede6;
-  --bg-deep:      #141410;
-  --card:         #ffffff;
-  --border:       rgba(20,20,16,0.08);
+  --green-live: #22c55e;
+  --wa-green: #25D366;
+  --bg: #faf8f5;
+  --bg-alt: #f0ede6;
+  --bg-deep: #141410;
+  --card: #ffffff;
+  --border: rgba(20,20,16,0.08);
   --border-strong:rgba(20,20,16,0.16);
   --ff-display: 'Fraunces', Georgia, serif;
-  --ff-body:    'Outfit', system-ui, sans-serif;
+  --ff-body: 'Outfit', system-ui, sans-serif;
   --s1: 0 2px 8px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
   --s2: 0 8px 32px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
   --s3: 0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
@@ -43,27 +43,26 @@
   --header-h: 60px;
 }
 body.dark {
-  --ink:          #f0ede8;
-  --ink-80:       rgba(240,237,232,0.8);
-  --ink-40:       rgba(240,237,232,0.4);
-  --parchment:    #1c1c18;
-  --parchment-d:  #242420;
-  --stone:        #3a3a34;
-  --stone-d:      #4e4e46;
-  --crimson:      #e05a5d;
-  --crimson-d:    #c44b4e;
+  --ink: #f0ede8;
+  --ink-80: rgba(240,237,232,0.8);
+  --ink-40: rgba(240,237,232,0.4);
+  --parchment: #1c1c18;
+  --parchment-d: #242420;
+  --stone: #3a3a34;
+  --stone-d: #4e4e46;
+  --crimson: #e05a5d;
+  --crimson-d: #c44b4e;
   --crimson-glow: rgba(224,90,93,0.22);
-  --bg:           #1c1c18;
-  --bg-alt:       #242420;
-  --bg-deep:      #0c0c0a;
-  --card:         #252520;
-  --border:       rgba(240,237,232,0.08);
+  --bg: #1c1c18;
+  --bg-alt: #242420;
+  --bg-deep: #0c0c0a;
+  --card: #252520;
+  --border: rgba(240,237,232,0.08);
   --border-strong:rgba(240,237,232,0.15);
   --s1: 0 2px 8px rgba(0,0,0,0.3);
   --s2: 0 8px 32px rgba(0,0,0,0.4);
   --s3: 0 20px 60px rgba(0,0,0,0.5);
 }
-
 /* ═══════════════════════════════════════════════
    2. RESET & BASE
 ═══════════════════════════════════════════════ */
@@ -85,7 +84,6 @@ a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 button { font-family: var(--ff-body); }
 .container { max-width: 1380px; margin: 0 auto; padding: 0 36px; }
-
 /* ═══════════════════════════════════════════════
    3. UTILITIES
 ═══════════════════════════════════════════════ */
@@ -95,7 +93,6 @@ button { font-family: var(--ff-body); }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
 .reveal-d4 { transition-delay: 0.4s; }
-
 /* Label pill — compact by default */
 .label-pill {
   display: inline-flex; align-items: center; gap: 0.35rem;
@@ -105,13 +102,11 @@ button { font-family: var(--ff-body); }
   background: var(--parchment-d); color: var(--ink-80); width: fit-content;
 }
 .label-pill.accent { background: var(--crimson); color: white; }
-
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
 .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.65rem; }
 .section-head p { color: var(--ink-80); font-size: 0.97rem; }
 .rule { width: 40px; height: 3px; background: var(--crimson); border-radius: 2px; margin: 0 auto 1.25rem; }
 .explore-row { text-align: center; margin-top: 2.5rem; }
-
 /* ═══════════════════════════════════════════════
    4. BUTTONS
 ═══════════════════════════════════════════════ */
@@ -131,7 +126,6 @@ button { font-family: var(--ff-body); }
 .btn-xs { padding: 0.38rem 0.9rem; font-size: 0.7rem; }
 .btn-wa { background: var(--wa-green); color: #fff; border-color: var(--wa-green); }
 .btn-wa:hover { background: #1da955; border-color: #1da955; transform: translateY(-2px); }
-
 /* ═══════════════════════════════════════════════
    5. TOP BAR
    Mobile: collapsible, hidden when scrolled down
@@ -156,7 +150,6 @@ button { font-family: var(--ff-body); }
   padding: 0.35rem 1rem; font-size: 0.7rem; border-radius: 2px;
   background: var(--crimson); color: white; border-color: var(--crimson); letter-spacing: 0.08em;
 }
-
 /* ═══════════════════════════════════════════════
    6. HEADER — Mobile-first
 ═══════════════════════════════════════════════ */
@@ -170,7 +163,6 @@ button { font-family: var(--ff-body); }
 }
 body.dark .site-header { background: rgba(28,28,24,0.97); }
 .site-header.scrolled { box-shadow: var(--s2); }
-
 .header-inner {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -178,7 +170,6 @@ body.dark .site-header { background: rgba(28,28,24,0.97); }
   height: var(--header-h);
   gap: 1rem;
 }
-
 /* Logo */
 .logo-wrap { display: flex; align-items: center; gap: 0.65rem; }
 .logo-icon {
@@ -190,7 +181,6 @@ body.dark .site-header { background: rgba(28,28,24,0.97); }
 body.dark .logo-icon { background: var(--crimson); }
 .logo-text { font-family: var(--ff-display); font-weight: 900; font-size: 1.3rem; letter-spacing: -0.04em; color: var(--ink); line-height: 1; }
 .logo-text em { font-style: normal; color: var(--crimson); }
-
 /* Desktop nav */
 .main-nav { display: flex; justify-content: center; }
 .nav-list { list-style: none; display: flex; gap: 0; }
@@ -198,13 +188,11 @@ body.dark .logo-icon { background: var(--crimson); }
 .nav-list a::after { content: ''; position: absolute; bottom: 0; left: 0.9rem; right: 0.9rem; height: 2px; background: var(--crimson); transform: scaleX(0); transform-origin: center; transition: transform 0.22s var(--ease-out); }
 .nav-list a:hover { color: var(--crimson); }
 .nav-list a:hover::after { transform: scaleX(1); }
-
 /* Header right — desktop */
 .header-right { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; }
 .header-phone-chip { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 500; color: var(--ink-80); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-live); animation: livePulse 2s ease-in-out infinite; flex-shrink: 0; }
 @keyframes livePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); } 50% { box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
-
 /* Icon button — dark toggle */
 .icon-btn {
   width: 34px; height: 34px; border: 1px solid var(--border-strong);
@@ -219,10 +207,8 @@ body.dark .logo-icon { background: var(--crimson); }
 .icon-moon { display: block; }
 body.dark .icon-sun { display: block; }
 body.dark .icon-moon { display: none; }
-
 /* Mobile header actions group */
 .mobile-actions { display: none; align-items: center; gap: 0.5rem; }
-
 /* Hamburger */
 .mobile-toggle {
   width: 36px; height: 36px; background: none; border: 1px solid var(--border-strong);
@@ -239,7 +225,6 @@ body.dark .icon-moon { display: none; }
 .mobile-toggle.open .hamburger-line:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
 .mobile-toggle.open .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-toggle.open .hamburger-line:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
-
 /* Mobile nav drawer */
 .mobile-nav {
   display: none;
@@ -268,7 +253,6 @@ body.dark .icon-moon { display: none; }
   display: flex; gap: 0.6rem;
 }
 .mobile-nav-cta a { flex: 1; text-align: center; font-size: 0.75rem; padding: 0.7rem 0.5rem; }
-
 /* ═══════════════════════════════════════════════
    7. ANNOUNCEMENT TICKER
 ═══════════════════════════════════════════════ */
@@ -284,7 +268,6 @@ body.dark .icon-moon { display: none; }
 .ticker-item { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0 2.2rem; font-size: 0.74rem; letter-spacing: 0.02em; color: #9e9990; font-family: var(--ff-body); }
 .ticker-item strong { color: #e8e4dc; font-weight: 500; }
 .ticker-item .tdot { width: 3px; height: 3px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
-
 /* ═══════════════════════════════════════════════
    8. HERO
 ═══════════════════════════════════════════════ */
@@ -301,14 +284,12 @@ body.dark .icon-moon { display: none; }
   position: absolute; inset: 0; z-index: 0;
   background: #1a1a16;
 }
-
 /* Single-image bg */
 .hero-bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: center;
   z-index: 1;
 }
-
 /* Crossfade carousel */
 .hero-carousel-bg { position: absolute; inset: 0; z-index: 1; }
 .hero-carousel-bg .hc-slide {
@@ -317,7 +298,6 @@ body.dark .icon-moon { display: none; }
   opacity: 0; transition: opacity 1.4s ease-in-out;
 }
 .hero-carousel-bg .hc-slide.active { opacity: 1; }
-
 .hero-overlay {
   position: absolute; inset: 0; z-index: 2;
   background: linear-gradient(125deg, rgba(14,13,10,0.85) 0%, rgba(14,13,10,0.55) 55%, rgba(196,40,43,0.1) 100%);
@@ -327,15 +307,12 @@ body.dark .icon-moon { display: none; }
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 200px;
 }
-
 /* Hero carousel dots */
 .hero-carousel-dots { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 6px; }
 .hc-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); border: none; cursor: pointer; padding: 0; transition: all 0.3s; }
 .hc-dot.active { width: 20px; border-radius: 3px; background: #fff; }
-
 .hero .container { position: relative; z-index: 4; }
 .hero-content { max-width: 700px; }
-
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 0.55rem;
   background: rgba(255,255,255,0.09); backdrop-filter: blur(8px);
@@ -345,7 +322,6 @@ body.dark .icon-moon { display: none; }
   margin-bottom: 1.5rem; animation: fadeUp 0.8s var(--ease-out) both;
 }
 .hero-eyebrow .live-dot { background: var(--green-live); }
-
 .hero h1 {
   font-family: var(--ff-display);
   font-size: clamp(2.2rem, 6vw, 5rem);
@@ -354,20 +330,17 @@ body.dark .icon-moon { display: none; }
   margin-bottom: 1.2rem; animation: fadeUp 0.8s 0.12s var(--ease-out) both;
 }
 .hero h1 em { font-style: italic; color: rgba(255,255,255,0.7); }
-
 .hero p {
   font-size: 1rem; line-height: 1.65;
   color: rgba(255,255,255,0.76); max-width: 520px;
   margin-bottom: 2rem; animation: fadeUp 0.8s 0.22s var(--ease-out) both;
 }
-
 .hero-actions {
   display: flex; gap: 0.8rem; flex-wrap: wrap;
   animation: fadeUp 0.8s 0.3s var(--ease-out) both;
 }
 .hero-actions .btn-ghost { border-color: rgba(255,255,255,0.38); color: rgba(255,255,255,0.9); }
 .hero-actions .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
-
 /* Hero stats */
 .hero-stats {
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -381,7 +354,6 @@ body.dark .icon-moon { display: none; }
 .hero-stat-n { font-family: var(--ff-display); font-size: 1.75rem; font-weight: 900; color: #fff; line-height: 1; }
 .hero-stat-l { font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.48); margin-top: 0.3rem; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
 /* ═══════════════════════════════════════════════
    9. SOLUTIONS GRID
 ═══════════════════════════════════════════════ */
@@ -402,7 +374,6 @@ body.dark .icon-moon { display: none; }
 .sol-name { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
 .sol-order { margin-top: auto; padding-top: 0.5rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--crimson); display: inline-flex; align-items: center; gap: 0.25rem; transition: gap 0.2s; }
 .sol-card:hover .sol-order { gap: 0.5rem; }
-
 /* ═══════════════════════════════════════════════
    10. ABOUT SECTION
 ═══════════════════════════════════════════════ */
@@ -419,7 +390,6 @@ body.dark .icon-moon { display: none; }
 .about-fact { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; box-shadow: var(--s1); }
 .about-fact-n { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 900; color: var(--crimson); }
 .about-fact-l { font-size: 0.74rem; color: var(--ink-80); margin-top: 0.12rem; }
-
 /* ═══════════════════════════════════════════════
    11. PRODUCT CAROUSEL
 ═══════════════════════════════════════════════ */
@@ -427,7 +397,6 @@ body.dark .icon-moon { display: none; }
 .products-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; gap: 1rem; flex-wrap: wrap; }
 .products-header .section-head { text-align: left; margin: 0; max-width: 540px; }
 .products-header .section-head h2 { margin-bottom: 0.45rem; }
-
 .carousel-wrap { position: relative; overflow: hidden; border-radius: 8px; }
 .carousel-track { display: flex; transition: transform 0.65s var(--ease-in-out); will-change: transform; }
 .c-slide { flex: 0 0 100%; display: grid; grid-template-columns: 1.1fr 1fr; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; min-height: 460px; }
@@ -442,7 +411,6 @@ body.dark .c-slide-num { color: var(--stone); }
 .c-slide-name { font-family: var(--ff-display); font-size: clamp(1.35rem, 2.2vw, 2rem); font-weight: 900; line-height: 1.1; }
 .c-slide-desc { font-size: 0.87rem; color: var(--ink-80); line-height: 1.68; max-width: 360px; }
 .c-slide-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; padding-top: 0.4rem; }
-
 .carousel-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; gap: 1rem; flex-wrap: wrap; }
 .c-dots { display: flex; gap: 5px; align-items: center; }
 .c-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--stone); border: none; cursor: pointer; padding: 0; transition: all 0.3s var(--ease-out); }
@@ -452,7 +420,6 @@ body.dark .c-slide-num { color: var(--stone); }
 .c-arrows { display: flex; gap: 0.5rem; }
 .c-arrow { width: 42px; height: 42px; border-radius: 4px; border: 1.5px solid var(--border-strong); background: var(--card); color: var(--ink); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; box-shadow: var(--s1); }
 .c-arrow:hover { background: var(--crimson); border-color: var(--crimson); color: #fff; transform: translateY(-2px); }
-
 /* ═══════════════════════════════════════════════
    12. WHY US
 ═══════════════════════════════════════════════ */
@@ -476,7 +443,6 @@ body.dark .why-card.featured { background: var(--crimson); }
 .why-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.3rem; }
 .why-card p { font-size: 0.8rem; color: var(--ink-80); line-height: 1.5; }
 .why-tag { display: inline-block; font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); padding: 0.18rem 0.65rem; border-radius: 2px; margin-bottom: 0.9rem; font-weight: 600; }
-
 /* ═══════════════════════════════════════════════
    13. CONTACT SECTION — Streamlined
 ═══════════════════════════════════════════════ */
@@ -495,7 +461,6 @@ body.dark .why-card.featured { background: var(--crimson); }
 .channel-icon { width: 38px; height: 38px; border-radius: 50%; background: var(--parchment-d); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
 .channel-label { font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 0.1rem; }
 .channel-val { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
-
 /* Enquiry form */
 .enquiry-form { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2.2rem; box-shadow: var(--s2); }
 .enquiry-form h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
@@ -516,7 +481,6 @@ body.dark .why-card.featured { background: var(--crimson); }
 .form-success .check { font-size: 2.8rem; margin-bottom: 0.8rem; }
 .form-success h4 { font-size: 1.1rem; margin-bottom: 0.4rem; }
 .form-success p { color: var(--ink-80); font-size: 0.88rem; }
-
 /* ═══════════════════════════════════════════════
    14. CTA BAND
 ═══════════════════════════════════════════════ */
@@ -529,7 +493,6 @@ body.dark .cta-band { background: #0c0c0a; }
 .cta-band-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; flex-shrink: 0; }
 .cta-band .btn-ghost { border-color: rgba(255,255,255,0.28); color: rgba(255,255,255,0.85); }
 .cta-band .btn-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
-
 /* ═══════════════════════════════════════════════
    15. FOOTER
 ═══════════════════════════════════════════════ */
@@ -551,7 +514,6 @@ body.dark .cta-band { background: #0c0c0a; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; padding-top: 1.8rem; font-size: 0.76rem; }
 .footer-bottom a { color: #5a5a56; transition: color 0.2s; }
 .footer-bottom a:hover { color: #9e9990; }
-
 /* ═══════════════════════════════════════════════
    16. TRUST POPUP — Right side card
 ═══════════════════════════════════════════════ */
@@ -575,7 +537,6 @@ body.dark .cta-band { background: #0c0c0a; }
 .tp-actions a:hover { opacity: 0.87; }
 .tp-enquire { background: var(--crimson); color: #fff; }
 .tp-wa { background: var(--wa-green); color: #fff; }
-
 /* ═══════════════════════════════════════════════
    17. RESPONSIVE — TABLET 1100px
 ═══════════════════════════════════════════════ */
@@ -586,53 +547,51 @@ body.dark .cta-band { background: #0c0c0a; }
   .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
   .footer-grid .footer-col:last-child { grid-column: 2 / 4; }
 }
-
 /* ═══════════════════════════════════════════════
    18. RESPONSIVE — TABLET 900px
 ═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
   :root { --header-h: 56px; }
   .container { padding: 0 24px; }
-
   /* Header */
   .main-nav { display: none; }
   .mobile-actions { display: flex; }
   .header-right { display: none; }
-  .header-inner { grid-template-columns: auto 1fr auto; }
-
+  /* Switch header-inner to flex for proper mobile alignment */
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .logo-wrap { flex-shrink: 0; }
+  .mobile-actions { flex-shrink: 0; }
   /* Top bar — simplified on tablet */
   .top-bar-chip:nth-child(3),
   .top-bar-chip:nth-child(4) { display: none; }
-
   /* About */
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-video iframe { height: 240px; }
-
   /* Carousel */
   .c-slide { grid-template-columns: 1fr; min-height: auto; }
   .c-slide-img { height: 260px; }
   .c-slide-body { padding: 1.8rem; }
   .c-slide-num { font-size: 3rem; }
-
   /* Contact */
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-
   /* CTA */
   .cta-band-inner { flex-direction: column; text-align: center; }
-
   /* Footer */
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-grid .footer-col:first-child { grid-column: 1 / -1; }
   .footer-grid .footer-col:last-child { grid-column: auto; }
 }
-
 /* ═══════════════════════════════════════════════
    19. RESPONSIVE — MOBILE 640px (critical)
 ═══════════════════════════════════════════════ */
 @media (max-width: 640px) {
   :root { --header-h: 52px; }
   .container { padding: 0 16px; }
-
   /* ── TOP BAR — mobile minimal ── */
   .top-bar { padding: 0.45rem 0; }
   .top-bar .container { flex-wrap: nowrap; gap: 0.5rem; }
@@ -644,11 +603,9 @@ body.dark .cta-band { background: #0c0c0a; }
   .top-bar-chip:nth-child(4) { display: none; }
   /* Hide "Enquire Now" CTA on mobile — popup handles it */
   .top-bar-cta { display: none; }
-
   /* ── LOGO ── */
   .logo-text { font-size: 1.15rem; }
   .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; }
-
   /* ── HERO — full bleed, properly fitted ── */
   .hero {
     min-height: 100svh;
@@ -670,7 +627,6 @@ body.dark .cta-band { background: #0c0c0a; }
   .hero p { font-size: 0.88rem; margin-bottom: 1.5rem; max-width: 100%; }
   .hero-actions { gap: 0.6rem; }
   .hero-actions .btn { font-size: 0.72rem; padding: 0.7rem 1.3rem; }
-
   /* Hero stats — 2x2 on mobile */
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
@@ -683,16 +639,13 @@ body.dark .cta-band { background: #0c0c0a; }
   .hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); }
   .hero-stat-n { font-size: 1.4rem; }
   .hero-stat-l { font-size: 0.58rem; }
-
   /* ── SECTION PADDING ── */
   .solutions, .about, .products, .why, .contact { padding: 4rem 0; }
-
   /* ── SECTION HEAD ── */
   .section-head { margin-bottom: 2rem; }
   .section-head h2 { font-size: 1.55rem; }
   .section-head p { font-size: 0.88rem; }
   .label-pill { font-size: 0.62rem; padding: 0.22rem 0.65rem; }
-
   /* ── SOLUTIONS — 2-column compact, app-style ── */
   .solutions-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -704,7 +657,6 @@ body.dark .cta-band { background: #0c0c0a; }
   .sol-tag { font-size: 0.52rem; padding: 0.1rem 0.45rem; }
   .sol-name { font-size: 0.78rem; line-height: 1.2; font-weight: 700; }
   .sol-order { font-size: 0.6rem; padding-top: 0.35rem; }
-
   /* ── ABOUT — mobile ── */
   .about { padding: 3.5rem 0; }
   .about-grid { gap: 2rem; }
@@ -716,7 +668,6 @@ body.dark .cta-band { background: #0c0c0a; }
   .about-fact { padding: 0.75rem 0.85rem; }
   .about-fact-n { font-size: 1.25rem; }
   .about-fact-l { font-size: 0.7rem; }
-
   /* ── PRODUCTS CAROUSEL ── */
   .products-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-bottom: 1.5rem; }
   .c-slide-img { height: 220px; }
@@ -727,7 +678,6 @@ body.dark .cta-band { background: #0c0c0a; }
   .c-slide-actions { gap: 0.5rem; }
   .c-slide-actions .btn { font-size: 0.7rem; padding: 0.6rem 1rem; }
   .c-arrow { width: 36px; height: 36px; font-size: 1rem; }
-
   /* ── WHY US — 2-column compact chips on mobile ── */
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -749,7 +699,6 @@ body.dark .cta-band { background: #0c0c0a; }
   .why-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
   .why-card h3 { font-size: 0.76rem; margin-bottom: 0.2rem; }
   .why-card p { font-size: 0.7rem; line-height: 1.45; }
-
   /* ── CONTACT — remove redundant WA, keep form ── */
   .form-row { grid-template-columns: 1fr; }
   .enquiry-form { padding: 1.5rem; border-radius: 8px; }
@@ -760,13 +709,11 @@ body.dark .cta-band { background: #0c0c0a; }
   .channel-card { padding: 0.75rem 0.9rem; gap: 0.7rem; border-radius: 6px; }
   .channel-icon { width: 34px; height: 34px; font-size: 1rem; }
   .channel-val { font-size: 0.84rem; }
-
   /* ── CTA BAND ── */
   .cta-band { padding: 3.5rem 0; }
   .cta-band h2 { font-size: 1.5rem; }
   .cta-band-actions { width: 100%; justify-content: center; }
   .cta-band-actions .btn { font-size: 0.74rem; padding: 0.75rem 1.4rem; }
-
   /* ── FOOTER mobile — 2-col links ── */
   .footer { padding: 3.5rem 0 2rem; }
   .footer-brand { margin-bottom: 2rem; }
@@ -781,42 +728,65 @@ body.dark .cta-band { background: #0c0c0a; }
   .footer-links a { font-size: 0.78rem; }
   .footer-contact { font-size: 0.78rem; line-height: 1.9; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 0.3rem; padding-top: 1.2rem; font-size: 0.72rem; }
-
-  /* ── TRUST POPUP — bottom sheet on mobile ── */
+  /* ── TRUST POPUP — small square card in bottom right ── */
   .trust-popup {
-    bottom: 0; right: 0; left: 0;
-    max-width: 100%;
-    border-radius: 14px 14px 0 0;
-    padding: 1rem 1.1rem 1.3rem;
-    border: none;
-    border-top: 1px solid var(--border-strong);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: start;
-    column-gap: 0.8rem;
-    row-gap: 0.4rem;
+    bottom: 16px;
+    right: 16px;
+    left: auto;
+    max-width: 180px;
+    width: auto;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-strong);
+    display: block;
+    box-shadow: var(--s3);
+    transform: none;
   }
-  .tp-rating { grid-column: 1; margin-bottom: 0; }
-  .trust-popup-close { position: static; grid-column: 2; grid-row: 1; align-self: center; }
-  .tp-info { grid-column: 1 / -1; margin-bottom: 0.2rem; }
-  .tp-phone { grid-column: 1; font-size: 0.95rem; margin: 0; }
-  .tp-actions { grid-column: 1 / -1; margin-top: 0.4rem; gap: 0.6rem; }
-  .tp-actions a { font-size: 0.74rem; padding: 0.65rem; }
+  .trust-popup.hide {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  .tp-rating {
+    margin-bottom: 0.3rem;
+    justify-content: space-between;
+  }
+  .tp-stars { font-size: 0.7rem; }
+  .tp-badge { font-size: 0.55rem; padding: 0.1rem 0.4rem; }
+  .tp-info {
+    font-size: 0.68rem;
+    margin-bottom: 0.2rem;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .tp-phone {
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+  }
+  .tp-actions {
+    margin-top: 0.4rem;
+    gap: 0.3rem;
+    flex-direction: column;
+  }
+  .tp-actions a {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.2rem;
+  }
+  .trust-popup-close {
+    top: 4px;
+    right: 6px;
+    font-size: 0.8rem;
+  }
 }
-
 /* Very small screens */
 @media (max-width: 360px) {
   .solutions-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
   .sol-img-wrap { height: 90px; }
   .sol-name { font-size: 0.72rem; }
 }
-
 :focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; }
 </style>
 </head>
-
 <body>
-
 <!-- ─────────────────────────────────────────────
      TRUST POPUP
 ───────────────────────────────────────────── -->
@@ -836,7 +806,6 @@ body.dark .cta-band { background: #0c0c0a; }
     <a href="https://wa.me/917510000000" class="tp-wa" id="tpWaLink" target="_blank" rel="noopener">💬 WhatsApp</a>
   </div>
 </aside>
-
 <!-- ─────────────────────────────────────────────
      TOP BAR
 ───────────────────────────────────────────── -->
@@ -853,20 +822,17 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </div>
-
 <!-- ─────────────────────────────────────────────
      HEADER
 ───────────────────────────────────────────── -->
 <header class="site-header" id="siteHeader" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="header-inner">
-
       <!-- Logo -->
       <a href="#home" class="logo-wrap" aria-label="Stardom Textiles — Home">
         <span class="logo-icon" aria-hidden="true">S</span>
         <span class="logo-text">STARDOM<em>.</em></span>
       </a>
-
       <!-- Desktop nav (center) -->
       <nav class="main-nav" aria-label="Site sections">
         <ul class="nav-list" role="list">
@@ -878,7 +844,6 @@ body.dark .cta-band { background: #0c0c0a; }
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
       <!-- Desktop right (phone + dark toggle) -->
       <div class="header-right">
         <div class="header-phone-chip" aria-label="Call us">
@@ -901,7 +866,6 @@ body.dark .cta-band { background: #0c0c0a; }
           </svg>
         </button>
       </div>
-
       <!-- Mobile actions (dark toggle + hamburger) — replaces header-right on mobile -->
       <div class="mobile-actions">
         <button class="icon-btn" id="darkToggleMob" aria-label="Toggle dark mode">
@@ -922,10 +886,8 @@ body.dark .cta-band { background: #0c0c0a; }
           <span class="hamburger-line"></span>
         </button>
       </div>
-
     </div>
   </div>
-
   <!-- Mobile nav drawer -->
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
     <ul role="list">
@@ -942,7 +904,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </nav>
 </header>
-
 <!-- ─────────────────────────────────────────────
      TICKER
 ───────────────────────────────────────────── -->
@@ -965,7 +926,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </div>
-
 <!-- ─────────────────────────────────────────────
      HERO
 ───────────────────────────────────────────── -->
@@ -976,7 +936,6 @@ body.dark .cta-band { background: #0c0c0a; }
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-carousel-dots" id="heroCarouselDots" style="display:none;" aria-hidden="true"></div>
-
   <div class="container">
     <div class="hero-content">
       <div class="hero-eyebrow">
@@ -1001,7 +960,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      SOLUTIONS
 ───────────────────────────────────────────── -->
@@ -1019,7 +977,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      ABOUT
 ───────────────────────────────────────────── -->
@@ -1043,7 +1000,6 @@ body.dark .cta-band { background: #0c0c0a; }
           ></iframe>
         </div>
       </div>
-
       <div class="about-body reveal reveal-d2">
         <span class="label-pill">Our Story</span>
         <h2 id="about-h2">स्टारडम टेक्सटाइल्स बद्दल</h2>
@@ -1060,7 +1016,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      PRODUCTS CAROUSEL
 ───────────────────────────────────────────── -->
@@ -1074,11 +1029,9 @@ body.dark .cta-band { background: #0c0c0a; }
       </div>
       <a href="explore_catalog.html" class="btn btn-ghost btn-sm reveal reveal-d2" style="flex-shrink:0;">Explore All →</a>
     </div>
-
     <div class="carousel-wrap reveal" id="carouselWrap">
       <div class="carousel-track" id="carouselTrack" role="list" aria-label="Product slides"></div>
     </div>
-
     <div class="carousel-footer">
       <div class="c-dots" id="cDots" role="tablist" aria-label="Slide navigation"></div>
       <div class="c-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="cProgressBar">
@@ -1094,7 +1047,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      WHY US
 ───────────────────────────────────────────── -->
@@ -1124,7 +1076,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      CONTACT — Single WhatsApp CTA (no repetition)
 ───────────────────────────────────────────── -->
@@ -1153,7 +1104,6 @@ body.dark .cta-band { background: #0c0c0a; }
           <!-- Single WA button — not repeated elsewhere in this section -->
         </div>
       </div>
-
       <div class="enquiry-form reveal reveal-d2" id="enquiryFormWrap">
         <h3>Send an Enquiry</h3>
         <p class="form-sub">Fill in your details and we'll reach out with pricing and availability.</p>
@@ -1214,7 +1164,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      CTA BAND — Primary conversion, one WA button
 ───────────────────────────────────────────── -->
@@ -1229,7 +1178,6 @@ body.dark .cta-band { background: #0c0c0a; }
     </div>
   </div>
 </section>
-
 <!-- ─────────────────────────────────────────────
      FOOTER
 ───────────────────────────────────────────── -->
@@ -1244,7 +1192,6 @@ body.dark .cta-band { background: #0c0c0a; }
         <a href="#" id="fSocPt" aria-label="Pinterest">📌</a>
       </div>
     </div>
-
     <div class="footer-grid">
       <div class="footer-col">
         <h4>Contact</h4>
@@ -1284,37 +1231,33 @@ body.dark .cta-band { background: #0c0c0a; }
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <p>© 2025 <span id="footerShopName">Stardom Textiles</span>. All rights reserved.</p>
+      <p>© 2026 <span id="footerShopName">Stardom Textiles</span>. All rights reserved.</p>
       <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refunds</a></p>
     </div>
   </div>
 </footer>
 </main>
-
 <!-- ═══════════════════════════════════════════════
      JAVASCRIPT
 ═══════════════════════════════════════════════ -->
 <script>
 'use strict';
-
 /* ─────────────────────────────────────────────
    GLOBAL CONTACT STATE
 ───────────────────────────────────────────── */
 const SITE = {
-  primaryPhone:    '7510000000',
-  primaryWaCode:   '91',
-  shopName:        'Stardom Textiles',
-  city:            'Karanja (Gh.)',
-  address:         'Karanja (Gh.), Maharashtra',
-  hours:           'Mon–Sat · 10:00 am – 10:30 pm',
-  hoursShort:      'Open till 10:30 pm',
+  primaryPhone: '7510000000',
+  primaryWaCode: '91',
+  shopName: 'Stardom Textiles',
+  city: 'Karanja (Gh.)',
+  address: 'Karanja (Gh.), Maharashtra',
+  hours: 'Mon–Sat · 10:00 am – 10:30 pm',
+  hoursShort: 'Open till 10:30 pm',
   yearsInBusiness: '11+',
   ordersDelivered: '500+',
-  rating:          { value: 4.3, stars: '⭐⭐⭐⭐☆' },
-  social:          { facebook: '#', instagram: '#', pinterest: '#' },
-
+  rating: { value: 4.3, stars: '⭐⭐⭐⭐☆' },
+  social: { facebook: '#', instagram: '#', pinterest: '#' },
   waLink(msg = '') {
     const num = this.primaryWaCode + this.primaryPhone.replace(/\D/g, '');
     return msg ? `https://wa.me/${num}?text=${encodeURIComponent(msg)}` : `https://wa.me/${num}`;
@@ -1323,17 +1266,16 @@ const SITE = {
   waEnquiry(fields = {}) {
     const lines = [
       'Hi, I want to enquire about Stardom Textiles products.',
-      fields.name    ? `Name: ${fields.name}`       : '',
-      fields.phone   ? `Phone: ${fields.phone}`     : '',
+      fields.name ? `Name: ${fields.name}` : '',
+      fields.phone ? `Phone: ${fields.phone}` : '',
       fields.product ? `Product: ${fields.product}` : '',
-      fields.qty     ? `Qty: ${fields.qty}`         : '',
-      fields.city    ? `City: ${fields.city}`       : '',
-      fields.msg     ? `Note: ${fields.msg}`        : '',
+      fields.qty ? `Qty: ${fields.qty}` : '',
+      fields.city ? `City: ${fields.city}` : '',
+      fields.msg ? `Note: ${fields.msg}` : '',
     ].filter(Boolean);
     return this.waLink(lines.join('\n'));
   }
 };
-
 /* ─────────────────────────────────────────────
    MODULE: Dark Mode — synced across both toggles
 ───────────────────────────────────────────── */
@@ -1343,52 +1285,35 @@ const DarkMode = (() => {
     document.getElementById('darkToggleMob')
   ].filter(Boolean);
   const body = document.body;
-  const KEY  = 'st-dark';
-
+  const KEY = 'st-dark';
   function apply(v) {
     body.classList.toggle('dark', v);
     btns.forEach(b => b && b.setAttribute('aria-pressed', String(v)));
   }
-
   const stored = localStorage.getItem(KEY);
   apply(stored !== null ? stored === '1' : window.matchMedia('(prefers-color-scheme: dark)').matches);
-
   btns.forEach(btn => btn && btn.addEventListener('click', () => {
     const v = !body.classList.contains('dark');
     apply(v);
     try { localStorage.setItem(KEY, v ? '1' : '0'); } catch {}
   }));
 })();
-
 /* ─────────────────────────────────────────────
-   MODULE: Top Bar — hide on scroll down, show on scroll up / at top
-   Mobile: keep it simple, just slides away
+   MODULE: Top Bar — only visible at very top (scrollY < 60)
 ───────────────────────────────────────────── */
 const TopBar = (() => {
   const bar = document.getElementById('topBar');
   if (!bar) return;
-  let lastY = 0;
-  let ticking = false;
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (y < 60) {
-          bar.classList.remove('tb-hidden');
-        } else if (y > lastY + 5) {
-          bar.classList.add('tb-hidden');    // scrolling down
-        } else if (y < lastY - 5) {
-          bar.classList.remove('tb-hidden'); // scrolling up
-        }
-        lastY = y;
-        ticking = false;
-      });
-      ticking = true;
+  function update() {
+    if (window.scrollY < 60) {
+      bar.classList.remove('tb-hidden');
+    } else {
+      bar.classList.add('tb-hidden');
     }
-  }, { passive: true });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update(); // initial check
 })();
-
 /* ─────────────────────────────────────────────
    MODULE: Header scroll shadow
 ───────────────────────────────────────────── */
@@ -1402,22 +1327,19 @@ const Header = (() => {
     }
   }, { passive: true });
 })();
-
 /* ─────────────────────────────────────────────
    MODULE: Mobile nav — animated hamburger
 ───────────────────────────────────────────── */
 const MobileNav = (() => {
   const toggle = document.getElementById('mobileToggle');
-  const nav    = document.getElementById('mobileNav');
+  const nav = document.getElementById('mobileNav');
   if (!toggle || !nav) return;
-
   function close() {
     nav.classList.remove('open');
     nav.setAttribute('aria-hidden', 'true');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.classList.remove('open');
   }
-
   toggle.addEventListener('click', e => {
     e.stopPropagation();
     const open = nav.classList.toggle('open');
@@ -1425,14 +1347,11 @@ const MobileNav = (() => {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.classList.toggle('open', open);
   });
-
   document.addEventListener('click', e => {
     if (!nav.contains(e.target) && !toggle.contains(e.target)) close();
   });
-
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 })();
-
 /* ─────────────────────────────────────────────
    MODULE: Scroll Reveal
 ───────────────────────────────────────────── */
@@ -1446,46 +1365,37 @@ const Reveal = (() => {
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   els.forEach(el => obs.observe(el));
 })();
-
 /* ─────────────────────────────────────────────
    MODULE: Trust Popup
    Shows after 4s on desktop, 3s on mobile.
    Hides while scrolling, shows after pause.
-   On mobile it's a bottom sheet.
 ───────────────────────────────────────────── */
 const TrustPopup = (() => {
-  const popup   = document.getElementById('trustPopup');
+  const popup = document.getElementById('trustPopup');
   const closeBtn= document.getElementById('tpClose');
   const enquire = document.getElementById('tpEnquireLink');
   if (!popup || !closeBtn) return;
-
   let userClosed = false;
   let showTimer, scrollTimer;
-
   const hide = () => popup.classList.add('hide');
   const show = () => { if (!userClosed) popup.classList.remove('hide'); };
-
   /* Initial show after delay */
   showTimer = setTimeout(show, 4000);
-
   /* Hide while scrolling, re-show on pause */
   window.addEventListener('scroll', () => {
     hide();
     clearTimeout(scrollTimer);
     if (!userClosed) scrollTimer = setTimeout(show, 3000);
   }, { passive: true });
-
   closeBtn.addEventListener('click', () => {
     hide();
     userClosed = true;
     clearTimeout(showTimer);
     clearTimeout(scrollTimer);
   });
-
   /* Close popup when user clicks Enquire (navigates to form) */
   enquire && enquire.addEventListener('click', () => { hide(); userClosed = true; });
 })();
-
 /* ─────────────────────────────────────────────
    MODULE: loadContact()
 ───────────────────────────────────────────── */
@@ -1493,59 +1403,52 @@ function loadContact() {
   fetch('/data/contact.json')
     .then(r => r.ok ? r.json() : Promise.reject('no contact.json'))
     .then(data => {
-      if (data.shopName)        SITE.shopName        = data.shopName;
-      if (data.city)            SITE.city            = data.city;
-      if (data.address)         SITE.address         = data.address;
-      if (data.hours)           SITE.hours           = data.hours;
-      if (data.hoursShort)      SITE.hoursShort      = data.hoursShort;
+      if (data.shopName) SITE.shopName = data.shopName;
+      if (data.city) SITE.city = data.city;
+      if (data.address) SITE.address = data.address;
+      if (data.hours) SITE.hours = data.hours;
+      if (data.hoursShort) SITE.hoursShort = data.hoursShort;
       if (data.yearsInBusiness) SITE.yearsInBusiness = data.yearsInBusiness;
       if (data.ordersDelivered) SITE.ordersDelivered = data.ordersDelivered;
-      if (data.rating?.stars)   SITE.rating.stars    = data.rating.stars;
-      if (data.rating?.value)   SITE.rating.value    = data.rating.value;
-      if (data.social)          SITE.social          = { ...SITE.social, ...data.social };
-
+      if (data.rating?.stars) SITE.rating.stars = data.rating.stars;
+      if (data.rating?.value) SITE.rating.value = data.rating.value;
+      if (data.social) SITE.social = { ...SITE.social, ...data.social };
       if (Array.isArray(data.phones) && data.phones.length) {
         const primary = data.phones.find(p => p.whatsapp !== false) || data.phones[0];
-        SITE.primaryPhone  = primary.number || SITE.primaryPhone;
+        SITE.primaryPhone = primary.number || SITE.primaryPhone;
         SITE.primaryWaCode = primary.countryCode || '91';
       }
-
       /* Top bar */
-      const tbCity  = document.getElementById('tbCity');
+      const tbCity = document.getElementById('tbCity');
       const tbPhone = document.getElementById('tbPhone');
-      if (tbCity)  tbCity.innerHTML  = `<span class="dot"></span>📍 ${SITE.city}`;
+      if (tbCity) tbCity.innerHTML = `<span class="dot"></span>📍 ${SITE.city}`;
       if (tbPhone) tbPhone.innerHTML = `<span class="dot"></span>📞 ${SITE.primaryPhone}`;
-
       /* Header phone */
       const hp = document.getElementById('headerPhone');
       if (hp) hp.textContent = SITE.primaryPhone;
-
       /* Trust popup */
-      const tpCity  = document.getElementById('tpCity');
+      const tpCity = document.getElementById('tpCity');
       const tpHours = document.getElementById('tpHoursShort');
       const tpPhone = document.getElementById('tpPhone');
-      const tpWa    = document.getElementById('tpWaLink');
+      const tpWa = document.getElementById('tpWaLink');
       const tpStars = document.getElementById('tpStars');
-      if (tpCity)  tpCity.textContent  = `📍 ${SITE.city}`;
+      if (tpCity) tpCity.textContent = `📍 ${SITE.city}`;
       if (tpHours) tpHours.textContent = `🕐 ${SITE.hoursShort}`;
       if (tpPhone) tpPhone.textContent = `📞 ${SITE.primaryPhone}`;
-      if (tpWa)    tpWa.href           = SITE.waLink();
+      if (tpWa) tpWa.href = SITE.waLink();
       if (tpStars) { tpStars.textContent = SITE.rating.stars; tpStars.setAttribute('aria-label', `${SITE.rating.value} out of 5`); }
-
       /* Mobile nav WA */
       const mobNavWa = document.getElementById('mobileNavWa');
       if (mobNavWa) mobNavWa.href = SITE.waLink();
-
       /* Contact channels */
-      const cpv   = document.getElementById('contactPhoneVal');
-      const cav   = document.getElementById('contactAddressVal');
-      const chv   = document.getElementById('contactHoursVal');
+      const cpv = document.getElementById('contactPhoneVal');
+      const cav = document.getElementById('contactAddressVal');
+      const chv = document.getElementById('contactHoursVal');
       const cpCard= document.getElementById('channelPhone');
-      if (cpv)    cpv.textContent  = SITE.primaryPhone;
-      if (cav)    cav.textContent  = SITE.address;
-      if (chv)    chv.textContent  = SITE.hours;
-      if (cpCard) cpCard.href      = `tel:${SITE.primaryPhone}`;
-
+      if (cpv) cpv.textContent = SITE.primaryPhone;
+      if (cav) cav.textContent = SITE.address;
+      if (chv) chv.textContent = SITE.hours;
+      if (cpCard) cpCard.href = `tel:${SITE.primaryPhone}`;
       /* Optional email card injection */
       if (data.email) {
         const ec = document.createElement('a');
@@ -1554,17 +1457,15 @@ function loadContact() {
         const ch = document.getElementById('contactChannels');
         if (ch) ch.appendChild(ec);
       }
-
       /* Hero eyebrow & stats */
       const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-      setTxt('heroEyebrowCity',  SITE.city);
+      setTxt('heroEyebrowCity', SITE.city);
       setTxt('heroEyebrowYears', SITE.yearsInBusiness);
-      setTxt('statYears',        SITE.yearsInBusiness);
-      setTxt('statOrders',       SITE.ordersDelivered);
-      setTxt('statRating',       `${SITE.rating.value}★`);
-      setTxt('factYears',        SITE.yearsInBusiness);
-      setTxt('factOrders',       SITE.ordersDelivered);
-
+      setTxt('statYears', SITE.yearsInBusiness);
+      setTxt('statOrders', SITE.ordersDelivered);
+      setTxt('statRating', `${SITE.rating.value}★`);
+      setTxt('factYears', SITE.yearsInBusiness);
+      setTxt('factOrders', SITE.ordersDelivered);
       /* Footer */
       setTxt('footerShopName', SITE.shopName);
       const fTag = document.getElementById('footerTagline');
@@ -1577,19 +1478,16 @@ function loadContact() {
         const mapA = data.mapsUrl ? `href="${data.mapsUrl}" target="_blank" rel="noopener"` : '';
         fCont.innerHTML = `📍 <a ${mapA} style="color:#7a7570">${SITE.address}</a><br>📞 <a href="tel:${SITE.primaryPhone}" style="color:#f0ede8;font-weight:600">${SITE.primaryPhone}</a><br>🕐 ${SITE.hours}<br>${emailLine}✈️ Delivering All Over India`;
       }
-
       /* Social */
       const fFb = document.getElementById('fSocFb');
       const fIg = document.getElementById('fSocIg');
       const fPt = document.getElementById('fSocPt');
-      if (fFb && SITE.social.facebook)  fFb.href = SITE.social.facebook;
+      if (fFb && SITE.social.facebook) fFb.href = SITE.social.facebook;
       if (fIg && SITE.social.instagram) fIg.href = SITE.social.instagram;
       if (fPt && SITE.social.pinterest) fPt.href = SITE.social.pinterest;
-
       /* CTA WA */
       const ctaWa = document.getElementById('ctaWaBtn');
       if (ctaWa) ctaWa.href = SITE.waLink('Hi, I want to place an order.');
-
       /* Form WA + success */
       const waD = document.getElementById('waDirectLink');
       if (waD) waD.href = SITE.waLink('Hi, I want to enquire about your products.');
@@ -1597,7 +1495,6 @@ function loadContact() {
     })
     .catch(() => console.info('[Stardom] contact.json not found — using defaults.'));
 }
-
 /* ─────────────────────────────────────────────
    MODULE: loadTicker()
 ───────────────────────────────────────────── */
@@ -1618,7 +1515,6 @@ function loadTicker() {
     })
     .catch(() => console.info('[Stardom] ticker.json not found — using fallback.'));
 }
-
 /* ─────────────────────────────────────────────
    MODULE: loadHero()
 ───────────────────────────────────────────── */
@@ -1626,13 +1522,11 @@ function loadHero() {
   fetch('/data/hero.json')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
-      if (data.heading)    document.getElementById('heroHeading').innerHTML = data.heading;
+      if (data.heading) document.getElementById('heroHeading').innerHTML = data.heading;
       if (data.subheading) document.getElementById('heroSubheading').textContent = data.subheading;
-
-      const bgImg      = document.getElementById('heroImage');
+      const bgImg = document.getElementById('heroImage');
       const bgCarousel = document.getElementById('heroBgCarousel');
-      const dotsWrap   = document.getElementById('heroCarouselDots');
-
+      const dotsWrap = document.getElementById('heroCarouselDots');
       const images = [];
       if (Array.isArray(data.images) && data.images.length >= 2) {
         data.images.forEach(img => {
@@ -1641,7 +1535,6 @@ function loadHero() {
           if (url) images.push({ url, alt });
         });
       }
-
       if (images.length >= 2) {
         bgImg.style.display = 'none';
         bgCarousel.style.display = 'block';
@@ -1652,24 +1545,20 @@ function loadHero() {
         dotsWrap.innerHTML = images.map((_,i) =>
           `<button class="hc-dot${i===0?' active':''}" data-i="${i}" aria-label="Image ${i+1}"></button>`
         ).join('');
-
         const slides = bgCarousel.querySelectorAll('.hc-slide');
-        const dots   = dotsWrap.querySelectorAll('.hc-dot');
+        const dots = dotsWrap.querySelectorAll('.hc-dot');
         let cur = 0, hcT;
-
         function goBg(n) {
           slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
           cur = (n + slides.length) % slides.length;
           slides[cur].classList.add('active'); dots[cur].classList.add('active');
         }
         function startBg() { hcT = setInterval(() => goBg(cur+1), 5000); }
-        function stopBg()  { clearInterval(hcT); }
-
+        function stopBg() { clearInterval(hcT); }
         dots.forEach(d => d.addEventListener('click', () => { stopBg(); goBg(+d.dataset.i); startBg(); }));
         bgCarousel.addEventListener('mouseenter', stopBg);
         bgCarousel.addEventListener('mouseleave', startBg);
         startBg();
-
       } else if (data.image) {
         bgImg.src = data.image; bgImg.style.display = 'block';
       } else if (Array.isArray(data.images) && data.images.length === 1) {
@@ -1679,7 +1568,6 @@ function loadHero() {
     })
     .catch(() => console.info('[Stardom] hero.json not found — using defaults.'));
 }
-
 /* ─────────────────────────────────────────────
    MODULE: loadSolutions()
 ───────────────────────────────────────────── */
@@ -1687,13 +1575,12 @@ function loadSolutions() {
   fetch('/data/solutions.json')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
-      const all     = Array.isArray(data) ? data : (data.solutions || []);
+      const all = Array.isArray(data) ? data : (data.solutions || []);
       const display = all.slice(0, 8);
-      const grid    = document.getElementById('solutionsGrid');
+      const grid = document.getElementById('solutionsGrid');
       if (!grid) return;
-
       grid.innerHTML = display.map(sol => {
-        const href    = (sol.buttonLink && sol.buttonLink !== '#') ? sol.buttonLink : SITE.waOrder(sol.title);
+        const href = (sol.buttonLink && sol.buttonLink !== '#') ? sol.buttonLink : SITE.waOrder(sol.title);
         const btnText = sol.buttonText || 'Order Now';
         return `
           <article class="sol-card" role="listitem" tabindex="0"
@@ -1710,37 +1597,32 @@ function loadSolutions() {
             </div>
           </article>`;
       }).join('');
-
       const row = document.getElementById('exploreMoreRow');
       if (row) row.style.display = all.length > 8 ? 'block' : 'none';
     })
     .catch(() => console.info('[Stardom] solutions.json not found.'));
 }
-
 /* ─────────────────────────────────────────────
    MODULE: Product Carousel
 ───────────────────────────────────────────── */
 const Carousel = (() => {
   let idx=0, total=0, timer=null;
-
   const DEMO = [
     { name:'School Uniform Set', image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=75', category:'Uniforms', description:'Premium school uniform sets — customisable sizing and colours. Minimum 50 pcs.' },
-    { name:'Sports Jersey Kit',  image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=900&q=75', category:'Sports Kit', description:'Breathable drifit kits for football, cricket and kabaddi. Custom printing available.' },
-    { name:'Custom T-Shirt',     image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&q=75', category:'T-Shirts', description:'Round neck and polo tees in all sizes. Screen or digital print. Min. 12 pcs.' },
-    { name:'Track Suit',         image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=900&q=75', category:'Track Suits', description:'Comfortable track suits for school, corporate or personal use. Fleece and nylon.' }
+    { name:'Sports Jersey Kit', image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=900&q=75', category:'Sports Kit', description:'Breathable drifit kits for football, cricket and kabaddi. Custom printing available.' },
+    { name:'Custom T-Shirt', image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&q=75', category:'T-Shirts', description:'Round neck and polo tees in all sizes. Screen or digital print. Min. 12 pcs.' },
+    { name:'Track Suit', image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=900&q=75', category:'Track Suits', description:'Comfortable track suits for school, corporate or personal use. Fleece and nylon.' }
   ];
-
   function build(products) {
     total = products.length;
     const track = document.getElementById('carouselTrack');
-    const dots  = document.getElementById('cDots');
+    const dots = document.getElementById('cDots');
     if (!track || !dots) return;
-
     track.innerHTML = products.map((p, i) => {
-      const waHref  = (p.buttonLink && p.buttonLink !== '#') ? p.buttonLink : SITE.waOrder(p.name);
+      const waHref = (p.buttonLink && p.buttonLink !== '#') ? p.buttonLink : SITE.waOrder(p.name);
       const btnText = p.buttonText || 'Order via WhatsApp';
-      const cat     = Array.isArray(p.categories) ? p.categories.join(' · ') : (p.category || 'Collection');
-      const num     = String(i+1).padStart(2,'0');
+      const cat = Array.isArray(p.categories) ? p.categories.join(' · ') : (p.category || 'Collection');
+      const num = String(i+1).padStart(2,'0');
       return `
         <article class="c-slide" role="listitem" aria-label="Product ${i+1}: ${p.name}">
           <div class="c-slide-img">
@@ -1759,37 +1641,30 @@ const Carousel = (() => {
           </div>
         </article>`;
     }).join('');
-
     dots.innerHTML = products.map((_,i) =>
       `<button class="c-dot${i===0?' active':''}" data-i="${i}" role="tab" aria-label="Slide ${i+1}" aria-selected="${i===0}"></button>`
     ).join('');
-
     dots.querySelectorAll('.c-dot').forEach(d => d.addEventListener('click', () => { stop(); go(+d.dataset.i); start(); }));
     updateUI(); start();
   }
-
   function go(n) {
     idx = (n + total) % total;
     const t = document.getElementById('carouselTrack');
     if (t) t.style.transform = `translateX(-${idx*100}%)`;
     updateUI();
   }
-
   function updateUI() {
     document.querySelectorAll('.c-dot').forEach((d,i) => { d.classList.toggle('active',i===idx); d.setAttribute('aria-selected',String(i===idx)); });
-    const pct  = total > 0 ? ((idx+1)/total)*100 : 0;
+    const pct = total > 0 ? ((idx+1)/total)*100 : 0;
     const fill = document.getElementById('cProgressFill');
-    const bar  = document.getElementById('cProgressBar');
+    const bar = document.getElementById('cProgressBar');
     if (fill) fill.style.width = pct+'%';
-    if (bar)  bar.setAttribute('aria-valuenow', Math.round(pct));
+    if (bar) bar.setAttribute('aria-valuenow', Math.round(pct));
   }
-
   function start() { stop(); timer = setInterval(() => go(idx+1), 5500); }
-  function stop()  { clearInterval(timer); }
-
+  function stop() { clearInterval(timer); }
   document.getElementById('cPrev').addEventListener('click', () => { stop(); go(idx-1); start(); });
   document.getElementById('cNext').addEventListener('click', () => { stop(); go(idx+1); start(); });
-
   const wrap = document.getElementById('carouselWrap');
   if (wrap) {
     wrap.addEventListener('mouseenter', stop);
@@ -1803,41 +1678,35 @@ const Carousel = (() => {
       if (Math.abs(diff) > 44) { stop(); go(idx + (diff>0?1:-1)); start(); }
     }, {passive:true});
   }
-
   fetch('/data/products.json')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => build(Array.isArray(data) ? data : (data.products || [])))
     .catch(() => { console.info('[Stardom] products.json not found — using demo.'); build(DEMO); });
-
   return { go, stop, start };
 })();
-
 /* ─────────────────────────────────────────────
    MODULE: Enquiry Form
 ───────────────────────────────────────────── */
 const EnquiryForm = (() => {
-  const form    = document.getElementById('enquiryForm');
+  const form = document.getElementById('enquiryForm');
   const success = document.getElementById('formSuccess');
-  const waLink  = document.getElementById('waDirectLink');
+  const waLink = document.getElementById('waDirectLink');
   if (!form) return;
-
   function updateWaLink() {
     const fields = {
-      name:    form.querySelector('#f-name').value.trim(),
-      phone:   form.querySelector('#f-phone').value.trim(),
+      name: form.querySelector('#f-name').value.trim(),
+      phone: form.querySelector('#f-phone').value.trim(),
       product: form.querySelector('#f-product').value,
-      qty:     form.querySelector('#f-qty').value,
-      city:    form.querySelector('#f-city').value.trim(),
-      msg:     form.querySelector('#f-msg').value.trim(),
+      qty: form.querySelector('#f-qty').value,
+      city: form.querySelector('#f-city').value.trim(),
+      msg: form.querySelector('#f-msg').value.trim(),
     };
     if (waLink) waLink.href = SITE.waEnquiry(fields);
   }
-
   form.querySelectorAll('input, select, textarea').forEach(el => el.addEventListener('input', updateWaLink));
-
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name  = form.querySelector('#f-name').value.trim();
+    const name = form.querySelector('#f-name').value.trim();
     const phone = form.querySelector('#f-phone').value.trim();
     if (!name || !phone) { form.querySelector(!name ? '#f-name' : '#f-phone').focus(); return; }
     updateWaLink();
@@ -1846,13 +1715,11 @@ const EnquiryForm = (() => {
     success.style.display = 'block';
   });
 })();
-
 /* ─────────────────────────────────────────────
    BOOT
 ───────────────────────────────────────────── */
 loadContact();
 setTimeout(() => { loadHero(); loadTicker(); loadSolutions(); }, 50);
-
 /* Netlify Identity */
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on('init', user => {

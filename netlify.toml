@@ -2,50 +2,19 @@
 #  Stardom Textiles — netlify.toml
 # ═══════════════════════════════════════════════════════
 #
-#  Place this file in the ROOT of your project (same level
-#  as your public/ folder and package.json if you have one).
+#  Place this file in the ROOT of your project.
+#  NO redirect rules for /admin — Netlify serves real
+#  files (admin/index.html) directly without rules.
+#  Redirect rules caused ERR_TOO_MANY_REDIRECTS.
 #
 # ═══════════════════════════════════════════════════════
 
 [build]
-  # Where your final site files live (adjust if different)
   publish = "public"
-
-  # No build command needed for a static HTML site.
-  # If you're using a bundler (Vite, Astro, etc.), set it here:
-  # command = "npm run build"
+  # No build command needed for a plain HTML site.
 
 # ───────────────────────────────────────────────────────
-#  REDIRECTS — Critical for fixing "Not Found" on login
-# ───────────────────────────────────────────────────────
-
-# 1. /admin → /admin/ (trailing slash normalisation)
-#    Without this, Netlify serves a 404 when Identity
-#    redirects back to /admin (no trailing slash).
-[[redirects]]
-  from   = "/admin"
-  to     = "/admin/"
-  status = 301
-  force  = true
-
-# 2. Serve admin/index.html for any /admin/* path
-#    This handles Netlify Identity hash-token redirects
-#    like /admin/#invite_token=abc or /admin/#recovery_token=xyz
-[[redirects]]
-  from   = "/admin/*"
-  to     = "/admin/index.html"
-  status = 200
-
-# 3. Optional: catch-all SPA redirect for the main site
-#    Only needed if your main site uses client-side routing.
-#    Comment out if your site is plain HTML with no JS router.
-# [[redirects]]
-#   from   = "/*"
-#   to     = "/index.html"
-#   status = 200
-
-# ───────────────────────────────────────────────────────
-#  HEADERS — Security basics
+#  HEADERS only — no redirects (they caused a loop)
 # ───────────────────────────────────────────────────────
 
 [[headers]]

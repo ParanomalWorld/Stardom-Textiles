@@ -14,8 +14,17 @@ const SHEET_ID = '1OvFW7cGgDO2FuPyWoSf6swK1JlVtxLCMcvSOESlMtlA';
 //  Internal helpers — do not edit below this line
 // ───────────────────────────────────────────────────────
 
+const TAB_GIDS = {
+  contact:   '0',
+  ticker:    '1841228985',
+  hero:      '2019338129',
+  solutions: '1258597208',
+  products:  '1069622695'
+};
+
 function sheetUrl(tabName) {
-  return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}`;
+  const gid = TAB_GIDS[tabName];
+  return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${gid}`;
 }
 
 // CSV parser — handles quoted fields with commas inside

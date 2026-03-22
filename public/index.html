@@ -1719,19 +1719,18 @@ loadContact();
 setTimeout(() => { loadHero(); loadTicker(); loadSolutions(); }, 50);
 /* Netlify Identity */
 if (window.netlifyIdentity) {
+  // login listener is TOP LEVEL — catches confirmation, invite, and normal login
+  window.netlifyIdentity.on('login', () => {
+    document.location.href = '/admin/';
+  });
+
+  // init catches the case where they're already logged in
   window.netlifyIdentity.on('init', user => {
-    if (user) {
-      // Already logged in (e.g. just confirmed email) → go straight to panel
-      document.location.href = '/admin/';
-    } else {
-      // Not logged in yet → redirect to panel after login
-      window.netlifyIdentity.on('login', () => {
-        document.location.href = '/admin/';
-      });
-    }
+    if (user) document.location.href = '/admin/';
   });
 }
-// Auto-open the widget for invite + confirmation tokens
+
+// Auto-open widget for all token types in the URL hash
 const hash = window.location.hash;
 if (hash.includes('invite_token') || hash.includes('confirmation_token') || hash.includes('recovery_token')) {
   if (window.netlifyIdentity) window.netlifyIdentity.open();

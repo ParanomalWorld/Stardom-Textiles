@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -6,7 +6,106 @@
   <title>Content Manager</title>
 </head>
 <body>
-  <!-- The CMS will automatically inject its UI here -->
+    The CMS will automatically inject its UI here -->
+    <!-- <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  </body>
+  </html> -->
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager — Stardom Textiles</title>
+
+  <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  Netlify Identity Widget                                 ║
+    ║  Must load BEFORE the CMS script.                       ║
+    ║  This handles the login token from the URL hash on      ║
+    ║  every page load — fixes the "Not Found" on 2nd login.  ║
+    ╚══════════════════════════════════════════════════════════╝
+  -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* Minimal loading state so page never looks blank mid-auth */
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #1a1a18;
+    }
+    #cms-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 1rem;
+      color: #9e9990;
+    }
+    #cms-loading .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #f0ede8;
+    }
+    #cms-loading .brand em {
+      font-style: normal;
+      color: #c4282b;
+    }
+    #cms-loading .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #c4282b;
+      animation: ping 1.4s ease-in-out infinite;
+    }
+    @keyframes ping {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0.4; }
+    }
+    #cms-loading p { font-size: 0.82rem; letter-spacing: 0.04em; }
+  </style>
+</head>
+<body>
+
+  <!-- Shown while CMS JS loads from CDN -->
+  <div id="cms-loading">
+    <div class="brand">STARDOM<em>.</em></div>
+    <div class="dot"></div>
+    <p>Loading Content Manager…</p>
+  </div>
+
+  <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  Netlify CMS — loaded from CDN (no build step needed)   ║
+    ║                                                          ║
+    ║  This auto-detects /admin/config.yml in the same folder. ║
+    ║  The broken `import CMS from 'netlify-cms-app'` in      ║
+    ║  admin.js required Webpack/Vite — DELETE that file.     ║
+    ╚══════════════════════════════════════════════════════════╝
+  -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+  <script>
+    // Hide loading screen once CMS initialises
+    if (window.CMS) {
+      window.CMS.registerEventListener({
+        name: 'preSave',
+        handler: () => undefined
+      });
+    }
+    // Remove loading overlay once body has CMS content
+    const observer = new MutationObserver(() => {
+      const cmsRoot = document.getElementById('nc-root');
+      if (cmsRoot) {
+        const loader = document.getElementById('cms-loading');
+        if (loader) loader.style.display = 'none';
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true });
+  </script>
+
 </body>
 </html>

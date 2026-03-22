@@ -16,7 +16,7 @@ collections:
   # 1. HOMEPAGE
   # ═══════════════════════════════════════════════
   - name: "homepage"
-    label: "🏠 Homepage"
+    label: "Homepage"
     files:
 
       # ── HERO SECTION ──────────────────────────
@@ -64,7 +64,7 @@ collections:
   # 2. SOLUTIONS / CATEGORIES
   # ═══════════════════════════════════════════════
   - name: "solutions"
-    label: "📦 Solutions / Categories"
+    label: "Solutions / Categories"
     files:
 
       - label: "Solutions List"
@@ -148,7 +148,7 @@ collections:
   # 3. PRODUCTS (Delivered catalogue)
   # ═══════════════════════════════════════════════
   - name: "products"
-    label: "🛍️ Products (Delivered Catalogue)"
+    label: "Products (Delivered Catalogue)"
     files:
 
       - label: "Products List"

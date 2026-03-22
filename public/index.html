@@ -1405,10 +1405,14 @@ const EnquiryForm = (() => {
 })();
 
 /* ─── Netlify Identity → redirect to admin ─── */
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
-  window.netlifyIdentity.on('init',  user => { if (user) document.location.href = '/admin/'; });
-}
+window.netlifyIdentity.on('init', user => {
+  // Sirf tab redirect karo jab confirmation/invite token URL mein ho
+  // Normal logged-in visitors ko homepage pe rehne do
+  const h = window.location.hash;
+  if (user && (h.includes('confirmation_token') || h.includes('invite_token') || h.includes('recovery_token'))) {
+    document.location.href = '/admin/';
+  }
+});
 const _hash = window.location.hash;
 if (_hash.includes('invite_token') || _hash.includes('confirmation_token') || _hash.includes('recovery_token')) {
   if (window.netlifyIdentity) window.netlifyIdentity.open();

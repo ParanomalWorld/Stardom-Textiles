@@ -1238,11 +1238,23 @@ body.dark .cta-band { background: #0c0c0a; }
 <!-- ═══════════════════════════════════════════════
      JAVASCRIPT
 ═══════════════════════════════════════════════ -->
+<!--
+  ════════════════════════════════════════════════════════
+  REPLACE the entire <script> block at the bottom of your
+  public/index.html with this content.
+
+  CHANGES from original:
+  1. loadContact / loadTicker / loadHero / loadSolutions
+     + Carousel fetch are all REMOVED from inline script.
+     They now live in public/js/sheets-cms.js
+  2. Netlify Identity block fixed (defer removed in <head>)
+  3. Enquiry form WA link still works — SITE object is kept
+  ════════════════════════════════════════════════════════
+-->
 <script>
 'use strict';
-/* ─────────────────────────────────────────────
-   GLOBAL CONTACT STATE
-───────────────────────────────────────────── */
+
+/* ─── SITE object — sheets-cms.js updates this ─── */
 const SITE = {
   primaryPhone: '7510000000',
   primaryWaCode: '91',
@@ -1263,57 +1275,44 @@ const SITE = {
   waEnquiry(fields = {}) {
     const lines = [
       'Hi, I want to enquire about Stardom Textiles products.',
-      fields.name ? `Name: ${fields.name}` : '',
-      fields.phone ? `Phone: ${fields.phone}` : '',
+      fields.name    ? `Name: ${fields.name}`       : '',
+      fields.phone   ? `Phone: ${fields.phone}`     : '',
       fields.product ? `Product: ${fields.product}` : '',
-      fields.qty ? `Qty: ${fields.qty}` : '',
-      fields.city ? `City: ${fields.city}` : '',
-      fields.msg ? `Note: ${fields.msg}` : '',
+      fields.qty     ? `Qty: ${fields.qty}`         : '',
+      fields.city    ? `City: ${fields.city}`       : '',
+      fields.msg     ? `Note: ${fields.msg}`        : '',
     ].filter(Boolean);
     return this.waLink(lines.join('\n'));
   }
 };
-/* ─────────────────────────────────────────────
-   MODULE: Dark Mode — synced across both toggles
-───────────────────────────────────────────── */
+
+/* ─── Dark Mode ─── */
 const DarkMode = (() => {
-  const btns = [
-    document.getElementById('darkToggle'),
-    document.getElementById('darkToggleMob')
-  ].filter(Boolean);
-  const body = document.body;
-  const KEY = 'st-dark';
+  const btns = [document.getElementById('darkToggle'), document.getElementById('darkToggleMob')].filter(Boolean);
+  const KEY  = 'st-dark';
   function apply(v) {
-    body.classList.toggle('dark', v);
+    document.body.classList.toggle('dark', v);
     btns.forEach(b => b && b.setAttribute('aria-pressed', String(v)));
   }
   const stored = localStorage.getItem(KEY);
   apply(stored !== null ? stored === '1' : window.matchMedia('(prefers-color-scheme: dark)').matches);
   btns.forEach(btn => btn && btn.addEventListener('click', () => {
-    const v = !body.classList.contains('dark');
+    const v = !document.body.classList.contains('dark');
     apply(v);
     try { localStorage.setItem(KEY, v ? '1' : '0'); } catch {}
   }));
 })();
-/* ─────────────────────────────────────────────
-   MODULE: Top Bar — only visible at very top (scrollY < 60)
-───────────────────────────────────────────── */
+
+/* ─── Top Bar (hide on scroll) ─── */
 const TopBar = (() => {
   const bar = document.getElementById('topBar');
   if (!bar) return;
-  function update() {
-    if (window.scrollY < 60) {
-      bar.classList.remove('tb-hidden');
-    } else {
-      bar.classList.add('tb-hidden');
-    }
-  }
+  function update() { bar.classList.toggle('tb-hidden', window.scrollY >= 60); }
   window.addEventListener('scroll', update, { passive: true });
-  update(); // initial check
+  update();
 })();
-/* ─────────────────────────────────────────────
-   MODULE: Header scroll shadow
-───────────────────────────────────────────── */
+
+/* ─── Header scroll shadow ─── */
 const Header = (() => {
   const el = document.getElementById('siteHeader');
   let ticking = false;
@@ -1324,12 +1323,11 @@ const Header = (() => {
     }
   }, { passive: true });
 })();
-/* ─────────────────────────────────────────────
-   MODULE: Mobile nav — animated hamburger
-───────────────────────────────────────────── */
+
+/* ─── Mobile nav ─── */
 const MobileNav = (() => {
   const toggle = document.getElementById('mobileToggle');
-  const nav = document.getElementById('mobileNav');
+  const nav    = document.getElementById('mobileNav');
   if (!toggle || !nav) return;
   function close() {
     nav.classList.remove('open');
@@ -1344,398 +1342,82 @@ const MobileNav = (() => {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.classList.toggle('open', open);
   });
-  document.addEventListener('click', e => {
-    if (!nav.contains(e.target) && !toggle.contains(e.target)) close();
-  });
+  document.addEventListener('click', e => { if (!nav.contains(e.target) && !toggle.contains(e.target)) close(); });
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 })();
-/* ─────────────────────────────────────────────
-   MODULE: Scroll Reveal
-───────────────────────────────────────────── */
+
+/* ─── Scroll Reveal ─── */
 const Reveal = (() => {
   const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   els.forEach(el => obs.observe(el));
 })();
-/* ─────────────────────────────────────────────
-   MODULE: Trust Popup
-   Shows after 4s on desktop, 3s on mobile.
-   Hides while scrolling, shows after pause.
-───────────────────────────────────────────── */
+
+/* ─── Trust Popup ─── */
 const TrustPopup = (() => {
-  const popup = document.getElementById('trustPopup');
-  const closeBtn= document.getElementById('tpClose');
-  const enquire = document.getElementById('tpEnquireLink');
+  const popup    = document.getElementById('trustPopup');
+  const closeBtn = document.getElementById('tpClose');
+  const enquire  = document.getElementById('tpEnquireLink');
   if (!popup || !closeBtn) return;
-  let userClosed = false;
-  let showTimer, scrollTimer;
+  let userClosed = false, showTimer, scrollTimer;
   const hide = () => popup.classList.add('hide');
   const show = () => { if (!userClosed) popup.classList.remove('hide'); };
-  /* Initial show after delay */
   showTimer = setTimeout(show, 4000);
-  /* Hide while scrolling, re-show on pause */
   window.addEventListener('scroll', () => {
-    hide();
-    clearTimeout(scrollTimer);
+    hide(); clearTimeout(scrollTimer);
     if (!userClosed) scrollTimer = setTimeout(show, 3000);
   }, { passive: true });
-  closeBtn.addEventListener('click', () => {
-    hide();
-    userClosed = true;
-    clearTimeout(showTimer);
-    clearTimeout(scrollTimer);
-  });
-  /* Close popup when user clicks Enquire (navigates to form) */
+  closeBtn.addEventListener('click', () => { hide(); userClosed = true; clearTimeout(showTimer); clearTimeout(scrollTimer); });
   enquire && enquire.addEventListener('click', () => { hide(); userClosed = true; });
 })();
-/* ─────────────────────────────────────────────
-   MODULE: loadContact()
-───────────────────────────────────────────── */
-function loadContact() {
-  fetch('/data/contact.json')
-    .then(r => r.ok ? r.json() : Promise.reject('no contact.json'))
-    .then(data => {
-      if (data.shopName) SITE.shopName = data.shopName;
-      if (data.city) SITE.city = data.city;
-      if (data.address) SITE.address = data.address;
-      if (data.hours) SITE.hours = data.hours;
-      if (data.hoursShort) SITE.hoursShort = data.hoursShort;
-      if (data.yearsInBusiness) SITE.yearsInBusiness = data.yearsInBusiness;
-      if (data.ordersDelivered) SITE.ordersDelivered = data.ordersDelivered;
-      if (data.rating?.stars) SITE.rating.stars = data.rating.stars;
-      if (data.rating?.value) SITE.rating.value = data.rating.value;
-      if (data.social) SITE.social = { ...SITE.social, ...data.social };
-      if (Array.isArray(data.phones) && data.phones.length) {
-        const primary = data.phones.find(p => p.whatsapp !== false) || data.phones[0];
-        SITE.primaryPhone = primary.number || SITE.primaryPhone;
-        SITE.primaryWaCode = primary.countryCode || '91';
-      }
-      /* Top bar */
-      const tbCity = document.getElementById('tbCity');
-      const tbPhone = document.getElementById('tbPhone');
-      if (tbCity) tbCity.innerHTML = `<span class="dot"></span>📍 ${SITE.city}`;
-      if (tbPhone) tbPhone.innerHTML = `<span class="dot"></span>📞 ${SITE.primaryPhone}`;
-      /* Header phone */
-      const hp = document.getElementById('headerPhone');
-      if (hp) hp.textContent = SITE.primaryPhone;
-      /* Trust popup */
-      const tpCity = document.getElementById('tpCity');
-      const tpHours = document.getElementById('tpHoursShort');
-      const tpPhone = document.getElementById('tpPhone');
-      const tpWa = document.getElementById('tpWaLink');
-      const tpStars = document.getElementById('tpStars');
-      if (tpCity) tpCity.textContent = `📍 ${SITE.city}`;
-      if (tpHours) tpHours.textContent = `🕐 ${SITE.hoursShort}`;
-      if (tpPhone) tpPhone.textContent = `📞 ${SITE.primaryPhone}`;
-      if (tpWa) tpWa.href = SITE.waLink();
-      if (tpStars) { tpStars.textContent = SITE.rating.stars; tpStars.setAttribute('aria-label', `${SITE.rating.value} out of 5`); }
-      /* Mobile nav WA */
-      const mobNavWa = document.getElementById('mobileNavWa');
-      if (mobNavWa) mobNavWa.href = SITE.waLink();
-      /* Contact channels */
-      const cpv = document.getElementById('contactPhoneVal');
-      const cav = document.getElementById('contactAddressVal');
-      const chv = document.getElementById('contactHoursVal');
-      const cpCard= document.getElementById('channelPhone');
-      if (cpv) cpv.textContent = SITE.primaryPhone;
-      if (cav) cav.textContent = SITE.address;
-      if (chv) chv.textContent = SITE.hours;
-      if (cpCard) cpCard.href = `tel:${SITE.primaryPhone}`;
-      /* Optional email card injection */
-      if (data.email) {
-        const ec = document.createElement('a');
-        ec.href = `mailto:${data.email}`; ec.className = 'channel-card'; ec.setAttribute('role','listitem');
-        ec.innerHTML = `<div class="channel-icon" aria-hidden="true">📧</div><div><div class="channel-label">Email Us</div><div class="channel-val">${data.email}</div></div>`;
-        const ch = document.getElementById('contactChannels');
-        if (ch) ch.appendChild(ec);
-      }
-      /* Hero eyebrow & stats */
-      const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-      setTxt('heroEyebrowCity', SITE.city);
-      setTxt('heroEyebrowYears', SITE.yearsInBusiness);
-      setTxt('statYears', SITE.yearsInBusiness);
-      setTxt('statOrders', SITE.ordersDelivered);
-      setTxt('statRating', `${SITE.rating.value}★`);
-      setTxt('factYears', SITE.yearsInBusiness);
-      setTxt('factOrders', SITE.ordersDelivered);
-      /* Footer */
-      setTxt('footerShopName', SITE.shopName);
-      const fTag = document.getElementById('footerTagline');
-      if (fTag) fTag.textContent = `Premium Textile Manufacturing · ${SITE.city} · Pan-India`;
-      const fPL = document.getElementById('footerPhoneLink');
-      if (fPL) { fPL.textContent = SITE.primaryPhone; fPL.href = `tel:${SITE.primaryPhone}`; }
-      const fCont = document.getElementById('footerContact');
-      if (fCont) {
-        const emailLine = data.email ? `📧 <a href="mailto:${data.email}" style="color:#f0ede8;font-weight:600">${data.email}</a><br>` : '';
-        const mapA = data.mapsUrl ? `href="${data.mapsUrl}" target="_blank" rel="noopener"` : '';
-        fCont.innerHTML = `📍 <a ${mapA} style="color:#7a7570">${SITE.address}</a><br>📞 <a href="tel:${SITE.primaryPhone}" style="color:#f0ede8;font-weight:600">${SITE.primaryPhone}</a><br>🕐 ${SITE.hours}<br>${emailLine}✈️ Delivering All Over India`;
-      }
-      /* Social */
-      const fFb = document.getElementById('fSocFb');
-      const fIg = document.getElementById('fSocIg');
-      const fPt = document.getElementById('fSocPt');
-      if (fFb && SITE.social.facebook) fFb.href = SITE.social.facebook;
-      if (fIg && SITE.social.instagram) fIg.href = SITE.social.instagram;
-      if (fPt && SITE.social.pinterest) fPt.href = SITE.social.pinterest;
-      /* CTA WA */
-      const ctaWa = document.getElementById('ctaWaBtn');
-      if (ctaWa) ctaWa.href = SITE.waLink('Hi, I want to place an order.');
-      /* Form WA + success */
-      const waD = document.getElementById('waDirectLink');
-      if (waD) waD.href = SITE.waLink('Hi, I want to enquire about your products.');
-      setTxt('successPhone', SITE.primaryPhone);
-    })
-    .catch(() => console.info('[Stardom] contact.json not found — using defaults.'));
-}
-/* ─────────────────────────────────────────────
-   MODULE: loadTicker()
-───────────────────────────────────────────── */
-function loadTicker() {
-  fetch('/data/ticker.json')
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const items = Array.isArray(data) ? data : (data.items || []);
-      if (!items.length) return;
-      const track = document.getElementById('tickerTrack');
-      if (!track) return;
-      const html = items.map(item => {
-        const hl = item.highlight ? `<strong>${item.highlight}</strong> ` : '';
-        return `<span class="ticker-item"><span class="tdot"></span>${hl}${item.text || ''}</span>`;
-      }).join('');
-      track.innerHTML = html + html;
-      track.style.animationDuration = Math.max(18, items.length * 6) + 's';
-    })
-    .catch(() => console.info('[Stardom] ticker.json not found — using fallback.'));
-}
-/* ─────────────────────────────────────────────
-   MODULE: loadHero()
-───────────────────────────────────────────── */
-function loadHero() {
-  fetch('/data/hero.json')
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      if (data.heading) document.getElementById('heroHeading').innerHTML = data.heading;
-      if (data.subheading) document.getElementById('heroSubheading').textContent = data.subheading;
-      const bgImg = document.getElementById('heroImage');
-      const bgCarousel = document.getElementById('heroBgCarousel');
-      const dotsWrap = document.getElementById('heroCarouselDots');
-      const images = [];
-      if (Array.isArray(data.images) && data.images.length >= 2) {
-        data.images.forEach(img => {
-          const url = typeof img === 'string' ? img : (img.url || img.image || '');
-          const alt = (typeof img === 'object' && img.alt) ? img.alt : 'Stardom Textiles';
-          if (url) images.push({ url, alt });
-        });
-      }
-      if (images.length >= 2) {
-        bgImg.style.display = 'none';
-        bgCarousel.style.display = 'block';
-        bgCarousel.innerHTML = images.map((img, i) =>
-          `<div class="hc-slide${i===0?' active':''}" style="background-image:url('${img.url}')" role="img" aria-label="${img.alt}"></div>`
-        ).join('');
-        dotsWrap.style.display = 'flex';
-        dotsWrap.innerHTML = images.map((_,i) =>
-          `<button class="hc-dot${i===0?' active':''}" data-i="${i}" aria-label="Image ${i+1}"></button>`
-        ).join('');
-        const slides = bgCarousel.querySelectorAll('.hc-slide');
-        const dots = dotsWrap.querySelectorAll('.hc-dot');
-        let cur = 0, hcT;
-        function goBg(n) {
-          slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
-          cur = (n + slides.length) % slides.length;
-          slides[cur].classList.add('active'); dots[cur].classList.add('active');
-        }
-        function startBg() { hcT = setInterval(() => goBg(cur+1), 5000); }
-        function stopBg() { clearInterval(hcT); }
-        dots.forEach(d => d.addEventListener('click', () => { stopBg(); goBg(+d.dataset.i); startBg(); }));
-        bgCarousel.addEventListener('mouseenter', stopBg);
-        bgCarousel.addEventListener('mouseleave', startBg);
-        startBg();
-      } else if (data.image) {
-        bgImg.src = data.image; bgImg.style.display = 'block';
-      } else if (Array.isArray(data.images) && data.images.length === 1) {
-        const url = typeof data.images[0]==='string' ? data.images[0] : (data.images[0].url||'');
-        if (url) { bgImg.src = url; bgImg.style.display = 'block'; }
-      }
-    })
-    .catch(() => console.info('[Stardom] hero.json not found — using defaults.'));
-}
-/* ─────────────────────────────────────────────
-   MODULE: loadSolutions()
-───────────────────────────────────────────── */
-function loadSolutions() {
-  fetch('/data/solutions.json')
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const all = Array.isArray(data) ? data : (data.solutions || []);
-      const display = all.slice(0, 8);
-      const grid = document.getElementById('solutionsGrid');
-      if (!grid) return;
-      grid.innerHTML = display.map(sol => {
-        const href = (sol.buttonLink && sol.buttonLink !== '#') ? sol.buttonLink : SITE.waOrder(sol.title);
-        const btnText = sol.buttonText || 'Order Now';
-        return `
-          <article class="sol-card" role="listitem" tabindex="0"
-            onclick="window.open('${href}','_blank')"
-            onkeypress="if(event.key==='Enter') window.open('${href}','_blank')"
-            aria-label="${sol.title}">
-            <div class="sol-img-wrap">
-              <img src="${sol.image}" alt="${sol.title}" class="sol-img" loading="lazy" width="400" height="200">
-            </div>
-            <div class="sol-body">
-              <span class="sol-tag">${sol.badge || 'Collection'}</span>
-              <h3 class="sol-name">${sol.title}</h3>
-              <span class="sol-order" aria-hidden="true">${btnText} →</span>
-            </div>
-          </article>`;
-      }).join('');
-      const row = document.getElementById('exploreMoreRow');
-      if (row) row.style.display = all.length > 8 ? 'block' : 'none';
-    })
-    .catch(() => console.info('[Stardom] solutions.json not found.'));
-}
-/* ─────────────────────────────────────────────
-   MODULE: Product Carousel
-───────────────────────────────────────────── */
-const Carousel = (() => {
-  let idx=0, total=0, timer=null;
-  const DEMO = [
-    { name:'School Uniform Set', image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=75', category:'Uniforms', description:'Premium school uniform sets — customisable sizing and colours. Minimum 50 pcs.' },
-    { name:'Sports Jersey Kit', image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=900&q=75', category:'Sports Kit', description:'Breathable drifit kits for football, cricket and kabaddi. Custom printing available.' },
-    { name:'Custom T-Shirt', image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900&q=75', category:'T-Shirts', description:'Round neck and polo tees in all sizes. Screen or digital print. Min. 12 pcs.' },
-    { name:'Track Suit', image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=900&q=75', category:'Track Suits', description:'Comfortable track suits for school, corporate or personal use. Fleece and nylon.' }
-  ];
-  function build(products) {
-    total = products.length;
-    const track = document.getElementById('carouselTrack');
-    const dots = document.getElementById('cDots');
-    if (!track || !dots) return;
-    track.innerHTML = products.map((p, i) => {
-      const waHref = (p.buttonLink && p.buttonLink !== '#') ? p.buttonLink : SITE.waOrder(p.name);
-      const btnText = p.buttonText || 'Order via WhatsApp';
-      const cat = Array.isArray(p.categories) ? p.categories.join(' · ') : (p.category || 'Collection');
-      const num = String(i+1).padStart(2,'0');
-      return `
-        <article class="c-slide" role="listitem" aria-label="Product ${i+1}: ${p.name}">
-          <div class="c-slide-img">
-            <img src="${p.image}" alt="${p.name}" loading="${i===0?'eager':'lazy'}" width="600" height="480">
-            <div class="c-slide-img-overlay" aria-hidden="true"></div>
-          </div>
-          <div class="c-slide-body">
-            <div class="c-slide-num" aria-hidden="true">${num}</div>
-            <div class="c-slide-cat">${cat}</div>
-            <h3 class="c-slide-name">${p.name}</h3>
-            <p class="c-slide-desc">${p.description || 'Premium quality, bulk & retail. Contact us for custom sizes, colours and branding.'}</p>
-            <div class="c-slide-actions">
-              <a href="${waHref}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">${btnText}</a>
-              <a href="explore_catalog.html" class="btn btn-ghost btn-sm">View Details</a>
-            </div>
-          </div>
-        </article>`;
-    }).join('');
-    dots.innerHTML = products.map((_,i) =>
-      `<button class="c-dot${i===0?' active':''}" data-i="${i}" role="tab" aria-label="Slide ${i+1}" aria-selected="${i===0}"></button>`
-    ).join('');
-    dots.querySelectorAll('.c-dot').forEach(d => d.addEventListener('click', () => { stop(); go(+d.dataset.i); start(); }));
-    updateUI(); start();
-  }
-  function go(n) {
-    idx = (n + total) % total;
-    const t = document.getElementById('carouselTrack');
-    if (t) t.style.transform = `translateX(-${idx*100}%)`;
-    updateUI();
-  }
-  function updateUI() {
-    document.querySelectorAll('.c-dot').forEach((d,i) => { d.classList.toggle('active',i===idx); d.setAttribute('aria-selected',String(i===idx)); });
-    const pct = total > 0 ? ((idx+1)/total)*100 : 0;
-    const fill = document.getElementById('cProgressFill');
-    const bar = document.getElementById('cProgressBar');
-    if (fill) fill.style.width = pct+'%';
-    if (bar) bar.setAttribute('aria-valuenow', Math.round(pct));
-  }
-  function start() { stop(); timer = setInterval(() => go(idx+1), 5500); }
-  function stop() { clearInterval(timer); }
-  document.getElementById('cPrev').addEventListener('click', () => { stop(); go(idx-1); start(); });
-  document.getElementById('cNext').addEventListener('click', () => { stop(); go(idx+1); start(); });
-  const wrap = document.getElementById('carouselWrap');
-  if (wrap) {
-    wrap.addEventListener('mouseenter', stop);
-    wrap.addEventListener('mouseleave', start);
-    wrap.addEventListener('focusin', stop);
-    wrap.addEventListener('focusout', start);
-    let tx = 0;
-    wrap.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, {passive:true});
-    wrap.addEventListener('touchend', e => {
-      const diff = tx - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 44) { stop(); go(idx + (diff>0?1:-1)); start(); }
-    }, {passive:true});
-  }
-  fetch('/data/products.json')
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => build(Array.isArray(data) ? data : (data.products || [])))
-    .catch(() => { console.info('[Stardom] products.json not found — using demo.'); build(DEMO); });
-  return { go, stop, start };
-})();
-/* ─────────────────────────────────────────────
-   MODULE: Enquiry Form
-───────────────────────────────────────────── */
+
+/* ─── Enquiry Form ─── */
 const EnquiryForm = (() => {
-  const form = document.getElementById('enquiryForm');
+  const form    = document.getElementById('enquiryForm');
   const success = document.getElementById('formSuccess');
-  const waLink = document.getElementById('waDirectLink');
+  const waLink  = document.getElementById('waDirectLink');
   if (!form) return;
   function updateWaLink() {
     const fields = {
-      name: form.querySelector('#f-name').value.trim(),
-      phone: form.querySelector('#f-phone').value.trim(),
+      name:    form.querySelector('#f-name').value.trim(),
+      phone:   form.querySelector('#f-phone').value.trim(),
       product: form.querySelector('#f-product').value,
-      qty: form.querySelector('#f-qty').value,
-      city: form.querySelector('#f-city').value.trim(),
-      msg: form.querySelector('#f-msg').value.trim(),
+      qty:     form.querySelector('#f-qty').value,
+      city:    form.querySelector('#f-city').value.trim(),
+      msg:     form.querySelector('#f-msg').value.trim(),
     };
     if (waLink) waLink.href = SITE.waEnquiry(fields);
   }
   form.querySelectorAll('input, select, textarea').forEach(el => el.addEventListener('input', updateWaLink));
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name = form.querySelector('#f-name').value.trim();
+    const name  = form.querySelector('#f-name').value.trim();
     const phone = form.querySelector('#f-phone').value.trim();
     if (!name || !phone) { form.querySelector(!name ? '#f-name' : '#f-phone').focus(); return; }
     updateWaLink();
     window.open(waLink.href, '_blank');
-    form.style.display = 'none';
+    form.style.display    = 'none';
     success.style.display = 'block';
   });
 })();
-/* ─────────────────────────────────────────────
-   BOOT
-───────────────────────────────────────────── */
-loadContact();
-setTimeout(() => { loadHero(); loadTicker(); loadSolutions(); }, 50);
-/* Netlify Identity */
+
+/* ─── Netlify Identity → redirect to admin ─── */
 if (window.netlifyIdentity) {
-  // login listener is TOP LEVEL — catches confirmation, invite, and normal login
-  window.netlifyIdentity.on('login', () => {
-    document.location.href = '/admin/';
-  });
-
-  // init catches the case where they're already logged in
-  window.netlifyIdentity.on('init', user => {
-    if (user) document.location.href = '/admin/';
-  });
+  window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+  window.netlifyIdentity.on('init',  user => { if (user) document.location.href = '/admin/'; });
 }
-
-// Auto-open widget for all token types in the URL hash
-const hash = window.location.hash;
-if (hash.includes('invite_token') || hash.includes('confirmation_token') || hash.includes('recovery_token')) {
+const _hash = window.location.hash;
+if (_hash.includes('invite_token') || _hash.includes('confirmation_token') || _hash.includes('recovery_token')) {
   if (window.netlifyIdentity) window.netlifyIdentity.open();
   else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
 }
 </script>
+
+<!-- Google Sheets CMS — loads after page scripts -->
+<!-- Make sure SHEET_ID is filled in inside this file -->
+<script src="/js/sheets-cms.js"></script>
 </body>
 </html>

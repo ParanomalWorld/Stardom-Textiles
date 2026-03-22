@@ -8,7 +8,7 @@
 //  https://docs.google.com/spreadsheets/d/  ← THIS PART →  /edit
 // ═══════════════════════════════════════════════════════
 
-const SHEET_ID = '1OvFW7cGgDO2FuPyWoSf6swK1JlVtxLCMcvSOESlMtlA/edit';
+const SHEET_ID = '1OvFW7cGgDO2FuPyWoSf6swK1JlVtxLCMcvSOESlMtlA';
 
 // ───────────────────────────────────────────────────────
 //  Internal helpers — do not edit below this line

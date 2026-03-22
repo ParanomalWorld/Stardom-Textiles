@@ -1720,10 +1720,20 @@ setTimeout(() => { loadHero(); loadTicker(); loadSolutions(); }, 50);
 /* Netlify Identity */
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on('init', user => {
-    if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+    if (user) {
+      // Already logged in (e.g. just confirmed email) → go straight to panel
+      document.location.href = '/admin/';
+    } else {
+      // Not logged in yet → redirect to panel after login
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/';
+      });
+    }
   });
 }
-if (window.location.hash.includes('invite_token')) {
+// Auto-open the widget for invite + confirmation tokens
+const hash = window.location.hash;
+if (hash.includes('invite_token') || hash.includes('confirmation_token') || hash.includes('recovery_token')) {
   if (window.netlifyIdentity) window.netlifyIdentity.open();
   else document.addEventListener('netlifyIdentityReady', () => window.netlifyIdentity.open());
 }

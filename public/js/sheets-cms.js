@@ -19,7 +19,9 @@ const TAB_GIDS = {
   ticker:    '1841228985',
   hero:      '2019338129',
   solutions: '1258597208',
-  products:  '1069622695'
+  products:  '1069622695',
+  stat:      '1792552014',
+  about:     '1520088463'
 };
 
 function sheetUrl(tabName) {
@@ -377,7 +379,7 @@ function loadSolutions() {
       }).join('');
 
       const row = document.getElementById('exploreMoreRow');
-      if (row) row.style.display = all.length > 8 ? 'block' : 'none';
+if (row) row.style.display = all.length > 0 ? 'block' : 'none';
     })
     .catch(err => console.warn('[Sheets CMS] solutions tab:', err));
 }
@@ -486,17 +488,130 @@ function buildCarousel(products) {
 }
 
 // ═══════════════════════════════════════════════════════
+//  STAT TAB loader
+//  Sheet format (2 columns): field | value
+//
+//  Rows needed:
+//  years        | 11+
+//  orders       | 500+
+//  rating       | 4.3
+//  ratingLabel  | Rated
+//  panLabel     | India Delivery
+// ═══════════════════════════════════════════════════════
+
+function loadStats() {
+  fetch(sheetUrl('stat'))
+    .then(r => r.ok ? r.text() : Promise.reject('stat sheet missing'))
+    .then(text => {
+      const d = parseKV(text);
+      if (d.years)  setText('statYears',  d.years);
+      if (d.orders) setText('statOrders', d.orders);
+      if (d.rating) setText('statRating', `${d.rating}★`);
+      // Also update about section facts if present
+      if (d.years)  setText('factYears',  d.years);
+      if (d.orders) setText('factOrders', d.orders);
+    })
+    .catch(err => console.warn('[Sheets CMS] stat tab:', err));
+}
+
+// ═══════════════════════════════════════════════════════
+//  ABOUT TAB loader
+//  Sheet format (2 columns): field | value
+//
+//  Rows needed:
+//  heading    | स्टारडम टेक्सटाइल्स बद्दल
+//  para1      | For over a decade, Stardom Textiles...
+//  para2      | From school uniforms to sports kits...
+//  image      | https://cloudinary.com/your-image.jpg
+//  youtubeId  | xzQR-nVmj0g   (just the video ID, not full URL)
+//  fact1n     | 11+
+//  fact1l     | Years in Business
+//  fact2n     | 500+
+//  fact2l     | Batches Delivered
+//  fact3n     | B2B
+//  fact3l     | Bulk & Institutional
+//  fact4n     | PAN IN
+//  fact4l     | Delivery Coverage
+// ═══════════════════════════════════════════════════════
+
+function loadAbout() {
+  fetch(sheetUrl('about'))
+    .then(r => r.ok ? r.text() : Promise.reject('about sheet missing'))
+    .then(text => {
+      const d = parseKV(text);
+
+      // Heading
+      const h2 = document.getElementById('about-h2');
+      if (h2 && d.heading) h2.textContent = d.heading;
+
+      // Paragraphs — find the 2 <p> tags inside .about-body
+      const aboutBody = document.querySelector('.about-body');
+      if (aboutBody) {
+        const paras = aboutBody.querySelectorAll('p');
+        if (paras[0] && d.para1) paras[0].textContent = d.para1;
+        if (paras[1] && d.para2) paras[1].textContent = d.para2;
+      }
+
+      // Image
+      const aboutImg = document.querySelector('.about-img');
+      if (aboutImg && d.image) {
+        aboutImg.src = d.image;
+        aboutImg.alt = d.heading || 'Stardom Textiles';
+      }
+
+      // YouTube embed — update iframe src
+      const iframe = document.querySelector('.about-video iframe');
+      if (iframe && d.youtubeid) {
+        iframe.src = `https://www.youtube.com/embed/${d.youtubeid}`;
+      }
+
+      // Fact numbers and labels
+      const setFact = (nId, lId, nVal, lVal) => {
+        const nEl = document.getElementById(nId);
+        const lEl = document.getElementById(lId);
+        if (nEl && nVal) nEl.textContent = nVal;
+        // Labels are plain text nodes — find by fact container
+        if (lEl && lVal) lEl.textContent = lVal;
+      };
+
+      // Fact number IDs exist in HTML, labels are in sibling divs
+      if (d.fact1n) setText('factYears',  d.fact1n);
+      if (d.fact2n) setText('factOrders', d.fact2n);
+
+      // Update fact labels — they don't have IDs so we target by structure
+      const factCards = document.querySelectorAll('.about-fact');
+      const factData = [
+        { n: d.fact1n, l: d.fact1l },
+        { n: d.fact2n, l: d.fact2l },
+        { n: d.fact3n, l: d.fact3l },
+        { n: d.fact4n, l: d.fact4l },
+      ];
+      factCards.forEach((card, i) => {
+        const fd = factData[i];
+        if (!fd) return;
+        const numEl = card.querySelector('.about-fact-n');
+        const lblEl = card.querySelector('.about-fact-l');
+        if (numEl && fd.n) numEl.textContent = fd.n;
+        if (lblEl && fd.l) lblEl.textContent = fd.l;
+      });
+    })
+    .catch(err => console.warn('[Sheets CMS] about tab:', err));
+}
+
+// ═══════════════════════════════════════════════════════
 //  BOOT — load all tabs
 // ═══════════════════════════════════════════════════════
 
 if (SHEET_ID === 'YOUR_SHEET_ID_HERE') {
   console.warn('[Sheets CMS] ⚠️  SHEET_ID not set in public/js/sheets-cms.js — using site defaults.');
 } else {
-  loadContact();
+loadContact();
   setTimeout(() => {
     loadHero();
     loadTicker();
     loadSolutions();
     loadProducts();
+    loadStats();   // ← add karo
+    loadAbout();   // ← add karo
   }, 50);
 }

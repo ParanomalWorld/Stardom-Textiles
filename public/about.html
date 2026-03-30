@@ -1,68 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — Stardom Textiles | 11+ Years of Excellence</title>
-  <meta name="description" content="Learn the story behind Stardom Textiles — 11+ years of premium textile manufacturing in Karanja (Gh.). School uniforms, sports kits and custom T-shirts delivered pan-India.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Stardom Textiles | कस्टम गारमेंट्स, युनिफॉर्म्स & स्पोर्ट्स किट — नागपूर</title>
+  <meta name="description" content="स्टारडम टेक्सटाइल्स – बाबलू शेख यांनी २२ जून २०२५ रोजी स्थापन केलेले प्रीमियम कस्टम गारमेंट शॉप. शाळा, कॉलेज, स्पोर्ट्स क्लबसाठी दर्जेदार युनिफॉर्म्स, टी-शर्ट्स आणि कस्टम प्रिंटिंग. अमरावती-नागपूर हायवेवर, साई कॉम्प्लेक्स, नारायण काळे कॉलेज जवळ.">
   <meta name="theme-color" content="#0f0f0d">
+  <link rel="icon" sizes="16x16" href="/favicon-16.png">
+  <link rel="icon" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" sizes="64x64" href="/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
-/* ── TOKENS ── */
-:root{
-  --ink:#141410;--ink-80:rgba(20,20,16,0.8);--ink-40:rgba(20,20,16,0.4);
-  --parchment:#f5f2ec;--parchment-d:#ede9e1;
-  --stone:#d4cfc6;--stone-d:#b0a99e;
-  --crimson:#c4282b;--crimson-d:#9e2022;--crimson-glow:rgba(196,40,43,0.18);
-  --green-live:#22c55e;
-  --bg:#faf8f5;--bg-alt:#f0ede6;--bg-deep:#141410;
-  --card:#ffffff;--border:rgba(20,20,16,0.08);--border-strong:rgba(20,20,16,0.16);
-  --ff-display:'Fraunces',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;
-  --s1:0 2px 8px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.03);
-  --s2:0 8px 32px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.04);
-  --s3:0 20px 60px rgba(0,0,0,0.10),0 4px 16px rgba(0,0,0,0.06);
-  --ease-out:cubic-bezier(0.16,1,0.3,1);
+:root {
+  --ink: #141410; --ink-80: rgba(20,20,16,0.8); --ink-40: rgba(20,20,16,0.4);
+  --parchment: #f5f2ec; --parchment-d: #ede9e1;
+  --stone: #d4cfc6; --stone-d: #b0a99e;
+  --crimson: #8a6e0a; --crimson-d: #6e5608; --crimson-glow: rgba(138,110,10,0.18);
+  --green-live: #22c55e; --wa-green: #25D366;
+  --bg: #faf8f5; --bg-alt: #f0ede6; --bg-deep: #141410;
+  --card: #ffffff; --border: rgba(20,20,16,0.08); --border-strong: rgba(20,20,16,0.16);
+  --ff-display: 'Fraunces', Georgia, serif; --ff-body: 'Outfit', system-ui, sans-serif;
+  --s1: 0 2px 8px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+  --s2: 0 8px 32px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+  --s3: 0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+  --ease-out: cubic-bezier(0.16,1,0.3,1); --ease-in-out: cubic-bezier(0.76,0,0.24,1);
+  --header-h: 60px; --bottom-nav-h: 64px;
 }
-body.dark{
-  --ink:#f0ede8;--ink-80:rgba(240,237,232,0.8);--ink-40:rgba(240,237,232,0.4);
-  --parchment:#1c1c18;--parchment-d:#242420;
-  --stone:#3a3a34;--stone-d:#4e4e46;
-  --crimson:#e05a5d;--crimson-d:#c44b4e;--crimson-glow:rgba(224,90,93,0.22);
-  --bg:#1c1c18;--bg-alt:#242420;--bg-deep:#0c0c0a;
-  --card:#252520;--border:rgba(240,237,232,0.08);--border-strong:rgba(240,237,232,0.15);
-  --s1:0 2px 8px rgba(0,0,0,0.3);--s2:0 8px 32px rgba(0,0,0,0.4);--s3:0 20px 60px rgba(0,0,0,0.5);
+body.dark {
+  --ink: #f0ede8; --ink-80: rgba(240,237,232,0.8); --ink-40: rgba(240,237,232,0.4);
+  --parchment: #1c1c18; --parchment-d: #242420;
+  --stone: #3a3a34; --stone-d: #4e4e46;
+  --crimson: #c8a420; --crimson-d: #a88a10; --crimson-glow: rgba(200,164,32,0.22);
+  --bg: #1c1c18; --bg-alt: #242420; --bg-deep: #0c0c0a;
+  --card: #252520; --border: rgba(240,237,232,0.08); --border-strong: rgba(240,237,232,0.15);
+  --s1: 0 2px 8px rgba(0,0,0,0.3); --s2: 0 8px 32px rgba(0,0,0,0.4); --s3: 0 20px 60px rgba(0,0,0,0.5);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--ff-body);font-weight:300;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;overflow-x:hidden;}
-h1,h2,h3,h4{font-family:var(--ff-display);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:var(--ink);}
+body{font-family:var(--ff-body);font-weight:300;font-size:1rem;line-height:1.65;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--ink);}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 button{font-family:var(--ff-body);}
 .container{max-width:1380px;margin:0 auto;padding:0 36px;}
-.container-narrow{max-width:840px;margin:0 auto;padding:0 36px;}
-
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease-out),transform .65s var(--ease-out);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.08s;}.reveal-d2{transition-delay:.16s;}.reveal-d3{transition-delay:.24s;}.reveal-d4{transition-delay:.32s;}
+.label-pill{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--ff-body);font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:.25rem .8rem;border-radius:2px;background:var(--parchment-d);color:var(--ink-80);width:fit-content;}
+.label-pill.accent{background:var(--crimson);color:white;}
+.section-head{text-align:center;max-width:640px;margin:0 auto 3.5rem;}
+.section-head h2{font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:900;margin-bottom:.65rem;}
+.section-head p{color:var(--ink-80);font-size:.97rem;}
+.rule{width:40px;height:3px;background:var(--crimson);border-radius:2px;margin:0 auto 1.25rem;}
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 2.1rem;font-family:var(--ff-body);font-weight:600;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;border:1.5px solid transparent;cursor:pointer;transition:all .22s var(--ease-out);white-space:nowrap;line-height:1;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.8rem 1.9rem;font-family:var(--ff-body);font-weight:600;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;border:1.5px solid transparent;cursor:pointer;transition:all .22s var(--ease-out);white-space:nowrap;line-height:1;}
+.btn svg{width:13px;height:13px;flex-shrink:0;}
 .btn-primary{background:var(--crimson);color:#fff;border-color:var(--crimson);box-shadow:0 2px 12px var(--crimson-glow);}
-.btn-primary:hover{background:var(--crimson-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--crimson-glow);}
+.btn-primary:hover{background:var(--crimson-d);border-color:var(--crimson-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--crimson-glow);}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--border-strong);}
-.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px);}
-.btn-wa{background:#25D366;color:#fff;border-color:#25D366;}
-.btn-wa:hover{background:#1da955;transform:translateY(-2px);}
-.btn-sm{padding:.6rem 1.4rem;font-size:.76rem;}
-
+.btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-2px);}
+.btn-sm{padding:.55rem 1.25rem;font-size:.74rem;}
+.btn-wa{background:var(--wa-green);color:#fff;border-color:var(--wa-green);}
+.btn-wa:hover{background:#1da955;border-color:#1da955;transform:translateY(-2px);}
 /* TOP BAR */
-.top-bar{background:var(--bg-deep);color:var(--stone-d);font-size:.78rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.top-bar{background:var(--bg-deep);color:var(--stone-d);font-size:.76rem;letter-spacing:.02em;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden;max-height:60px;transition:max-height .35s var(--ease-out),opacity .3s;opacity:1;}
+.top-bar.tb-hidden{max-height:0;opacity:0;pointer-events:none;}
 .top-bar .container{display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;}
-.top-bar-chips{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
-.top-bar-chip{display:flex;align-items:center;gap:.35rem;color:var(--stone-d);}
-.dot{width:4px;height:4px;border-radius:50%;background:var(--crimson);flex-shrink:0;}
-.top-bar-cta .btn{padding:.4rem 1.2rem;font-size:.72rem;border-radius:2px;background:var(--crimson);color:white;border-color:var(--crimson);}
-
+.top-bar-chips{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;}
+.top-bar-chip{display:flex;align-items:center;gap:.35rem;color:var(--stone-d);white-space:nowrap;}
+.top-bar-chip .dot{width:4px;height:4px;border-radius:50%;background:var(--crimson);flex-shrink:0;}
+.top-bar-cta .btn{padding:.35rem 1rem;font-size:.7rem;border-radius:2px;background:var(--crimson);color:white;border-color:var(--crimson);letter-spacing:.08em;}
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:200;background:rgba(250,248,245,.97);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border-bottom:1px solid var(--border);transition:box-shadow .3s,background .25s;}
+body.dark .site-header{background:rgba(28,28,24,.97);}
+.site-header.scrolled{box-shadow:var(--s2);}
+.header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:var(--header-h);gap:1rem;}
+.logo-wrap{display:flex;align-items:center;gap:.65rem;}
+.logo-favicon{width: 105px;height:60px;border-radius:10px;object-fit:contain;flex-shrink:0;display:block;}
+.main-nav{display:flex;justify-content:center;}
+.nav-list{list-style:none;display:flex;gap:0;}
+.nav-list a{font-size:.75rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-80);padding:.5rem .9rem;position:relative;transition:color .2s;}
+.nav-list a::after{content:'';position:absolute;bottom:0;left:.9rem;right:.9rem;height:2px;background:var(--crimson);transform:scaleX(0);transform-origin:center;transition:transform .22s var(--ease-out);}
+.nav-list a:hover{color:var(--crimson);}
+.nav-list a:hover::after{transform:scaleX(1);}
+.header-right{display:flex;align-items:center;justify-content:flex-end;gap:.75rem;}
+.header-phone-chip{display:flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:500;color:var(--ink-80);}
+.icon-btn{width:34px;height:34px;border:1px solid var(--border-strong);border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .22s;flex-shrink:0;}
+.icon-btn:hover{border-color:var(--crimson);background:var(--crimson);color:#fff;}
+.icon-btn svg{width:16px;height:16px;}
+.icon-sun{display:none;}.icon-moon{display:block;}
+body.dark .icon-sun{display:block;}body.dark .icon-moon{display:none;}
+.mobile-actions{display:none;align-items:center;gap:.5rem;}
+.mobile-toggle{width:36px;height:36px;background:none;border:1px solid var(--border-strong);border-radius:6px;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;flex-shrink:0;transition:border-color .2s;}
+.mobile-toggle:hover{border-color:var(--crimson);}
+.hamburger-line{width:18px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .3s var(--ease-out),opacity .2s;transform-origin:center;}
+.mobile-toggle.open .hamburger-line:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+.mobile-toggle.open .hamburger-line:nth-child(2){opacity:0;transform:scaleX(0);}
+.mobile-toggle.open .hamburger-line:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
+.mobile-nav{display:none;position:absolute;top:var(--header-h);left:0;right:0;background:var(--card);border-bottom:1px solid var(--border);box-shadow:var(--s3);z-index:199;transform:translateY(-8px);opacity:0;transition:transform .3s var(--ease-out),opacity .25s;}
+.mobile-nav.open{display:block;transform:translateY(0);opacity:1;}
+.mobile-nav ul{list-style:none;padding:.5rem 0;}
+.mobile-nav ul li a{display:flex;align-items:center;justify-content:space-between;padding:.85rem 20px;font-weight:500;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-80);border-bottom:1px solid var(--border);transition:color .2s,background .2s;}
+.mobile-nav ul li:last-child a{border-bottom:none;}
+.mobile-nav ul li a:hover{color:var(--crimson);background:var(--parchment-d);}
+.mobile-nav ul li a::after{content:'›';font-size:1.2rem;opacity:.4;}
+.mobile-nav-cta{padding:1rem 20px 1.2rem;border-top:1px solid var(--border);display:flex;gap:.6rem;}
+.mobile-nav-cta a{flex:1;text-align:center;font-size:.75rem;padding:.7rem .5rem;}
 /* HEADER */
 .site-header{position:sticky;top:0;z-index:200;background:rgba(250,248,245,0.96);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--border);transition:box-shadow .3s,background .25s;}
 body.dark .site-header{background:rgba(28,28,24,0.96);}
@@ -176,7 +223,7 @@ body.dark .stats-band{background:#0c0c0a;}
 .timeline-desc{font-size:.88rem;color:var(--ink-80);line-height:1.65;}
 .timeline-img{width:100%;border-radius:6px;margin-top:.8rem;max-height:200px;object-fit:cover;box-shadow:var(--s1);}
 
-/* TEAM (placeholder) */
+/* TEAM */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .team-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:var(--s1);text-align:center;transition:transform .3s var(--ease-out),box-shadow .3s;}
 .team-card:hover{transform:translateY(-4px);box-shadow:var(--s2);}
@@ -204,10 +251,14 @@ body.dark .stats-band{background:#0c0c0a;}
 .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;}
 
 /* FOOTER */
-.footer{background:var(--bg-deep);color:#7a7570;padding:5rem 0 2rem;}
-.footer-logo{font-family:var(--ff-display);font-size:1.5rem;font-weight:900;color:#f0ede8;margin-bottom:.4rem;letter-spacing:-0.03em;}
-.footer-logo em{font-style:normal;color:var(--crimson);}
-.footer-tagline{font-size:.82rem;margin-bottom:3rem;}
+.footer{background:var(--bg-deep);color:#7a7570;padding:4.5rem 0 2rem;}
+.footer-brand{margin-bottom:2.5rem;}
+.footer-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.05);}
 .footer-col h4{font-family:var(--ff-body);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#f0ede8;margin-bottom:1.2rem;font-weight:600;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
@@ -227,7 +278,7 @@ body.dark .stats-band{background:#0c0c0a;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-d1{transition-delay:.1s;}.reveal-d2{transition-delay:.2s;}.reveal-d3{transition-delay:.3s;}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:1100px){.pillars-grid{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){
   .header-inner{grid-template-columns:auto 1fr auto;} .main-nav{display:none;} .mobile-toggle{display:flex;}
@@ -259,12 +310,7 @@ body.dark .stats-band{background:#0c0c0a;}
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="container">
-    <div class="top-bar-chips">
-      <span class="top-bar-chip"><span class="dot"></span>👕 T-shirts · Uniforms · Sports Kit</span>
-      <span class="top-bar-chip"><span class="dot"></span>📍 Karanja (Gh.)</span>
-      <span class="top-bar-chip"><span class="dot"></span>📞 7510000000</span>
-    </div>
-    <div class="top-bar-cta"><a href="index.html#contact" class="btn">ENQUIRE NOW</a></div>
+    <div class="top-bar-cta"><a href="index.html#contact" class="btn">आता Enquiry करा</a></div>
   </div>
 </div>
 
@@ -273,8 +319,6 @@ body.dark .stats-band{background:#0c0c0a;}
   <div class="container">
     <div class="header-inner">
       <a href="index.html" class="logo-wrap" aria-label="Stardom Textiles — Home">
-        <span class="logo-icon" aria-hidden="true">S</span>
-        <span class="logo-text">STARDOM<em>.</em></span>
       </a>
       <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-label="Open menu">☰</button>
       <nav class="main-nav">
@@ -286,9 +330,11 @@ body.dark .stats-band{background:#0c0c0a;}
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-right">
-        <div class="header-phone-chip"><span class="live-dot" aria-hidden="true"></span><span>7510000000</span></div>
-        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">🌓</button>
+    <div class="header-right">
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -308,31 +354,26 @@ body.dark .stats-band{background:#0c0c0a;}
   <div class="container">
     <div class="breadcrumb-inner">
       <a href="index.html">Home</a><span class="sep">›</span>
-      <span class="current">About Us</span>
+      <span class="current">आमच्याबद्दल</span>
     </div>
   </div>
 </div>
 
 <!-- ── HERO ── -->
 <section class="about-hero" id="home">
-  <img
-    class="about-hero-bg"
-    src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1800&q=80"
-    alt="Textile manufacturing — Stardom Textiles"
-    loading="eager"
-  >
+  <img class="about-hero-bg" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1800&q=80" alt="स्टारडम टेक्सटाइल्स - कस्टम गारमेंट मॅन्युफॅक्चरिंग" loading="eager">
   <div class="about-hero-overlay" aria-hidden="true"></div>
-  <div class="about-hero-grain"  aria-hidden="true"></div>
+  <div class="about-hero-grain" aria-hidden="true"></div>
   <div class="container">
     <div class="about-hero-content">
-      <div class="hero-eyebrow">🏭 Est. 2013 · Karanja (Gh.), Maharashtra</div>
-      <h1>Stitching Dreams<br>Since <em>2013</em></h1>
-      <p>From a small workshop in Karanja to delivering premium textiles across India — this is the Stardom story.</p>
+      <div class="hero-eyebrow">🏭 स्थापना : २२ जून २०२५ • साई कॉम्प्लेक्स, नागपूर</div>
+      <h1>एक हात, <em>एक स्वप्न</em><br>आणि अथक मेहनत</h1>
+      <p>बाबलू शेख यांच्या एकहाती मेहनतीतून जन्मलेला स्टारडम टेक्सटाइल्स. छोट्या स्टार्टअपपासून आज स्थानिक शाळा, कॉलेज आणि बाजारात दर्जेदार कस्टम गारमेंट्स पुरवणारा विश्वासार्ह ब्रँड.</p>
       <div class="hero-chips">
-        <span class="hero-chip">👕 T-shirts & Uniforms</span>
-        <span class="hero-chip">⚽ Sports Kit</span>
-        <span class="hero-chip">✈️ Pan-India Delivery</span>
-        <span class="hero-chip">🤝 B2B & B2C</span>
+        <span class="hero-chip">👕 कस्टम टी-शर्ट्स</span>
+        <span class="hero-chip">🏫 शाळा-कॉलेज युनिफॉर्म्स</span>
+        <span class="hero-chip">⚽ स्पोर्ट्स किट</span>
+        <span class="hero-chip">📍 करंजा • कटोल • नागपूर</span>
       </div>
     </div>
   </div>
@@ -342,10 +383,10 @@ body.dark .stats-band{background:#0c0c0a;}
 <div class="stats-band" aria-label="Company highlights">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item"><div class="stat-n">11<em>+</em></div><div class="stat-l">Years in Business</div></div>
-      <div class="stat-item"><div class="stat-n">500<em>+</em></div><div class="stat-l">Batches Delivered</div></div>
-      <div class="stat-item"><div class="stat-n">4.3<em>★</em></div><div class="stat-l">Customer Rating</div></div>
-      <div class="stat-item"><div class="stat-n">PAN<em>IN</em></div><div class="stat-l">Delivery Coverage</div></div>
+      <div class="stat-item"><div class="stat-n">9<em>+</em></div><div class="stat-l">महिने मेहनत</div></div>
+      <div class="stat-item"><div class="stat-n">२५०<em>+</em></div><div class="stat-l">ऑर्डर्स पूर्ण</div></div>
+      <div class="stat-item"><div class="stat-n">४.८<em>★</em></div><div class="stat-l">ग्राहक समाधान</div></div>
+      <div class="stat-item"><div class="stat-n">लोकल<em>महाराष्ट्र</em></div><div class="stat-l">वितरण क्षेत्र</div></div>
     </div>
   </div>
 </div>
@@ -355,22 +396,17 @@ body.dark .stats-band{background:#0c0c0a;}
   <div class="container">
     <div class="mission-grid">
       <div class="mission-img-wrap reveal">
-        <img
-          class="mission-img"
-          src="https://i.pinimg.com/736x/e5/55/81/e5558138553c5ca5f9a3c6b03624a5ae.jpg"
-          alt="Premium fabric quality at Stardom Textiles"
-          loading="lazy"
-        >
+        <img class="mission-img" src="https://i.pinimg.com/736x/e5/55/81/e5558138553c5ca5f9a3c6b03624a5ae.jpg" alt="स्टारडम टेक्सटाइल्स - दर्जेदार फॅब्रिक" loading="lazy">
         <div class="mission-img-accent" aria-hidden="true"></div>
       </div>
       <div class="reveal reveal-d2">
-        <span class="eyebrow">Who We Are</span>
-        <h2 id="mission-h2">A Brand Built on<br>Quality & Trust</h2>
+        <span class="eyebrow">आमची कहाणी</span>
+        <h2 id="mission-h2">बाबलू शेख यांची<br>एकहाती उभारणी</h2>
         <div class="rule"></div>
-        <p>Stardom Textiles was born from a simple belief: every person deserves fabric that looks good, feels good, and lasts long — at a price that makes sense. Since 2013, we've been manufacturing premium T-shirts, school uniforms, sports kits, and custom-printed clothing from our facility in Karanja (Gh.).</p>
-        <p>We serve schools, colleges, sports clubs, corporate offices, NGOs, and individual customers across India. Whether you need 12 pieces or 12,000, we bring the same attention to detail and commitment to quality to every order.</p>
-        <p>Our strength lies in the relationships we build — with fabric suppliers, with our skilled production team, and most importantly, with our customers who trust us to deliver exactly what they envision.</p>
-        <a href="index.html#contact" class="btn btn-primary" style="margin-top:1.5rem;width:fit-content;">Get in Touch</a>
+        <p>२२ जून २०२५ रोजी, साई कॉम्प्लेक्स, नारायण काळे कॉलेज जवळ, अमरावती-नागपूर हायवेवर स्टारडम टेक्सटाइल्सचा जन्म झाला. बाबलू शेख यांनी स्वप्न, संघर्ष आणि अथक मेहनतीने हा व्यवसाय उभारला.</p>
+        <p>एका छोट्या जागेतून सुरुवात करून, आज आम्ही करंजा, कटोल आणि नागपूर परिसरातील शाळा, कॉलेज, स्पोर्ट्स क्लब आणि स्थानिक ग्राहकांसाठी दर्जेदार कस्टम गारमेंट्स तयार करतो. प्रत्येक ऑर्डरमध्ये आमची मेहनत, प्रामाणिकपणा आणि दर्जा दिसतो.</p>
+        <p>एका हाताने सुरू केलेला हा प्रवास आज अनेकांच्या विश्वासावर उभा आहे. आमचा विश्वास आहे — “दर्जा आणि वेळेची पाबती हाच आमचा ब्रँड आहे.”</p>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-top:1.5rem;width:fit-content;">आमच्याशी संपर्क साधा</a>
       </div>
     </div>
   </div>
@@ -380,40 +416,40 @@ body.dark .stats-band{background:#0c0c0a;}
 <section class="section alt" aria-labelledby="values-h2">
   <div class="container">
     <div style="text-align:center;max-width:580px;margin:0 auto 3.5rem;" class="reveal">
-      <span class="eyebrow">Our Values</span>
-      <h2 id="values-h2" style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;margin-bottom:1rem;">What We Stand For</h2>
-      <p style="color:var(--ink-80);line-height:1.65;">Every stitch, every colour, every delivery is guided by these core principles.</p>
+      <span class="eyebrow">आमचे मूल्य</span>
+      <h2 id="values-h2">आम्ही ज्यावर विश्वास ठेवतो</h2>
+      <p style="color:var(--ink-80);line-height:1.65;">प्रत्येक टाकी, प्रत्येक रंग आणि प्रत्येक डिलिव्हरीमागे आमचे हे मूल्य आहे.</p>
     </div>
     <div class="pillars-grid" role="list">
       <div class="pillar-card reveal" role="listitem">
         <span class="pillar-icon" aria-hidden="true">🧵</span>
-        <h3>Uncompromising Quality</h3>
-        <p>From fabric selection to final stitching, every product goes through a thorough quality check before it leaves our facility. We use reliable materials that withstand regular wear and washing.</p>
+        <h3>अजोड दर्जा</h3>
+        <p>फॅब्रिकपासून ते अंतिम स्टिचिंगपर्यंत प्रत्येक प्रोडक्ट 철कस क्वालिटी चेकनंतरच पाठवला जातो.</p>
       </div>
       <div class="pillar-card reveal reveal-d1" role="listitem">
         <span class="pillar-icon" aria-hidden="true">🤝</span>
-        <h3>Customer First</h3>
-        <p>We believe in listening before manufacturing. Your specific requirements — colours, sizes, print, timeline — are treated as a commitment, not a suggestion. We deliver what we promise.</p>
+        <h3>ग्राहक प्रथम</h3>
+        <p>तुमची गरज, तुमचा डिझाईन, तुमचा टाइम — आमच्यासाठी सर्वात महत्वाचे.</p>
       </div>
       <div class="pillar-card reveal reveal-d2" role="listitem">
         <span class="pillar-icon" aria-hidden="true">💰</span>
-        <h3>Fair & Transparent Pricing</h3>
-        <p>No hidden charges. We offer competitive pricing for bulk B2B orders and fair retail rates for individuals, with honest timelines and clear communication throughout.</p>
+        <h3>न्याय्य किंमत</h3>
+        <p>कोणतेही लपलेले चार्ज नाहीत. बेस्ट क्वालिटी आणि योग्य किंमत.</p>
       </div>
       <div class="pillar-card reveal" role="listitem">
         <span class="pillar-icon" aria-hidden="true">♻️</span>
-        <h3>Responsible Manufacturing</h3>
-        <p>We are conscious of our environmental footprint. Our production processes minimize fabric waste and we actively work to reduce our resource consumption year on year.</p>
+        <h3>जिम्मेदार उत्पादन</h3>
+        <p>कापड वाया न जाता, पर्यावरणाची काळजी घेत आम्ही काम करतो.</p>
       </div>
       <div class="pillar-card reveal reveal-d1" role="listitem">
         <span class="pillar-icon" aria-hidden="true">🚚</span>
-        <h3>Reliable Delivery</h3>
-        <p>Timely dispatch is as important as quality production. We coordinate with trusted logistics partners to ensure your order reaches you on time, every time, across India.</p>
+        <h3>वेळेवर डिलिव्हरी</h3>
+        <p>करंजा, कटोल आणि नागपूर परिसरात विश्वासू डिलिव्हरी.</p>
       </div>
       <div class="pillar-card reveal reveal-d2" role="listitem">
         <span class="pillar-icon" aria-hidden="true">📈</span>
-        <h3>Continuous Improvement</h3>
-        <p>We invest in better equipment, better processes, and better skills. Every year we expand our capabilities — from new printing techniques to wider fabric options.</p>
+        <h3>सतत प्रगती</h3>
+        <p>नवीन मशीन, नवीन डिझाईन आणि नवीन स्किल्स — आम्ही रोज शिकत आणि वाढत आहोत.</p>
       </div>
     </div>
   </div>
@@ -424,47 +460,41 @@ body.dark .stats-band{background:#0c0c0a;}
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
       <div class="reveal">
-        <span class="eyebrow">Our Journey</span>
-        <h2 id="history-h2" style="font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:900;margin-bottom:1rem;">11 Years in the Making</h2>
+        <span class="eyebrow">आमचा प्रवास</span>
+        <h2 id="history-h2">९ महिन्यांची<br>मेहनत आणि स्वप्ने</h2>
         <div class="rule"></div>
-        <p style="color:var(--ink-80);line-height:1.75;font-size:.97rem;">From a humble beginning to a trusted textile brand delivering across India — here's how Stardom Textiles grew, year by year.</p>
+        <p style="color:var(--ink-80);line-height:1.75;font-size:.97rem;">एका छोट्या जागेपासून सुरू झालेला हा प्रवास आज स्थानिक बाजारात विश्वासाचे नाव बनला आहे.</p>
       </div>
       <div class="timeline reveal reveal-d2">
         <div class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-year">2013</div>
-          <h3 class="timeline-title">The Beginning</h3>
-          <p class="timeline-desc">Stardom Textiles started as a small T-shirt printing unit in Karanja (Gh.) with a single screen printing machine and a dream to serve local institutions.</p>
+          <div class="timeline-year">२२ जून २०२५</div>
+          <h3 class="timeline-title">सुरुवात</h3>
+          <p class="timeline-desc">बाबलू शेख यांनी साई कॉम्प्लेक्समध्ये स्टारडम टेक्सटाइल्सची स्थापना केली. स्वप्न आणि मेहनतीने भरलेला पहिला दिवस.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-year">2015</div>
-          <h3 class="timeline-title">School Uniforms at Scale</h3>
-          <p class="timeline-desc">We secured our first institutional order for school uniforms. The trust we built with local schools became the foundation of our B2B growth.</p>
+          <div class="timeline-year">जुलै २०२५</div>
+          <h3 class="timeline-title">पहिल्या ऑर्डर्स</h3>
+          <p class="timeline-desc">स्थानिक शाळा आणि छोट्या दुकानांकडून पहिल्या कस्टम टी-शर्ट्स आणि युनिफॉर्म्सच्या ऑर्डर्स मिळाल्या.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-year">2017</div>
-          <h3 class="timeline-title">Sports Kit Division Launched</h3>
-          <p class="timeline-desc">With growing demand from sports clubs and tournaments, we expanded into drifit sports jerseys, cricket kits, and kabaddi uniforms with sublimation printing.</p>
+          <div class="timeline-year">ऑक्टोबर २०२५</div>
+          <h3 class="timeline-title">स्पोर्ट्स किट विभाग</h3>
+          <p class="timeline-desc">कटोल आणि करंजा परिसरातील स्पोर्ट्स क्लबसाठी ड्रिफिट जर्सी आणि किट तयार करण्यास सुरुवात.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-year">2019</div>
-          <h3 class="timeline-title">Pan-India Delivery Begins</h3>
-          <p class="timeline-desc">We partnered with reliable logistics providers to extend our reach beyond Maharashtra, delivering to customers across India for the first time.</p>
+          <div class="timeline-year">जानेवारी २०२६</div>
+          <h3 class="timeline-title">विस्तार</h3>
+          <p class="timeline-desc">नागपूर परिसरातील अधिक शाळा आणि कॉलेजेसशी जोडणी. दर्जामुळे ग्राहक वाढत आहेत.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-year">2021</div>
-          <h3 class="timeline-title">Digital Growth & WhatsApp Orders</h3>
-          <p class="timeline-desc">We embraced digital ordering, making it easier for customers to reach us via WhatsApp. Order volumes grew significantly as word spread.</p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-year">2024 →</div>
-          <h3 class="timeline-title">Expanding Capabilities</h3>
-          <p class="timeline-desc">Today Stardom Textiles serves schools, sports teams, corporate offices, NGOs, and individual customers with a full range of custom textile products — and we're just getting started.</p>
+          <div class="timeline-year">मार्च २०२६ →</div>
+          <h3 class="timeline-title">सतत वाढ</h3>
+          <p class="timeline-desc">बाबलू शेख यांच्या नेतृत्वात आम्ही रोज नवीन क्षमता वाढवत आहोत. तुमचा विश्वास हाच आमचा सर्वात मोठा पुरस्कार आहे.</p>
         </div>
       </div>
     </div>
@@ -476,21 +506,14 @@ body.dark .stats-band{background:#0c0c0a;}
   <div class="container">
     <div class="video-inner">
       <div class="video-text reveal">
-        <span class="eyebrow">See Us in Action</span>
-        <h2 id="video-h2">The Craft Behind<br>Every Stitch</h2>
+        <span class="eyebrow">आमचे काम पाहा</span>
+        <h2 id="video-h2">प्रत्येक टाकीमागची<br>मेहनत</h2>
         <div class="rule" style="margin-left:0;"></div>
-        <p>Watch how we work — from fabric selection and cutting to printing, stitching, and quality checking. Every product is a result of skilled hands and careful process.</p>
-        <a href="index.html#contact" class="btn btn-primary">Order Now</a>
+        <p>फॅब्रिक निवड, कटिंग, प्रिंटिंग, स्टिचिंग आणि क्वालिटी चेक — सर्व काही बाबलू शेख यांच्या देखरेखीखाली होते.</p>
+        <a href="index.html#contact" class="btn btn-primary">ऑर्डर द्या</a>
       </div>
       <div class="video-wrap reveal reveal-d2">
-        <iframe
-          src="https://www.youtube.com/embed/xzQR-nVmj0g"
-          title="Stardom Textiles — Manufacturing Process"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/xzQR-nVmj0g" title="स्टारडम टेक्सटाइल्स - मॅन्युफॅक्चरिंग" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -500,33 +523,33 @@ body.dark .stats-band{background:#0c0c0a;}
 <section class="section alt" aria-labelledby="team-h2">
   <div class="container">
     <div style="text-align:center;max-width:560px;margin:0 auto 3.5rem;" class="reveal">
-      <span class="eyebrow">The People</span>
-      <h2 id="team-h2" style="font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:900;margin-bottom:.8rem;">Faces Behind Stardom</h2>
-      <p style="color:var(--ink-80);line-height:1.65;">A small, dedicated team with a big passion for quality textile manufacturing.</p>
+      <span class="eyebrow">माणसे</span>
+      <h2 id="team-h2">स्टारडममागची टीम</h2>
+      <p style="color:var(--ink-80);line-height:1.65;">एक छोटी, समर्पित टीम जी दर्जासाठी कटिबद्ध आहे.</p>
     </div>
     <div class="team-grid" role="list">
       <div class="team-card reveal" role="listitem">
         <div class="team-img" style="background:linear-gradient(135deg,#ede9e1,#d4cfc6);display:flex;align-items:center;justify-content:center;font-size:4rem;">👤</div>
         <div class="team-body">
-          <div class="team-name">Owner / Founder</div>
-          <div class="team-role">Production & Sales</div>
-          <p>The visionary behind Stardom Textiles, managing everything from fabric procurement to customer relations with 11+ years of experience.</p>
+          <div class="team-name">बाबलू शेख</div>
+          <div class="team-role">संस्थापक &amp; मालक</div>
+          <p>एकहाती मेहनतीने व्यवसाय उभारणारे. प्रत्येक ग्राहकाशी थेट संपर्क आणि दर्जाची हमी.</p>
         </div>
       </div>
       <div class="team-card reveal reveal-d1" role="listitem">
         <div class="team-img" style="background:linear-gradient(135deg,#f0ede6,#c4282b1a);display:flex;align-items:center;justify-content:center;font-size:4rem;">🧵</div>
         <div class="team-body">
-          <div class="team-name">Production Team</div>
-          <div class="team-role">Manufacturing & Stitching</div>
-          <p>Our skilled tailors and operators ensure every piece meets quality standards before leaving the workshop.</p>
+          <div class="team-name">उत्पादन टीम</div>
+          <div class="team-role">स्टिचिंग &amp; मॅन्युफॅक्चरिंग</div>
+          <p>दर्जेदार कामगार जे प्रत्येक प्रोडक्ट परफेक्ट बनवतात.</p>
         </div>
       </div>
       <div class="team-card reveal reveal-d2" role="listitem">
         <div class="team-img" style="background:linear-gradient(135deg,#f5f2ec,#d4cfc6);display:flex;align-items:center;justify-content:center;font-size:4rem;">🎨</div>
         <div class="team-body">
-          <div class="team-name">Print & Design Team</div>
-          <div class="team-role">Custom Printing & Artwork</div>
-          <p>Specialists in screen printing, sublimation, and digital printing who bring your designs to life on every garment.</p>
+          <div class="team-name">प्रिंट &amp; डिझाईन टीम</div>
+          <div class="team-role">कस्टम प्रिंटिंग</div>
+          <p>तुमचे डिझाईन प्रत्येक गारमेंटवर जिवंत करणारे कलाकार.</p>
         </div>
       </div>
     </div>
@@ -537,13 +560,12 @@ body.dark .stats-band{background:#0c0c0a;}
 <section class="about-cta">
   <div class="container">
     <div class="about-cta-inner reveal">
-      <span class="eyebrow" style="text-align:center;display:block;">Ready to Work Together?</span>
-      <h2>Let's Create Something<br>Great Together</h2>
-      <p>Whether it's 12 t-shirts for a college event or 5,000 uniforms for a school chain — we're ready. Tell us what you need and we'll make it happen.</p>
+      <span class="eyebrow" style="text-align:center;display:block;">एकत्र काम करूया?</span>
+      <h2>तुमचे स्वप्न, आमची मेहनत</h2>
+      <p>शाळेच्या युनिफॉर्म्स असो किंवा स्पोर्ट्स किट — कितीही छोटी ऑर्डर असो, आम्ही पूर्ण समर्पणाने करतो.</p>
       <div class="cta-actions">
-        <a href="index.html#contact" class="btn btn-primary">Send an Enquiry</a>
-        <a href="https://wa.me/917510000000" class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp Us</a>
-        <a href="explore_catalog.html" class="btn btn-ghost">Browse Products</a>
+        <a href="index.html#contact" class="btn btn-primary">Enquiry पाठवा</a>
+        <a href="explore_catalog.html" class="btn btn-ghost">प्रॉडक्ट्स बघा</a>
       </div>
     </div>
   </div>
@@ -552,18 +574,25 @@ body.dark .stats-band{background:#0c0c0a;}
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo">STARDOM<em>.</em></div>
-    <p class="footer-tagline">Premium Textile Manufacturing · Karanja (Gh.) · Delivering Pan-India</p>
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="/favicon1.png" alt="Stardom Textiles Logo">
+      </div>
+      <p class="footer-tagline">प्रीमियम कस्टम गारमेंट्स • नागपूर • दर्जा आणि विश्वास</p>
+    </div>
     <div class="footer-grid">
       <div class="footer-col">
-        <p class="footer-contact">📍 Karanja (Gh.), Maharashtra<br>📞 <a href="tel:7510000000">7510000000</a><br>🕐 Mon–Sat · 10am – 10:30pm<br>✈️ Delivering All Over India</p>
-        <div class="footer-socials"><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="Pinterest">📌</a></div>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
       </div>
-      <div class="footer-col"><h4>Products</h4><ul class="footer-links"><li><a href="explore_product.html">School Uniforms</a></li><li><a href="explore_product.html">Sports Kit</a></li><li><a href="explore_product.html">T-Shirts</a></li><li><a href="explore_product.html">Track Suits</a></li><li><a href="explore_product.html">Custom Printing</a></li></ul></div>
-      <div class="footer-col"><h4>Business</h4><ul class="footer-links"><li><a href="explore_catalog.html">Bulk Orders</a></li><li><a href="explore_catalog.html">Corporate Uniforms</a></li><li><a href="explore_catalog.html">Institutional Supply</a></li></ul></div>
-      <div class="footer-col"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li><li><a href="#">Size Guide</a></li></ul></div>
+      <div class="footer-col"><h4>प्रॉडक्ट्स</h4><ul class="footer-links"><li><a href="explore_product.html">शाळा युनिफॉर्म्स</a></li><li><a href="explore_product.html">स्पोर्ट्स किट</a></li><li><a href="explore_product.html">कस्टम टी-शर्ट्स</a></li><li><a href="explore_product.html">ट्रॅक सूट</a></li></ul></div>
+      <div class="footer-col"><h4>सेवा</h4><ul class="footer-links"><li><a href="explore_catalog.html">बल्क ऑर्डर्स</a></li><li><a href="explore_catalog.html">कॉर्पोरेट युनिफॉर्म</a></li><li><a href="explore_catalog.html">कस्टम प्रिंटिंग</a></li></ul></div>
+      <div class="footer-col"><h4>सपोर्ट</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">शिपिंग</a></li><li><a href="#">रिटर्न</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>© 2025 Stardom Textiles. All rights reserved.</p><p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refund</a></p></div>
+    <div class="footer-bottom"><p>© २०२६ स्टारडम टेक्सटाइल्स. सर्वाधिकार सुरक्षित.</p><p><a href="#">प्रायव्हसी</a> • <a href="#">टर्म्स</a></p></div>
   </div>
 </footer>
 
@@ -591,9 +620,6 @@ mN.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMN));
 /* REVEAL */
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-/* Netlify Identity */
-if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u)window.netlifyIdentity.on('login',()=>{document.location.href='/admin/';});});}
 </script>
 </body>
 </html>

@@ -95,7 +95,7 @@ function setText(id, val) {
 //
 //  Rows needed:
 //  shopName    | Stardom Textiles
-//  phone       | 7510000000
+//  phone       | ***
 //  city        | Karanja (Gh.)
 //  address     | Karanja (Gh.), Maharashtra
 //  hours       | Mon–Sat · 10:00 am – 10:30 pm

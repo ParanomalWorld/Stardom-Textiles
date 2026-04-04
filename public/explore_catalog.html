@@ -15,7 +15,7 @@
   --ink:#141410;--ink-80:rgba(20,20,16,0.8);--ink-40:rgba(20,20,16,0.4);
   --parchment:#f5f2ec;--parchment-d:#ede9e1;
   --stone:#d4cfc6;--stone-d:#b0a99e;
-  --crimson:#c4282b;--crimson-d:#9e2022;--crimson-glow:rgba(196,40,43,0.18);
+  --crimson: #c8a420; --crimson-d: #a88a10; --crimson-glow: rgba(200,164,32,0.22);
   --green-live:#22c55e;
   --bg:#faf8f5;--bg-alt:#f0ede6;--bg-deep:#141410;
   --card:#ffffff;--border:rgba(20,20,16,0.08);--border-strong:rgba(20,20,16,0.16);
@@ -29,7 +29,7 @@ body.dark{
   --ink:#f0ede8;--ink-80:rgba(240,237,232,0.8);--ink-40:rgba(240,237,232,0.4);
   --parchment:#1c1c18;--parchment-d:#242420;
   --stone:#3a3a34;--stone-d:#4e4e46;
-  --crimson:#e05a5d;--crimson-d:#c44b4e;--crimson-glow:rgba(224,90,93,0.22);
+  --crimson: #c8a420; --crimson-d: #a88a10; --crimson-glow: rgba(200,164,32,0.22);
   --bg:#1c1c18;--bg-alt:#242420;--bg-deep:#0c0c0a;
   --card:#252520;--border:rgba(240,237,232,0.08);--border-strong:rgba(240,237,232,0.15);
   --s1:0 2px 8px rgba(0,0,0,0.3);--s2:0 8px 32px rgba(0,0,0,0.4);--s3:0 20px 60px rgba(0,0,0,0.5);
@@ -194,9 +194,14 @@ body.dark .logo-icon{background:var(--crimson);}
 .modal-overlay .modal-body{position:relative;}
 
 /* FOOTER */
-.footer{background:var(--bg-deep);color:#7a7570;padding:5rem 0 2rem;}
-.footer-logo{font-family:var(--ff-display);font-size:1.5rem;font-weight:900;color:#f0ede8;margin-bottom:.4rem;letter-spacing:-0.03em;}
-.footer-logo em{font-style:normal;color:var(--crimson);}
+.footer{background:var(--bg-deep);color:#7a7570;padding:4.5rem 0 2rem;}
+.footer-brand{margin-bottom:2.5rem;}
+.footer-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;  /* 👈 rounded corners */
+}
 .footer-tagline{font-size:.82rem;margin-bottom:3rem;}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.05);}
 .footer-col h4{font-family:var(--ff-body);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#f0ede8;margin-bottom:1.2rem;font-weight:600;}
@@ -231,6 +236,45 @@ body.dark .logo-icon{background:var(--crimson);}
   .search-input{width:130px;} .page-hero{padding:2.5rem 0 2rem;}
   .footer-grid{grid-template-columns:1fr;gap:2rem;}
 }
+@media (max-width: 768px){
+
+  .catalog-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .prod-img-wrap{
+    height: 150px;
+  }
+
+  .prod-body{
+    padding: .7rem .8rem;
+  }
+
+  .prod-name{
+    font-size: .9rem;
+  }
+
+  .prod-desc{
+    font-size: .75rem;
+  }
+
+  .prod-wa-btn,
+  .prod-details-btn{
+    padding: .35rem .7rem;
+    font-size: .65rem;
+  }
+}
+@media (max-width: 480px){
+
+  .catalog-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .prod-img-wrap{
+    height: 180px;
+  }
+}
 @media(max-width:400px){.catalog-grid:not(.list-view){grid-template-columns:1fr;}}
 :focus-visible{outline:2px solid var(--crimson);outline-offset:3px;}
 </style>
@@ -254,8 +298,8 @@ body.dark .logo-icon{background:var(--crimson);}
   <div class="container">
     <div class="header-inner">
       <a href="index.html" class="logo-wrap" aria-label="Stardom Textiles — Home">
-        <span class="logo-icon" aria-hidden="true">S</span>
-        <span class="logo-text">STARDOM<em>.</em></span>
+        <!-- <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">STARDOM<em>.</em></span> -->
       </a>
       <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-label="Open menu">☰</button>
       <nav class="main-nav">
@@ -268,9 +312,10 @@ body.dark .logo-icon{background:var(--crimson);}
         </ul>
       </nav>
       <div class="header-right">
-        <div class="header-phone-chip"><span class="live-dot" aria-hidden="true"></span><span>7510000000</span></div>
-        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">🌓</button>
-      </div>
+        <!-- <div class="header-phone-chip"><span>7510000000</span></div> -->
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2("icon-sun", viewBox("0 0 ２４ ２４", fill("none", stroke("currentColor", stroke-width("２"))), circle(cx("１２", cy("１２", r("５"))), line(x１("１２", y１("１", x２("１２", y２("３"))), line(x１("１２", y１("２１", x２("１２", y２("２３"))), line(x１("４.２２", y１("４.２２", x２("５.６４", y２("５.６４"))), line(x１("１８.３６", y１("１８.３６", x２("１９.７８", y２("１９.７８"))), line(x１("１", y１("１２", x₂("３", y₂("１２"))), line(x₁("２１", y₁("１２", x₂("２３", y₂("１２"))), line(x₁("４.２２", y₁("１９.７８", x₂("５.６４", y₂("１８.３６"))), line(x₁("１８.３６", y₁("５.６４", x₂("１９.７８", y₂("４.２２"))))
     </div>
   </div>
   <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
@@ -372,10 +417,13 @@ body.dark .logo-icon{background:var(--crimson);}
   </div>
 </div>
 
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo">STARDOM<em>.</em></div>
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="/favicon1.png" alt="Stardom Textiles Logo">
     <p class="footer-tagline">Premium Textile Manufacturing · Karanja (Gh.) · Delivering Pan-India</p>
     <div class="footer-grid">
       <div class="footer-col">
@@ -426,16 +474,7 @@ document.getElementById('modalClose').addEventListener('click',()=>overlay.class
 overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open');});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('open');});
 
-function openModal(p){
-  document.getElementById('modalImg').src=p.image;
-  document.getElementById('modalImg').alt=p.name;
-  document.getElementById('modalCat').textContent=p.category||p.categories?.join(' · ')||'Collection';
-  document.getElementById('modalName').textContent=p.name;
-  document.getElementById('modalDesc').textContent=p.description||'Premium quality product, available in bulk & retail. Contact us for custom sizes, colours and branding.';
-  const wa=`https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: '+p.name)}`;
-  document.getElementById('modalActions').innerHTML=`<a href="${wa}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">💬 Order via WhatsApp</a><a href="index.html#contact" class="btn btn-ghost btn-sm">Send Enquiry</a>`;
-  overlay.classList.add('open');
-}
+
 
 /* DEMO DATA */
 const DEMO=[
@@ -529,20 +568,91 @@ document.getElementById('searchInput').addEventListener('input',e=>{
 document.getElementById('sortSelect').addEventListener('change',render);
 
 /* Load products */
-fetch('/data/products.json')
-  .then(r=>r.ok?r.json():Promise.reject())
-  .then(data=>{
-    allProducts=Array.isArray(data)?data:(data.products||[]);
-    document.getElementById('totalCount').textContent=allProducts.length;
+/* ── Google Sheets fetch ── */
+const _SID = '1OvFW7cGgDO2FuPyWoSf6swK1JlVtxLCMcvSOESlMtlA';
+const _PGID = '1069622695';
+const _SGID = '1258597208';
+
+function _parseCSV(text) {
+  const rows = [];
+  const lines = text.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n');
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    const cols = []; let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { if (inQ && line[i+1]==='"') { cur+='"'; i++; } else inQ=!inQ; }
+      else if (c === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else cur += c;
+    }
+    cols.push(cur.trim()); rows.push(cols);
+  }
+  return rows;
+}
+
+function _parseTable(text) {
+  const rows = _parseCSV(text);
+  if (rows.length < 2) return [];
+  const headers = rows[0].map(h => h.toLowerCase().replace(/[^a-z0-9]/g,''));
+  return rows.slice(1)
+    .filter(r => r.some(c => c.trim()))
+    .map(row => {
+      const obj = {};
+      headers.forEach((h,i) => { obj[h] = (row[i]||'').trim(); });
+      return obj;
+    });
+}
+
+function _sheetUrl(gid) {
+  return `https://docs.google.com/spreadsheets/d/${_SID}/export?format=csv&gid=${gid}`;
+}
+
+/* Load products from Google Sheet */
+fetch(_sheetUrl(_PGID))
+  .then(r => r.ok ? r.text() : Promise.reject('sheet fetch failed'))
+  .then(text => {
+    const rows = _parseTable(text);
+    if (!rows.length) throw new Error('empty');
+    // Normalize — map sheet columns to what cardHTML expects
+    allProducts = rows.map(p => ({
+      name:        p.name        || '',
+      image:       p.image       || '',
+      category:    p.category    || 'Collection',
+      description: p.description || '',
+      buttonText:  p.buttontext  || 'Order via WhatsApp',
+      buttonLink:  p.buttonlink  || '',
+      tags:        p.tags ? p.tags.split(',').map(t=>t.trim().toLowerCase()) : 
+                   [(p.category||'').toLowerCase().replace(/\s+/g,'')]
+    }));
+    document.getElementById('totalCount').textContent = allProducts.length;
     render();
   })
-  .catch(()=>{
-    allProducts=DEMO;
-    document.getElementById('totalCount').textContent=allProducts.length;
-    render();
-    console.info('[Stardom] products.json not found — demo data loaded.');
+  .catch(() => {
+    /* Also try solutions tab as fallback for category cards */
+    fetch(_sheetUrl(_SGID))
+      .then(r => r.ok ? r.text() : Promise.reject())
+      .then(text => {
+        const rows = _parseTable(text);
+        if (!rows.length) throw new Error('empty');
+        allProducts = rows.map(p => ({
+          name:        p.title       || p.name  || '',
+          image:       p.image       || '',
+          category:    p.badge       || 'Collection',
+          description: p.description || '',
+          buttonText:  p.buttontext  || 'Order Now',
+          buttonLink:  p.buttonlink  || '',
+          tags:        [(p.badge||'').toLowerCase()]
+        }));
+        document.getElementById('totalCount').textContent = allProducts.length;
+        render();
+      })
+      .catch(() => {
+        allProducts = DEMO;
+        document.getElementById('totalCount').textContent = allProducts.length;
+        render();
+        console.info('[Stardom] Sheets fetch failed — demo data loaded.');
+      });
   });
-
 /* Netlify Identity */
 if(window.netlifyIdentity){window.netlifyIdentity.on('init',u=>{if(!u)window.netlifyIdentity.on('login',()=>{document.location.href='/admin/';});});}
 </script>

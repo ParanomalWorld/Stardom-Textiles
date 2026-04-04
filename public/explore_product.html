@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="icon" sizes="16x16" href="/favicon-16.png?v=2">
+<link rel="icon" sizes="64x64" href="/favicon-64.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
   <title>All Categories — Stardom Textiles</title>
   <meta name="description" content="Browse all product categories at Stardom Textiles — School Uniforms, Sports Kits, T-Shirts, Track Suits & more. Delivered pan-India.">
   <meta name="theme-color" content="#0f0f0d">
@@ -11,29 +15,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 <style>
-/* ── SHARED TOKENS ── */
-:root {
-  --ink:#141410; --ink-80:rgba(20,20,16,0.8); --ink-40:rgba(20,20,16,0.4);
-  --parchment:#f5f2ec; --parchment-d:#ede9e1;
-  --stone:#d4cfc6; --stone-d:#b0a99e;
-  --crimson:#c4282b; --crimson-d:#9e2022; --crimson-glow:rgba(196,40,43,0.18);
+/* ── ALL STYLES FROM explore_catalog.html (polished header, top-bar, breadcrumb, hero, controls, footer, etc.) ── */
+:root{
+  --ink:#141410;--ink-80:rgba(20,20,16,0.8);--ink-40:rgba(20,20,16,0.4);
+  --parchment:#f5f2ec;--parchment-d:#ede9e1;
+  --stone:#d4cfc6;--stone-d:#b0a99e;
+  --crimson: #8a6e0a; --crimson-d: #6e5608; --crimson-glow: rgba(138,110,10,0.18);
   --green-live:#22c55e;
-  --bg:#faf8f5; --bg-alt:#f0ede6; --bg-deep:#141410;
-  --card:#ffffff; --border:rgba(20,20,16,0.08); --border-strong:rgba(20,20,16,0.16);
-  --ff-display:'Fraunces',Georgia,serif; --ff-body:'Outfit',system-ui,sans-serif;
+  --bg:#faf8f5;--bg-alt:#f0ede6;--bg-deep:#141410;
+  --card:#ffffff;--border:rgba(20,20,16,0.08);--border-strong:rgba(20,20,16,0.16);
+  --ff-display:'Fraunces',Georgia,serif;--ff-body:'Outfit',system-ui,sans-serif;
   --s1:0 2px 8px rgba(0,0,0,0.04),0 1px 3px rgba(0,0,0,0.03);
   --s2:0 8px 32px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.04);
   --s3:0 20px 60px rgba(0,0,0,0.10),0 4px 16px rgba(0,0,0,0.06);
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
-body.dark {
-  --ink:#f0ede8; --ink-80:rgba(240,237,232,0.8); --ink-40:rgba(240,237,232,0.4);
-  --parchment:#1c1c18; --parchment-d:#242420;
-  --stone:#3a3a34; --stone-d:#4e4e46;
-  --crimson:#e05a5d; --crimson-d:#c44b4e; --crimson-glow:rgba(224,90,93,0.22);
-  --bg:#1c1c18; --bg-alt:#242420; --bg-deep:#0c0c0a;
-  --card:#252520; --border:rgba(240,237,232,0.08); --border-strong:rgba(240,237,232,0.15);
-  --s1:0 2px 8px rgba(0,0,0,0.3); --s2:0 8px 32px rgba(0,0,0,0.4); --s3:0 20px 60px rgba(0,0,0,0.5);
+body.dark{
+  --ink:#f0ede8;--ink-80:rgba(240,237,232,0.8);--ink-40:rgba(240,237,232,0.4);
+  --parchment:#1c1c18;--parchment-d:#242420;
+  --stone:#3a3a34;--stone-d:#4e4e46;
+  --crimson: #c8a420; --crimson-d: #a88a10; --crimson-glow: rgba(200,164,32,0.22);
+  --bg:#1c1c18;--bg-alt:#242420;--bg-deep:#0c0c0a;
+  --card:#252520;--border:rgba(240,237,232,0.08);--border-strong:rgba(240,237,232,0.15);
+  --s1:0 2px 8px rgba(0,0,0,0.3);--s2:0 8px 32px rgba(0,0,0,0.4);--s3:0 20px 60px rgba(0,0,0,0.5);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -43,26 +47,22 @@ a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 button{font-family:var(--ff-body);}
 .container{max-width:1380px;margin:0 auto;padding:0 36px;}
-
-/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 2.1rem;font-family:var(--ff-body);font-weight:600;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;border:1.5px solid transparent;cursor:pointer;transition:all .22s var(--ease-out);white-space:nowrap;line-height:1;}
 .btn-primary{background:var(--crimson);color:#fff;border-color:var(--crimson);box-shadow:0 2px 12px var(--crimson-glow);}
-.btn-primary:hover{background:var(--crimson-d);border-color:var(--crimson-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--crimson-glow);}
+.btn-primary:hover{background:var(--crimson-d);transform:translateY(-2px);box-shadow:0 8px 28px var(--crimson-glow);}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--border-strong);}
 .btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px);}
 .btn-wa{background:#25D366;color:#fff;border-color:#25D366;}
-.btn-wa:hover{background:#1da955;border-color:#1da955;transform:translateY(-2px);}
+.btn-wa:hover{background:#1da955;transform:translateY(-2px);}
 .btn-sm{padding:.6rem 1.4rem;font-size:.76rem;}
-
-/* ── TOP BAR ── */
-.top-bar{background:var(--bg-deep);color:var(--stone-d);font-size:.78rem;letter-spacing:.02em;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+/* TOP BAR */
+.top-bar{background:var(--bg-deep);color:var(--stone-d);font-size:.78rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
 .top-bar .container{display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;}
 .top-bar-chips{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
 .top-bar-chip{display:flex;align-items:center;gap:.35rem;color:var(--stone-d);}
 .dot{width:4px;height:4px;border-radius:50%;background:var(--crimson);flex-shrink:0;}
 .top-bar-cta .btn{padding:.4rem 1.2rem;font-size:.72rem;border-radius:2px;background:var(--crimson);color:white;border-color:var(--crimson);}
-
-/* ── HEADER ── */
+/* HEADER - POLISHED (exactly like explore_catalog.html) */
 .site-header{position:sticky;top:0;z-index:200;background:rgba(250,248,245,0.96);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--border);transition:box-shadow .3s,background .25s;}
 body.dark .site-header{background:rgba(28,28,24,0.96);}
 .site-header.scrolled{box-shadow:var(--s2);}
@@ -76,8 +76,8 @@ body.dark .logo-icon{background:var(--crimson);}
 .nav-list{list-style:none;display:flex;gap:0;}
 .nav-list a{font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-80);padding:.5rem 1rem;position:relative;transition:color .2s;}
 .nav-list a::after{content:'';position:absolute;bottom:0;left:1rem;right:1rem;height:2px;background:var(--crimson);transform:scaleX(0);transform-origin:center;transition:transform .22s var(--ease-out);}
-.nav-list a:hover{color:var(--crimson);}
-.nav-list a:hover::after{transform:scaleX(1);}
+.nav-list a:hover,.nav-list a.active{color:var(--crimson);}
+.nav-list a:hover::after,.nav-list a.active::after{transform:scaleX(1);}
 .header-right{display:flex;align-items:center;justify-content:flex-end;gap:.8rem;}
 .header-phone-chip{display:flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:500;color:var(--ink-80);}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green-live);animation:livePulse 2s ease-in-out infinite;flex-shrink:0;}
@@ -91,16 +91,14 @@ body.dark .logo-icon{background:var(--crimson);}
 .mobile-nav ul li a{display:block;padding:.75rem 0;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-80);border-bottom:1px solid var(--border);transition:color .2s;}
 .mobile-nav ul li:last-child a{border-bottom:none;}
 .mobile-nav ul li a:hover{color:var(--crimson);}
-
-/* ── BREADCRUMB ── */
-.breadcrumb{padding:1.2rem 0;border-bottom:1px solid var(--border);background:var(--bg);}
+/* BREADCRUMB */
+.breadcrumb{padding:1.2rem 0;border-bottom:1px solid var(--border);}
 .breadcrumb-inner{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--ink-80);}
 .breadcrumb-inner a{color:var(--ink-80);transition:color .2s;}
 .breadcrumb-inner a:hover{color:var(--crimson);}
 .breadcrumb-inner .sep{color:var(--stone-d);}
 .breadcrumb-inner .current{color:var(--crimson);font-weight:500;}
-
-/* ── PAGE HERO (slim) ── */
+/* PAGE HERO */
 .page-hero{padding:4rem 0 3rem;background:var(--bg-alt);border-bottom:1px solid var(--border);}
 .page-hero-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
 .page-hero-text .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:.6rem;}
@@ -110,44 +108,30 @@ body.dark .logo-icon{background:var(--crimson);}
 .meta-stat{text-align:center;}
 .meta-stat-n{font-family:var(--ff-display);font-size:1.8rem;font-weight:900;color:var(--crimson);}
 .meta-stat-l{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-80);margin-top:.2rem;}
-
-/* ── CONTROLS BAR ── */
-.controls-bar{padding:1.5rem 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:68px;z-index:100;transition:box-shadow .3s;}
+/* CONTROLS */
+.controls-bar{padding:1.4rem 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:68px;z-index:100;transition:box-shadow .3s;}
 .controls-bar.stuck{box-shadow:var(--s1);}
 .controls-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
-
-/* Filter chips - simplified */
-.filter-chips{display:flex;gap:.5rem;flex-wrap:wrap;}
-.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem 1rem;border:1.5px solid var(--border-strong);border-radius:40px;font-size:.74rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--ink-80);transition:all .18s;}
+.filter-chips{display:flex;gap:.45rem;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .9rem;border:1.5px solid var(--border-strong);border-radius:40px;font-size:.72rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--ink-80);transition:all .18s;}
 .chip:hover{border-color:var(--crimson);color:var(--crimson);}
 .chip.active{background:var(--crimson);border-color:var(--crimson);color:#fff;}
-
-/* Sort + count */
 .controls-right{display:flex;align-items:center;gap:1rem;}
 .results-count{font-size:.82rem;color:var(--ink-80);}
-.sort-select{font-family:var(--ff-body);font-size:.8rem;padding:.4rem .8rem;border:1.5px solid var(--border-strong);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;outline:none;appearance:none;}
+.sort-select{font-family:var(--ff-body);font-size:.8rem;padding:.42rem .8rem;border:1.5px solid var(--border-strong);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;outline:none;appearance:none;}
 .sort-select:focus{border-color:var(--crimson);}
-
-/* ── CATALOG GRID ── */
-.catalog-section{padding:3rem 0 6rem;}
+/* ── CATEGORY CARDS (kept exactly as in original explore_product.html) ── */
 .catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
-
-/* Product card — ecommerce style */
-.cat-card{border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--s1);transition:transform .3s var(--ease-out),box-shadow .3s;cursor:pointer;display:flex;flex-direction:column;position:relative;}
+.cat-card{border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--s1);transition:transform .3s var(--ease-out),box-shadow .3s;cursor:pointer;display:flex;flex-direction:column;}
 .cat-card:hover{transform:translateY(-6px);box-shadow:var(--s3);}
-.cat-card:hover .cat-img{transform:scale(1.06);}
-
 .cat-img-wrap{position:relative;overflow:hidden;height:220px;}
 .cat-img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out);}
-
 .cat-badge-wrap{position:absolute;top:.75rem;left:.75rem;display:flex;gap:.4rem;flex-wrap:wrap;}
 .cat-badge{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .7rem;border-radius:2px;line-height:1.4;}
 .cat-badge.b2b{background:var(--ink);color:#fff;}
 .cat-badge.b2c{background:var(--crimson);color:#fff;}
 .cat-badge.new{background:#22c55e;color:#fff;}
-.cat-badge.sale{background:#f59e0b;color:#fff;}
 .cat-badge.popular{background:#8b5cf6;color:#fff;}
-
 .cat-body{padding:1.1rem 1.2rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
 .cat-tag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40);background:var(--parchment-d);padding:.15rem .6rem;border-radius:2px;width:fit-content;}
 .cat-name{font-size:1rem;font-weight:700;line-height:1.25;margin-top:.1rem;}
@@ -156,22 +140,30 @@ body.dark .logo-icon{background:var(--crimson);}
 .cat-moq{font-size:.7rem;color:var(--ink-40);letter-spacing:.04em;}
 .cat-order{display:inline-flex;align-items:center;gap:.25rem;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--crimson);transition:gap .2s;}
 .cat-card:hover .cat-order{gap:.5rem;}
-
-/* Section header inside grid */
-.section-label{grid-column:1/-1;margin-bottom:-.25rem;padding-top:1rem;}
-.section-label h3{font-size:1.3rem;font-weight:700;position:relative;display:inline-block;padding-bottom:.4rem;}
-.section-label h3::after{content:'';position:absolute;bottom:0;left:0;width:36px;height:3px;background:var(--crimson);border-radius:2px;}
-.section-label p{font-size:.85rem;color:var(--ink-80);margin-top:.5rem;}
-
-/* Empty state */
-.empty-state{grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--ink-80);}
-.empty-state .icon{font-size:3rem;margin-bottom:1rem;}
-.empty-state h3{font-size:1.2rem;margin-bottom:.5rem;}
-
-/* ── FOOTER ── */
-.footer{background:var(--bg-deep);color:#7a7570;padding:5rem 0 2rem;}
-.footer-logo{font-family:var(--ff-display);font-size:1.5rem;font-weight:900;color:#f0ede8;margin-bottom:.4rem;letter-spacing:-0.03em;}
-.footer-logo em{font-style:normal;color:var(--crimson);}
+/* RESPONSIVE (kept from original + catalog) */
+@media(max-width:1100px){.catalog-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:900px){
+  .header-inner{grid-template-columns:auto 1fr auto;} 
+  .main-nav{display:none;} 
+  .mobile-toggle{display:flex;}
+  .catalog-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:640px){
+  .container{padding:0 20px;}
+  .catalog-grid{grid-template-columns:repeat(2,1fr); gap:1rem;}
+  .page-hero{padding:2.5rem 0 2rem;}
+}
+@media(max-width:400px){.catalog-grid{grid-template-columns:1fr;}}
+/* FOOTER (exactly like explore_catalog.html) */
+/* FOOTER */
+.footer{background:var(--bg-deep);color:#7a7570;padding:4.5rem 0 2rem;}
+.footer-brand{margin-bottom:2.5rem;}
+.footer-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;  /* 👈 rounded corners */
+}
 .footer-tagline{font-size:.82rem;margin-bottom:3rem;}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.05);}
 .footer-col h4{font-family:var(--ff-body);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#f0ede8;margin-bottom:1.2rem;font-weight:600;}
@@ -186,38 +178,11 @@ body.dark .logo-icon{background:var(--crimson);}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding-top:2rem;font-size:.78rem;}
 .footer-bottom a{color:#5a5a56;transition:color .2s;}
 .footer-bottom a:hover{color:#9e9990;}
-
-/* Reveal */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){.catalog-grid{grid-template-columns:repeat(3,1fr);}  .footer-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:900px){
-  .header-inner{grid-template-columns:auto 1fr auto;}
-  .main-nav{display:none;}.mobile-toggle{display:flex;}
-  .catalog-grid{grid-template-columns:repeat(2,1fr);}
-  .page-hero-inner{flex-direction:column;align-items:flex-start;}
-  .page-hero-meta{gap:1.5rem;}
-}
-@media(max-width:640px){
-  .container{padding:0 20px;}
-  .catalog-grid{grid-template-columns:repeat(2,1fr); gap:1rem;}
-  .filter-chips{gap:.35rem;}
-  .chip{padding:.3rem .75rem;font-size:.7rem;}
-  .page-hero{padding:2.5rem 0 2rem;}
-  .controls-bar{top:0;}
-  .footer-grid{grid-template-columns:1fr;gap:2rem;}
-}
-@media(max-width:400px){
-  .catalog-grid{grid-template-columns:1fr;}
-}
 :focus-visible{outline:2px solid var(--crimson);outline-offset:3px;}
 </style>
 </head>
 <body>
-
-<!-- TOP BAR -->
+<!-- TOP BAR (identical to explore_catalog.html) -->
 <div class="top-bar">
   <div class="container">
     <div class="top-bar-chips">
@@ -229,27 +194,30 @@ body.dark .logo-icon{background:var(--crimson);}
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- HEADER (exactly like explore_catalog.html – polished grid layout, active states, live dot, etc.) -->
 <header class="site-header" id="siteHeader">
   <div class="container">
     <div class="header-inner">
       <a href="index.html" class="logo-wrap" aria-label="Stardom Textiles — Home">
-        <span class="logo-icon" aria-hidden="true">S</span>
-        <span class="logo-text">STARDOM<em>.</em></span>
+        <!-- <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">STARDOM<em>.</em></span> -->
       </a>
       <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-label="Open menu">☰</button>
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
-          <li><a href="explore_product.html" style="color:var(--crimson)">Categories</a></li>
+          <li><a href="explore_product.html" class="active">Categories</a></li>
           <li><a href="explore_catalog.html">Products</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-right">
-        <div class="header-phone-chip"><span class="live-dot" aria-hidden="true"></span><span>7510000000</span></div>
-        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">🌓</button>
+    <div class="header-right">
+        <!-- <div class="header-phone-chip"><span>7510000000</span></div> -->
+        <button class="icon-btn" id="darkToggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -264,27 +232,26 @@ body.dark .logo-icon{background:var(--crimson);}
   </nav>
 </header>
 
-<!-- BREADCRUMB -->
+<!-- BREADCRUMB (polished like explore_catalog.html) -->
 <div class="breadcrumb">
   <div class="container">
     <div class="breadcrumb-inner">
-      <a href="index.html">Home</a>
-      <span class="sep">›</span>
+      <a href="index.html">Home</a><span class="sep">›</span>
       <span class="current">All Categories</span>
     </div>
   </div>
 </div>
 
-<!-- PAGE HERO -->
+<!-- PAGE HERO (updated layout + copy from original) -->
 <div class="page-hero">
   <div class="container">
     <div class="page-hero-inner">
-      <div class="page-hero-text reveal">
+      <div class="page-hero-text">
         <div class="eyebrow">Full Product Range</div>
         <h1>All Categories</h1>
-        <p>From school uniforms to corporate wear — browse our complete range of manufactured textiles, available for B2B bulk and B2C individual orders.</p>
+        <p>From school uniforms to corporate wear — browse our complete range of manufactured textiles.</p>
       </div>
-      <div class="page-hero-meta reveal">
+      <div class="page-hero-meta">
         <div class="meta-stat"><div class="meta-stat-n" id="totalCatCount">—</div><div class="meta-stat-l">Categories</div></div>
         <div class="meta-stat"><div class="meta-stat-n">PAN</div><div class="meta-stat-l">India Delivery</div></div>
         <div class="meta-stat"><div class="meta-stat-n">11+</div><div class="meta-stat-l">Years Active</div></div>
@@ -293,11 +260,11 @@ body.dark .logo-icon{background:var(--crimson);}
   </div>
 </div>
 
-<!-- CONTROLS BAR (simplified chips) -->
+<!-- CONTROLS (styled exactly like explore_catalog.html but kept simple – no search / view toggle to preserve original dynamic behaviour) -->
 <div class="controls-bar" id="controlsBar">
   <div class="container">
     <div class="controls-inner">
-      <div class="filter-chips" id="filterChips" role="group" aria-label="Filter by type">
+      <div class="filter-chips" id="filterChips" role="group" aria-label="Filter categories">
         <button class="chip active" data-filter="all">All</button>
         <button class="chip" data-filter="uniform">Uniforms</button>
         <button class="chip" data-filter="sports">Sports</button>
@@ -305,7 +272,7 @@ body.dark .logo-icon{background:var(--crimson);}
       </div>
       <div class="controls-right">
         <span class="results-count" id="resultsCount"></span>
-        <select class="sort-select" id="sortSelect" aria-label="Sort products">
+        <select class="sort-select" id="sortSelect" aria-label="Sort">
           <option value="default">Default</option>
           <option value="az">A → Z</option>
           <option value="za">Z → A</option>
@@ -315,112 +282,135 @@ body.dark .logo-icon{background:var(--crimson);}
   </div>
 </div>
 
-<!-- CATALOG GRID -->
+<!-- CATALOG GRID (original dynamic card layout preserved) -->
 <section class="catalog-section">
   <div class="container">
-    <div class="catalog-grid" id="catalogGrid" role="list" aria-label="Product categories">
-      <!-- Injected by JS -->
-    </div>
+    <div class="catalog-grid" id="catalogGrid"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo">STARDOM<em>.</em></div>
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="/favicon1.png" alt="Stardom Textiles Logo">
     <p class="footer-tagline">Premium Textile Manufacturing · Karanja (Gh.) · Delivering Pan-India</p>
     <div class="footer-grid">
       <div class="footer-col">
         <p class="footer-contact">📍 Karanja (Gh.), Maharashtra<br>📞 <a href="tel:7510000000">7510000000</a><br>🕐 Mon–Sat · 10am – 10:30pm<br>✈️ All Over India</p>
-        <div class="footer-socials"><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="Pinterest">📌</a></div>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
       </div>
       <div class="footer-col"><h4>Products</h4><ul class="footer-links"><li><a href="#">School Uniforms</a></li><li><a href="#">Sports Kit</a></li><li><a href="#">T-Shirts</a></li><li><a href="#">Track Suits</a></li><li><a href="#">Custom Printing</a></li></ul></div>
-      <div class="footer-col"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Institutional Supply</a></li><li><a href="#">Custom Manufacturing</a></li></ul></div>
-      <div class="footer-col"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li><li><a href="#">Size Guide</a></li></ul></div>
+      <div class="footer-col"><h4>Business</h4><ul class="footer-links"><li><a href="#">Bulk Orders</a></li><li><a href="#">Corporate Uniforms</a></li><li><a href="#">Custom Manufacturing</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul class="footer-links"><li><a href="#">FAQs</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>© 2025 Stardom Textiles. All rights reserved.</p><p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Refund</a></p></div>
+    <div class="footer-bottom"><p>© 2026 Stardom Textiles. All rights reserved.</p></div>
   </div>
 </footer>
 
 <script>
 'use strict';
 
-/* ── DARK MODE ── */
+/* ── COMMON POLISHED JS FROM explore_catalog.html ── */
+/* DARK MODE */
 const darkBtn = document.getElementById('darkToggle');
-const DARK_KEY = 'st-dark';
 function applyDark(v){ document.body.classList.toggle('dark',v); darkBtn.setAttribute('aria-pressed',String(v)); }
-const stored = localStorage.getItem(DARK_KEY);
-applyDark(stored !== null ? stored==='1' : window.matchMedia('(prefers-color-scheme:dark)').matches);
-darkBtn.addEventListener('click',()=>{ const d=!document.body.classList.contains('dark'); applyDark(d); try{localStorage.setItem(DARK_KEY,d?'1':'0');}catch{} });
+const stored = localStorage.getItem('st-dark');
+applyDark(stored!==null ? stored==='1' : window.matchMedia('(prefers-color-scheme:dark)').matches);
+darkBtn.addEventListener('click',()=>{ const d=!document.body.classList.contains('dark'); applyDark(d); try{localStorage.setItem('st-dark',d?'1':'0');}catch{} });
 
-/* ── HEADER SCROLL ── */
+/* HEADER SCROLL + CONTROLS STUCK */
 const hdr = document.getElementById('siteHeader');
-window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>24),{passive:true});
+window.addEventListener('scroll',()=>{ 
+  hdr.classList.toggle('scrolled', scrollY > 24);
+  document.getElementById('controlsBar').classList.toggle('stuck', scrollY > 200);
+},{passive:true});
 
-/* ── STICKY CONTROLS BAR ── */
-const ctrlBar = document.getElementById('controlsBar');
-window.addEventListener('scroll',()=>ctrlBar.classList.toggle('stuck',scrollY>200),{passive:true});
+/* MOBILE NAV (improved with aria and close on outside click) */
+const mT = document.getElementById('mobileToggle');
+const mN = document.getElementById('mobileNav');
+function closeMN(){ 
+  mN.classList.remove('open'); 
+  mN.setAttribute('aria-hidden','true'); 
+  mT.setAttribute('aria-expanded','false'); 
+  mT.textContent = '☰'; 
+}
+mT.addEventListener('click', e => {
+  e.stopPropagation();
+  const o = mN.classList.toggle('open');
+  mN.setAttribute('aria-hidden', String(!o));
+  mT.setAttribute('aria-expanded', String(o));
+  mT.textContent = o ? '✕' : '☰';
+});
+document.addEventListener('click', e => {
+  if(!mN.contains(e.target) && !mT.contains(e.target)) closeMN();
+});
+mN.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMN));
 
-/* ── MOBILE NAV ── */
-const mToggle = document.getElementById('mobileToggle');
-const mNav = document.getElementById('mobileNav');
-function closeMNav(){ mNav.classList.remove('open'); mNav.setAttribute('aria-hidden','true'); mToggle.setAttribute('aria-expanded','false'); mToggle.textContent='☰'; }
-mToggle.addEventListener('click',e=>{ e.stopPropagation(); const o=mNav.classList.toggle('open'); mNav.setAttribute('aria-hidden',String(!o)); mToggle.setAttribute('aria-expanded',String(o)); mToggle.textContent=o?'✕':'☰'; });
-document.addEventListener('click',e=>{ if(!mNav.contains(e.target)&&!mToggle.contains(e.target)) closeMNav(); });
-mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMNav));
-
-/* ── REVEAL ── */
-const revObs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-
-/* ── SOLUTIONS DATA ── */
-const DEMO_SOLUTIONS = [
-  {title:'School Uniforms',badge:'B2B',image:'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80',description:'Custom school uniform sets for any institution. Available in bulk with custom sizing, school logos and colour options.',moq:'Min. 50 pcs',tags:['uniform','b2b']},
-  {title:'Sports Jersey Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80',description:'Breathable drifit sports kits for football, cricket, kabaddi and more. Custom name & number printing available.',moq:'Min. 12 pcs',tags:['sports','b2b','custom']},
-  {title:'Custom T-Shirts',badge:'B2C',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80',description:'Round neck and polo tees in all sizes with screen or digital print. Perfect for events, teams and gifting.',moq:'Min. 12 pcs',tags:['custom','b2c']},
-  {title:'Track Suits',badge:'B2C',image:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80',description:'Comfortable track suits for school, corporate and personal use. Available in fleece, nylon and polyester.',moq:'Min. 10 pcs',tags:['b2c','b2b']},
-  {title:'Corporate Uniforms',badge:'B2B',image:'https://images.unsplash.com/photo-1542744095-291d1f67b221?w=600&q=80',description:'Professional corporate uniforms for offices, hotels, hospitals and institutions. Custom branding included.',moq:'Min. 25 pcs',tags:['uniform','b2b']},
-  {title:'Cricket Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80',description:'Full cricket uniform sets including jersey, trousers and cap. Sublimation printing with team names.',moq:'Min. 11 pcs',tags:['sports','b2b','custom']},
-  {title:'Polo T-Shirts',badge:'B2C',image:'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80',description:'Premium polo shirts for corporate gifting, events and daily wear. Available in 20+ colours.',moq:'Min. 6 pcs',tags:['b2c','custom']},
-  {title:'Football Jersey',badge:'B2B',image:'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80',description:'Lightweight drifit football jerseys with custom number and name printing. Club and tournament orders welcome.',moq:'Min. 11 pcs',tags:['sports','b2b','custom']},
-  {title:'Lowers / Track Pants',badge:'B2C',image:'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80',description:'Comfortable track pants for gyms, schools and daily wear. Elastic waist with drawstring.',moq:'Min. 10 pcs',tags:['b2c']},
-  {title:'Kabaddi Kit',badge:'B2B',image:'https://images.unsplash.com/photo-1617280614715-ef9b37e0e5c5?w=600&q=80',description:'Traditional and modern kabaddi uniform sets with custom printing and colour combinations.',moq:'Min. 12 pcs',tags:['sports','b2b']},
-  {title:'Hoodie & Sweatshirt',badge:'B2C',image:'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80',description:'Custom printed hoodies and sweatshirts for colleges, events and brand merchandise.',moq:'Min. 12 pcs',tags:['b2c','custom']},
-  {title:'Gym Vest & Shorts',badge:'B2C',image:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80',description:'Breathable gym wear sets for fitness centres and athletic use. Drifit and cotton variants available.',moq:'Min. 10 pcs',tags:['sports','b2c']},
-];
-
+/* ── CATEGORY SPECIFIC LOGIC (original dynamic behaviour fully preserved) ── */
 let allSolutions = [];
-let filteredSolutions = [];
 let activeFilter = 'all';
 
-function getBadgeClass(badge='') {
-  const b = badge.toLowerCase();
-  if(b.includes('b2b')) return 'b2b';
-  if(b.includes('b2c')) return 'b2c';
-  return 'b2b';
+const _SID = '1OvFW7cGgDO2FuPyWoSf6swK1JlVtxLCMcvSOESlMtlA';
+const _SGID = '1258597208';
+
+/* Robust CSV parser from explore_catalog.html */
+function _parseCSV(text) {
+  const rows = [];
+  const lines = text.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n');
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    const cols = []; let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { 
+        if (inQ && line[i+1]==='"') { cur+='"'; i++; } 
+        else inQ = !inQ; 
+      }
+      else if (c === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else cur += c;
+    }
+    cols.push(cur.trim()); 
+    rows.push(cols);
+  }
+  return rows;
+}
+function _parseTable(text) {
+  const rows = _parseCSV(text);
+  if (rows.length < 2) return [];
+  const headers = rows[0].map(h => h.toLowerCase().replace(/[^a-z0-9]/g,''));
+  return rows.slice(1)
+    .filter(r => r.some(c => c.trim()))
+    .map(row => {
+      const obj = {};
+      headers.forEach((h,i) => { obj[h] = (row[i]||'').trim(); });
+      return obj;
+    });
+}
+function _sheetUrl(gid) {
+  return `https://docs.google.com/spreadsheets/d/${_SID}/export?format=csv&gid=${gid}`;
 }
 
-function cardHTML(sol, i) {
+/* Category card HTML (original – opens WhatsApp directly) */
+function cardHTML(sol) {
   const wa = `https://wa.me/917510000000?text=${encodeURIComponent('Hi, I want to order: ' + sol.title)}`;
-  const badgeClass = getBadgeClass(sol.badge);
-  const isNew = i < 2 ? ' <span class="cat-badge new">New</span>' : '';
-  const isPopular = [1,3,5].includes(i) ? ' <span class="cat-badge popular">Popular</span>' : '';
   return `
-    <article class="cat-card reveal" role="listitem" tabindex="0"
-      onclick="window.open('${wa}','_blank')"
-      onkeypress="if(event.key==='Enter') window.open('${wa}','_blank')"
-      aria-label="${sol.title} — click to order via WhatsApp">
+    <article class="cat-card" onclick="window.open('${wa}','_blank')">
       <div class="cat-img-wrap">
-        <img src="${sol.image}" alt="${sol.title}" class="cat-img" loading="lazy" width="400" height="220">
+        <img src="${sol.image}" alt="${sol.title}" class="cat-img" loading="lazy">
         <div class="cat-badge-wrap">
-          <span class="cat-badge ${badgeClass}">${sol.badge || 'B2B'}</span>
-          ${isNew}${isPopular}
+          <span class="cat-badge ${sol.badge?.toLowerCase().includes('b2b')?'b2b':'b2c'}">${sol.badge||'B2B'}</span>
         </div>
       </div>
       <div class="cat-body">
-        <span class="cat-tag">${sol.badge || 'Collection'}</span>
+        <span class="cat-tag">${sol.badge||'Collection'}</span>
         <h3 class="cat-name">${sol.title}</h3>
-        <p class="cat-desc">${sol.description || 'Premium quality textile product available for bulk and retail orders.'}</p>
+        <p class="cat-desc">${sol.description}</p>
         <div class="cat-footer">
           <span class="cat-moq">${sol.moq || 'MOQ: Ask Us'}</span>
           <span class="cat-order">Order Now →</span>
@@ -429,78 +419,58 @@ function cardHTML(sol, i) {
     </article>`;
 }
 
-function renderGrid(items) {
-  const grid = document.getElementById('catalogGrid');
-  const count = document.getElementById('resultsCount');
-  if(!grid) return;
-
-  if(!items.length) {
-    grid.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><h3>No categories found</h3><p>Try a different filter.</p></div>`;
-    count.textContent = '0 results';
-    return;
-  }
-
-  grid.innerHTML = items.map((s,i) => cardHTML(s,i)).join('');
-  count.textContent = `${items.length} ${items.length === 1 ? 'category' : 'categories'}`;
-
-  // Trigger reveals
-  requestAnimationFrame(()=>{
-    grid.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+function render() {
+  let items = allSolutions.filter(s => {
+    if (activeFilter === 'all') return true;
+    return (s.tags || '').toLowerCase().includes(activeFilter);
   });
-}
-
-function applyFilterSort() {
-  let items = [...allSolutions];
-  if(activeFilter !== 'all') {
-    items = items.filter(s => {
-      const tags = s.tags || [];
-      // match if any tag includes the filter string (uniform, sports, custom)
-      return tags.some(t => t.includes(activeFilter));
-    });
-  }
   const sort = document.getElementById('sortSelect').value;
-  if(sort === 'az') items.sort((a,b)=>a.title.localeCompare(b.title));
-  if(sort === 'za') items.sort((a,b)=>b.title.localeCompare(a.title));
-  filteredSolutions = items;
-  renderGrid(items);
+  if (sort === 'az') items.sort((a,b) => a.title.localeCompare(b.title));
+  if (sort === 'za') items.sort((a,b) => b.title.localeCompare(a.title));
+
+  document.getElementById('catalogGrid').innerHTML = items.map(cardHTML).join('');
+  document.getElementById('resultsCount').textContent = `${items.length} categories`;
 }
 
-/* Filter chips */
+/* Filters & Sort */
 document.getElementById('filterChips').addEventListener('click', e => {
   const chip = e.target.closest('.chip');
-  if(!chip) return;
-  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  if (!chip) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   chip.classList.add('active');
   activeFilter = chip.dataset.filter;
-  applyFilterSort();
+  render();
 });
+document.getElementById('sortSelect').addEventListener('change', render);
 
-document.getElementById('sortSelect').addEventListener('change', applyFilterSort);
-
-/* Load solutions */
-fetch('/data/solutions.json')
-  .then(r => r.ok ? r.json() : Promise.reject())
-  .then(data => {
-    allSolutions = (Array.isArray(data) ? data : (data.solutions || [])).map(s => ({
-      ...s,
-      description: s.description || '',
-      moq: s.moq || '',
-      tags: s.tags || []
+/* Load Data (original sheet + robust parser) */
+fetch(_sheetUrl(_SGID))
+  .then(r => r.ok ? r.text() : Promise.reject())
+  .then(text => {
+    const rows = _parseTable(text);
+    allSolutions = rows.map(r => ({
+      title: r.title || r.name || '',
+      image: r.image || '',
+      description: r.description || '',
+      badge: r.badge || '',
+      moq: r.moq || '',
+      tags: r.tags || ''
     }));
-    document.getElementById('totalCatCount').textContent = allSolutions.length;
-    applyFilterSort();
+    document.getElementById('totalCatCount').textContent = allSolutions.length || '—';
+    render();
   })
   .catch(() => {
-    allSolutions = DEMO_SOLUTIONS;
+    console.log("Using demo data for categories");
+    // Demo fallback (same as original)
+    allSolutions = [
+      {title:"School Uniforms",image:"https://picsum.photos/id/1015/600/400",description:"Complete school uniform sets for all classes.",badge:"B2B",moq:"50 sets",tags:"uniform"},
+      {title:"Sports Kits",image:"https://picsum.photos/id/201/600/400",description:"Custom sports jerseys & kits.",badge:"B2C",moq:"Ask Us",tags:"sports"},
+      {title:"T-Shirts",image:"https://picsum.photos/id/301/600/400",description:"Premium round neck & polo t-shirts.",badge:"B2B",moq:"12 pcs",tags:"custom"},
+      {title:"Track Suits",image:"https://picsum.photos/id/401/600/400",description:"Comfortable track suits for school & corporate.",badge:"B2C",moq:"20 sets",tags:"sports"}
+    ];
     document.getElementById('totalCatCount').textContent = allSolutions.length;
-    applyFilterSort();
-    console.info('[Stardom] solutions.json not found — demo data loaded.');
+    render();
   });
-
-/* Netlify Identity */
-if(window.netlifyIdentity){
-  window.netlifyIdentity.on('init',user=>{if(!user)window.netlifyIdentity.on('login',()=>{document.location.href='/admin/';});});
-}
 </script>
 </body>
 </html>

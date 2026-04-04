@@ -313,7 +313,7 @@ collections:
                 name: "number"
                 widget: "string"
                 required: true
-                hint: "Digits only recommended. e.g. 7510000000"
+                hint: "Digits only recommended. e.g. ***"
 
               - label: "Display Label"
                 name: "label"

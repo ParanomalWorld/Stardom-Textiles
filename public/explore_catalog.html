@@ -236,6 +236,45 @@ body.dark .logo-icon{background:var(--crimson);}
   .search-input{width:130px;} .page-hero{padding:2.5rem 0 2rem;}
   .footer-grid{grid-template-columns:1fr;gap:2rem;}
 }
+@media (max-width: 768px){
+
+  .catalog-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .prod-img-wrap{
+    height: 150px;
+  }
+
+  .prod-body{
+    padding: .7rem .8rem;
+  }
+
+  .prod-name{
+    font-size: .9rem;
+  }
+
+  .prod-desc{
+    font-size: .75rem;
+  }
+
+  .prod-wa-btn,
+  .prod-details-btn{
+    padding: .35rem .7rem;
+    font-size: .65rem;
+  }
+}
+@media (max-width: 480px){
+
+  .catalog-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .prod-img-wrap{
+    height: 180px;
+  }
+}
 @media(max-width:400px){.catalog-grid:not(.list-view){grid-template-columns:1fr;}}
 :focus-visible{outline:2px solid var(--crimson);outline-offset:3px;}
 </style>

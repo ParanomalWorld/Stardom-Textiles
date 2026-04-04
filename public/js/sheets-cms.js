@@ -9,6 +9,7 @@
 // ═══════════════════════════════════════════════════════
 
 const SHEET_ID = '1OvFW7cGgDO2FuPyWoSf6swK1JlVtxLCMcvSOESlMtlA';
+const ENQUIRY_URL = "https://script.google.com/macros/library/d/1B99CXRZdR7hM_JJLYkybFk6ws09KPgGS7OgihUbG6-GZzk_XMujOh3mr/1";
 
 // ───────────────────────────────────────────────────────
 //  Internal helpers — do not edit below this line
